@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}" SchemaVersion="89">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{FADDF642-F444-471C-AA04-F1DDEDF43A48}" WorkUnitID="{A1D1CC6B-B751-46FA-98E8-20F5C5D2CCF6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Music" ID="{AFAE5254-D45C-4D0B-A770-6E69F1016FD1}"/>
+						<Bus Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Music" ID="{AFAE5254-D45C-4D0B-A770-6E69F1016FD1}"/>
+									<DuckingParam>
+										<Volume>-5</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>0.300000011920929</FadeOutTime>
+										<FadeCurve>FadeExp2</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<AuxBus Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
+						<AuxBus Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
+					</ChildrenList>
+				</Bus>
+				<Bus Name="Motion Factory Bus" ID="{2AF9B9C6-6EF1-46E9-B5F2-E30C9E602C74}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="Default_Motion_Device" ID="{F37021E2-01C2-4FA1-B443-1D029F0E7F5F}" WorkUnitID="{A1D1CC6B-B751-46FA-98E8-20F5C5D2CCF6}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

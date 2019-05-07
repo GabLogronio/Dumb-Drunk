@@ -1,0 +1,98 @@
+# Exported from Fuse 1.3.0
+
+newmtl Moustache
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Beggar_Moustache_diffuse.png
+map_Ks Beggar_Moustache_specular.png
+bump Beggar_Moustache_normal.png
+map_Ns Beggar_Moustache_gloss.png
+
+newmtl Eyewear
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Beggar_Eyewear_diffuse.png
+map_Ks Beggar_Eyewear_specular.png
+bump Beggar_Eyewear_normal.png
+map_Ns Beggar_Eyewear_gloss.png
+
+newmtl Bottom
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Beggar_Bottom_diffuse.png
+map_Ks Beggar_Bottom_specular.png
+bump Beggar_Bottom_normal.png
+map_Ns Beggar_Bottom_gloss.png
+
+newmtl Beard
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Beggar_Beard_diffuse.png
+map_Ks Beggar_Beard_specular.png
+bump Beggar_Beard_normal.png
+map_Ns Beggar_Beard_gloss.png
+
+newmtl Hat
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Beggar_Hat_diffuse.png
+map_Ks Beggar_Hat_specular.png
+bump Beggar_Hat_normal.png
+map_Ns Beggar_Hat_gloss.png
+
+newmtl Shoes
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Beggar_Shoes_diffuse.png
+map_Ks Beggar_Shoes_specular.png
+bump Beggar_Shoes_normal.png
+map_Ns Beggar_Shoes_gloss.png
+
+newmtl Body
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Beggar_Body_diffuse.png
+map_Ks Beggar_Body_specular.png
+bump Beggar_Body_normal.png
+map_Ns Beggar_Body_gloss.png
+
+newmtl Top
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Beggar_Top_diffuse.png
+map_Ks Beggar_Top_specular.png
+bump Beggar_Top_normal.png
+map_Ns Beggar_Top_gloss.png
+

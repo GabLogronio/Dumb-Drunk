@@ -1,0 +1,1039 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f834d8cb60ca547628d407ef77b4ab67, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 0b0e1bac754b43429cc325ef030b8a8a
+    m_lastTime: -8586598450194775808
+    List: []
+  - PhysicalPath: Virtual Acoustics/Factory Reflect Acoustic Textures.wwu
+    ParentPhysicalPath: 
+    guid: 6b663d46a83ca54f8b4a5fef12b883f6
+    m_lastTime: -8586598452554775808
+    List:
+    - name: Acoustic_Banner
+      guid: f2532d2fccda8e408b8898b1b52a26d6
+      id: 4168643977
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Acoustic_Banner
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Acoustic_Banner
+    - name: Anechoic
+      guid: 32c20a8be202de4ebeacfdd1a900e3ed
+      id: 1873957695
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Anechoic
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Anechoic
+    - name: Brick
+      guid: a9a586b004f2534ca838bdb18b18f6d6
+      id: 504532776
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Brick
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Brick
+    - name: Carpet
+      guid: 8975223456dc604296c4b9f4b669092b
+      id: 2412606308
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Carpet
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Carpet
+    - name: Concrete
+      guid: 001cf85c9628e04aaf7c3080bdaba682
+      id: 841620460
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Concrete
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Concrete
+    - name: Cork_Tiles
+      guid: 19c9d2305f92434189063dbb3c4ae5e2
+      id: 3195498748
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Cork_Tiles
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Cork_Tiles
+    - name: Curtains
+      guid: 339ee6f8975c6849b508a1535f2d66e8
+      id: 2928161104
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Curtains
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Curtains
+    - name: Drywall
+      guid: f4e3a4680b4c8746a8b8a84db93dbc8f
+      id: 3670307564
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Drywall
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Drywall
+    - name: Fabric
+      guid: 32d581836edbed4ea7a3bc7b0a0b8ba8
+      id: 1970351858
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Fabric
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Fabric
+    - name: Mountain
+      guid: 313793c51a00b44a98dd9b033a8c8eab
+      id: 513139656
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Mountain
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Mountain
+    - name: Tile
+      guid: c4da82a82a13b747ba9db9907ba29cc0
+      id: 2637588553
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Tile
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Tile
+    - name: Wood
+      guid: 96bcff1fe76f9e48ba6c7c14a71391ae
+      id: 2058049674
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Wood
+    - name: Wood_Bright
+      guid: e5d1857ba2c1634e9a13cec54b641adc
+      id: 4262522749
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood_Bright
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Wood_Bright
+    - name: Wood_Deep
+      guid: 8e474652dac50c4ea0dec98d1479529a
+      id: 1755085759
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Wood_Deep
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures/Textures/Wood_Deep
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 7c3bd1d5c146604b85014a7c259967fd
+    m_lastTime: -8586538880434775808
+    List:
+    - name: RVBGameplay
+      guid: 84db9b1da5b17a4d8a59b1ca3c186f89
+      id: 1298044221
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: RVBGameplay
+        ObjectType: 1
+      Path: Default Work Unit/Master Audio Bus/RVBGameplay
+    - name: TutorialRVB
+      guid: ef5fac9cc6392f4c8a84b47361207fc2
+      id: 3029550055
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: TutorialRVB
+        ObjectType: 1
+      Path: Default Work Unit/Master Audio Bus/TutorialRVB
+  BankWwu:
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: aaa3ed57c36dff44a3f952afca07d73e
+    m_lastTime: -8586538870874775808
+    List:
+    - name: Main
+      guid: efe3d44e04d98643b126746cedfe2a48
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Default Work Unit/Main
+    - name: Music
+      guid: c6965b5f69522b41b641d334a43275db
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 7
+      Path: Default Work Unit/Music
+    - name: Paris
+      guid: 023560e0886d2d45ba1b88e0e85a68b1
+      id: 3529644050
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Paris
+        ObjectType: 7
+      Path: Default Work Unit/Paris
+  EventWwu:
+  - PhysicalPath: Events/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 615d881f8bb6b741908d89dbb9960f0e
+    m_lastTime: -8586538855294775808
+    List:
+    - name: AlmostFall
+      guid: 172702a39fe475459800e8e155d080ca
+      id: 4178581820
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Audience
+        ObjectType: 4
+      - ElementName: AlmostFall
+        ObjectType: 3
+      Path: Default Work Unit/Audience/AlmostFall
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ClickGeneral
+      guid: 6f6cf48297f05648838ddaf85bef246f
+      id: 2786096973
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: ClickGeneral
+        ObjectType: 3
+      Path: Default Work Unit/Menu/ClickGeneral
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Clock
+      guid: 1fcb53aa7b210345b288329774021f89
+      id: 1182830809
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: Clock
+        ObjectType: 3
+      Path: Default Work Unit/Menu/Clock
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: DontFell
+      guid: 9746f3d3ca80bc4b9335cf506bacd71c
+      id: 1924693583
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Audience
+        ObjectType: 4
+      - ElementName: DontFell
+        ObjectType: 3
+      Path: Default Work Unit/Audience/DontFell
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: EffortGotUp
+      guid: 7af918684cec944f8a68fb23138b1fd4
+      id: 56469244
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: EffortGotUp
+        ObjectType: 3
+      Path: Default Work Unit/Player/EffortGotUp
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Footsteps
+      guid: 6c692c0fef15284e95ecb4e5011c807a
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 3
+      Path: Default Work Unit/Player/Footsteps
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GotUp
+      guid: dd764396820dba49b996ae5ef8275380
+      id: 3625187538
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Audience
+        ObjectType: 4
+      - ElementName: GotUp
+        ObjectType: 3
+      Path: Default Work Unit/Audience/GotUp
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GrannyImpact
+      guid: 599bbc8913ee724dbf465e82cf27898f
+      id: 835900482
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: GrannyImpact
+        ObjectType: 3
+      Path: Default Work Unit/Obstacles/GrannyImpact
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GrannyVoice
+      guid: 9f067a63fc14234cbc43d03d219195df
+      id: 4250186138
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: GrannyVoice
+        ObjectType: 3
+      Path: Default Work Unit/Obstacles/GrannyVoice
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: HiccupPlayer
+      guid: af6c9ebd7ecddb4b91e212c6a9b621db
+      id: 2895182762
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: HiccupPlayer
+        ObjectType: 3
+      Path: Default Work Unit/Player/HiccupPlayer
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Key
+      guid: 05a8b5b335e5744fa9663427af6aecdc
+      id: 1183067778
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Items
+        ObjectType: 4
+      - ElementName: Key
+        ObjectType: 3
+      Path: Default Work Unit/Items/Key
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: LaughPlayer
+      guid: 20695a7b0f247540b196af0b7555e7bc
+      id: 1376241711
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: LaughPlayer
+        ObjectType: 3
+      Path: Default Work Unit/Player/LaughPlayer
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Music
+      guid: 775a7bcfe3e33343815868378542a20c
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MusicEvents
+        ObjectType: 4
+      - ElementName: Music
+        ObjectType: 3
+      Path: Default Work Unit/MusicEvents/Music
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ObstacleNYC
+      guid: 6d1efee0e6d490459515f417e92b6624
+      id: 1434238328
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: ObstacleNYC
+        ObjectType: 3
+      Path: Default Work Unit/Obstacles/ObstacleNYC
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: OpenGate
+      guid: 371a93975d3d6847be3abe0068cfe5e7
+      id: 604601532
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: OpenGate
+        ObjectType: 3
+      Path: Default Work Unit/Menu/OpenGate
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: PickupGood
+      guid: 363734af4e84984e8b587a3252cdc7da
+      id: 2467796810
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Items
+        ObjectType: 4
+      - ElementName: PickupGood
+        ObjectType: 3
+      Path: Default Work Unit/Items/PickupGood
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Recover
+      guid: c3eb713a2377ba47b5b14c025a4cee70
+      id: 1972544759
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Audience
+        ObjectType: 4
+      - ElementName: Recover
+        ObjectType: 3
+      Path: Default Work Unit/Audience/Recover
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: RecoverFalling
+      guid: 5834c18528aa744a91988c5557605132
+      id: 3806475592
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Audience
+        ObjectType: 4
+      - ElementName: RecoverFalling
+        ObjectType: 3
+      Path: Default Work Unit/Audience/RecoverFalling
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ThrowingUp
+      guid: 5559d36bf735954585c72993c7d03f7f
+      id: 3416598638
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Audience
+        ObjectType: 4
+      - ElementName: ThrowingUp
+        ObjectType: 3
+      Path: Default Work Unit/Audience/ThrowingUp
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: TrampImpact
+      guid: 1918687bfcebb942a17b545a706c761b
+      id: 2161169877
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: TrampImpact
+        ObjectType: 3
+      Path: Default Work Unit/Obstacles/TrampImpact
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: TrampVoice
+      guid: 1d28f5d38e90764490537dc2a939f112
+      id: 4200414363
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: TrampVoice
+        ObjectType: 3
+      Path: Default Work Unit/Obstacles/TrampVoice
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: YouFell
+      guid: e053677239849e43a85d43d4e54fe8c1
+      id: 1792625333
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Audience
+        ObjectType: 4
+      - ElementName: YouFell
+        ObjectType: 3
+      Path: Default Work Unit/Audience/YouFell
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  RtpcWwu:
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: e0449f80e846e64fb8f996fdf04b2fe9
+    m_lastTime: -8586549937974775808
+    List:
+    - name: Balance
+      guid: 3b5f87a910024141adcf1e97c95ce96a
+      id: 429005311
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Balance
+        ObjectType: 13
+      Path: Default Work Unit/Balance
+    - name: GettinUp
+      guid: f8c6e6291e038c40aa2972014f4174f5
+      id: 1473240539
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GettinUp
+        ObjectType: 13
+      Path: Default Work Unit/GettinUp
+    - name: NauseaBar
+      guid: 1ed1fa004ad12247affbbdaa1a6d5fe5
+      id: 3627326343
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: NauseaBar
+        ObjectType: 13
+      Path: Default Work Unit/NauseaBar
+    - name: Time
+      guid: db67abbf9b6c064fb764d12677f13baa
+      id: 2654366170
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Time
+        ObjectType: 13
+      Path: Default Work Unit/Time
+  - PhysicalPath: Game Parameters/Factory Motion.wwu
+    ParentPhysicalPath: 
+    guid: 225213d7dbd1d042adc0930743567776
+    m_lastTime: -8586598452554775808
+    List:
+    - name: Playback_Rate
+      guid: e37e38283ac11643b9c3db5c521624af
+      id: 1524500807
+      PathAndIcons:
+      - ElementName: Factory Motion
+        ObjectType: 12
+      - ElementName: Playback_Rate
+        ObjectType: 13
+      Path: Factory Motion/Playback_Rate
+    - name: RPM
+      guid: 05aa129177f5fd449f4e4424158129e6
+      id: 796049864
+      PathAndIcons:
+      - ElementName: Factory Motion
+        ObjectType: 12
+      - ElementName: RPM
+        ObjectType: 13
+      Path: Factory Motion/RPM
+  - PhysicalPath: Game Parameters/Factory SoundSeed Air Game Syncs.wwu
+    ParentPhysicalPath: 
+    guid: 5577163b42fb8b4598bf96f557afb3b9
+    m_lastTime: -8586598452554775808
+    List:
+    - name: SS_Air_Fear
+      guid: 59062ef746431c4ea1b1dab46a05101e
+      id: 1351367891
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fear
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Fear
+    - name: SS_Air_Freefall
+      guid: 37fe2d2f9e4f944d83d853cca39781ad
+      id: 3002758120
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Freefall
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Freefall
+    - name: SS_Air_Fury
+      guid: dc79aea23acaba4696529986c322a87b
+      id: 1029930033
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fury
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Fury
+    - name: SS_Air_Month
+      guid: 45b4e209a3c47f44b3ca818a1d925ef7
+      id: 2648548617
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Month
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Month
+    - name: SS_Air_Presence
+      guid: 1a81b7e32f7b0f49b44f5fe51b468041
+      id: 3847924954
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Presence
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Presence
+    - name: SS_Air_RPM
+      guid: ab9048a3d5b92645a64d5290c43ef2dc
+      id: 822163944
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_RPM
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_RPM
+    - name: SS_Air_Size
+      guid: efeb291393a12e47a38c64668b494879
+      id: 3074696722
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Size
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Size
+    - name: SS_Air_Storm
+      guid: db8c3fe9d1063747acaf7cd44bbed783
+      id: 3715662592
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Storm
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Storm
+    - name: SS_Air_TimeOfDay
+      guid: 2ca76f537e8c8b4cae03ef34fdadc314
+      id: 3203397129
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_TimeOfDay
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_TimeOfDay
+    - name: SS_Air_Turbulence
+      guid: 197ba8edaa73a0409f192073606db710
+      id: 4160247818
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Turbulence
+        ObjectType: 13
+      Path: Factory SoundSeed Air Game Syncs/SS_Air_Turbulence
+  StateWwu:
+  - PhysicalPath: States/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 74dcac0601591f4a99f9861a80ff4ef8
+    m_lastTime: -8586582441474775808
+    List:
+    - name: City
+      guid: 666ed2a9ca892c47a838d1bf9ca9af1e
+      id: 3888786832
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: City
+        ObjectType: 9
+      Path: Default Work Unit/City
+      values:
+      - name: None
+        guid: 560484b57ce551468fefd4690faabd72
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: NYC
+        guid: 2d2f33df161294418e1300893e8f6261
+        id: 779860493
+        PathAndIcons:
+        - ElementName: NYC
+          ObjectType: 8
+      - name: Paris
+        guid: 2fe519fb5503764a9b403dec42508542
+        id: 3529644050
+        PathAndIcons:
+        - ElementName: Paris
+          ObjectType: 8
+    - name: GameState
+      guid: 4318a0379433244ba62d351669cc86bc
+      id: 4091656514
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GameState
+        ObjectType: 9
+      Path: Default Work Unit/GameState
+      values:
+      - name: End
+        guid: 7d3abf86ac78634db443318ce23af28e
+        id: 529726532
+        PathAndIcons:
+        - ElementName: End
+          ObjectType: 8
+      - name: None
+        guid: 5d9617cb3cdb4c459ab26bdcab3c2a79
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Play
+        guid: 6675f6731d56814292e1c5fc2de91580
+        id: 1256202815
+        PathAndIcons:
+        - ElementName: Play
+          ObjectType: 8
+      - name: StartMenu
+        guid: bdc8db8b18c85f498beb368bb4d20308
+        id: 3944636910
+        PathAndIcons:
+        - ElementName: StartMenu
+          ObjectType: 8
+  SwitchWwu:
+  - PhysicalPath: Switches/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 9b89ba27dcfbf14096f3d300a817e26f
+    m_lastTime: -8586550939854775808
+    List:
+    - name: Keys
+      guid: 3e5ab5275cefa443a1e517ec13fa5862
+      id: 2215982805
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Keys
+        ObjectType: 11
+      Path: Default Work Unit/Keys
+      values:
+      - name: Key1
+        guid: f5f555f900b6f64aa520169c7ddbc6de
+        id: 2215982743
+        PathAndIcons:
+        - ElementName: Key1
+          ObjectType: 10
+      - name: Key2
+        guid: 257dda7efddae743b03427f62fd2a246
+        id: 2215982740
+        PathAndIcons:
+        - ElementName: Key2
+          ObjectType: 10
+      - name: Key3
+        guid: 6fac7f90d6a2f343b86a8b4724d45ba7
+        id: 2215982741
+        PathAndIcons:
+        - ElementName: Key3
+          ObjectType: 10
+    - name: Nausea
+      guid: 10b4747e49fa66408ed6fd196927b19d
+      id: 844087024
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Nausea
+        ObjectType: 11
+      Path: Default Work Unit/Nausea
+      values:
+      - name: StraightEdge
+        guid: 5159521601b3a1448e3a95d879b1f590
+        id: 699010564
+        PathAndIcons:
+        - ElementName: StraightEdge
+          ObjectType: 10
+      - name: Tipsy
+        guid: 08c77cb0189ab843ad8126ca7ba1d615
+        id: 3554139576
+        PathAndIcons:
+        - ElementName: Tipsy
+          ObjectType: 10
+      - name: TooDrunk
+        guid: 2f602cf13b5211448957e89287bd1ae6
+        id: 1710180437
+        PathAndIcons:
+        - ElementName: TooDrunk
+          ObjectType: 10
+      - name: Vomit
+        guid: ad54d50d9cbb3942bff6100021a6984d
+        id: 2934545850
+        PathAndIcons:
+        - ElementName: Vomit
+          ObjectType: 10
+    - name: NYCObstacles
+      guid: 8b94048310a6a24ea953d77478fae03d
+      id: 580044789
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: NYCObstacles
+        ObjectType: 11
+      Path: Default Work Unit/NYCObstacles
+      values:
+      - name: FireExtinguisher
+        guid: c3603433ddf09d42bae4414da659417f
+        id: 3378138780
+        PathAndIcons:
+        - ElementName: FireExtinguisher
+          ObjectType: 10
+      - name: HotDogStand
+        guid: 4f9bce2ef1aed74b917f399b93fa9a1f
+        id: 2861812420
+        PathAndIcons:
+        - ElementName: HotDogStand
+          ObjectType: 10
+      - name: Mascotte
+        guid: fffe9864b0ad7649a2cbeb38405c46a0
+        id: 4291420489
+        PathAndIcons:
+        - ElementName: Mascotte
+          ObjectType: 10
+      - name: Taxi
+        guid: eca3e8660db4d44d8a525e365525cda9
+        id: 2837639985
+        PathAndIcons:
+        - ElementName: Taxi
+          ObjectType: 10
+    - name: ParisObstacles
+      guid: 3cb65509211dbd4994ddc56c5f72c577
+      id: 1107149412
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ParisObstacles
+        ObjectType: 11
+      Path: Default Work Unit/ParisObstacles
+      values:
+      - name: ArtistDancing
+        guid: 647f3663a3a8da43af4abf9a0f8eff1d
+        id: 4258714584
+        PathAndIcons:
+        - ElementName: ArtistDancing
+          ObjectType: 10
+      - name: BaguetteBox
+        guid: 278e3579e1885e45990536796b188d25
+        id: 2859006487
+        PathAndIcons:
+        - ElementName: BaguetteBox
+          ObjectType: 10
+      - name: BikeBaguette
+        guid: f80e9bceb1636e419b22a0aec2a7547f
+        id: 1582918959
+        PathAndIcons:
+        - ElementName: BikeBaguette
+          ObjectType: 10
+      - name: FlowerVase
+        guid: 14ec51f5e8ba6249a61d9ed2669d210c
+        id: 51596611
+        PathAndIcons:
+        - ElementName: FlowerVase
+          ObjectType: 10
+      - name: Mime
+        guid: 17751ed35447004dbb5836463cc4b2d5
+        id: 2559194501
+        PathAndIcons:
+        - ElementName: Mime
+          ObjectType: 10
+      - name: PeopleTalking
+        guid: 4d3b8d1eebd44945b8ddfc4bc64c6338
+        id: 952687098
+        PathAndIcons:
+        - ElementName: PeopleTalking
+          ObjectType: 10
+    - name: PickupBad
+      guid: 658bdef0c534974a943966fc42bdee1f
+      id: 4152723942
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PickupBad
+        ObjectType: 11
+      Path: Default Work Unit/PickupBad
+      values:
+      - name: SpoiledFood
+        guid: aa554ecb7666a4438fe776d1d00f1d7d
+        id: 1196838563
+        PathAndIcons:
+        - ElementName: SpoiledFood
+          ObjectType: 10
+    - name: PickupGood
+      guid: dafa3935e3cf0c418bfbbe36c5413868
+      id: 2467796810
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PickupGood
+        ObjectType: 11
+      Path: Default Work Unit/PickupGood
+      values:
+      - name: PickupBottle
+        guid: ab6532c2bce2f442810b8fd37c2969a9
+        id: 1153742465
+        PathAndIcons:
+        - ElementName: PickupBottle
+          ObjectType: 10
+      - name: PickupClock
+        guid: cdc35f003690f245889052b0cbe52bc0
+        id: 750153097
+        PathAndIcons:
+        - ElementName: PickupClock
+          ObjectType: 10
+    - name: Player
+      guid: 899fd3de21570a4aa5f95d17be49c46e
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 11
+      Path: Default Work Unit/Player
+      values:
+      - name: Player1
+        guid: da329837bc77024eb41bf183f95c741c
+        id: 2188949039
+        PathAndIcons:
+        - ElementName: Player1
+          ObjectType: 10
+      - name: Player2
+        guid: a06ef48aa76522468f40c21987525830
+        id: 2188949036
+        PathAndIcons:
+        - ElementName: Player2
+          ObjectType: 10
+    - name: Scratch
+      guid: 24311b6e3338e1459f9500b14797e0f6
+      id: 2077382857
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scratch
+        ObjectType: 11
+      Path: Default Work Unit/Scratch
+      values:
+      - name: ForHipHop
+        guid: 0a11c0b28958fd45bfa809eff3da5116
+        id: 1989555702
+        PathAndIcons:
+        - ElementName: ForHipHop
+          ObjectType: 10
+      - name: ForRit
+        guid: d2d88dd050622c4d9d1574a0604bfa0d
+        id: 4217917287
+        PathAndIcons:
+        - ElementName: ForRit
+          ObjectType: 10
+      - name: ForStac
+        guid: 6009aee563ddde45898b100f28d8853f
+        id: 3088015319
+        PathAndIcons:
+        - ElementName: ForStac
+          ObjectType: 10
+      - name: InVerse
+        guid: 8bbf26d8865e8c489d5fc0eea8b68d60
+        id: 3481487443
+        PathAndIcons:
+        - ElementName: InVerse
+          ObjectType: 10
+  TriggerWwu:
+  - PhysicalPath: Triggers/Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 0de505f679ac7a478978712aedb3eb0b
+    m_lastTime: -8586598450194775808
+    List: []
+  ExpandedItems:
+  - /Dumb_and_Drunk
+  - /Dumb_and_Drunk/Events
+  - /Dumb_and_Drunk/Events/Default Work Unit
+  - /Dumb_and_Drunk/Events/Default Work Unit/Audience
+  - /Dumb_and_Drunk/Events/Default Work Unit/Menu
+  - /Dumb_and_Drunk/Events/Default Work Unit/Obstacles
+  - /Dumb_and_Drunk/Events/Default Work Unit/Player
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 

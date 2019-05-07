@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: fb6efaebc662a934a9d42b6dcbf81338
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Blue_neon_gas002
+    100002: Carrier_001
+    100004: Carrier_002
+    100006: Carrier_003
+    100008: Carrier_004
+    100010: Carrier_005
+    100012: Carrier_006
+    100014: Carrier_007
+    100016: Carrier_008
+    100018: Carrier_009
+    100020: Carrier_010
+    100022: Carrier_011
+    100024: Electrical_conductor_001
+    100026: Electrical_conductor_002
+    100028: Font_Party_time
+    100030: //RootNode
+    100032: Plug
+    100034: Plugs_for_electrical_conductor
+    100036: Plugs_for_tube
+    100038: Transformer
+    100040: White_screen
+    100042: Yellow_neon_gas_001
+    100044: Cables
+    400000: Blue_neon_gas002
+    400002: Carrier_001
+    400004: Carrier_002
+    400006: Carrier_003
+    400008: Carrier_004
+    400010: Carrier_005
+    400012: Carrier_006
+    400014: Carrier_007
+    400016: Carrier_008
+    400018: Carrier_009
+    400020: Carrier_010
+    400022: Carrier_011
+    400024: Electrical_conductor_001
+    400026: Electrical_conductor_002
+    400028: Font_Party_time
+    400030: //RootNode
+    400032: Plug
+    400034: Plugs_for_electrical_conductor
+    400036: Plugs_for_tube
+    400038: Transformer
+    400040: White_screen
+    400042: Yellow_neon_gas_001
+    400044: Cables
+    2100000: Font_Party_time
+    2100002: Plugs_for_tube
+    2100004: Electrical_conductor
+    2100006: White_screen
+    2100008: Detail_01
+    2100010: Detail_02
+    2100012: Neon_gas
+    2100014: Black_transformator
+    2100016: Sticker
+    2100018: Blue_neon_gas
+    2300000: Blue_neon_gas002
+    2300002: Carrier_001
+    2300004: Carrier_002
+    2300006: Carrier_003
+    2300008: Carrier_004
+    2300010: Carrier_005
+    2300012: Carrier_006
+    2300014: Carrier_007
+    2300016: Carrier_008
+    2300018: Carrier_009
+    2300020: Carrier_010
+    2300022: Carrier_011
+    2300024: Electrical_conductor_001
+    2300026: Electrical_conductor_002
+    2300028: Font_Party_time
+    2300030: Plug
+    2300032: Plugs_for_electrical_conductor
+    2300034: Plugs_for_tube
+    2300036: Transformer
+    2300038: White_screen
+    2300040: Yellow_neon_gas_001
+    2300042: Cables
+    3300000: Blue_neon_gas002
+    3300002: Carrier_001
+    3300004: Carrier_002
+    3300006: Carrier_003
+    3300008: Carrier_004
+    3300010: Carrier_005
+    3300012: Carrier_006
+    3300014: Carrier_007
+    3300016: Carrier_008
+    3300018: Carrier_009
+    3300020: Carrier_010
+    3300022: Carrier_011
+    3300024: Electrical_conductor_001
+    3300026: Electrical_conductor_002
+    3300028: Font_Party_time
+    3300030: Plug
+    3300032: Plugs_for_electrical_conductor
+    3300034: Plugs_for_tube
+    3300036: Transformer
+    3300038: White_screen
+    3300040: Yellow_neon_gas_001
+    3300042: Cables
+    4300000: Font_Party_time
+    4300002: Plugs_for_tube
+    4300004: Electrical_conductor_001
+    4300006: White_screen
+    4300008: Carrier_011
+    4300010: Yellow_neon_gas_001
+    4300012: Carrier_001
+    4300014: Transformer
+    4300016: Plugs_for_electrical_conductor
+    4300018: Electrical_conductor_002
+    4300020: Plug
+    4300022: Carrier_002
+    4300024: Carrier_003
+    4300026: Carrier_004
+    4300028: Carrier_005
+    4300030: Carrier_006
+    4300032: Carrier_007
+    4300034: Carrier_008
+    4300036: Carrier_009
+    4300038: Carrier_010
+    4300040: Blue_neon_gas002
+    4300042: Cables
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

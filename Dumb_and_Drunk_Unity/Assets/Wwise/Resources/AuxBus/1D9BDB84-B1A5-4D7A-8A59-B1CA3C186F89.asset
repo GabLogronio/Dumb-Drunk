@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a072ed20c664eb88b27fa73b578361, type: 3}
+  m_Name: 1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89
+  m_EditorClassIdentifier: 
+  objectName: RVBGameplay
+  id: 1298044221
+  guid: 1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89

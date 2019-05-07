@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c37e9cee4664dbab0477b7feef1e70, type: 3}
+  m_Name: DF332F2D-1216-4194-8E13-00893E8F6261
+  m_EditorClassIdentifier: 
+  objectName: NYC
+  id: 779860493
+  guid: DF332F2D-1216-4194-8E13-00893E8F6261
+  WwiseStateGroupReference: {fileID: 11400000, guid: ee251908a8f2b4b43a8a32b6395bcdbb,
+    type: 2}

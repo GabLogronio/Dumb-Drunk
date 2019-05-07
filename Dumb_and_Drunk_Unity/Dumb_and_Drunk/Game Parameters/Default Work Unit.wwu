@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{809F44E0-46E8-4FE6-B8F9-96FDF04B2FE9}" SchemaVersion="89">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{809F44E0-46E8-4FE6-B8F9-96FDF04B2FE9}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="NauseaBar" ID="{00FAD11E-D14A-4722-AFFB-BDAA1A6D5FE5}"/>
+				<GameParameter Name="Balance" ID="{A9875F3B-0210-4141-ADCF-1E97C95CE96A}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Time" ID="{BFAB67DB-6C9B-4F06-B764-D12677F13BAA}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="300"/>
+						<Property Name="Max" Type="Real64" Value="300"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="GettinUp" ID="{29E6C6F8-031E-408C-AA29-72014F4174F5}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="5"/>
+						<Property Name="Max" Type="Real64" Value="5"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

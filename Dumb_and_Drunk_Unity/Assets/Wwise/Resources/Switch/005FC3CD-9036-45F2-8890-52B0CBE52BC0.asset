@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee57a34ef483643248bece1adffd4bab, type: 3}
+  m_Name: 005FC3CD-9036-45F2-8890-52B0CBE52BC0
+  m_EditorClassIdentifier: 
+  objectName: PickupClock
+  id: 750153097
+  guid: 005FC3CD-9036-45F2-8890-52B0CBE52BC0
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: b1d9165bd4d274e409fcaec4403e7b7c,
+    type: 2}

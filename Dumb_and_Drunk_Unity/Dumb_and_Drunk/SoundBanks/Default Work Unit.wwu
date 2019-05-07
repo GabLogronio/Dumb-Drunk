@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{57EDA3AA-6DC3-44FF-A3F9-52AFCA07D73E}" SchemaVersion="89">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{57EDA3AA-6DC3-44FF-A3F9-52AFCA07D73E}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{4ED4E3EF-D904-4386-B126-746CEDFE2A48}">
+					<ObjectInclusionList>
+						<ObjectRef Name="LaughPlayer" ID="{7B5A6920-240F-4075-B196-AF0B7555E7BC}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="TrampImpact" ID="{7B681819-EBFC-42B9-A17B-545A706C761B}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="YouFell" ID="{726753E0-8439-439E-A85D-43D4E54FE8C1}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="TrampVoice" ID="{D3F5281D-908E-4476-9053-7DC2A939F112}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Clock" ID="{AA53CB1F-217B-4503-B288-329774021F89}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="AlmostFall" ID="{A3022717-E49F-4575-9800-E8E155D080CA}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ObstacleNYC" ID="{E0FE1E6D-D4E6-4590-9515-F417E92B6624}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ThrowingUp" ID="{6BD35955-35F7-4595-85C7-2993C7D03F7F}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="OpenGate" ID="{97931A37-3D5D-4768-BE3A-BE0068CFE5E7}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Recover" ID="{3A71EBC3-7723-47BA-B5B1-4C025A4CEE70}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ClickGeneral" ID="{82F46C6F-F097-4856-838D-DAF85BEF246F}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="GotUp" ID="{964376DD-0D82-49BA-B996-AE5EF8275380}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="RecoverFalling" ID="{85C13458-AA28-4A74-9198-8C5557605132}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="DontFell" ID="{D3F34697-80CA-4BBC-9335-CF506BACD71C}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="HiccupPlayer" ID="{BD9E6CAF-CD7E-4BDB-91E2-12C6A9B621DB}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="GrannyVoice" ID="{637A069F-14FC-4C23-BC43-D03D219195DF}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="GrannyImpact" ID="{89BC9B59-EE13-4D72-BF46-5E82CF27898F}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PickupBad" ID="{F1CC1840-2903-4E12-8E11-5558E11C6AB1}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Footsteps" ID="{0F2C696C-15EF-4E28-95EC-B4E5011C807A}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PickupGood" ID="{AF343736-844E-4E98-8B58-7A3252CDC7DA}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Key" ID="{B3B5A805-E535-4F74-A966-3427AF6AECDC}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="EffortGotUp" ID="{6818F97A-EC4C-4F94-8A68-FB23138B1FD4}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Music" ID="{5F5B96C6-5269-412B-B641-D334A43275DB}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Music" ID="{CF7B5A77-E3E3-4333-8158-68378542A20C}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Paris" ID="{E0603502-6D88-452D-BA1B-88E0E85A68B1}">
+					<ObjectInclusionList/>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

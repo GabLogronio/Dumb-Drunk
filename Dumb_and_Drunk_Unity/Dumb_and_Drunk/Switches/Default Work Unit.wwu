@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{27BA899B-FBDC-40F1-96F3-D300A817E26F}" SchemaVersion="89">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{27BA899B-FBDC-40F1-96F3-D300A817E26F}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Nausea" ID="{7E74B410-FA49-4066-8ED6-FD196927B19D}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="TooDrunk" ID="{F12C602F-523B-4411-8957-E89287BD1AE6}"/>
+						<Switch Name="Tipsy" ID="{B07CC708-9A18-43B8-AD81-26CA7BA1D615}"/>
+						<Switch Name="StraightEdge" ID="{16525951-B301-44A1-8E3A-95D879B1F590}"/>
+						<Switch Name="Vomit" ID="{0DD554AD-BB9C-4239-BFF6-100021A6984D}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="NauseaBar" ID="{00FAD11E-D14A-4722-AFFB-BDAA1A6D5FE5}"/>
+						<Curve Name="" ID="{703DDC7F-2639-4CB8-8A61-108C7CFCD56A}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>4</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.001</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>30.06757</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>69.76352</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>100</XPos>
+									<YPos>3</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="ParisObstacles" ID="{0955B63C-1D21-49BD-94DD-C56C5F72C577}">
+					<ChildrenList>
+						<Switch Name="ArtistDancing" ID="{63367F64-A8A3-43DA-AF4A-BF9A0F8EFF1D}"/>
+						<Switch Name="BikeBaguette" ID="{CE9B0EF8-63B1-416E-9B22-A0AEC2A7547F}"/>
+						<Switch Name="BaguetteBox" ID="{79358E27-88E1-455E-9905-36796B188D25}"/>
+						<Switch Name="FlowerVase" ID="{F551EC14-BAE8-4962-A61D-9ED2669D210C}"/>
+						<Switch Name="Mime" ID="{D31E7517-4754-4D00-BB58-36463CC4B2D5}"/>
+						<Switch Name="PeopleTalking" ID="{1E8D3B4D-D4EB-4549-B8DD-FC4BC64C6338}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="NYCObstacles" ID="{8304948B-A610-4EA2-A953-D77478FAE03D}">
+					<ChildrenList>
+						<Switch Name="HotDogStand" ID="{2ECE9B4F-AEF1-4BD7-917F-399B93FA9A1F}"/>
+						<Switch Name="Mascotte" ID="{6498FEFF-ADB0-4976-A2CB-EB38405C46A0}"/>
+						<Switch Name="Taxi" ID="{66E8A3EC-B40D-4DD4-8A52-5E365525CDA9}"/>
+						<Switch Name="FireExtinguisher" ID="{333460C3-F0DD-429D-BAE4-414DA659417F}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="PickupGood" ID="{3539FADA-CFE3-410C-8BFB-BE36C5413868}">
+					<ChildrenList>
+						<Switch Name="PickupClock" ID="{005FC3CD-9036-45F2-8890-52B0CBE52BC0}"/>
+						<Switch Name="PickupBottle" ID="{C23265AB-E2BC-42F4-810B-8FD37C2969A9}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Scratch" ID="{6E1B3124-3833-45E1-9F95-00B14797E0F6}">
+					<ChildrenList>
+						<Switch Name="ForRit" ID="{D08DD8D2-6250-4D2C-9D15-74A0604BFA0D}"/>
+						<Switch Name="ForStac" ID="{E5AE0960-DD63-45DE-898B-100F28D8853F}"/>
+						<Switch Name="ForHipHop" ID="{B2C0110A-5889-45FD-BFA8-09EFF3DA5116}"/>
+						<Switch Name="InVerse" ID="{D826BF8B-5E86-488C-9D5F-C0EEA8B68D60}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Player" ID="{DED39F89-5721-4A0A-A5F9-5D17BE49C46E}">
+					<ChildrenList>
+						<Switch Name="Player1" ID="{379832DA-77BC-4E02-B41B-F183F95C741C}"/>
+						<Switch Name="Player2" ID="{8AF46EA0-65A7-4622-8F40-C21987525830}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Keys" ID="{27B55A3E-EF5C-43A4-A1E5-17EC13FA5862}">
+					<ChildrenList>
+						<Switch Name="Key1" ID="{F955F5F5-B600-4AF6-A520-169C7DDBC6DE}"/>
+						<Switch Name="Key2" ID="{7EDA7D25-DAFD-43E7-B034-27F62FD2A246}"/>
+						<Switch Name="Key3" ID="{907FAC6F-A2D6-43F3-B86A-8B4724D45BA7}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="PickupBad" ID="{F0DE8B65-34C5-4A97-9439-66FC42BDEE1F}">
+					<ChildrenList>
+						<Switch Name="SpoiledFood" ID="{CB4E55AA-6676-43A4-8FE7-76D1D00F1D7D}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>
