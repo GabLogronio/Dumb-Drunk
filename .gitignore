@@ -36,7 +36,8 @@ sysinfo.txt
 *.unitypackage
 
 # SoundBanks
-Dumb_and_Drunk_Unity\Dumb_and_Drunk\GeneratedSoundBanks
+Dumb_and_Drunk_Unity/Dumb_and_Drunk/GeneratedSoundBanks/
+*.bnk
 
 # Cache
-Dumb_and_Drunk_Unity\Library\PlayerDataCache
+Dumb_and_Drunk_Unity/Library/PlayerDataCache
