@@ -10,7 +10,9 @@ public class CarsAndCartSpawner : MonoBehaviour
     GameObject[] Obstacles;
 
     [SerializeField]
-    Transform SpawnPoint1, SpawnPoint2;
+    Transform[] SpawnPoints;
+
+    int LastSpawned = 10;
 
     void Awake()
     {
@@ -26,20 +28,23 @@ public class CarsAndCartSpawner : MonoBehaviour
 
     public void SpawnObstacle()
     {
-        int SelectedObstalce = Random.Range(0, Obstacles.Length - 1);
-        if (Random.value > 0.5f)
+        int SelectedObstacle;
+        do SelectedObstacle = Random.Range(0, Obstacles.Length - 1);
+        while (SelectedObstacle == LastSpawned);
+        LastSpawned = SelectedObstacle;
+        for (int i = 0; i < Obstacles.Length; i++)
         {
-            Obstacles[SelectedObstalce].transform.position = SpawnPoint1.position;
-            Obstacles[SelectedObstalce].transform.rotation = SpawnPoint1.rotation;
+            if (i == SelectedObstacle)
+            {
+                int SelectedSpawnPoint = Random.Range(0, SpawnPoints.Length - 1);
+                Obstacles[i].transform.position = SpawnPoints[SelectedSpawnPoint].position;
+                Obstacles[i].transform.rotation = SpawnPoints[SelectedSpawnPoint].rotation;
+                Obstacles[i].SetActive(true);
+
+            }
+            else Obstacles[i].SetActive(false);
 
         }
-        else
-        {
-            Obstacles[SelectedObstalce].transform.position = SpawnPoint2.position;
-            Obstacles[SelectedObstalce].transform.rotation = SpawnPoint2.rotation;
-
-        }
-        Obstacles[SelectedObstalce].SetActive(true);
 
     }
 
