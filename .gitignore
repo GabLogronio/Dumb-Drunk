@@ -39,5 +39,7 @@ sysinfo.txt
 Dumb_and_Drunk_Unity/Dumb_and_Drunk/GeneratedSoundBanks/
 *.bnk
 
-# Cache
-Dumb_and_Drunk_Unity/Library/PlayerDataCache
+# Library
+Dumb_and_Drunk_Unity/Library/
+Dumb_and_Drunk_Unity/obj/Debug/
+Dumb_and_Drunk_Unity/.vs
