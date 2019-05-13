@@ -8373,6 +8373,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ipaddress: 
   DebugText: {fileID: 0}
+  Characters:
+  - {fileID: 1251183921}
+  - {fileID: 965821762}
+  - {fileID: 8613763389305771452}
+  - {fileID: 1575321750}
 --- !u!4 &846153140
 Transform:
   m_ObjectHideFlags: 0
@@ -9525,6 +9530,7 @@ GameObject:
   - component: {fileID: 965821760}
   - component: {fileID: 965821759}
   - component: {fileID: 965821758}
+  - component: {fileID: 965821762}
   m_Layer: 9
   m_Name: Dennis
   m_TagString: Untagged
@@ -9637,6 +9643,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &965821762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965821756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dcf880fa2f8cb4f932c497fa6b76bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &969795134
 GameObject:
   m_ObjectHideFlags: 0
@@ -12522,6 +12540,7 @@ GameObject:
   - component: {fileID: 1251183919}
   - component: {fileID: 1251183918}
   - component: {fileID: 1251183917}
+  - component: {fileID: 1251183921}
   m_Layer: 9
   m_Name: Cheng
   m_TagString: Untagged
@@ -12634,6 +12653,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1251183921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251183915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dcf880fa2f8cb4f932c497fa6b76bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1277084270
 GameObject:
   m_ObjectHideFlags: 0
@@ -15046,6 +15077,7 @@ GameObject:
   - component: {fileID: 1575321748}
   - component: {fileID: 1575321747}
   - component: {fileID: 1575321746}
+  - component: {fileID: 1575321750}
   m_Layer: 9
   m_Name: Mike
   m_TagString: Untagged
@@ -15158,6 +15190,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1575321750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575321744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dcf880fa2f8cb4f932c497fa6b76bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575400911
 GameObject:
   m_ObjectHideFlags: 0
@@ -34064,6 +34108,7 @@ GameObject:
   - component: {fileID: 8613763389305771454}
   - component: {fileID: 8613763389305771449}
   - component: {fileID: 8613763389305771448}
+  - component: {fileID: 8613763389305771452}
   m_Layer: 9
   m_Name: Maurice
   m_TagString: Untagged
@@ -34090,6 +34135,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8613763389305771452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613763389305771450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dcf880fa2f8cb4f932c497fa6b76bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8613763389305771454
 MonoBehaviour:
   m_ObjectHideFlags: 0

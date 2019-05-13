@@ -6,16 +6,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.Networking.NetworkSystem;
+using System;
 
 public class NetworkClientManager : MonoBehaviour
 {
     public static NetworkClientManager instance = null;
 
     [SerializeField]
-    string ServerIP = "192.168.1.6", PlayerNumber = "0";
+    string ServerIP = "192.168.1.6";
+
+    int PlayerID;
 
     [SerializeField]
     Text textUI;
+
+    [SerializeField]
+    GameObject[] PlayersImages;
 
     [SerializeField]
     GameObject GameUI, ConnectButton;
@@ -35,8 +41,36 @@ public class NetworkClientManager : MonoBehaviour
     {
         client.Connect(ServerIP, 25000);
         textUI.text = "Connecting";
-        
 
+        client.RegisterHandler(888, ServerMessageReceiver);
+
+    }
+
+    private void ServerMessageReceiver(NetworkMessage NetMsg)
+    {
+        StringMessage msg = new StringMessage();
+        msg.value = NetMsg.ReadMessage<StringMessage>().value;
+        string[] deltas = msg.value.Split('|');
+        switch (deltas[0])
+        {
+            case "Player":
+                int ToSetID;
+                if (Int32.TryParse(deltas[1], out ToSetID))
+                {
+                    PlayerID = ToSetID;
+                    PlayersImages[PlayerID].SetActive(true);
+                    ConnectButton.SetActive(false);
+
+                }
+                break;
+            case "Start":
+                GameUI.SetActive(true);
+                PlayersImages[PlayerID].SetActive(false);
+                break;
+            default:
+                Debug.Log("Message");
+                break;
+        }
     }
 
     public void SendJoystickInfo(float HorDelta, float VerDelta)
@@ -45,7 +79,7 @@ public class NetworkClientManager : MonoBehaviour
         {
             //textUI.text = "Sending: P" + PlayerNumber + "|" + HorDelta + "|" + VerDelta;
             StringMessage msg = new StringMessage();
-            msg.value = "P" + PlayerNumber + "|AnAx|" + HorDelta + "|" + VerDelta;
+            msg.value = "AnAx|" + HorDelta + "|" + VerDelta;
             client.Send(888, msg);
 
         }
@@ -57,7 +91,7 @@ public class NetworkClientManager : MonoBehaviour
         {
             //textUI.text = "Sending: P" + PlayerNumber + "|" + HorDelta + "|" + VerDelta;
             StringMessage msg = new StringMessage();
-            msg.value = "P" + PlayerNumber + "|Butt|" + ButtonPressed;
+            msg.value = "Butt|" + ButtonPressed;
             client.Send(888, msg);
 
         }
@@ -69,21 +103,11 @@ public class NetworkClientManager : MonoBehaviour
         {   // Delta.x > 0 tilted backwards, Delta.x < 0 tilted forwatd, Delta.y > 0 tilted left, Delta.y < 0 tilted right, *(-1) in order to align the y value.
 
             StringMessage msg = new StringMessage();
-            msg.value = "P" + PlayerNumber + "|Gyro|" + System.Math.Round(Delta.x, 2) + "|" + System.Math.Round(Delta.y, 2)*(-1f) + "|" + System.Math.Round(Delta.z, 2) + "|" + System.Math.Round(Delta.w, 2);
+            msg.value = "Gyro|" + System.Math.Round(Delta.x, 2) + "|" + System.Math.Round(Delta.y, 2)*(-1f) + "|" + System.Math.Round(Delta.z, 2) + "|" + System.Math.Round(Delta.w, 2);
             textUI.text = "Sending: " + msg.value;
             client.Send(888, msg);
 
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (client.isConnected)
-        {
-            // textUI.text = "Connected";
-            GameUI.SetActive(true);
-            ConnectButton.SetActive(false);
-        }
-    }
 }
