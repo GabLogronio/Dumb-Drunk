@@ -41,7 +41,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Old/New York PS.unity
     guid: 5e5519ca20b4f5e488db9f349807e66c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/New version Test/Player1 Controller.unity
-    guid: 7f57b89fa45f0f542a182a26b68b09f0
+    path: Assets/Scenes/Game Scene 1.unity
+    guid: 10114e8bbd1d30f48a9f4db3a75900de
   m_configObjects: {}

@@ -40,6 +40,6 @@ Dumb_and_Drunk_Unity/Dumb_and_Drunk/GeneratedSoundBanks/
 *.bnk
 
 # Library
-Dumb_and_Drunk_Unity/Library/
-Dumb_and_Drunk_Unity/obj/Debug/
-Dumb_and_Drunk_Unity/.vs
+/Dumb_and_Drunk_Unity/Library/
+/Dumb_and_Drunk_Unity/obj/Debug/
+/Dumb_and_Drunk_Unity/.vs/
