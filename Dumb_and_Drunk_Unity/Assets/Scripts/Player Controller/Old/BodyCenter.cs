@@ -25,8 +25,8 @@ public class BodyCenter : MonoBehaviour {
         PukeInstantiated.GetComponent<PuddleObstacle>().Activate();
         ThrowingUp = true;
 
-        RightFoot.GetComponent<FootController>().FixFoot(true);
-        LeftFoot.GetComponent<FootController>().FixFoot(true);
+        //RightFoot.GetComponent<FootController>().FixFoot(true);
+        //LeftFoot.GetComponent<FootController>().FixFoot(true);
     }
 
     public void StopThrowingUp()
@@ -34,8 +34,8 @@ public class BodyCenter : MonoBehaviour {
         PukeInstantiated.GetComponent<PuddleObstacle>().StopSpread();
         ThrowingUp = false;
 
-        RightFoot.GetComponent<FootController>().FixFoot(false);
-        LeftFoot.GetComponent<FootController>().FixFoot(false);
+        //RightFoot.GetComponent<FootController>().FixFoot(false);
+        //LeftFoot.GetComponent<FootController>().FixFoot(false);
     }
 
     public void Fall()

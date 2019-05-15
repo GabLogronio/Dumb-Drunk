@@ -46,7 +46,7 @@ public class PlayerInputController : MonoBehaviour
     }
 
     void GetInput()
-    {
+    {/*
         // ----------------------------------- PLAYER RIGHT FOOT ----------------------------------- //
         if (( (Player1 && (Input.GetKeyDown(KeyCode.L))) || (!Player1 && (Input.GetKeyDown(KeyCode.Keypad3))) || (Input.GetKeyDown(PlayerControls[0])) ) && RightFootSet && LeftFootSet)
             PlayerRightFoot.Detach();
@@ -83,7 +83,7 @@ public class PlayerInputController : MonoBehaviour
 
         if ((Player1 && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button5))) || (!Player1 && (Input.GetKeyDown(KeyCode.Keypad5) || Input.GetKeyDown(KeyCode.Joystick2Button5))))
             BarsManager.ThrowUp();
-
+            */
     }
 
     void GetDirection()
@@ -206,8 +206,8 @@ public class PlayerInputController : MonoBehaviour
 
     public void SetFeetCanAttach(bool ToSet)
     {
-        PlayerRightFoot.SetFootCanAttach(ToSet);
-        PlayerLeftFoot.SetFootCanAttach(ToSet);
+        //PlayerRightFoot.SetFootCanAttach(ToSet);
+        //PlayerLeftFoot.SetFootCanAttach(ToSet);
 
     }
 

@@ -30,17 +30,18 @@ public class NetworkServerManager : MonoBehaviour
     void Start()
     {
         NetworkServer.Listen(25000);
-        NetworkServer.RegisterHandler(888, ServerStringMessageReceiver);
 
+        NetworkServer.RegisterHandler(888, ServerStringMessageReceiver);
         NetworkServer.RegisterHandler(MsgType.Connect, OnClientConnected);
 
     }
 
     void OnClientConnected(NetworkMessage NetMsg)
     {
-        if (CurrentConnections.Count <= Characters.Length)
-        {
-            CurrentConnections.Add(NetMsg.conn.connectionId, Characters[CurrentConnections.Count]);
+        //if (CurrentConnections.Count <= Characters.Length)
+        if (CurrentConnections.Count <= 2)
+            {
+                CurrentConnections.Add(NetMsg.conn.connectionId, Characters[CurrentConnections.Count]);
             ServerStringMessageSender(NetMsg.conn.connectionId, "Player|" + NetMsg.conn.connectionId);
             if (CurrentConnections.Count == Characters.Length)
             {
@@ -71,7 +72,7 @@ public class NetworkServerManager : MonoBehaviour
                 CurrentConnections[NetMsg.conn.connectionId].SetAnalogAxis(StringToFloat(deltas[1]), StringToFloat(deltas[2]));
                 break;
             case "Butt":
-                CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1]);
+                CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Up");
                 break;
             case "Gyro":
                 CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(StringToFloat(deltas[1]), StringToFloat(deltas[2]), StringToFloat(deltas[3]));

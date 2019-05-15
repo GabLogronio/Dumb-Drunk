@@ -4,8 +4,24 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
-public class FootController : MonoBehaviour {
+public class FootController : LimbController
+{
 
+    public override bool Detach()
+    {
+        return true;
+    }
+
+    public override bool Move()
+    {
+        return true;
+    }
+
+    public override bool Set(bool ToSet)
+    {
+        return ToSet;
+    }
+    /*
     [Header("Movement parameters")]
     [SerializeField]
     float FootHeight, StepForce, RotationForce;
@@ -63,14 +79,15 @@ public class FootController : MonoBehaviour {
         }
     }
 
-    public void Detach()
+
+    /*public override bool Detach()
     {
         if (Joint != null) Destroy(Joint);
         
         //if (FixedJoint != null) Destroy(FixedJoint);
         CanBeMoved = true;
     }
-
+    
     private void OnCollisionExit(Collision coll)
     {
         if (Joint == null && coll.gameObject.layer == 11)
@@ -121,7 +138,7 @@ public class FootController : MonoBehaviour {
             Rigidbody OtherRb = coll.gameObject.GetComponent<Rigidbody>();
             if (OtherRb != null) FixedJoint.connectedBody = OtherRb;
 
-        }*/
+        }
         
     }
 
@@ -131,5 +148,5 @@ public class FootController : MonoBehaviour {
         else if (FixedJoint != null) Destroy(FixedJoint);
 
     }
-
+    */
 }

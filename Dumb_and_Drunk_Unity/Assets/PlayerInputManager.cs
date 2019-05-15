@@ -7,6 +7,23 @@ public class PlayerInputManager : MonoBehaviour
     float Hor = 0f, Ver = 0f;
     float XRot = 0f, YRot = 0f, ZRot = 0f;
 
+    Dictionary<string, LimbController> Limbs;
+
+    Vector3 PreviousPosition;
+
+    [SerializeField]
+    FootController PlayerRightFoot, PlayerLeftFoot;
+
+    [SerializeField]
+    HandController PlayerRightHand, PlayerLeftHand;
+
+    [SerializeField]
+    GameObject DirectionArrow;
+
+    bool MovingRightFoot = false, MovingLeftFoot = false, MovingRightHand = false, MovingLeftHand = false;
+    bool BlockedControls = false, RightFootSet = false, LeftFootSet = false, MovingBack = false, Initialized = false;
+
+    // ----------------------------- INPUT -----------------------------
     public void SetAnalogAxis(float ToSetHor, float ToSetVer)
     {
         Hor = ToSetHor;
@@ -21,20 +38,18 @@ public class PlayerInputManager : MonoBehaviour
 
     }
 
-    public void PressedButton(string ButtonName)
+    public void PressedButton(string ButtonName, bool Up)
     {
-        switch (ButtonName)
+        if (Up)
         {
-            case "Red":
-                break;
-            case "Blue":
-                break;
-            case "Green":
-                break;
-            case "Yellow":
-                break;
-
+            Limbs[ButtonName].Detach();
+            // Moving = true;
         }
+        else
+        {
+            //MovingBack = false;
+        }
+
     }
 
 }

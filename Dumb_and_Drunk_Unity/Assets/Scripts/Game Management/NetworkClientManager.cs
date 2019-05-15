@@ -50,6 +50,7 @@ public class NetworkClientManager : MonoBehaviour
     {
         StringMessage msg = new StringMessage();
         msg.value = NetMsg.ReadMessage<StringMessage>().value;
+        textUI.text = msg.value;
         string[] deltas = msg.value.Split('|');
         switch (deltas[0])
         {
@@ -58,7 +59,7 @@ public class NetworkClientManager : MonoBehaviour
                 if (Int32.TryParse(deltas[1], out ToSetID))
                 {
                     PlayerID = ToSetID;
-                    PlayersImages[PlayerID].SetActive(true);
+                    PlayersImages[PlayerID - 1].SetActive(true);
                     ConnectButton.SetActive(false);
 
                 }
@@ -104,7 +105,6 @@ public class NetworkClientManager : MonoBehaviour
 
             StringMessage msg = new StringMessage();
             msg.value = "Gyro|" + System.Math.Round(Delta.x, 2) + "|" + System.Math.Round(Delta.y, 2)*(-1f) + "|" + System.Math.Round(Delta.z, 2) + "|" + System.Math.Round(Delta.w, 2);
-            textUI.text = "Sending: " + msg.value;
             client.Send(888, msg);
 
         }

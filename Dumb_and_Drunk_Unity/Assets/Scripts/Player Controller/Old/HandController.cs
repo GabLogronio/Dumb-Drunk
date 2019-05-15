@@ -2,9 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandController : MonoBehaviour {
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
+public class HandController : LimbController
+{
 
+    public override bool Detach()
+    {
+        return true;
+    }
 
+    public override bool Move()
+    {
+        return true;
+    }
+
+    public override bool Set(bool ToSet)
+    {
+        return ToSet;
+    }
+    /*
     [SerializeField]
     float MoveForce, ActivateDuration = 0.5f, Cooldown = 0.75f;
 
@@ -40,7 +57,9 @@ public class HandController : MonoBehaviour {
 
     }
 
-    public void Detach()
+
+
+    /*public void Detach()
     {
         if(Joint != null )Destroy(Joint);
         if (PlayerController.GetComponent<PlayerBarsManager>() != null)
@@ -98,5 +117,5 @@ public class HandController : MonoBehaviour {
     void FinishCooldown()
     {
         OnCooldown = false;
-    }
+    }*/
 }
