@@ -66,7 +66,7 @@ public class NetworkClientManager : MonoBehaviour
                 break;
             case "Start":
                 GameUI.SetActive(true);
-                PlayersImages[PlayerID].SetActive(false);
+                PlayersImages[PlayerID - 1].SetActive(false);
                 break;
             default:
                 Debug.Log("Message");

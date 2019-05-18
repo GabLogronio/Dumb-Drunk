@@ -5,18 +5,14 @@ using UnityEngine;
 public class Follow : MonoBehaviour {
 
     [SerializeField]
-    Transform PlayerController, Camera;
+    Transform PlayerController;
 
     [SerializeField]
-    float Height;
-
-    [SerializeField]
-    bool LookCamera;
+    float height;
 
 	// Update is called once per frame
 	void Update () {
 
-        transform.position = new Vector3(PlayerController.position.x, Height, PlayerController.position.z);
-        if (LookCamera) transform.LookAt(Camera);
+        transform.position = new Vector3(PlayerController.position.x, height, PlayerController.position.z);
 	}
 }

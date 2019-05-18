@@ -38,12 +38,13 @@ public class NetworkServerManager : MonoBehaviour
 
     void OnClientConnected(NetworkMessage NetMsg)
     {
-        //if (CurrentConnections.Count <= Characters.Length)
+        //if (CurrentConnections.Count <= Characters.Length) <---------- TO PUT BACK
         if (CurrentConnections.Count <= 2)
             {
-                CurrentConnections.Add(NetMsg.conn.connectionId, Characters[CurrentConnections.Count]);
+            CurrentConnections.Add(NetMsg.conn.connectionId, Characters[CurrentConnections.Count]);
             ServerStringMessageSender(NetMsg.conn.connectionId, "Player|" + NetMsg.conn.connectionId);
-            if (CurrentConnections.Count == Characters.Length)
+            //if (CurrentConnections.Count == Characters.Length)  <---------- TO PUT BACK
+            if (CurrentConnections.Count == 1) 
             {
                 foreach (int ConnectionID in CurrentConnections.Keys)
                 {

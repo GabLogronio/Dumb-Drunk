@@ -4,10 +4,34 @@ using UnityEngine;
 
 public abstract class LimbController : MonoBehaviour
 {
-    public abstract bool Detach();
+    protected bool Moving = false, Active = true;
 
-    public abstract bool Move();
+    protected Vector2 CurrentDirection;
 
-    public abstract bool Set(bool ToSet);
+    public virtual bool Move()
+    {
+        Moving = true;
+        return true;
+    }
+
+    public virtual bool UpdateDirection(Vector2 ToSet, bool direction)
+    {
+        CurrentDirection = ToSet;
+
+        if (Moving) return true;
+        return false;
+    }
+
+    public virtual bool Set(bool ToSet)
+    {
+        Active = ToSet;
+        return ToSet;
+    }
+
+    public virtual bool Release()
+    {
+        Moving = false;
+        return true;
+    }
 
 }

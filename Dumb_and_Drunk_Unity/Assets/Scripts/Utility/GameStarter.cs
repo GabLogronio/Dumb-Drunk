@@ -21,13 +21,13 @@ public class GameStarter : MonoBehaviour {
 
         P1Controller.GetComponent<PlayerInputController>().BlockControls(true);
         P2Controller.GetComponent<PlayerInputController>().BlockControls(true);
-
+        /*
         P1Controller.GetComponent<PlayerBarsManager>().BlockBar(true, true);
         P1Controller.GetComponent<PlayerBarsManager>().BlockBar(false, true);
 
         P2Controller.GetComponent<PlayerBarsManager>().BlockBar(true, true);
         P2Controller.GetComponent<PlayerBarsManager>().BlockBar(false, true);
-
+        */
         Camera.transform.position = InitialTransform.position;
         Camera.transform.rotation = InitialTransform.rotation;
 
@@ -44,13 +44,13 @@ public class GameStarter : MonoBehaviour {
                 Step4 = false;
                 P1Controller.GetComponent<PlayerInputController>().BlockControls(false);
                 P2Controller.GetComponent<PlayerInputController>().BlockControls(false);
-
+                /*
                 P1Controller.GetComponent<PlayerBarsManager>().BlockBar(true, false);
                 P1Controller.GetComponent<PlayerBarsManager>().BlockBar(false, false);
 
                 P2Controller.GetComponent<PlayerBarsManager>().BlockBar(true, false);
                 P2Controller.GetComponent<PlayerBarsManager>().BlockBar(false, false);
-
+                */
                 P1GUI.SetActive(true);
                 P2GUI.SetActive(true);
 

@@ -6,22 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class FootController : LimbController
 {
-
-    public override bool Detach()
-    {
-        return true;
-    }
-
-    public override bool Move()
-    {
-        return true;
-    }
-
-    public override bool Set(bool ToSet)
-    {
-        return ToSet;
-    }
-    /*
     [Header("Movement parameters")]
     [SerializeField]
     float FootHeight, StepForce, RotationForce;
@@ -29,100 +13,70 @@ public class FootController : LimbController
     [Header("RightFoot = true, LeftFoot = false")]
     [SerializeField]
     bool RightFoot;
-    [SerializeField]
-    bool CanBeMoved = false, CanAttach = true;
+    bool MovingBack = false;
 
     [SerializeField]
-    GameObject PlayerController, InstantiableJoint;
-    GameObject Joint;
-    FixedJoint FixedJoint;
+    PlayerInputManager PlayerController;
 
+    [SerializeField]
+    GameObject InstantiableJoint;
 
     Rigidbody rb;
+    GameObject Joint;
 
-    void Start () {
-
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
-
-	}
-	
-	void Update () {
-        //if (Joint == null) rb.isKinematic = false;
-        //else rb.isKinematic = true;
+        Active = true;
     }
 
-    public void Move(Vector3 direction, bool MovingBack)
+    // ----------------------------- UPDATES -----------------------------
+
+    private void Update()
     {
-        if (CanBeMoved)
+        if (Moving) KeepMoving();
+
+    }
+
+    public override bool UpdateDirection(Vector2 ToSet, bool direction)
+    {
+        MovingBack = direction;
+        return base.UpdateDirection(ToSet, direction);
+
+    }
+
+    void KeepMoving()
+    {
+        rb.velocity = Vector3.zero;
+
+        CurrentDirection = CurrentDirection.normalized * 0.5f;
+        Vector3 FinalDirection = PlayerController.gameObject.transform.position - transform.position + new Vector3(CurrentDirection.x, 0f, CurrentDirection.y);
+        if (RightFoot) FinalDirection += PlayerController.gameObject.transform.right * 0.15f;
+        else FinalDirection -= PlayerController.gameObject.transform.right * 0.15f;
+
+        if (!MovingBack)
         {
-            rb.velocity = Vector3.zero;
-
-            direction = direction.normalized * 0.5f;
-            Vector3 FinalDirection = PlayerController.transform.position - transform.position + direction;
-            if (RightFoot) FinalDirection += PlayerController.transform.right * 0.15f;
-            else FinalDirection -= PlayerController.transform.right * 0.15f;
-
-            if (!MovingBack)
-            {
-                if (FootHeight - transform.position.y >= 0f) FinalDirection.y = FootHeight - transform.position.y;
-                else FinalDirection.y = transform.position.y - FootHeight; 
-            }
-            else
-            {
-                if (FootHeight / 2f - transform.position.y >= 0f) FinalDirection.y = FootHeight / 2f - transform.position.y;
-                else FinalDirection.y = transform.position.y - FootHeight / 2f;
-
-            }
-
-            rb.AddForce(FinalDirection * StepForce);
+            if (FootHeight - transform.position.y >= 0f) FinalDirection.y = FootHeight - transform.position.y;
+            else FinalDirection.y = transform.position.y - FootHeight;
+        }
+        else
+        {
+            if (FootHeight / 2f - transform.position.y >= 0f) FinalDirection.y = FootHeight / 2f - transform.position.y;
+            else FinalDirection.y = transform.position.y - FootHeight / 2f;
 
         }
+
+        rb.AddForce(FinalDirection * StepForce);
     }
 
-
-    /*public override bool Detach()
-    {
-        if (Joint != null) Destroy(Joint);
-        
-        //if (FixedJoint != null) Destroy(FixedJoint);
-        CanBeMoved = true;
-    }
-    
-    private void OnCollisionExit(Collision coll)
-    {
-        if (Joint == null && coll.gameObject.layer == 11)
-        {
-            PlayerController.GetComponent<PlayerInputController>().SetFoot(RightFoot, false);
-        }
-    }
-
-    public void Release()
-    {
-        CanBeMoved = false;
-    }
-
-    public void Rotate(bool direction)
-    {
-        if (Joint != null)
-        {
-            //if(direction) rb.AddTorque(Vector3.up * RotationForce);
-            //else rb.AddTorque( - Vector3.up * RotationForce);
-            transform.Rotate(Vector3.up * Time.deltaTime * RotationForce);
-
-        }
-    }
-
-    public void SetFootCanAttach(bool ToSet)
-    {
-        CanAttach = ToSet;
-    }
+    // ----------------------------- COLLIDERS -----------------------------
 
     private void OnCollisionEnter(Collision coll)
     {
-        
-        if (coll.gameObject.layer == 11 && CanAttach && Joint == null)
+
+        if (coll.gameObject.layer == 14 && Active && Joint == null) // Environment layer
         {
-            PlayerController.GetComponent<PlayerInputController>().SetFoot(RightFoot, true);
+            PlayerController.SetFoot(RightFoot, true);
 
             ContactPoint contact = coll.contacts[0];
             Joint = Instantiate(InstantiableJoint, new Vector3(contact.point.x, contact.point.y, contact.point.z), coll.gameObject.transform.rotation);
@@ -130,23 +84,22 @@ public class FootController : LimbController
             Joint.transform.parent = transform;
 
         }
-        /*
-        if (coll.gameObject.layer == 11 && CanAttach && FixedJoint == null)
-        {
-            PlayerController.GetComponent<PlayerInputController>().SetFoot(RightFoot, true);
-            FixedJoint = gameObject.AddComponent<FixedJoint>();
-            Rigidbody OtherRb = coll.gameObject.GetComponent<Rigidbody>();
-            if (OtherRb != null) FixedJoint.connectedBody = OtherRb;
-
-        }
         
     }
 
-    public void FixFoot(bool ToSet)
+    private void OnCollisionExit(Collision coll)
     {
-        if (ToSet) FixedJoint = gameObject.AddComponent<FixedJoint>();
-        else if (FixedJoint != null) Destroy(FixedJoint);
-
+        if (Joint == null && coll.gameObject.layer == 11)
+        {
+            PlayerController.SetFoot(RightFoot, false);
+        }
     }
-    */
+
+    // ----------------------------- CONTROLS -----------------------------
+
+    public override bool Move()
+    {
+        if (Joint != null) Destroy(Joint);
+        return base.Move();
+    }
 }

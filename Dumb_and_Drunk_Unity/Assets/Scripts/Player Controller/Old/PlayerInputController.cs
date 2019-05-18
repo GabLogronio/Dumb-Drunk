@@ -26,12 +26,12 @@ public class PlayerInputController : MonoBehaviour
     bool BlockedControls = false, RightFootSet = false, LeftFootSet = false, MovingBack = false, Initialized = false;
 
     Vector3 PreviousPosition;
-    PlayerBarsManager BarsManager;
+    //PlayerBarsManager BarsManager;
 
     private void Start()
     {
         PreviousPosition = transform.position;
-        BarsManager = GetComponent<PlayerBarsManager>();
+        //BarsManager = GetComponent<PlayerBarsManager>();
         RerollControls();
 
     }
@@ -177,8 +177,8 @@ public class PlayerInputController : MonoBehaviour
 
         PreviousPosition = transform.position;
 
-        if (LateralDirection > 0.25f && LateralMovement > 0.01f) BarsManager.AddBalance(false);
-        if (LateralDirection < -0.25f && LateralMovement < -0.01f) BarsManager.AddBalance(true);
+        //if (LateralDirection > 0.25f && LateralMovement > 0.01f) BarsManager.AddBalance(false);
+        //if (LateralDirection < -0.25f && LateralMovement < -0.01f) BarsManager.AddBalance(true);
 
     }
 
@@ -192,15 +192,15 @@ public class PlayerInputController : MonoBehaviour
 
     public void DetachFeet()
     {
-        PlayerRightFoot.Detach();
-        PlayerLeftFoot.Detach();
+        //PlayerRightFoot.Detach();
+        //PlayerLeftFoot.Detach();
 
     }
 
     public void DetachHands()
     {
-        PlayerRightHand.Detach();
-        PlayerLeftHand.Detach();
+        //PlayerRightHand.Detach();
+        //PlayerLeftHand.Detach();
 
     }
 

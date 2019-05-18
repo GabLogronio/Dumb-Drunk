@@ -6,8 +6,8 @@ public class GetUpButton : MonoBehaviour {
 
     bool InContact = false;
 
-    [SerializeField]
-    PlayerSpecialStatusManager StatusManager;
+    //[SerializeField]
+    //PlayerSpecialStatusManager StatusManager;
 
     [SerializeField]
     KeyCode ButtonKeyCode, AlternateKeyCode;
@@ -28,7 +28,7 @@ public class GetUpButton : MonoBehaviour {
 
             if (InContact)
             {
-                StatusManager.AddGetUpPoint();
+                //StatusManager.AddGetUpPoint();
                 Destroy(Other);
 
             }
