@@ -24,7 +24,7 @@ public class NetworkClientManager : MonoBehaviour
     GameObject[] PlayersImages;
 
     [SerializeField]
-    GameObject GameUI, ConnectButton;
+    GameObject Scene1UI, Scene2UI, ConnectButton;
 
     NetworkClient client;
 
@@ -65,8 +65,16 @@ public class NetworkClientManager : MonoBehaviour
                 }
                 break;
             case "Start":
-                GameUI.SetActive(true);
+                Scene1UI.SetActive(true);
                 PlayersImages[PlayerID - 1].SetActive(false);
+                break;
+            case "Scene1":
+                Scene1UI.SetActive(true);
+                Scene2UI.SetActive(false);
+                break;
+            case "Scene2":
+                Scene1UI.SetActive(false);
+                Scene2UI.SetActive(true);
                 break;
             default:
                 Debug.Log("Message");
