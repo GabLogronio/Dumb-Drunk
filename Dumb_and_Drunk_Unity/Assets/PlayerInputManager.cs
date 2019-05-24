@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class PlayerInputManager : MonoBehaviour
 {
     float Hor = 0f, Ver = 0f;
-    float XRot = 0f, YRot = 0f, ZRot = 0f;
 
     Dictionary<string, LimbController> Limbs = new Dictionary<string, LimbController>();
     string[] Buttons = { "Red", "Blue", "Green", "Yellow" };
+
+    BodyCenter bd;
 
     Vector3 PreviousPosition;
 
@@ -26,15 +27,40 @@ public class PlayerInputManager : MonoBehaviour
 
     private void Start()
     {
+        bd = GetComponent<BodyCenter>();
         RandomizeControls();
     }
 
     private void Update()
     {
+        // FOR TESTING PURPOSE ONLY --------------------------------------------------
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton0)) PressedButton("Green", true);
+        if (Input.GetKeyUp(KeyCode.JoystickButton0)) PressedButton("Green", false);
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton1)) PressedButton("Red", true);
+        if (Input.GetKeyUp(KeyCode.JoystickButton1)) PressedButton("Red", false);
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton2)) PressedButton("Blue", true);
+        if (Input.GetKeyUp(KeyCode.JoystickButton2)) PressedButton("Blue", false);
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton3)) PressedButton("Yellow", true);
+        if (Input.GetKeyUp(KeyCode.JoystickButton3)) PressedButton("Yellow", false);
+
+        Hor = Input.GetAxis("Horizontal");
+        Ver = Input.GetAxis("Vertical");
+
+        SetGyroscope(Input.GetAxis("RightStickHor"), Input.GetAxis("RightStickVer"));
+
+        // FOR TESTING PURPOSE ONLY --------------------------------------------------
+
         foreach (LimbController Limb in Limbs.Values)
         {
             Limb.UpdateDirection(new Vector2(Hor, Ver), MovingBack);
         }
+
+        DirectionArrow.transform.LookAt(DirectionArrow.transform.position + new Vector3(-Ver, 0, Hor).normalized);
+
     }
 
     // ----------------------------- INPUT -----------------------------
@@ -49,17 +75,15 @@ public class PlayerInputManager : MonoBehaviour
 
     }
 
-    public void SetGyroscope(float ToSetXRot, float ToSetYRot, float ToSetZRot)
+    public void SetGyroscope(float ToSetXRot, float ToSetZRot)
     {
-        XRot = ToSetXRot;
-        YRot = ToSetYRot;
-        ZRot = ToSetZRot;
+        bd.MoveBodyCenter(ToSetXRot, ToSetZRot);
 
     }
 
-    public void PressedButton(string ButtonName, bool Up)
+    public void PressedButton(string ButtonName, bool Down)
     {
-        if (Up)
+        if (Down)
         {
             Limbs[ButtonName].Move();
             DebugText.text += "Released " + ButtonName + "\n";

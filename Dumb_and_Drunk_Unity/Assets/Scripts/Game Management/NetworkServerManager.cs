@@ -73,10 +73,10 @@ public class NetworkServerManager : MonoBehaviour
                 CurrentConnections[NetMsg.conn.connectionId].SetAnalogAxis(StringToFloat(deltas[1]), StringToFloat(deltas[2]));
                 break;
             case "Butt":
-                CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Up");
+                CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Down");
                 break;
             case "Gyro":
-                CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(StringToFloat(deltas[1]), StringToFloat(deltas[2]), StringToFloat(deltas[3]));
+                CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(StringToFloat(deltas[1]), StringToFloat(deltas[2]));
                 break;
         }
 

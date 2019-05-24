@@ -112,7 +112,8 @@ public class NetworkClientManager : MonoBehaviour
         {   // Delta.x > 0 tilted backwards, Delta.x < 0 tilted forwatd, Delta.y > 0 tilted left, Delta.y < 0 tilted right, *(-1) in order to align the y value.
 
             StringMessage msg = new StringMessage();
-            msg.value = "Gyro|" + System.Math.Round(Delta.x, 2) + "|" + System.Math.Round(Delta.y, 2)*(-1f) + "|" + System.Math.Round(Delta.z, 2) + "|" + System.Math.Round(Delta.w, 2);
+            // OLD msg.value = "Gyro|" + System.Math.Round(Delta.x, 2) + "|" + System.Math.Round(Delta.y, 2)*(-1f) + "|" + System.Math.Round(Delta.z, 2) + "|" + System.Math.Round(Delta.w, 2);
+            msg.value = "Gyro|" + System.Math.Round(Delta.x, 2) + "|" + System.Math.Round(Delta.y, 2) * (-1f);
             client.Send(888, msg);
 
         }

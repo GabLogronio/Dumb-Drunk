@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GyroscopeController : MonoBehaviour
 {
-    [SerializeField]
     bool gyroEnabled = false;
 
     Gyroscope gyro;

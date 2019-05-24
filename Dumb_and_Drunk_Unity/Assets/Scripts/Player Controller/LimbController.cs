@@ -11,6 +11,7 @@ public abstract class LimbController : MonoBehaviour
     public virtual bool Move()
     {
         Moving = true;
+        // Debug.Log("Moving " + gameObject.name + "\n");
         return true;
     }
 
@@ -31,6 +32,7 @@ public abstract class LimbController : MonoBehaviour
     public virtual bool Release()
     {
         Moving = false;
+        // Debug.Log("Releasing " + gameObject.name + "\n");
         return true;
     }
 
