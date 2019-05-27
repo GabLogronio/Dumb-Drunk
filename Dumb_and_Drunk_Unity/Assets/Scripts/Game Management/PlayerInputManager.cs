@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerInputManager : MonoBehaviour
+public class PlayerInputManager : InputManager
 {
     float Hor = 0f, Ver = 0f;
 
@@ -64,7 +64,7 @@ public class PlayerInputManager : MonoBehaviour
     }
 
     // ----------------------------- INPUT -----------------------------
-    public void SetAnalogAxis(float ToSetHor, float ToSetVer)
+    public override void SetAnalogAxis(float ToSetHor, float ToSetVer)
     {
         Hor = ToSetHor;
         Ver = ToSetVer;
@@ -75,13 +75,13 @@ public class PlayerInputManager : MonoBehaviour
 
     }
 
-    public void SetGyroscope(float ToSetXRot, float ToSetZRot)
+    public override void SetGyroscope(float ToSetXRot, float ToSetZRot)
     {
         bd.MoveBodyCenter(ToSetXRot, ToSetZRot);
 
     }
 
-    public void PressedButton(string ButtonName, bool Down)
+    public override void PressedButton(string ButtonName, bool Down)
     {
         if (Down)
         {

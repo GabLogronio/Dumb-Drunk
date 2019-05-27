@@ -14,9 +14,9 @@ public class NetworkServerManager : MonoBehaviour
     public Text DebugText;
 
     [SerializeField]
-    PlayerInputManager[] Characters;
+    InputManager[] Characters;
 
-    Dictionary<int, PlayerInputManager> CurrentConnections = new Dictionary<int, PlayerInputManager>();
+    Dictionary<int, InputManager> CurrentConnections = new Dictionary<int, InputManager>();
 
     void OnGUI()
     {
@@ -89,7 +89,22 @@ public class NetworkServerManager : MonoBehaviour
         float Converted = float.Parse(ToConvert);
         while (Converted > 1 || Converted < -1) Converted /= 10;
         return Converted;
+    }
 
+    public void SwitchInputManager(int i)
+    {
+        if(Characters[i].gameObject.GetComponent<PlayerInputManager>().enabled)
+        {
+            Characters[i].gameObject.GetComponent<ShooterInputManager>().enabled = true;
+            Characters[i].gameObject.GetComponent<PlayerInputManager>().enabled = false;
+            Characters[i] = Characters[i].gameObject.GetComponent<ShooterInputManager>();
+        }
+        else
+        {
+            Characters[i].gameObject.GetComponent<PlayerInputManager>().enabled = true;
+            Characters[i].gameObject.GetComponent<ShooterInputManager>().enabled = false;
+            Characters[i] = Characters[i].gameObject.GetComponent<PlayerInputManager>();
+        }
     }
 
 }
