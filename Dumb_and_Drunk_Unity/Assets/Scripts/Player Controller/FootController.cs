@@ -69,6 +69,11 @@ public class FootController : LimbController
         rb.AddForce(FinalDirection * StepForce);
     }
 
+    public override void Detach()
+    {
+        if (Joint != null) Destroy(Joint);
+    }
+
     // ----------------------------- COLLIDERS -----------------------------
 
     private void OnCollisionEnter(Collision coll)

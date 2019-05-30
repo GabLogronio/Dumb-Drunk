@@ -10,7 +10,7 @@ public class PlayerInputManager : InputManager
     Dictionary<string, LimbController> Limbs = new Dictionary<string, LimbController>();
     string[] Buttons = { "Red", "Blue", "Green", "Yellow" };
 
-    BodyCenter bd;
+    PlayerBalanceManager BalanceManager;
 
     Vector3 PreviousPosition;
 
@@ -27,7 +27,7 @@ public class PlayerInputManager : InputManager
 
     private void Start()
     {
-        bd = GetComponent<BodyCenter>();
+        BalanceManager = GetComponent<PlayerBalanceManager>();
         RandomizeControls();
     }
 
@@ -77,22 +77,26 @@ public class PlayerInputManager : InputManager
 
     public override void SetGyroscope(float ToSetXRot, float ToSetZRot)
     {
-        bd.MoveBodyCenter(ToSetXRot, ToSetZRot);
+        BalanceManager.MoveBodyCenter(ToSetXRot, ToSetZRot);
 
     }
 
     public override void PressedButton(string ButtonName, bool Down)
     {
-        if (Down)
+        if (!BlockedControls)
         {
-            Limbs[ButtonName].Move();
-            DebugText.text += "Released " + ButtonName + "\n";
+            if (Down)
+            {
+                Limbs[ButtonName].Move();
+                DebugText.text += "Released " + ButtonName + "\n";
+            }
+            else
+            {
+                Limbs[ButtonName].Release();
+                DebugText.text += "Pressed " + ButtonName + "\n";
+            }
         }
-        else
-        {
-            Limbs[ButtonName].Release();
-            DebugText.text += "Pressed " + ButtonName + "\n";
-        }
+
     }
 
     public void SetFoot(bool RightFoot, bool ToSet)
@@ -101,6 +105,27 @@ public class PlayerInputManager : InputManager
         if (RightFoot) RightFootSet = ToSet;
         else LeftFootSet = ToSet;
 
+    }
+
+    public void Detach()
+    {
+        foreach (LimbController Limb in Limbs.Values)
+        {
+            Limb.Detach();
+        }
+    }
+
+    public void SetCanAttach(bool ToSet)
+    {
+        foreach (LimbController Limb in Limbs.Values)
+        {
+            Limb.Set(ToSet);
+        }
+    }
+
+    public void BlockControls(bool ToSet)
+    {
+        BlockedControls = ToSet;
     }
 
     void RandomizeControls()

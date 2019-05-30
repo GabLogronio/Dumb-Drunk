@@ -54,6 +54,11 @@ public class HandController : LimbController
         return base.Move();
     }
 
+    public override void Detach()
+    {
+        if (Joint != null) Destroy(Joint);
+    }
+
     // ----------------------------- COLLIDERS -----------------------------
 
     void OnCollisionEnter(Collision coll)

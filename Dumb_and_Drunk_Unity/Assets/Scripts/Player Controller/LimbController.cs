@@ -36,4 +36,8 @@ public abstract class LimbController : MonoBehaviour
         return true;
     }
 
+    public virtual void Detach()
+    {
+
+    }
 }

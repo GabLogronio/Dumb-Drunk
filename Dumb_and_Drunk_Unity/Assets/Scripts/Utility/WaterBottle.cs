@@ -9,7 +9,7 @@ public class WaterBottle : MonoBehaviour {
         Debug.Log("COLLISION");
         if (other.gameObject.layer == 9 || other.gameObject.layer == 10)
         {
-            other.gameObject.GetComponent<PlayerObstacleManager>().EmptyNauseaBar();
+            other.gameObject.GetComponent<PlayerObstacleManager>().BlockBalance(10f);
             gameObject.SetActive(false);
         }
     }

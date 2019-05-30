@@ -25,32 +25,8 @@ public class PuddleObstacle : MonoBehaviour
     // Increases balance bar speed
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 9)
-        {
-            Player1BodyCounts++;
-            if (Player1BodyCounts == 1) other.gameObject.GetComponent<PlayerObstacleManager>().Puddle(true);
-        }
-        if (other.gameObject.layer == 10)
-        {
-            Player2BodyCounts++;
-            if (Player2BodyCounts == 1) other.gameObject.GetComponent<PlayerObstacleManager>().Puddle(true);
-        }
+        // Fall
 
-    }
-
-    // Decreases balance bar speed
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == 9)
-        {
-            Player1BodyCounts--;
-            if (Player1BodyCounts == 0) other.gameObject.GetComponent<PlayerObstacleManager>().Puddle(false);
-        }
-        if (other.gameObject.layer == 10)
-        {
-            Player2BodyCounts--;
-            if (Player2BodyCounts == 0) other.gameObject.GetComponent<PlayerObstacleManager>().Puddle(false);
-        }
     }
 	
 	// Keeps expanding untill a maximum size is reached
