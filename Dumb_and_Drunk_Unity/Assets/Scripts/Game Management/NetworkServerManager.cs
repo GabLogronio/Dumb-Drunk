@@ -12,28 +12,38 @@ public class NetworkServerManager : MonoBehaviour
 {
     public string ipaddress;
     public Text DebugText;
+    private static NetworkServerManager instance = null;
 
     [SerializeField]
     InputManager[] Characters;
 
     Dictionary<int, InputManager> CurrentConnections = new Dictionary<int, InputManager>();
 
-    void OnGUI()
+    /*void OnGUI()
     {
         ipaddress = LocalIPAddress();
         GUI.Box(new Rect(10, Screen.height - 50, 100, 50), ipaddress);
         GUI.Label(new Rect(20, Screen.height - 35, 100, 20), "Status: " + NetworkServer.active);
         GUI.Label(new Rect(20, Screen.height - 20, 100, 20), "Connected: " + NetworkServer.connections.Count);
-    }
+    }*/
 
     // Start is called before the first frame update
     void Start()
     {
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(this);
+        DontDestroyOnLoad(gameObject);
+
         NetworkServer.Listen(25000);
 
         NetworkServer.RegisterHandler(888, ServerStringMessageReceiver);
         NetworkServer.RegisterHandler(MsgType.Connect, OnClientConnected);
 
+    }
+
+    public static NetworkServerManager getInstance()
+    {
+        return instance;
     }
 
     void OnClientConnected(NetworkMessage NetMsg)
@@ -50,6 +60,7 @@ public class NetworkServerManager : MonoBehaviour
                 {
                     ServerStringMessageSender(ConnectionID, "Start");
                 }
+                MatchManager.getInstance().LoadMatchmakingScene();
             }
         }
     }
@@ -91,20 +102,12 @@ public class NetworkServerManager : MonoBehaviour
         return Converted;
     }
 
-    public void SwitchInputManager(int i)
+    public void SwitchInputManager(int i, bool player)
     {
-        if(Characters[i].gameObject.GetComponent<PlayerInputManager>().enabled)
-        {
-            Characters[i].gameObject.GetComponent<ShooterInputManager>().enabled = true;
-            Characters[i].gameObject.GetComponent<PlayerInputManager>().enabled = false;
-            Characters[i] = Characters[i].gameObject.GetComponent<ShooterInputManager>();
-        }
-        else
-        {
-            Characters[i].gameObject.GetComponent<PlayerInputManager>().enabled = true;
-            Characters[i].gameObject.GetComponent<ShooterInputManager>().enabled = false;
-            Characters[i] = Characters[i].gameObject.GetComponent<PlayerInputManager>();
-        }
+        Characters[i].gameObject.GetComponent<PlayerInputManager>().enabled = player;
+        Characters[i].gameObject.GetComponent<ShooterInputManager>().enabled = !player;
+        if (player) Characters[i] = Characters[i].gameObject.GetComponent<PlayerInputManager>();
+        else Characters[i] = Characters[i].gameObject.GetComponent<ShooterInputManager>();
     }
 
 }
