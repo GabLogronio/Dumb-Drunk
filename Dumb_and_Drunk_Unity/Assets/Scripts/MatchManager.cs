@@ -18,7 +18,7 @@ public class MatchManager : MonoBehaviour
     public GameObject teamCanvas;
     private Vector3[] spawnPointsFirstScene = new Vector3[4];
     private Vector3[] spawnPointsSecondScene = new Vector3[4];
-    public GameObject[] players = new GameObject[4];
+    public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 10;
 
@@ -118,9 +118,9 @@ public class MatchManager : MonoBehaviour
         SceneManager.LoadScene("Game Scene 1");
         for (int i = 0; i < 4; i++)
         {
-            Vector3 move = spawnPointsFirstScene[i] - players[i].transform.GetChild(1).GetChild(0).position;
-            players[i].transform.position += move;
-            players[i].transform.rotation = Quaternion.identity;
+            Vector3 move = spawnPointsFirstScene[i] - PlayersGameObjects[i].transform.GetChild(1).GetChild(0).position;
+            PlayersGameObjects[i].transform.position += move;
+            PlayersGameObjects[i].transform.rotation = Quaternion.identity;
         }
     }
 
@@ -159,17 +159,17 @@ public class MatchManager : MonoBehaviour
                 gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(true);
                 NetworkServerManager.getInstance().SwitchInputManager(i, false);
 
-                Vector3 move = spawnPointsSecondScene[loser + 2] - players[i].transform.GetChild(1).GetChild(0).position;
-                players[i].transform.position += move;
-                players[i].transform.rotation = Quaternion.identity;
+                Vector3 move = spawnPointsSecondScene[loser + 2] - PlayersGameObjects[i].transform.GetChild(1).GetChild(0).position;
+                PlayersGameObjects[i].transform.position += move;
+                PlayersGameObjects[i].transform.rotation = Quaternion.identity;
                 loser++;
             }
             else
             {
                 if (scores[i] < maxPoints - 1) scores[i]++;
-                Vector3 move = spawnPointsSecondScene[winner] - players[i].transform.GetChild(1).GetChild(0).position;
-                players[i].transform.position += move;
-                players[i].transform.rotation = Quaternion.identity;
+                Vector3 move = spawnPointsSecondScene[winner] - PlayersGameObjects[i].transform.GetChild(1).GetChild(0).position;
+                PlayersGameObjects[i].transform.position += move;
+                PlayersGameObjects[i].transform.rotation = Quaternion.identity;
                 winner++;
             }
         }

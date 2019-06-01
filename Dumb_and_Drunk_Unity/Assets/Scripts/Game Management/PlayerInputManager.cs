@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,15 +8,24 @@ public class PlayerInputManager : InputManager
 {
     float Hor = 0f, Ver = 0f;
 
-    Dictionary<string, LimbController> Limbs = new Dictionary<string, LimbController>();
-    string[] Buttons = { "Red", "Blue", "Green", "Yellow" };
+    Dictionary<LimbController, string> ControllerStringDictionary = new Dictionary<LimbController, string>();
+    Dictionary<LimbController, Vector3> ControllerToPositionDictionary = new Dictionary<LimbController, Vector3>();
+    Dictionary<string, RawImage> StringToImageDictionary = new Dictionary<string, RawImage>();
+    string[] ButtonsStrings = {"Blue", "Green", "Red", "Yellow" };
 
+    [SerializeField]
     PlayerBalanceManager BalanceManager;
 
     Vector3 PreviousPosition;
 
     [SerializeField]
-    LimbController[] LimbControllers;
+    LimbController[] LimbControllers = new LimbController[4];
+
+    [SerializeField]
+    RawImage[] ButtonsImages = new RawImage[4];
+
+    [SerializeField]
+    Vector3[] ButtonPositions = new Vector3[4];
 
     [SerializeField]
     GameObject DirectionArrow;
@@ -27,8 +37,7 @@ public class PlayerInputManager : InputManager
 
     private void Start()
     {
-        BalanceManager = GetComponent<PlayerBalanceManager>();
-        RandomizeControls();
+        Setup();
     }
 
     private void Update()
@@ -54,7 +63,7 @@ public class PlayerInputManager : InputManager
 
         // FOR TESTING PURPOSE ONLY --------------------------------------------------
 
-        foreach (LimbController Limb in Limbs.Values)
+        foreach (LimbController Limb in ControllerStringDictionary.Keys)
         {
             Limb.UpdateDirection(new Vector2(Hor, Ver), MovingBack);
         }
@@ -87,12 +96,12 @@ public class PlayerInputManager : InputManager
         {
             if (Down)
             {
-                Limbs[ButtonName].Move();
+                ControllerStringDictionary.FirstOrDefault(x => x.Value == ButtonName).Key.Move();
                 DebugText.text += "Released " + ButtonName + "\n";
             }
             else
             {
-                Limbs[ButtonName].Release();
+                ControllerStringDictionary.FirstOrDefault(x => x.Value == ButtonName).Key.Release();
                 DebugText.text += "Pressed " + ButtonName + "\n";
             }
         }
@@ -109,7 +118,7 @@ public class PlayerInputManager : InputManager
 
     public void Detach()
     {
-        foreach (LimbController Limb in Limbs.Values)
+        foreach (LimbController Limb in ControllerStringDictionary.Keys)
         {
             Limb.Detach();
         }
@@ -117,7 +126,7 @@ public class PlayerInputManager : InputManager
 
     public void SetCanAttach(bool ToSet)
     {
-        foreach (LimbController Limb in Limbs.Values)
+        foreach (LimbController Limb in ControllerStringDictionary.Keys)
         {
             Limb.Set(ToSet);
         }
@@ -128,33 +137,36 @@ public class PlayerInputManager : InputManager
         BlockedControls = ToSet;
     }
 
-    void RandomizeControls()
+    void Setup()
     {
-        for (int i = 0; i < Buttons.Length; i++ )
+        for (int i = 0; i < LimbControllers.Length; i++)
         {
-            int ran = Random.Range(i, Buttons.Length);
+            ControllerToPositionDictionary.Add(LimbControllers[i], ButtonPositions[i]);
+            StringToImageDictionary.Add(ButtonsStrings[i], ButtonsImages[i]);
+            ControllerStringDictionary.Add(LimbControllers[i], ButtonsStrings[i]);
+        }
 
-            string temp = Buttons[i];
-            Buttons[i] = Buttons[ran];
-            Buttons[ran] = temp;
+        RandomizeControls();
+    }
+
+    public void RandomizeControls()
+    {
+        // Shuffles the ButtonsStrings array
+        for (int i = 0; i < ButtonsStrings.Length; i++ )
+        {
+            int ran = Random.Range(i, ButtonsStrings.Length);
+
+            string temp = ButtonsStrings[i];
+            ButtonsStrings[i] = ButtonsStrings[ran];
+            ButtonsStrings[ran] = temp;
 
         }
 
-        for (int i = 0; i < Buttons.Length; i++)
+        for (int i = 0; i < ButtonsStrings.Length; i++)
         {
-            foreach (Transform ColorTransform in transform)
-            {
-                if(ColorTransform.gameObject.name == Buttons[i])
-                {
-                    ColorTransform.gameObject.SetActive(true);
-                    ColorTransform.SetParent(LimbControllers[i].gameObject.transform);
-                    ColorTransform.gameObject.transform.position = LimbControllers[i].gameObject.transform.position;
-
-                }
-            }
-
-            Limbs.Add(Buttons[i], LimbControllers[i]);
-
+            ControllerStringDictionary[ControllerStringDictionary.ElementAt(i).Key] = ButtonsStrings[i];
+            StringToImageDictionary[ButtonsStrings[i]].GetComponent<RectTransform>().localPosition = ControllerToPositionDictionary[ControllerStringDictionary.ElementAt(i).Key];
         }
+
     }
 }

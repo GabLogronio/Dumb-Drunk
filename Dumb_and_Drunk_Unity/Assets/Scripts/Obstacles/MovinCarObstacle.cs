@@ -5,8 +5,10 @@ using UnityEngine;
 public class MovinCarObstacle : MonoBehaviour
 {
     [SerializeField]
-    float MovementSpeed = 5f, WaitTime = 7.5f;
+    float MovementSpeed = 5f, WaitTime = 5f;
 
+    [SerializeField]
+    bool Scene1 = true;
     bool Waiting = false;
 
     // Update is called once per frame
@@ -14,7 +16,16 @@ public class MovinCarObstacle : MonoBehaviour
     {
         //transform.Translate(transform.forward * MovementSpeed * Time.deltaTime);
         if(!Waiting) transform.Translate(Vector3.forward * MovementSpeed * Time.deltaTime);
-        if ((transform.position.x > 31.5f) || (transform.position.z < -27.5f) || (transform.position.z > 22f) || (transform.position.x < -28f)) Despawn();
+        if (Scene1)
+        {
+            if ((transform.position.x > 31.5f) || (transform.position.z < -27.5f) || (transform.position.z > 22f) || (transform.position.x < -28f)) Despawn();
+        }
+        else
+        {
+            if ((transform.position.x > 56f) || (transform.position.z < -0f) || (transform.position.z > 78f) || (transform.position.x < -28f)) Despawn();
+
+        }
+
 
     }
 
@@ -29,6 +40,7 @@ public class MovinCarObstacle : MonoBehaviour
         if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
             Waiting = true;
+            collision.gameObject.GetComponent<PlayerObstacleManager>().MovingCart(transform.position);
             Invoke("StopWaiting", WaitTime);
         }
     }

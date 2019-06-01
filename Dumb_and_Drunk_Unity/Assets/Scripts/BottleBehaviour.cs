@@ -23,17 +23,18 @@ public class BottleBehaviour : MonoBehaviour
     {
         if (collision.gameObject.layer == 14)
         {
-            explode(collision.transform.position);
+            explode(transform.position);
         }
         else if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
             collision.gameObject.GetComponent<PlayerObstacleManager>().Fall();
+            Destroy(gameObject);
         }
     }
 
     private void explode(Vector3 pos)
     {
-        Instantiate(Puddle, pos, Quaternion.identity);
+        Instantiate(Puddle, new Vector3 (pos.x, 0.5f, pos.z), Quaternion.identity);
         Destroy(gameObject);
     }
 }

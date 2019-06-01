@@ -28,6 +28,7 @@ public class PlayerObstacleManager : MonoBehaviour {
             PushDirection = PushDirection.normalized;
             PushDirection.y = 1f;
             BalanceManager.Fall(PushDirection * 100f);
+            ResetRigidbodiesVelocity();
 
         }
     }
@@ -40,6 +41,8 @@ public class PlayerObstacleManager : MonoBehaviour {
             PushDirection = PushDirection.normalized;
             PushDirection.y = 0f;
             BalanceManager.Fall(PushDirection * 50f);
+            ResetRigidbodiesVelocity();
+
         }
 
     }
@@ -52,8 +55,10 @@ public class PlayerObstacleManager : MonoBehaviour {
             PushDirection = PushDirection.normalized;
             PushDirection.y = 0.5f;
             BalanceManager.Fall(PushDirection * 150f);
+            ResetRigidbodiesVelocity();
+
         }
-        
+
     }
 
     public void MovingCart(Vector3 MovingCartPosition)
@@ -64,6 +69,7 @@ public class PlayerObstacleManager : MonoBehaviour {
             PushDirection.y = 0.5f;
             PushDirection = PushDirection.normalized;
             BalanceManager.Fall(PushDirection * 75f);
+            ResetRigidbodiesVelocity();
 
         }
     }
@@ -83,6 +89,16 @@ public class PlayerObstacleManager : MonoBehaviour {
         //if (direction.x > 0f) PlayerController.GetComponent<PlayerBarsManager>().AddBalance(false);
         //else PlayerController.GetComponent<PlayerBarsManager>().AddBalance(true);
 
+    }
+
+    void ResetRigidbodiesVelocity()
+    {
+        foreach (Transform child in transform.GetChild(2))
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null) rb.velocity = Vector3.zero;
+
+        }
     }
 
     public void BlockBalance(float Timer)

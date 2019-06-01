@@ -14,6 +14,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     [SerializeField]
     GameObject RightFoot, LeftFoot, Hips;
 
+    [SerializeField]
     PlayerInputManager InputController;
 
     [SerializeField]
@@ -27,7 +28,6 @@ public class PlayerBalanceManager : MonoBehaviour {
     private void Start()
     {
         RandomizeDirection();
-        InputController = GetComponent<PlayerInputManager>();
 
     }
 
@@ -43,6 +43,8 @@ public class PlayerBalanceManager : MonoBehaviour {
 
         Hips.GetComponent<SpringJoint>().spring = 0f;
         Hips.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+        NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "Fallen");
     }
 
     public void Fall(Vector3 direction)
@@ -67,6 +69,9 @@ public class PlayerBalanceManager : MonoBehaviour {
         transform.localPosition = new Vector3(0f, LegsLength + BodyLength, 0f);
         XRot = 0f;
         ZRot = 0f;
+
+        NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
+
     }
 
     public bool HasFallen()

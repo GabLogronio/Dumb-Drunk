@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
@@ -15,7 +16,13 @@ public class NetworkServerManager : MonoBehaviour
     private static NetworkServerManager instance = null;
 
     [SerializeField]
-    InputManager[] Characters;
+    InputManager[] PlayersInputManagers = new InputManager[4];
+
+    [SerializeField]
+    RawImage[] PlayersImages = new RawImage[4];
+
+    [SerializeField]
+    Vector3[] PlayersPosition = new Vector3[4];
 
     Dictionary<int, InputManager> CurrentConnections = new Dictionary<int, InputManager>();
 
@@ -51,25 +58,26 @@ public class NetworkServerManager : MonoBehaviour
         //if (CurrentConnections.Count <= Characters.Length) <---------- TO PUT BACK
         if (CurrentConnections.Count <= 2)
             {
-            CurrentConnections.Add(NetMsg.conn.connectionId, Characters[CurrentConnections.Count]);
-            ServerStringMessageSender(NetMsg.conn.connectionId, "Player|" + NetMsg.conn.connectionId);
+            CurrentConnections.Add(NetMsg.conn.connectionId, PlayersInputManagers[CurrentConnections.Count]);
+            ServerStringMessageSender(CurrentConnections[NetMsg.conn.connectionId], "Player|" + NetMsg.conn.connectionId);
+            PlayersImages[CurrentConnections.Count - 1].GetComponent<BouncingFace>().SetImage(PlayersPosition[CurrentConnections.Count - 1]);
             //if (CurrentConnections.Count == Characters.Length)  <---------- TO PUT BACK
             if (CurrentConnections.Count == 1) 
             {
                 foreach (int ConnectionID in CurrentConnections.Keys)
                 {
-                    ServerStringMessageSender(ConnectionID, "Start");
+                    ServerStringMessageSender(CurrentConnections[ConnectionID], "Start");
                 }
                 MatchManager.getInstance().LoadMatchmakingScene();
             }
         }
     }
 
-    void ServerStringMessageSender (int ConnectionID, string ToSend)
+    public void ServerStringMessageSender (InputManager Player, string ToSend)
     {
         StringMessage msg = new StringMessage();
         msg.value = ToSend;
-        NetworkServer.SendToClient(ConnectionID, 888, msg);
+        NetworkServer.SendToClient(CurrentConnections.First(ConnId => ConnId.Value == Player).Key, 888, msg);
     }
 
     void ServerStringMessageReceiver(NetworkMessage NetMsg)
@@ -104,10 +112,10 @@ public class NetworkServerManager : MonoBehaviour
 
     public void SwitchInputManager(int i, bool player)
     {
-        Characters[i].gameObject.GetComponent<PlayerInputManager>().enabled = player;
-        Characters[i].gameObject.GetComponent<ShooterInputManager>().enabled = !player;
-        if (player) Characters[i] = Characters[i].gameObject.GetComponent<PlayerInputManager>();
-        else Characters[i] = Characters[i].gameObject.GetComponent<ShooterInputManager>();
+        PlayersInputManagers[i].gameObject.GetComponent<PlayerInputManager>().enabled = player;
+        PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>().enabled = !player;
+        if (player) PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<PlayerInputManager>();
+        else PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>();
     }
 
 }

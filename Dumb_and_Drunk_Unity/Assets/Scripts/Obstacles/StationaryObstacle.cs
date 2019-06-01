@@ -18,7 +18,7 @@ public abstract class StationaryObstacle : MonoBehaviour {
 
         target = collision.gameObject;
 
-        if (target.layer == 9 || target.layer == 10) // PLAYER LAYER
+        if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
             Activate();
         }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrannyObstacle : MovingObstacle
+public class GrannyObstacle : MonoBehaviour
 {
     [SerializeField]
-    float MinX, MaxX, MinZ, MaxZ, PauseTime, RotationSpeed;
+    float MinX, MaxX, MinZ, MaxZ, PauseTime, MovementSpeed, RotationSpeed;
 
     float PauseTimer;
 
@@ -32,9 +32,13 @@ public class GrannyObstacle : MovingObstacle
 
     }
 
-    protected override void Activate()
+    private void OnCollisionEnter(Collision collision)
     {
-        target.gameObject.GetComponent<PlayerObstacleManager>().Granny(transform.position);
+        if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
+        {
+            collision.gameObject.GetComponent<PlayerObstacleManager>().Granny(transform.position);
+            CalculateNewDestination();
+        }
     }
 
     void CalculateNewDestination()

@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotatingSignObstacle : StationaryObstacle
+public class RotatingSignObstacle : MonoBehaviour
 {
     [SerializeField]
     private float RotationSpeed;
 
-    // If it hits a player, pushes him away
-    protected override void Activate()
+    private void OnCollisionEnter(Collision collision)
     {
-        target.GetComponent<PlayerObstacleManager>().Taxi(transform.position);
+        if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
+        {
+            collision.gameObject.GetComponent<PlayerObstacleManager>().RotatingSign(transform.position);
+        }
     }
 
     // Keep rotating around the "forward" ax
     private void Update()
     {
-        transform.RotateAround(transform.position, Vector3.forward, RotationSpeed * Time.deltaTime);
+        transform.RotateAround(transform.position, transform.forward, RotationSpeed * Time.deltaTime);
     }
 }

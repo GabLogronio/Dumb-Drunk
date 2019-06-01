@@ -10,7 +10,7 @@ public class HandController : LimbController
     float MoveForce, ActivateDuration = 0.5f;
 
     [SerializeField]
-    GameObject PlayerController;
+    GameObject BodyCenter;
 
     bool Detachable = false;
 
@@ -39,7 +39,7 @@ public class HandController : LimbController
 
         rb.velocity = Vector3.zero;
         rb.AddForce(new Vector3(CurrentDirection.x, 0f, CurrentDirection.y) * MoveForce);
-        rb.AddForce(transform.up * (PlayerController.transform.position.y - transform.position.y) * MoveForce);
+        rb.AddForce(transform.up * (BodyCenter.transform.position.y - transform.position.y) * MoveForce);
 
     }
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 454658855891227725}
   - component: {fileID: 7538549375732824765}
   m_Layer: 0
-  m_Name: beerbottle
+  m_Name: Beer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a684047823a324d45953ef2f28911d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Puddle: {fileID: 5150525000174401827, guid: c2a15247626b7ea45bc623a3943846b8, type: 3}
 --- !u!136 &7538549375732824765
 CapsuleCollider:
   m_ObjectHideFlags: 0
