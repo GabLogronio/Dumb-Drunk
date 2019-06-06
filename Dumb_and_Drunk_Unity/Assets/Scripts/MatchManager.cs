@@ -21,6 +21,7 @@ public class MatchManager : MonoBehaviour
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 10;
+    private int maxPlayers = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,12 @@ public class MatchManager : MonoBehaviour
         teamsFacesPos[1] = new Vector3(-100, 155, 0);
         teamsFacesPos[2] = new Vector3(70, -275, 0);
         teamsFacesPos[3] = new Vector3(373, -275, 0);
+        DontDestroyOnLoad(gameCanvas);
+        DontDestroyOnLoad(teamCanvas);
+        for (int i = 0; i < maxPlayers; i++)
+        {
+            DontDestroyOnLoad(PlayersGameObjects[i]);
+        }
     }
 
     // Update is called once per frame
@@ -65,8 +72,9 @@ public class MatchManager : MonoBehaviour
     {
         gameCanvas.SetActive(false);
         teamCanvas.SetActive(true);
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < maxPlayers; i++)
         {
+            PlayersGameObjects[i].SetActive(false);
             NetworkServerManager.getInstance().SwitchInputManager(i, true);
         }
         teams[0] = Random.Range(1, 3);
@@ -92,16 +100,16 @@ public class MatchManager : MonoBehaviour
         }
         SceneManager.LoadScene("Matchmaking Scene");
         int team1Comp = 0, team2Comp = 0;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < maxPlayers; i++)
         {
             if (teams[i] == 1)
             {
-                teamCanvas.transform.GetChild(3).GetChild(i).gameObject.GetComponent<RectTransform>().localPosition = teamsFacesPos[team1Comp];
+                teamCanvas.transform.GetChild(1).GetChild(i).gameObject.GetComponent<RectTransform>().localPosition = teamsFacesPos[team1Comp];
                 team1Comp++;
             }
             else
             {
-                teamCanvas.transform.GetChild(3).GetChild(i).gameObject.GetComponent<RectTransform>().localPosition = teamsFacesPos[team2Comp + 2];
+                teamCanvas.transform.GetChild(1).GetChild(i).gameObject.GetComponent<RectTransform>().localPosition = teamsFacesPos[team2Comp + 2];
                 team2Comp++;
             }
         }
@@ -115,10 +123,12 @@ public class MatchManager : MonoBehaviour
         gameCanvas.SetActive(true);
         timer = 30.0f;
         isFirstScene = true;
+        isMatchmakingScene = false;
         NetworkServerManager.getInstance().ServerStringMessageSenderToAll("Scene1");
         SceneManager.LoadScene("Game Scene 1");
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < maxPlayers; i++)
         {
+            PlayersGameObjects[i].SetActive(true);
             Vector3 move = spawnPointsFirstScene[i] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
             PlayersGameObjects[i].transform.position += move;
             PlayersGameObjects[i].transform.rotation = Quaternion.identity;
@@ -135,7 +145,7 @@ public class MatchManager : MonoBehaviour
     {
         isFirstScene = false;
         int team1Score = 0, team2Score = 0;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < maxPlayers; i++)
         {
             if (teams[i] == 1) team1Score += keyCollected[i];
             else team2Score += keyCollected[i];
@@ -146,17 +156,18 @@ public class MatchManager : MonoBehaviour
         }
         if (team1Score > team2Score) scene1End(1);
         else scene1End(2);
-        NetworkServerManager.getInstance().ServerStringMessageSenderToAll("Scene2");
+        
         SceneManager.LoadScene("Game Scene 2");
     }
 
     private void scene1End(int win)
     {
         int winner = 0, loser = 0;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < maxPlayers; i++)
         {
             if (teams[i] != win)
             {
+                NetworkServerManager.getInstance().ServerStringMessageSender(i, "Scene2");
                 gameCanvas.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
                 gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(true);
                 NetworkServerManager.getInstance().SwitchInputManager(i, false);
