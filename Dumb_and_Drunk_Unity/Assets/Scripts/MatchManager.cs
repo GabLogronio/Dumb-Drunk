@@ -36,10 +36,10 @@ public class MatchManager : MonoBehaviour
         spawnPointsSecondScene[1] = new Vector3(1.2f, 0, -1);
         spawnPointsSecondScene[2] = new Vector3(-2, 0, 0);
         spawnPointsSecondScene[3] = new Vector3(2, 0, 0);
-        teamsFacesPos[0] = new Vector3(-200, 250, 0);
-        teamsFacesPos[1] = new Vector3(200, 250, 0);
-        teamsFacesPos[2] = new Vector3(-200, -250, 0);
-        teamsFacesPos[3] = new Vector3(200, -250, 0);
+        teamsFacesPos[0] = new Vector3(-400, 155, 0);
+        teamsFacesPos[1] = new Vector3(-100, 155, 0);
+        teamsFacesPos[2] = new Vector3(70, -275, 0);
+        teamsFacesPos[3] = new Vector3(373, -275, 0);
     }
 
     // Update is called once per frame
@@ -115,10 +115,11 @@ public class MatchManager : MonoBehaviour
         gameCanvas.SetActive(true);
         timer = 30.0f;
         isFirstScene = true;
+        NetworkServerManager.getInstance().ServerStringMessageSenderToAll("Scene1");
         SceneManager.LoadScene("Game Scene 1");
         for (int i = 0; i < 4; i++)
         {
-            Vector3 move = spawnPointsFirstScene[i] - PlayersGameObjects[i].transform.GetChild(1).GetChild(0).position;
+            Vector3 move = spawnPointsFirstScene[i] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
             PlayersGameObjects[i].transform.position += move;
             PlayersGameObjects[i].transform.rotation = Quaternion.identity;
         }
@@ -145,6 +146,7 @@ public class MatchManager : MonoBehaviour
         }
         if (team1Score > team2Score) scene1End(1);
         else scene1End(2);
+        NetworkServerManager.getInstance().ServerStringMessageSenderToAll("Scene2");
         SceneManager.LoadScene("Game Scene 2");
     }
 
@@ -159,7 +161,7 @@ public class MatchManager : MonoBehaviour
                 gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(true);
                 NetworkServerManager.getInstance().SwitchInputManager(i, false);
 
-                Vector3 move = spawnPointsSecondScene[loser + 2] - PlayersGameObjects[i].transform.GetChild(1).GetChild(0).position;
+                Vector3 move = spawnPointsSecondScene[loser + 2] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
                 PlayersGameObjects[i].transform.position += move;
                 PlayersGameObjects[i].transform.rotation = Quaternion.identity;
                 loser++;
@@ -167,7 +169,7 @@ public class MatchManager : MonoBehaviour
             else
             {
                 if (scores[i] < maxPoints - 1) scores[i]++;
-                Vector3 move = spawnPointsSecondScene[winner] - PlayersGameObjects[i].transform.GetChild(1).GetChild(0).position;
+                Vector3 move = spawnPointsSecondScene[winner] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
                 PlayersGameObjects[i].transform.position += move;
                 PlayersGameObjects[i].transform.rotation = Quaternion.identity;
                 winner++;

@@ -11,8 +11,8 @@ using UnityEngine.Networking.NetworkSystem;
 
 public class NetworkServerManager : MonoBehaviour
 {
-    public string ipaddress;
-    public Text DebugText;
+    // public string ipaddress;
+    // public Text DebugText;
     private static NetworkServerManager instance = null;
 
     [SerializeField]
@@ -78,6 +78,14 @@ public class NetworkServerManager : MonoBehaviour
         StringMessage msg = new StringMessage();
         msg.value = ToSend;
         NetworkServer.SendToClient(CurrentConnections.First(ConnId => ConnId.Value == Player).Key, 888, msg);
+    }
+
+    public void ServerStringMessageSenderToAll(string ToSend)
+    {
+        foreach (int ConnectionID in CurrentConnections.Keys)
+        {
+            ServerStringMessageSender(CurrentConnections[ConnectionID], ToSend);
+        }
     }
 
     void ServerStringMessageReceiver(NetworkMessage NetMsg)
