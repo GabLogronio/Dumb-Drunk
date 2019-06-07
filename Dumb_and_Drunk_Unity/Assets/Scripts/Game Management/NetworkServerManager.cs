@@ -106,6 +106,7 @@ public class NetworkServerManager : MonoBehaviour
                 break;
             case "Butt":
                 CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Down");
+                DebugText.instance.Log(CurrentConnections[NetMsg.conn.connectionId].gameObject.name + "pressed " + deltas[1]);
                 break;
             case "Gyro":
                 CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(StringToFloat(deltas[1]), StringToFloat(deltas[2]));

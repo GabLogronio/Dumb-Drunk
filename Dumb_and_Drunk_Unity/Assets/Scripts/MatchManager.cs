@@ -29,10 +29,10 @@ public class MatchManager : MonoBehaviour
         if (instance == null) instance = this;
         else if (instance != this) Destroy(this);
         DontDestroyOnLoad(gameObject);
-        spawnPointsFirstScene[0] = new Vector3(-2, 0, -6.66f);
-        spawnPointsFirstScene[1] = new Vector3(-0.75f, 0, -5.66f);
-        spawnPointsFirstScene[2] = new Vector3(0.75f, 0, -5.66f);
-        spawnPointsFirstScene[3] = new Vector3(2, 0, -6.66f);
+        spawnPointsFirstScene[0] = new Vector3(-4.468635f, 2.26525f, -8.865828f);
+        spawnPointsFirstScene[1] = new Vector3(-1.466706f, 2.294139f, -9.023758f);
+        spawnPointsFirstScene[2] = new Vector3(1.530971f, 2.134083f, -9.0221f);
+        spawnPointsFirstScene[3] = new Vector3(4.53252f, 2.240787f, -9.023205f);
         spawnPointsSecondScene[0] = new Vector3(-1.2f, 0, -1);
         spawnPointsSecondScene[1] = new Vector3(1.2f, 0, -1);
         spawnPointsSecondScene[2] = new Vector3(-2, 0, 0);
@@ -61,6 +61,8 @@ public class MatchManager : MonoBehaviour
                 else if (isMatchmakingScene) LoadFirstGameScene();
             }
         }
+        // TO REMOVE <-----------------------------------------------------------------------------------------------------
+        if (Input.GetKeyDown(KeyCode.Space)) LoadFirstGameScene();
     }
 
     public static MatchManager getInstance()
@@ -99,6 +101,7 @@ public class MatchManager : MonoBehaviour
             else teams[3] = 1;
         }
         SceneManager.LoadScene("Matchmaking Scene");
+        DebugText.instance.Log("Loaded Matchmaking Scene");
         int team1Comp = 0, team2Comp = 0;
         for (int i = 0; i < maxPlayers; i++)
         {
@@ -125,10 +128,12 @@ public class MatchManager : MonoBehaviour
         isFirstScene = true;
         isMatchmakingScene = false;
         NetworkServerManager.getInstance().ServerStringMessageSenderToAll("Scene1");
+        DebugText.instance.Log("Loaded First Scene");
         SceneManager.LoadScene("Game Scene 1");
         for (int i = 0; i < maxPlayers; i++)
         {
             PlayersGameObjects[i].SetActive(true);
+            if(PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
             Vector3 move = spawnPointsFirstScene[i] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
             PlayersGameObjects[i].transform.position += move;
             PlayersGameObjects[i].transform.rotation = Quaternion.identity;
@@ -143,6 +148,7 @@ public class MatchManager : MonoBehaviour
 
     private void LoadSecondScene()
     {
+        // MANCA LO SPOSTAMENTEO DEI GIOCATORI <---------------------------------------------------------------------------
         isFirstScene = false;
         int team1Score = 0, team2Score = 0;
         for (int i = 0; i < maxPlayers; i++)
@@ -156,7 +162,7 @@ public class MatchManager : MonoBehaviour
         }
         if (team1Score > team2Score) scene1End(1);
         else scene1End(2);
-        
+        DebugText.instance.Log("Loaded Second Scene");
         SceneManager.LoadScene("Game Scene 2");
     }
 
@@ -172,6 +178,7 @@ public class MatchManager : MonoBehaviour
                 gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(true);
                 NetworkServerManager.getInstance().SwitchInputManager(i, false);
 
+                if (PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
                 Vector3 move = spawnPointsSecondScene[loser + 2] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
                 PlayersGameObjects[i].transform.position += move;
                 PlayersGameObjects[i].transform.rotation = Quaternion.identity;
@@ -180,6 +187,7 @@ public class MatchManager : MonoBehaviour
             else
             {
                 if (scores[i] < maxPoints - 1) scores[i]++;
+                if (PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
                 Vector3 move = spawnPointsSecondScene[winner] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
                 PlayersGameObjects[i].transform.position += move;
                 PlayersGameObjects[i].transform.rotation = Quaternion.identity;

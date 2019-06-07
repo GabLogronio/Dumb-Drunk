@@ -23,11 +23,14 @@ public class BouncingFace : MonoBehaviour
 
     private void Update()
     {
-        if (Hor) rt.localPosition += new Vector3(MovementSpeed * Time.deltaTime, 0f, 0f);
-        else rt.localPosition += new Vector3(-MovementSpeed * Time.deltaTime, 0f, 0f);
+        if (Moving)
+        {
+            if (Hor) rt.localPosition += new Vector3(MovementSpeed * Time.deltaTime, 0f, 0f);
+            else rt.localPosition += new Vector3(-MovementSpeed * Time.deltaTime, 0f, 0f);
 
-        if (Ver) rt.localPosition += new Vector3(0f, MovementSpeed * Time.deltaTime, 0f);
-        else rt.localPosition += new Vector3(0f, -MovementSpeed * Time.deltaTime, 0f);
+            if (Ver) rt.localPosition += new Vector3(0f, MovementSpeed * Time.deltaTime, 0f);
+            else rt.localPosition += new Vector3(0f, -MovementSpeed * Time.deltaTime, 0f);
+        }
 
     }
 
