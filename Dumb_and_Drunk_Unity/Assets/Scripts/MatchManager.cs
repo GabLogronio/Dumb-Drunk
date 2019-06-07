@@ -33,15 +33,15 @@ public class MatchManager : MonoBehaviour
         spawnPointsFirstScene[1] = new Vector3(-1.466706f, 2.294139f, -9.023758f);
         spawnPointsFirstScene[2] = new Vector3(1.530971f, 2.134083f, -9.0221f);
         spawnPointsFirstScene[3] = new Vector3(4.53252f, 2.240787f, -9.023205f);
-        spawnPointsSecondScene[0] = new Vector3(-1.2f, 0, -1);
-        spawnPointsSecondScene[1] = new Vector3(1.2f, 0, -1);
-        spawnPointsSecondScene[2] = new Vector3(-2, 0, 0);
-        spawnPointsSecondScene[3] = new Vector3(2, 0, 0);
+        spawnPointsSecondScene[0] = new Vector3(-1.468635f, 2.26525f, 17.71417f);
+        spawnPointsSecondScene[1] = new Vector3(1.468635f, 2.26525f, 17.71417f);
+        spawnPointsSecondScene[2] = new Vector3(-1.468635f, 2.26525f, -9);
+        spawnPointsSecondScene[3] = new Vector3(1.468635f, 2.26525f, -9);
         teamsFacesPos[0] = new Vector3(-400, 155, 0);
         teamsFacesPos[1] = new Vector3(-100, 155, 0);
         teamsFacesPos[2] = new Vector3(70, -275, 0);
         teamsFacesPos[3] = new Vector3(373, -275, 0);
-        DontDestroyOnLoad(gameCanvas);
+        DontDestroyOnLoad(gameCanvas.transform.parent.gameObject);
         DontDestroyOnLoad(teamCanvas);
         for (int i = 0; i < maxPlayers; i++)
         {

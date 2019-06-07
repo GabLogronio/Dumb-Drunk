@@ -14,10 +14,12 @@ public class DebugText : MonoBehaviour
     {
         instance = this;
         OutText = GetComponent<Text>();
+        Log("started\n");
     }
 
     public void Log(string ToAdd)
     {
+        if (OutText.text.Length > 1000) OutText.text = "";
         OutText.text += ToAdd + " - ";
     }
 

@@ -95,21 +95,26 @@ public class NetworkServerManager : MonoBehaviour
 
     void ServerStringMessageReceiver(NetworkMessage NetMsg)
     {
+        
         StringMessage msg = new StringMessage();
         msg.value = NetMsg.ReadMessage<StringMessage>().value;
+        DebugText.instance.Log(msg.value);
         string[] deltas = msg.value.Split('|');
 
         switch (deltas[0])
         {
             case "AnAx":
                 CurrentConnections[NetMsg.conn.connectionId].SetAnalogAxis(StringToFloat(deltas[1]), StringToFloat(deltas[2]));
+                
                 break;
             case "Butt":
                 CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Down");
-                DebugText.instance.Log(CurrentConnections[NetMsg.conn.connectionId].gameObject.name + "pressed " + deltas[1]);
+                //DebugText.instance.Log(CurrentConnections[NetMsg.conn.connectionId].gameObject.name + "pressed " + deltas[1]);
+                DebugText.instance.Log("ricevuto button");
                 break;
             case "Gyro":
                 CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(StringToFloat(deltas[1]), StringToFloat(deltas[2]));
+                //DebugText.instance.Log("ricevuto gyro");
                 break;
         }
 

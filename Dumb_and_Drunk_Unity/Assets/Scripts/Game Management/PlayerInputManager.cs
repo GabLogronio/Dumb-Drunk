@@ -31,7 +31,7 @@ public class PlayerInputManager : InputManager
     GameObject DirectionArrow;
 
     [SerializeField]
-    Text DebugText;
+    //Text DebugText;
 
     bool BlockedControls = false, RightFootSet = true, LeftFootSet = true, MovingBack = false;
 
@@ -56,8 +56,8 @@ public class PlayerInputManager : InputManager
         if (Input.GetKeyDown(KeyCode.JoystickButton3)) PressedButton("Yellow", true);
         if (Input.GetKeyUp(KeyCode.JoystickButton3)) PressedButton("Yellow", false);
 
-        Hor = Input.GetAxis("Horizontal");
-        Ver = Input.GetAxis("Vertical");
+        //Hor = Input.GetAxis("Horizontal");
+        //Ver = Input.GetAxis("Vertical");
 
         SetGyroscope(Input.GetAxis("RightStickHor"), Input.GetAxis("RightStickVer"));
 
@@ -77,7 +77,7 @@ public class PlayerInputManager : InputManager
     {
         Hor = ToSetHor;
         Ver = ToSetVer;
-
+        DebugText.instance.Log("ricevuto: " + Hor + ", " + Ver);
         float ForwardDirection = transform.InverseTransformDirection(new Vector3(Hor, transform.position.y, Ver)).z;
         if (ForwardDirection < 0f) MovingBack = true;
         else MovingBack = false;
@@ -97,12 +97,12 @@ public class PlayerInputManager : InputManager
             if (Down)
             {
                 ControllerStringDictionary.FirstOrDefault(x => x.Value == ButtonName).Key.Move();
-                DebugText.text += "Released " + ButtonName + "\n";
+                //DebugText.text += "Released " + ButtonName + "\n";
             }
             else
             {
                 ControllerStringDictionary.FirstOrDefault(x => x.Value == ButtonName).Key.Release();
-                DebugText.text += "Pressed " + ButtonName + "\n";
+                //DebugText.text += "Pressed " + ButtonName + "\n";
             }
         }
 
