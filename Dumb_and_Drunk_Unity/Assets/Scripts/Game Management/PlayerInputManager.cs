@@ -59,8 +59,6 @@ public class PlayerInputManager : InputManager
         //Hor = Input.GetAxis("Horizontal");
         //Ver = Input.GetAxis("Vertical");
 
-        SetGyroscope(Input.GetAxis("RightStickHor"), Input.GetAxis("RightStickVer"));
-
         // FOR TESTING PURPOSE ONLY --------------------------------------------------
 
         foreach (LimbController Limb in ControllerStringDictionary.Keys)
@@ -68,7 +66,7 @@ public class PlayerInputManager : InputManager
             Limb.UpdateDirection(new Vector2(Hor, Ver), MovingBack);
         }
 
-        DirectionArrow.transform.LookAt(DirectionArrow.transform.position + new Vector3(-Ver, 0, Hor).normalized);
+        DirectionArrow.transform.LookAt(DirectionArrow.transform.position + new Vector3(Hor, 0, Ver).normalized);
 
     }
 
@@ -84,9 +82,9 @@ public class PlayerInputManager : InputManager
 
     }
 
-    public override void SetGyroscope(float ToSetXRot, float ToSetZRot)
+    public override void SetGyroscope(char Direction)
     {
-        BalanceManager.MoveBodyCenter(ToSetXRot, ToSetZRot);
+        BalanceManager.MoveBodyCenter(Direction);
 
     }
 

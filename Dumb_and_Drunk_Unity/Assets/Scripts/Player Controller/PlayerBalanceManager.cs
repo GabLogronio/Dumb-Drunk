@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerBalanceManager : MonoBehaviour {
 
-    [SerializeField]
-    bool Mode1 = true;
     bool Blocked = false;
 
+    // Random Wander parameters
     float MinChangeTime = 0f, MaxChangeTime = 1.5f, MinAngularAcc = 0.001f, MaxAngularAcc = 0.01f,
           X = 0f, Y = 0f, ChangeTime = 0f, CurrentSpeed = 0f, CurrentAngular = 0f;
+
+    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f;
 
     [SerializeField]
     GameObject RightFoot, LeftFoot, Hips;
@@ -18,8 +19,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     PlayerInputManager InputController;
 
     [SerializeField]
-    float BodyLength = 0.55f, LegsLength = 0.85f, Forward = 0.1f;
-    float XRot = 0f, ZRot = 0f;
+    float BodyLength = 0.55f, LegsLength = 0.85f, Forward = 0.1f, Speed = 1f;
 
     Vector3 BalanceModifier = Vector3.zero;
 
@@ -67,8 +67,8 @@ public class PlayerBalanceManager : MonoBehaviour {
         Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
 
         transform.localPosition = new Vector3(0f, LegsLength + BodyLength, 0f);
-        XRot = 0f;
-        ZRot = 0f;
+        RightTimer = 0f; LeftTimer = 0f; UpTimer = 0f; DownTimer = 0f;
+
 
         NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
 
@@ -99,11 +99,13 @@ public class PlayerBalanceManager : MonoBehaviour {
     {
         if (!Fallen)
         {
+            UpdateTimers();
+
             float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
 
-            if (new Vector2(transform.localPosition.x, transform.localPosition.z).magnitude < 0.375f)
+            if (new Vector2(transform.localPosition.x, transform.localPosition.z).magnitude < 0.375f) // NOT FALLEN
             {
-                Vector3 BalanceModifier = Vector3.right * XRot + Vector3.forward * ZRot;
+                Vector3 BalanceModifier = Vector3.right * (RightTimer - LeftTimer) + Vector3.forward * (UpTimer - DownTimer);
 
                 if (!Blocked && !float.IsNaN(Height) && !float.IsNaN(BalanceModifier.x) && !float.IsNaN(BalanceModifier.y) && !float.IsNaN(BalanceModifier.z) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
                 {
@@ -116,25 +118,41 @@ public class PlayerBalanceManager : MonoBehaviour {
             }
             else
             {
-                //Fall();
+                Fall();
             }
         }
     }
 
-    public void MoveBodyCenter(float x, float z)
+    void UpdateTimers()
     {
-        if (Mode1)
-        {
-            XRot = x / 7.5f;
-            ZRot = z / 7.5f;
-        }
-        else
-        {
-            XRot += x / 20f;
-            ZRot += z / 20f;
-        }
+        if (RightTimer > 0f) RightTimer -= Time.deltaTime;
+        if (LeftTimer > 0f) LeftTimer -= Time.deltaTime;
+        if (UpTimer > 0f) UpTimer -= Time.deltaTime;
+        if (DownTimer > 0f) DownTimer -= Time.deltaTime;
 
     }
+
+    public void MoveBodyCenter(char Direction)
+    {
+        switch (Direction)
+        {
+            case 'R':
+                RightTimer = TimerChanger;
+                break;
+            case 'L':
+                LeftTimer = TimerChanger;
+                break;
+            case 'U':
+                UpTimer = TimerChanger;
+                break;
+            case 'D':
+                DownTimer = TimerChanger;
+                break;
+
+        }
+    }
+
+
 
     void RandomizeDirection()
     {
