@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShooterInputManager : InputManager
 {
 
-    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f;
+    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f, InputX = 0f, InputY = 0f, InputSpeed = 20f;
 
     float MinChangeTime = 3f, MaxChangeTime = 10f,
       DeltaX = 0f, DeltaY = 0f, X = 0f, Y = 0f, CurrentChangeTime = 0f, CurrentSpeed = 0f;
@@ -24,10 +24,12 @@ public class ShooterInputManager : InputManager
     {
         if (Down)
         {
+            DebugText.instance.Set("Charging shot");
             pressed = true;
         }
         else
         {
+            DebugText.instance.Set("Released shot");
             pressed = false;
             Shoot();
         }
@@ -44,15 +46,19 @@ public class ShooterInputManager : InputManager
         {
             case 'R':
                 RightTimer = TimerChanger;
+                DebugText.instance.Set("Moving Right");
                 break;
             case 'L':
                 LeftTimer = TimerChanger;
+                DebugText.instance.Set("Moving Left");
                 break;
             case 'U':
                 UpTimer = TimerChanger;
+                DebugText.instance.Set("Moving Up");
                 break;
             case 'D':
                 DownTimer = TimerChanger;
+                DebugText.instance.Set("Moving Down");
                 break;
         }
     }
@@ -82,8 +88,11 @@ public class ShooterInputManager : InputManager
         X += DeltaX * Time.deltaTime;
         Y += DeltaY * Time.deltaTime;
 
+        InputX = RightTimer - LeftTimer;
+        InputY = UpTimer - DownTimer;
+
         //pointerRT.localPosition = new Vector3(pointerRT.localPosition.x + X * CurrentSpeed * Time.deltaTime, pointerRT.localPosition.y + Y * CurrentSpeed * Time.deltaTime, 1.0f);
-        pointerRT.Translate(new Vector3(X * CurrentSpeed * Time.deltaTime, Y * CurrentSpeed * Time.deltaTime, 0f));
+        pointerRT.Translate(new Vector3((X * CurrentSpeed) + (InputX * InputSpeed) * Time.deltaTime, (Y * CurrentSpeed) + (InputY * InputSpeed) * Time.deltaTime, 0f));
     }
 
     private void Shoot()

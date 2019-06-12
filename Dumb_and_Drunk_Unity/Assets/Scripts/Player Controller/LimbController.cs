@@ -11,7 +11,7 @@ public abstract class LimbController : MonoBehaviour
     public virtual bool Move()
     {
         Moving = true;
-        DebugText.instance.Log("Moving " + gameObject.name);
+        //DebugText.instance.Log("Moving " + gameObject.name);
         return true;
     }
 

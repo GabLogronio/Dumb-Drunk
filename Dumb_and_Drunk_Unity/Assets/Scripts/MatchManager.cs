@@ -21,7 +21,7 @@ public class MatchManager : MonoBehaviour
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 10;
-    private int maxPlayers = 2;
+    private int maxPlayers = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -101,7 +101,7 @@ public class MatchManager : MonoBehaviour
             else teams[3] = 1;
         }
         SceneManager.LoadScene("Matchmaking Scene");
-        DebugText.instance.Log("Loaded Matchmaking Scene");
+        //DebugText.instance.Log("Loaded Matchmaking Scene");
         int team1Comp = 0, team2Comp = 0;
         for (int i = 0; i < maxPlayers; i++)
         {
@@ -128,7 +128,7 @@ public class MatchManager : MonoBehaviour
         isFirstScene = true;
         isMatchmakingScene = false;
         NetworkServerManager.getInstance().ServerStringMessageSenderToAll("Scene1");
-        DebugText.instance.Log("Loaded First Scene");
+        //DebugText.instance.Log("Loaded First Scene");
         SceneManager.LoadScene("Game Scene 1");
         for (int i = 0; i < maxPlayers; i++)
         {
@@ -162,7 +162,7 @@ public class MatchManager : MonoBehaviour
         }
         if (team1Score > team2Score) scene1End(1);
         else scene1End(2);
-        DebugText.instance.Log("Loaded Second Scene");
+        //DebugText.instance.Log("Loaded Second Scene");
         SceneManager.LoadScene("Game Scene 2");
     }
 

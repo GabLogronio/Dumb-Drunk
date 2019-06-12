@@ -110,7 +110,7 @@ public class PlayerBalanceManager : MonoBehaviour {
                 if (!Blocked && !float.IsNaN(Height) && !float.IsNaN(BalanceModifier.x) && !float.IsNaN(BalanceModifier.y) && !float.IsNaN(BalanceModifier.z) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
                 {
                     transform.position = new Vector3(transform.position.x, Height, transform.position.z);
-                    transform.Translate(transform.forward * Time.deltaTime * CurrentSpeed);
+                    //transform.Translate(transform.forward * Time.deltaTime * CurrentSpeed);
                     transform.Translate(BalanceModifier * Time.deltaTime, Space.World);
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(new Vector3(X, 0f, Y)), CurrentAngular);
                     // + transform.right * Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) * BalanceValue / 200;

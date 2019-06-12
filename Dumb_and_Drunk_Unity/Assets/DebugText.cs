@@ -14,13 +14,18 @@ public class DebugText : MonoBehaviour
     {
         instance = this;
         OutText = GetComponent<Text>();
-        Log("started\n");
+        Set("Started");
     }
 
-    public void Log(string ToAdd)
+    public void Add(string ToAdd)
     {
         if (OutText.text.Length > 1000) OutText.text = "";
         OutText.text += ToAdd + " - ";
+    }
+
+    public void Set(string ToAdd)
+    {
+        OutText.text = ToAdd;
     }
 
 }

@@ -75,7 +75,7 @@ public class PlayerInputManager : InputManager
     {
         Hor = ToSetHor;
         Ver = ToSetVer;
-        DebugText.instance.Log("ricevuto: " + Hor + ", " + Ver);
+        //DebugText.instance.Log("ricevuto: " + Hor + ", " + Ver);
         float ForwardDirection = transform.InverseTransformDirection(new Vector3(Hor, transform.position.y, Ver)).z;
         if (ForwardDirection < 0f) MovingBack = true;
         else MovingBack = false;

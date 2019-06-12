@@ -19,6 +19,9 @@ public class NetworkServerManager : MonoBehaviour
     InputManager[] PlayersInputManagers = new InputManager[4];
 
     [SerializeField]
+    Text IPAddressText;
+
+    [SerializeField]
     RawImage[] PlayersImages = new RawImage[4];
 
     [SerializeField]
@@ -26,13 +29,11 @@ public class NetworkServerManager : MonoBehaviour
 
     Dictionary<int, InputManager> CurrentConnections = new Dictionary<int, InputManager>();
 
-    /*void OnGUI()
+    void OnGUI()
     {
-        ipaddress = LocalIPAddress();
-        GUI.Box(new Rect(10, Screen.height - 50, 100, 50), ipaddress);
-        GUI.Label(new Rect(20, Screen.height - 35, 100, 20), "Status: " + NetworkServer.active);
-        GUI.Label(new Rect(20, Screen.height - 20, 100, 20), "Connected: " + NetworkServer.connections.Count);
-    }*/
+        //GUI.Box(new Rect(10, Screen.height - 50, 100, 50), LocalIPAddress());
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,8 @@ public class NetworkServerManager : MonoBehaviour
 
         NetworkServer.RegisterHandler(888, ServerStringMessageReceiver);
         NetworkServer.RegisterHandler(MsgType.Connect, OnClientConnected);
+
+        IPAddressText.text = LocalIPAddress();
 
     }
 
@@ -62,7 +65,7 @@ public class NetworkServerManager : MonoBehaviour
             ServerStringMessageSender(CurrentConnections[NetMsg.conn.connectionId], "Player|" + NetMsg.conn.connectionId);
             PlayersImages[CurrentConnections.Count - 1].GetComponent<BouncingFace>().SetImage(PlayersPosition[CurrentConnections.Count - 1]);
             //if (CurrentConnections.Count == Characters.Length)  <---------- TO PUT BACK
-            if (CurrentConnections.Count == 2) 
+            if (CurrentConnections.Count == 1) 
             {
                 foreach (int ConnectionID in CurrentConnections.Keys)
                 {
@@ -98,7 +101,7 @@ public class NetworkServerManager : MonoBehaviour
         
         StringMessage msg = new StringMessage();
         msg.value = NetMsg.ReadMessage<StringMessage>().value;
-        DebugText.instance.Log(msg.value);
+        //DebugText.instance.Log(msg.value);
         string[] deltas = msg.value.Split('|');
 
         switch (deltas[0])
@@ -109,7 +112,7 @@ public class NetworkServerManager : MonoBehaviour
             case "Butt":
                 CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Down");
                 //DebugText.instance.Log(CurrentConnections[NetMsg.conn.connectionId].gameObject.name + "pressed " + deltas[1]);
-                DebugText.instance.Log("ricevuto button");
+                //DebugText.instance.Log("ricevuto button");
                 break;
             case "Gyro":
                 CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(deltas[1][0]);
