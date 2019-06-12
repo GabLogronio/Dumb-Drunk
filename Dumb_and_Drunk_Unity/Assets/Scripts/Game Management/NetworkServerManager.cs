@@ -104,8 +104,7 @@ public class NetworkServerManager : MonoBehaviour
         switch (deltas[0])
         {
             case "AnAx":
-                CurrentConnections[NetMsg.conn.connectionId].SetAnalogAxis(StringToFloat(deltas[1]), StringToFloat(deltas[2]));
-                
+                CurrentConnections[NetMsg.conn.connectionId].SetAnalogAxis(StringToFloat(deltas[1]), StringToFloat(deltas[2]));              
                 break;
             case "Butt":
                 CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Down");
@@ -115,6 +114,9 @@ public class NetworkServerManager : MonoBehaviour
             case "Gyro":
                 CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(deltas[1][0]);
                 //DebugText.instance.Log("ricevuto gyro");
+                break;
+            case "GetUp":
+                //CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(deltas[1][0]);
                 break;
         }
 
