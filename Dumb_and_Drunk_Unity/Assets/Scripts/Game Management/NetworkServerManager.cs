@@ -115,11 +115,11 @@ public class NetworkServerManager : MonoBehaviour
                 //DebugText.instance.Log("ricevuto button");
                 break;
             case "Gyro":
-                CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(deltas[1][0]);
+                CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(deltas[1][0], deltas[2][0], deltas[3][0], deltas[4][0]);
                 //DebugText.instance.Log("ricevuto gyro");
                 break;
             case "GetUp":
-                //CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(deltas[1][0]);
+                CurrentConnections[NetMsg.conn.connectionId].Fallen(false);
                 break;
         }
 

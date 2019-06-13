@@ -13,7 +13,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f;
 
     [SerializeField]
-    GameObject RightFoot, LeftFoot, Hips;
+    GameObject RightFoot, LeftFoot, Hips, BalanceGUI;
 
     [SerializeField]
     PlayerInputManager InputController;
@@ -41,6 +41,8 @@ public class PlayerBalanceManager : MonoBehaviour {
         InputController.BlockControls(true);
         InputController.SetCanAttach(false);
 
+        BalanceGUI.SetActive(false);
+
         Hips.GetComponent<SpringJoint>().spring = 0f;
         Hips.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
@@ -62,6 +64,8 @@ public class PlayerBalanceManager : MonoBehaviour {
 
         InputController.SetCanAttach(true);
         InputController.BlockControls(false);
+
+        BalanceGUI.SetActive(true);
 
         Hips.GetComponent<SpringJoint>().spring = 1000f;
         Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
@@ -132,24 +136,13 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     }
 
-    public void MoveBodyCenter(char Direction)
+    public void MoveBodyCenter(char Right, char Left, char Down, char Up)
     {
-        switch (Direction)
-        {
-            case 'R':
-                RightTimer = TimerChanger;
-                break;
-            case 'L':
-                LeftTimer = TimerChanger;
-                break;
-            case 'U':
-                UpTimer = TimerChanger;
-                break;
-            case 'D':
-                DownTimer = TimerChanger;
-                break;
+        if (Right == 'T') RightTimer = TimerChanger; 
+        if (Left == 'T') LeftTimer = TimerChanger;
+        if (Down == 'T') DownTimer = TimerChanger;
+        if (Up == 'T') UpTimer = TimerChanger;
 
-        }
     }
 
 

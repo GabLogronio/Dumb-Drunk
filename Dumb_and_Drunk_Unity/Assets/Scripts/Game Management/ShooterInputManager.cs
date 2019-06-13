@@ -40,27 +40,13 @@ public class ShooterInputManager : InputManager
         //mind your business
     }
 
-    public override void SetGyroscope(char Direction)
+    public override void SetGyroscope(char Right, char Left, char Down, char Up)
     {
-        switch (Direction)
-        {
-            case 'R':
-                RightTimer = TimerChanger;
-                DebugText.instance.Set("Moving Right");
-                break;
-            case 'L':
-                LeftTimer = TimerChanger;
-                DebugText.instance.Set("Moving Left");
-                break;
-            case 'U':
-                UpTimer = TimerChanger;
-                DebugText.instance.Set("Moving Up");
-                break;
-            case 'D':
-                DownTimer = TimerChanger;
-                DebugText.instance.Set("Moving Down");
-                break;
-        }
+        if (Right == 'T') RightTimer = TimerChanger;
+        if (Left == 'T') LeftTimer = TimerChanger;
+        if (Down == 'T') DownTimer = TimerChanger;
+        if (Up == 'T') UpTimer = TimerChanger;
+
     }
 
     void Start()
@@ -85,14 +71,46 @@ public class ShooterInputManager : InputManager
 
         if (pressed) charge += Time.deltaTime;
 
+        if (pointerRT.localPosition.x > 960 && X > 0)
+        {
+            Debug.Log("Destra");
+            DeltaX = - Mathf.Abs(DeltaX);
+            X = -Mathf.Abs(X);
+        }
+        if (pointerRT.localPosition.x < -960 && X < 0)
+        {
+            Debug.Log("Sinistra");
+            DeltaX = Mathf.Abs(DeltaX);
+            X = Mathf.Abs(X);
+        }
+        if (pointerRT.localPosition.y > 540 && Y > 0)
+        {
+            Debug.Log("Su");
+            DeltaY = -Mathf.Abs(DeltaY);
+            Y = -Mathf.Abs(Y);
+        }
+        if (pointerRT.localPosition.y < -540 && Y < 0)
+        {
+            Debug.Log("Giù");
+            DeltaY = Mathf.Abs(DeltaY);
+            Y = Mathf.Abs(Y);
+        }
+
+
         X += DeltaX * Time.deltaTime;
         Y += DeltaY * Time.deltaTime;
 
-        InputX = RightTimer - LeftTimer;
-        InputY = UpTimer - DownTimer;
 
-        //pointerRT.localPosition = new Vector3(pointerRT.localPosition.x + X * CurrentSpeed * Time.deltaTime, pointerRT.localPosition.y + Y * CurrentSpeed * Time.deltaTime, 1.0f);
+        //InputX = RightTimer - LeftTimer;
+        //InputY = UpTimer - DownTimer;
+
+            //pointerRT.localPosition = new Vector3(pointerRT.localPosition.x + X * CurrentSpeed * Time.deltaTime, pointerRT.localPosition.y + Y * CurrentSpeed * Time.deltaTime, 1.0f);
         pointerRT.Translate(new Vector3((X * CurrentSpeed) + (InputX * InputSpeed) * Time.deltaTime, (Y * CurrentSpeed) + (InputY * InputSpeed) * Time.deltaTime, 0f));
+    }
+
+    public override void Fallen(bool ToSet)
+    {
+
     }
 
     private void Shoot()
@@ -105,7 +123,7 @@ public class ShooterInputManager : InputManager
 
     void RandomizeDirection()
     {
-        float NewX = Random.Range(-10f, 10f), NewY = Random.Range(-10f, 10f);
+        float NewX = Random.Range(-1f, 1f), NewY = Random.Range(-1f, 1f);
         CurrentChangeTime = Random.Range(MinChangeTime, MaxChangeTime);
         CurrentSpeed = new Vector3(X, Y, 0f).magnitude / 2;
 

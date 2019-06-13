@@ -82,10 +82,22 @@ public class PlayerInputManager : InputManager
 
     }
 
-    public override void SetGyroscope(char Direction)
+    public override void SetGyroscope(char Right, char Left, char Down, char Up)
     {
-        BalanceManager.MoveBodyCenter(Direction);
+        BalanceManager.MoveBodyCenter(Right, Left, Down, Up);
 
+    }
+
+    public override void Fallen(bool ToSet)
+    {
+        if (ToSet)
+        {
+            BalanceManager.Fall();
+        }
+        else
+        {
+            BalanceManager.RecoverFromFall();
+        }
     }
 
     public override void PressedButton(string ButtonName, bool Down)
