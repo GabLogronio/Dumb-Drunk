@@ -97,14 +97,14 @@ public class ShooterInputManager : InputManager
         }
 
 
-        X += DeltaX * Time.deltaTime;
-        Y += DeltaY * Time.deltaTime;
+        //X += DeltaX * Time.deltaTime;
+        //Y += DeltaY * Time.deltaTime;
 
 
-        //InputX = RightTimer - LeftTimer;
-        //InputY = UpTimer - DownTimer;
+        InputX = RightTimer - LeftTimer;
+        InputY = UpTimer - DownTimer;
 
-            //pointerRT.localPosition = new Vector3(pointerRT.localPosition.x + X * CurrentSpeed * Time.deltaTime, pointerRT.localPosition.y + Y * CurrentSpeed * Time.deltaTime, 1.0f);
+        //pointerRT.localPosition = new Vector3(pointerRT.localPosition.x + X * CurrentSpeed * Time.deltaTime, pointerRT.localPosition.y + Y * CurrentSpeed * Time.deltaTime, 1.0f);
         pointerRT.Translate(new Vector3((X * CurrentSpeed) + (InputX * InputSpeed) * Time.deltaTime, (Y * CurrentSpeed) + (InputY * InputSpeed) * Time.deltaTime, 0f));
     }
 

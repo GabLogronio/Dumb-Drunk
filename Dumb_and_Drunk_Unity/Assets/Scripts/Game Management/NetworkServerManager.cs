@@ -65,7 +65,7 @@ public class NetworkServerManager : MonoBehaviour
             ServerStringMessageSender(CurrentConnections[NetMsg.conn.connectionId], "Player|" + NetMsg.conn.connectionId);
             PlayersImages[CurrentConnections.Count - 1].GetComponent<BouncingFace>().SetImage(PlayersPosition[CurrentConnections.Count - 1]);
             //if (CurrentConnections.Count == Characters.Length)  <---------- TO PUT BACK
-            if (CurrentConnections.Count == 1) 
+            if (CurrentConnections.Count == 2) 
             {
                 foreach (int ConnectionID in CurrentConnections.Keys)
                 {

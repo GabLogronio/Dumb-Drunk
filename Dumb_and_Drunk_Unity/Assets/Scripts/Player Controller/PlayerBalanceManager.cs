@@ -114,7 +114,7 @@ public class PlayerBalanceManager : MonoBehaviour {
                 if (!Blocked && !float.IsNaN(Height) && !float.IsNaN(BalanceModifier.x) && !float.IsNaN(BalanceModifier.y) && !float.IsNaN(BalanceModifier.z) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
                 {
                     transform.position = new Vector3(transform.position.x, Height, transform.position.z);
-                    //transform.Translate(transform.forward * Time.deltaTime * CurrentSpeed);
+                    transform.Translate(transform.forward * Time.deltaTime * CurrentSpeed);
                     transform.Translate(BalanceModifier * Time.deltaTime, Space.World);
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(new Vector3(X, 0f, Y)), CurrentAngular);
                     // + transform.right * Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) * BalanceValue / 200;
@@ -138,10 +138,14 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     public void MoveBodyCenter(char Right, char Left, char Down, char Up)
     {
-        if (Right == 'T') RightTimer = TimerChanger; 
+        /*if (Right == 'T') RightTimer = TimerChanger; 
         if (Left == 'T') LeftTimer = TimerChanger;
         if (Down == 'T') DownTimer = TimerChanger;
-        if (Up == 'T') UpTimer = TimerChanger;
+        if (Up == 'T') UpTimer = TimerChanger;*/
+        if (Right == 'T') DebugText.instance.Add("Destra ");
+        if (Left == 'T') DebugText.instance.Add("Sinistra ");
+        if (Down == 'T') DebugText.instance.Add("Giù ");
+        if (Up == 'T') DebugText.instance.Add("Su ");
 
     }
 

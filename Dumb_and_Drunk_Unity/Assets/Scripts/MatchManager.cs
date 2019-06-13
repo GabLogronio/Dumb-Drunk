@@ -21,7 +21,7 @@ public class MatchManager : MonoBehaviour
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 10;
-    private int maxPlayers = 1;
+    private int maxPlayers = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +79,7 @@ public class MatchManager : MonoBehaviour
             PlayersGameObjects[i].SetActive(false);
             NetworkServerManager.getInstance().SwitchInputManager(i, true);
         }
-        teams[0] = Random.Range(1, 3);
+        /*teams[0] = Random.Range(1, 3);
         teams[1] = Random.Range(1, 3);
         if (teams[0] == teams[1])
         {
@@ -99,7 +99,8 @@ public class MatchManager : MonoBehaviour
             teams[2] = Random.Range(1, 3);
             if (teams[2] == 1) teams[3] = 2;
             else teams[3] = 1;
-        }
+        }*/
+        teams = new int[] { 1, 2, 1, 2 };
         SceneManager.LoadScene("Matchmaking Scene");
         //DebugText.instance.Log("Loaded Matchmaking Scene");
         int team1Comp = 0, team2Comp = 0;
