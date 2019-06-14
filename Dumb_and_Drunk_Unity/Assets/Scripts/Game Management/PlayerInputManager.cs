@@ -42,28 +42,9 @@ public class PlayerInputManager : InputManager
 
     private void Update()
     {
-        // FOR TESTING PURPOSE ONLY --------------------------------------------------
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton0)) PressedButton("Green", true);
-        if (Input.GetKeyUp(KeyCode.JoystickButton0)) PressedButton("Green", false);
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton1)) PressedButton("Red", true);
-        if (Input.GetKeyUp(KeyCode.JoystickButton1)) PressedButton("Red", false);
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton2)) PressedButton("Blue", true);
-        if (Input.GetKeyUp(KeyCode.JoystickButton2)) PressedButton("Blue", false);
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton3)) PressedButton("Yellow", true);
-        if (Input.GetKeyUp(KeyCode.JoystickButton3)) PressedButton("Yellow", false);
-
-        //Hor = Input.GetAxis("Horizontal");
-        //Ver = Input.GetAxis("Vertical");
-
-        // FOR TESTING PURPOSE ONLY --------------------------------------------------
-
         foreach (LimbController Limb in ControllerStringDictionary.Keys)
         {
-            Limb.UpdateDirection(new Vector2(Hor, Ver), MovingBack);
+            Limb.UpdateDirection(new Vector3(Hor, 0f, Ver), MovingBack);
         }
 
         DirectionArrow.transform.LookAt(DirectionArrow.transform.position + new Vector3(Hor, 0, Ver).normalized);
@@ -102,7 +83,7 @@ public class PlayerInputManager : InputManager
 
     public override void PressedButton(string ButtonName, bool Down)
     {
-        if (!BlockedControls)
+        if (!BlockedControls && RightFootSet && LeftFootSet)
         {
             if (Down)
             {

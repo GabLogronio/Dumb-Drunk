@@ -56,6 +56,11 @@ public class NetworkServerManager : MonoBehaviour
         return instance;
     }
 
+    private void Update()
+    {
+        TestingInput();
+    }
+
     void OnClientConnected(NetworkMessage NetMsg)
     {
         //if (CurrentConnections.Count <= Characters.Length) <---------- TO PUT BACK
@@ -65,7 +70,7 @@ public class NetworkServerManager : MonoBehaviour
             ServerStringMessageSender(CurrentConnections[NetMsg.conn.connectionId], "Player|" + NetMsg.conn.connectionId);
             PlayersImages[CurrentConnections.Count - 1].GetComponent<BouncingFace>().SetImage(PlayersPosition[CurrentConnections.Count - 1]);
             //if (CurrentConnections.Count == Characters.Length)  <---------- TO PUT BACK
-            if (CurrentConnections.Count == 2) 
+            if (CurrentConnections.Count == 1) 
             {
                 foreach (int ConnectionID in CurrentConnections.Keys)
                 {
@@ -140,6 +145,38 @@ public class NetworkServerManager : MonoBehaviour
         PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>().enabled = !player;
         if (player) PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<PlayerInputManager>();
         else PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>();
+    }
+
+    void TestingInput() // ONLY USED IN TESTING
+    {
+        // FOR TESTING PURPOSE ONLY --------------------------------------------------
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton0)) PlayersInputManagers[0].PressedButton("Green", true);
+        if (Input.GetKeyUp(KeyCode.JoystickButton0)) PlayersInputManagers[0].PressedButton("Green", false);
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton1)) PlayersInputManagers[0].PressedButton("Red", true);
+        if (Input.GetKeyUp(KeyCode.JoystickButton1)) PlayersInputManagers[0].PressedButton("Red", false);
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton2)) PlayersInputManagers[0].PressedButton("Blue", true);
+        if (Input.GetKeyUp(KeyCode.JoystickButton2)) PlayersInputManagers[0].PressedButton("Blue", false);
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton3)) PlayersInputManagers[0].PressedButton("Yellow", true);
+        if (Input.GetKeyUp(KeyCode.JoystickButton3)) PlayersInputManagers[0].PressedButton("Yellow", false);
+
+        PlayersInputManagers[0].SetAnalogAxis(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        PlayersInputManagers[0].SetGyroscope(BoolToChar(Input.GetAxis("RightStickHor") > 0.5f), BoolToChar(Input.GetAxis("RightStickHor") < -0.5f), BoolToChar(Input.GetAxis("RightStickVer") < -0.5f), BoolToChar(Input.GetAxis("RightStickVer") > 0.5f));
+
+        //Hor = Input.GetAxis("Horizontal");
+        //Ver = Input.GetAxis("Vertical");
+
+        // FOR TESTING PURPOSE ONLY --------------------------------------------------
+    }
+
+    char BoolToChar(bool ToSet)
+    {
+        if (ToSet) return 'T';
+        else return 'F';
     }
 
 }

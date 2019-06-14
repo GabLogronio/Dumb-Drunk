@@ -7,10 +7,10 @@ public class PlayerBalanceManager : MonoBehaviour {
     bool Blocked = false;
 
     // Random Wander parameters
-    float MinChangeTime = 0f, MaxChangeTime = 1.5f, MinAngularAcc = 0.001f, MaxAngularAcc = 0.01f,
-          X = 0f, Y = 0f, ChangeTime = 0f, CurrentSpeed = 0f, CurrentAngular = 0f;
+    float MinChangeTime = 2f, MaxChangeTime = 5f,
+      DeltaX = 0f, DeltaY = 0f, X = 0f, Y = 0f, CurrentChangeTime = 0f;
 
-    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f;
+    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 1.5f, InputX = 0f, InputY = 0f, InputSpeed = 0.5f;
 
     [SerializeField]
     GameObject RightFoot, LeftFoot, Hips, BalanceGUI;
@@ -18,10 +18,9 @@ public class PlayerBalanceManager : MonoBehaviour {
     [SerializeField]
     PlayerInputManager InputController;
 
-    [SerializeField]
-    float BodyLength = 0.55f, LegsLength = 0.85f, Forward = 0.1f, Speed = 1f;
+    float BodyLength = 0.6f, LegsLength = 1.66f;
 
-    Vector3 BalanceModifier = Vector3.zero;
+    Vector3 PositionModifier = Vector3.zero, InitialPosition = Vector3.zero;
 
     bool Fallen = false;
 
@@ -105,24 +104,27 @@ public class PlayerBalanceManager : MonoBehaviour {
         {
             UpdateTimers();
 
+            // Initial position based on the feet
             float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
+            InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
 
-            if (new Vector2(transform.localPosition.x, transform.localPosition.z).magnitude < 0.375f) // NOT FALLEN
+            if (!Blocked && !float.IsNaN(Height) && !float.IsNaN(PositionModifier.x) && !float.IsNaN(PositionModifier.y) && !float.IsNaN(PositionModifier.z) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
             {
-                Vector3 BalanceModifier = Vector3.right * (RightTimer - LeftTimer) + Vector3.forward * (UpTimer - DownTimer);
 
-                if (!Blocked && !float.IsNaN(Height) && !float.IsNaN(BalanceModifier.x) && !float.IsNaN(BalanceModifier.y) && !float.IsNaN(BalanceModifier.z) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
-                {
-                    transform.position = new Vector3(transform.position.x, Height, transform.position.z);
-                    transform.Translate(transform.forward * Time.deltaTime * CurrentSpeed);
-                    transform.Translate(BalanceModifier * Time.deltaTime, Space.World);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(new Vector3(X, 0f, Y)), CurrentAngular);
-                    // + transform.right * Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) * BalanceValue / 200;
-                }
-            }
-            else
-            {
-                Fall();
+                X += DeltaX * Time.deltaTime;
+                Y += DeltaY * Time.deltaTime;
+
+                InputX = (RightTimer - LeftTimer) / TimerChanger * InputSpeed * Time.deltaTime;
+                InputY = (UpTimer - DownTimer) / TimerChanger * InputSpeed * Time.deltaTime;
+
+                PositionModifier += new Vector3(X, 0f, Y);
+                PositionModifier += Vector3.right * InputX  + Vector3.forward * InputY;
+
+                transform.position = InitialPosition + PositionModifier;
+
+                if (PositionModifier.magnitude > 0.75f) Fall();
+
+                // Debug.DrawLine(InitialPosition, InitialPosition + PositionModifier, Color.red);
             }
         }
     }
@@ -142,24 +144,27 @@ public class PlayerBalanceManager : MonoBehaviour {
         if (Left == 'T') LeftTimer = TimerChanger;
         if (Down == 'T') DownTimer = TimerChanger;
         if (Up == 'T') UpTimer = TimerChanger;*/
-        if (Right == 'T') DebugText.instance.Add("Destra ");
-        if (Left == 'T') DebugText.instance.Add("Sinistra ");
-        if (Down == 'T') DebugText.instance.Add("Giù ");
-        if (Up == 'T') DebugText.instance.Add("Su ");
+        if (Right == 'T') RightTimer = TimerChanger;
+        if (Left == 'T') LeftTimer = TimerChanger;
+        if (Down == 'T') DownTimer = TimerChanger;
+        if (Up == 'T') UpTimer = TimerChanger;
 
     }
 
-
-
     void RandomizeDirection()
     {
-        X = Random.Range(-0.1f, 0.1f);
-        Y = Random.Range(-0.1f, 0.1f);
-        ChangeTime = Random.Range(MinChangeTime, MaxChangeTime);
-        CurrentSpeed = new Vector3(X, 0f, Y).magnitude;
-        CurrentAngular = Random.Range(MinAngularAcc, MaxAngularAcc);
+        float NewX = Random.Range(-0.001f, 0.001f), NewY = Random.Range(-0.001f, 0.001f);
+        CurrentChangeTime = Random.Range(MinChangeTime, MaxChangeTime);
 
-        Invoke("RandomizeDirection", ChangeTime);
+        DeltaX = (NewX - X) / CurrentChangeTime;
+        DeltaY = (NewY - Y) / CurrentChangeTime;
+
+        Invoke("RandomizeDirection", CurrentChangeTime);
+    }
+
+    public Vector3 GetInitialPosition()
+    {
+        return InitialPosition;
     }
 
 }

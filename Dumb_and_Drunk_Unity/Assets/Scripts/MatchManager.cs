@@ -21,7 +21,7 @@ public class MatchManager : MonoBehaviour
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 10;
-    private int maxPlayers = 2;
+    private int maxPlayers = 1;
 
     // Start is called before the first frame update
     void Start()

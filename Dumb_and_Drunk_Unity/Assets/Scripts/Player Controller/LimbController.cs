@@ -6,7 +6,7 @@ public abstract class LimbController : MonoBehaviour
 {
     protected bool Moving = false, Active = true;
 
-    protected Vector2 CurrentDirection;
+    protected Vector3 CurrentDirection;
 
     public virtual bool Move()
     {
@@ -15,7 +15,7 @@ public abstract class LimbController : MonoBehaviour
         return true;
     }
 
-    public virtual bool UpdateDirection(Vector2 ToSet, bool direction)
+    public virtual bool UpdateDirection(Vector3 ToSet, bool direction)
     {
         CurrentDirection = ToSet;
 

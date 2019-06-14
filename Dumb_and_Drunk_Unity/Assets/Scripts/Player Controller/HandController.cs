@@ -6,11 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class HandController : LimbController
 {
-    [SerializeField]
-    float MoveForce, ActivateDuration = 0.5f;
+    float MoveForce = 200f, ActivateDuration = 0.75f;
 
     [SerializeField]
-    GameObject BodyCenter;
+    PlayerBalanceManager PlayerBalance;
 
     bool Detachable = false;
 
@@ -33,14 +32,23 @@ public class HandController : LimbController
 
     public void KeepMoving()
     {
-        Active = true;
-        CancelInvoke();
+        rb.velocity = Vector3.zero;
+
+        CurrentDirection = CurrentDirection.normalized * 0.9f;
+        Vector3 FinalDirection = PlayerBalance.GetInitialPosition() - transform.position + CurrentDirection;
+
+        if (PlayerBalance.transform.position.y - transform.position.y >= 0f) FinalDirection.y = PlayerBalance.transform.position.y - transform.position.y;
+        else FinalDirection.y = transform.position.y - PlayerBalance.transform.position.y;
+
+        rb.AddForce(FinalDirection * MoveForce);
+
+    }
+
+    public override bool Release()
+    {
         Invoke("Deactivate", ActivateDuration);
 
-        rb.velocity = Vector3.zero;
-        rb.AddForce(new Vector3(CurrentDirection.x, 0f, CurrentDirection.y) * MoveForce);
-        rb.AddForce(transform.up * (BodyCenter.transform.position.y - transform.position.y) * MoveForce);
-
+        return base.Release();
     }
 
     void Deactivate()
@@ -50,6 +58,8 @@ public class HandController : LimbController
 
     public override bool Move()
     {
+        Active = true;
+
         if (Joint != null) Destroy(Joint);
         return base.Move();
     }
