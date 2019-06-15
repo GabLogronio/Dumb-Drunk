@@ -11,16 +11,13 @@ public abstract class LimbController : MonoBehaviour
     public virtual bool Move()
     {
         Moving = true;
-        //DebugText.instance.Log("Moving " + gameObject.name);
+        //DebugText.instance.Set("Moving " + gameObject.name);
         return true;
     }
 
-    public virtual bool UpdateDirection(Vector3 ToSet, bool direction)
+    public virtual void UpdateDirection(Vector3 ToSet)
     {
         CurrentDirection = ToSet;
-
-        if (Moving) return true;
-        return false;
     }
 
     public virtual bool Set(bool ToSet)
@@ -32,7 +29,7 @@ public abstract class LimbController : MonoBehaviour
     public virtual bool Release()
     {
         Moving = false;
-        // Debug.Log("Releasing " + gameObject.name + "\n");
+        //DebugText.instance.Set("Releasing " + gameObject.name);
         return true;
     }
 

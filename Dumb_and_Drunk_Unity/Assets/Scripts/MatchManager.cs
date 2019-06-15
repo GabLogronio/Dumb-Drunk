@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MatchManager : MonoBehaviour
@@ -13,15 +14,15 @@ public class MatchManager : MonoBehaviour
     private bool isFirstScene = false;
     private bool isMatchmakingScene = false;
     private int lastPicked = 0;
-    private float timer = 30.0f;
-    public GameObject gameCanvas;
-    public GameObject teamCanvas;
+    private float timer = 0f, FirstSceneDuration = 66.0f, MatchMakingSceneDuration = 5f;
+    public GameObject gameCanvas, teamCanvas, loadingCanvas;
     private Vector3[] spawnPointsFirstScene = new Vector3[4];
     private Vector3[] spawnPointsSecondScene = new Vector3[4];
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 10;
     private int maxPlayers = 1;
+    public Text CounterText, CountdownText;
 
     // Start is called before the first frame update
     void Start()
@@ -49,20 +50,36 @@ public class MatchManager : MonoBehaviour
         }
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
-        if (isFirstScene || isMatchmakingScene)
+        if (isFirstScene)
         {
             timer -= Time.deltaTime;
-            if (timer <= 0)
+
+            if (timer < FirstSceneDuration - 3f)
             {
-                if (isFirstScene) LoadSecondScene();
-                else if (isMatchmakingScene) LoadFirstGameScene();
-            }
+                loadingCanvas.SetActive(false);
+                CounterText.text = "Get Ready!";
+                CountdownText.text = (int)(timer - 60) + "";
+   }
+            if (timer < FirstSceneDuration - 5.9f && timer > 0f)
+            {
+                CountdownText.text = "";
+                CounterText.text = Mathf.Floor(timer / 60).ToString("00") + ":" + (timer % 60).ToString("00");
+            } 
+            if (timer <= 0) LoadSecondScene();
+
         }
-        // TO REMOVE <-----------------------------------------------------------------------------------------------------
-        if (Input.GetKeyDown(KeyCode.Space)) LoadFirstGameScene();
+
+        else if (isMatchmakingScene)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0) LoadFirstGameScene();
+        }
+
     }
 
     public static MatchManager getInstance()
@@ -117,7 +134,7 @@ public class MatchManager : MonoBehaviour
                 team2Comp++;
             }
         }
-        timer = 5.0f;
+        timer = MatchMakingSceneDuration;
         isMatchmakingScene = true;
     }
 
@@ -125,7 +142,9 @@ public class MatchManager : MonoBehaviour
     {
         teamCanvas.SetActive(false);
         gameCanvas.SetActive(true);
-        timer = 30.0f;
+        loadingCanvas.SetActive(true);
+        CounterText.text = "";
+        timer = FirstSceneDuration;
         isFirstScene = true;
         isMatchmakingScene = false;
         NetworkServerManager.getInstance().ServerStringMessageSenderToAll("Scene1");
@@ -149,8 +168,8 @@ public class MatchManager : MonoBehaviour
 
     private void LoadSecondScene()
     {
-        // MANCA LO SPOSTAMENTEO DEI GIOCATORI <---------------------------------------------------------------------------
         isFirstScene = false;
+        CounterText.text = "";
         int team1Score = 0, team2Score = 0;
         for (int i = 0; i < maxPlayers; i++)
         {

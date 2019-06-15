@@ -14,7 +14,6 @@ public class DebugText : MonoBehaviour
     {
         instance = this;
         OutText = GetComponent<Text>();
-        Set("Started");
     }
 
     public void Add(string ToAdd)

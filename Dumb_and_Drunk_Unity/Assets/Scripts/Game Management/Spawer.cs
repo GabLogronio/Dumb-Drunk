@@ -17,7 +17,7 @@ public class Spawer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Spawn", 4f);
+        Invoke("Spawn", 3f);
     }
 
     void Spawn()
@@ -34,7 +34,7 @@ public class Spawer : MonoBehaviour
             Key1.SetActive(true);
             Key2.SetActive(true);
 
-            Invoke("Spawn", (GameSettings_New.instance.KeySpawnTime));
+            Invoke("Spawn", (30f));
         }
     }
 }

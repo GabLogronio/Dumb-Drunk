@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class HandController : LimbController
 {
-    float MoveForce = 200f, ActivateDuration = 0.75f;
+    float MoveForce = 350f, ActivateDuration = 0.75f;
 
     [SerializeField]
     PlayerBalanceManager PlayerBalance;
@@ -34,11 +34,9 @@ public class HandController : LimbController
     {
         rb.velocity = Vector3.zero;
 
-        CurrentDirection = CurrentDirection.normalized * 0.9f;
-        Vector3 FinalDirection = PlayerBalance.GetInitialPosition() - transform.position + CurrentDirection;
+        Vector3 FinalDirection = PlayerBalance.GetInitialPosition() - transform.position + CurrentDirection.normalized * 0.9f;
 
-        if (PlayerBalance.transform.position.y - transform.position.y >= 0f) FinalDirection.y = PlayerBalance.transform.position.y - transform.position.y;
-        else FinalDirection.y = transform.position.y - PlayerBalance.transform.position.y;
+        FinalDirection.y = PlayerBalance.transform.position.y - transform.position.y;
 
         rb.AddForce(FinalDirection * MoveForce);
 

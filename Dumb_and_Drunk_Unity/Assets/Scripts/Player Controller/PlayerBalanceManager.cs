@@ -10,13 +10,16 @@ public class PlayerBalanceManager : MonoBehaviour {
     float MinChangeTime = 2f, MaxChangeTime = 5f,
       DeltaX = 0f, DeltaY = 0f, X = 0f, Y = 0f, CurrentChangeTime = 0f;
 
-    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 1.5f, InputX = 0f, InputY = 0f, InputSpeed = 0.5f;
+    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 1.5f, InputX = 0f, InputY = 0f, InputSpeed = 0.35f;
 
     [SerializeField]
     GameObject RightFoot, LeftFoot, Hips, BalanceGUI;
 
     [SerializeField]
     PlayerInputManager InputController;
+
+    [SerializeField]
+    bool Moving = true;
 
     float BodyLength = 0.6f, LegsLength = 1.66f;
 
@@ -63,15 +66,20 @@ public class PlayerBalanceManager : MonoBehaviour {
 
         InputController.SetCanAttach(true);
         InputController.BlockControls(false);
+        BlockBar(true, 5f);
 
         BalanceGUI.SetActive(true);
 
         Hips.GetComponent<SpringJoint>().spring = 1000f;
-        Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
+        //Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
 
-        transform.localPosition = new Vector3(0f, LegsLength + BodyLength, 0f);
+        //transform.localPosition = new Vector3(0f, LegsLength + BodyLength, 0f);
+        float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
+        InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
+        transform.position = InitialPosition;
+
+        PositionModifier = Vector3.zero;
         RightTimer = 0f; LeftTimer = 0f; UpTimer = 0f; DownTimer = 0f;
-
 
         NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
 
@@ -108,25 +116,43 @@ public class PlayerBalanceManager : MonoBehaviour {
             float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
             InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
 
-            if (!Blocked && !float.IsNaN(Height) && !float.IsNaN(PositionModifier.x) && !float.IsNaN(PositionModifier.y) && !float.IsNaN(PositionModifier.z) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
+            if (!float.IsNaN(Height) && !float.IsNaN(PositionModifier.x) && !float.IsNaN(PositionModifier.y) && !float.IsNaN(PositionModifier.z) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
             {
+                if(!Blocked)
+                {
+                    if (Moving)
+                    {
+                        X += DeltaX * Time.deltaTime;
+                        Y += DeltaY * Time.deltaTime;
 
-                X += DeltaX * Time.deltaTime;
-                Y += DeltaY * Time.deltaTime;
+                        InputX = (RightTimer - LeftTimer) / TimerChanger * InputSpeed * Time.deltaTime;
+                        InputY = (UpTimer - DownTimer) / TimerChanger * InputSpeed * Time.deltaTime;
 
-                InputX = (RightTimer - LeftTimer) / TimerChanger * InputSpeed * Time.deltaTime;
-                InputY = (UpTimer - DownTimer) / TimerChanger * InputSpeed * Time.deltaTime;
+                        //DebugText.instance.Set("RT: " + RightTimer + ", LT: " + LeftTimer + ", UT: " + UpTimer + ", DT: " + DownTimer + " - ");
+                        //DebugText.instance.Set("Input X: " + InputX + ", Input Y: " + InputY + ", UT: " + " - ");
 
-                PositionModifier += new Vector3(X, 0f, Y);
-                PositionModifier += Vector3.right * InputX  + Vector3.forward * InputY;
 
-                transform.position = InitialPosition + PositionModifier;
+                    }
 
-                if (PositionModifier.magnitude > 0.75f) Fall();
+                    PositionModifier += new Vector3(X, 0f, Y);
+                    PositionModifier += Vector3.right * InputX + Vector3.forward * InputY;
+
+                    transform.position = InitialPosition + PositionModifier;
+
+                    if (PositionModifier.magnitude > 0.75f) Fall();
+
+                }
+                else
+                {
+                    transform.position = InitialPosition;
+
+                }
+
 
                 // Debug.DrawLine(InitialPosition, InitialPosition + PositionModifier, Color.red);
             }
         }
+
     }
 
     void UpdateTimers()
@@ -138,7 +164,7 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     }
 
-    public void MoveBodyCenter(char Right, char Left, char Down, char Up)
+    public void MoveBodyCenter(char Right, char Left, char Up, char Down)
     {
         /*if (Right == 'T') RightTimer = TimerChanger; 
         if (Left == 'T') LeftTimer = TimerChanger;

@@ -58,7 +58,7 @@ public class NetworkServerManager : MonoBehaviour
 
     private void Update()
     {
-        TestingInput();
+        //TestingInput();
     }
 
     void OnClientConnected(NetworkMessage NetMsg)
@@ -112,12 +112,12 @@ public class NetworkServerManager : MonoBehaviour
         switch (deltas[0])
         {
             case "AnAx":
-                CurrentConnections[NetMsg.conn.connectionId].SetAnalogAxis(StringToFloat(deltas[1]), StringToFloat(deltas[2]));              
+                float Hor = Mathf.Round(float.Parse(deltas[1]) * 100f) / 100f, Ver = Mathf.Round(float.Parse(deltas[2]) * 100f) / 100f;
+                CurrentConnections[NetMsg.conn.connectionId].SetAnalogAxis(Hor, Ver);
                 break;
             case "Butt":
                 CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Down");
                 //DebugText.instance.Log(CurrentConnections[NetMsg.conn.connectionId].gameObject.name + "pressed " + deltas[1]);
-                //DebugText.instance.Log("ricevuto button");
                 break;
             case "Gyro":
                 CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(deltas[1][0], deltas[2][0], deltas[3][0], deltas[4][0]);
