@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeggarObstacle : MovingObstacle
+public class BeggarObstacle : MonoBehaviour
 {
-    [SerializeField]
     bool Chasing = false, Resetting = false, OnCooldown = false;
 
     Vector3 InitialPosition;
-    [SerializeField]
     Quaternion InitialRotation;
+
+    GameObject targetPlayer = null;
 
     [SerializeField]
     LayerMask PlayersLayers;
 
-    [SerializeField]
-    float MaxDistance, TimeToStop = 5f, Cooldown = 20f, RotationSpeed = 4f;
+    float MaxDistance = 12f, TimeToStop = 5f, Cooldown = 20f, RotationSpeed = 4f, MovementSpeed = 7f;
 
-    Collider[] NearbyPlayers = new Collider[7];
+    Collider[] NearbyPlayers = new Collider[1];
 
     Animator anim;
 
@@ -34,10 +33,10 @@ public class BeggarObstacle : MovingObstacle
     // Update is called once per frame
     void Update()
     {
-        if (Physics.OverlapSphereNonAlloc(transform.position, 6f, NearbyPlayers, PlayersLayers) > 0 && target == null && !Resetting && !OnCooldown)
+        if (Physics.OverlapSphereNonAlloc(transform.position, 6f, NearbyPlayers, PlayersLayers) > 0 && targetPlayer == null && !Resetting && !OnCooldown)
         {
             anim.SetBool("Activated", true);
-            target = NearbyPlayers[0].gameObject.GetComponent<PlayerObstacleManager>().GetPlayerController();
+            targetPlayer = NearbyPlayers[0].gameObject.GetComponent<PlayerObstacleManager>().GetPlayerController();
             MovementSpeed = 1.5f;
             Chase();
 
@@ -52,9 +51,9 @@ public class BeggarObstacle : MovingObstacle
             }
             else
             {
-                Vector3 Destination = target.transform.position + target.transform.forward * 2f;
+                Vector3 Destination = targetPlayer.transform.position + targetPlayer.transform.forward * 3f;
                 Destination.y = transform.position.y;
-                if (Vector3.Distance(transform.position, Destination) > 1.25f)
+                if (Vector3.Distance(transform.position, Destination) > 2f)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, Destination, Time.deltaTime * MovementSpeed);
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Destination - transform.position), Time.deltaTime * RotationSpeed);
@@ -93,11 +92,6 @@ public class BeggarObstacle : MovingObstacle
 
     }
 
-    protected override void Activate()
-    {
-
-    }
-
     void Chase()
     {
         Chasing = true;
@@ -111,7 +105,7 @@ public class BeggarObstacle : MovingObstacle
         Chasing = false;
         Resetting = true;
         MovementSpeed = 1f;
-        target = null;
+        targetPlayer = null;
     }
 
     void EndCooldown()

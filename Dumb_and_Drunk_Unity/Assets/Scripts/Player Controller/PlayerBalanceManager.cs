@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBalanceManager : MonoBehaviour {
 
@@ -16,20 +17,24 @@ public class PlayerBalanceManager : MonoBehaviour {
     GameObject RightFoot, LeftFoot, Hips, BalanceGUI;
 
     [SerializeField]
-    PlayerInputManager InputController;
+    RectTransform PlayerImage;
 
     [SerializeField]
+    PlayerInputManager InputController;
+
     bool Moving = true;
 
     float BodyLength = 0.6f, LegsLength = 1.66f;
 
-    Vector3 PositionModifier = Vector3.zero, InitialPosition = Vector3.zero;
+    Vector3 PositionModifier = Vector3.zero, InitialPosition = Vector3.zero, ImageInitialPosition = Vector3.zero;
 
     bool Fallen = false;
 
     private void Start()
     {
         RandomizeDirection();
+
+        ImageInitialPosition = PlayerImage.localPosition;
 
     }
 
@@ -74,15 +79,21 @@ public class PlayerBalanceManager : MonoBehaviour {
         //Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
 
         //transform.localPosition = new Vector3(0f, LegsLength + BodyLength, 0f);
+        ResetBar();
+
+
+        NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
+
+    }
+
+    void ResetBar()
+    {
         float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
         InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
         transform.position = InitialPosition;
 
         PositionModifier = Vector3.zero;
         RightTimer = 0f; LeftTimer = 0f; UpTimer = 0f; DownTimer = 0f;
-
-        NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
-
     }
 
     public bool HasFallen()
@@ -108,6 +119,8 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     void Update()
     {
+        PlayerImage.localPosition = ImageInitialPosition;
+
         if (!Fallen)
         {
             UpdateTimers();
@@ -138,6 +151,7 @@ public class PlayerBalanceManager : MonoBehaviour {
                     PositionModifier += Vector3.right * InputX + Vector3.forward * InputY;
 
                     transform.position = InitialPosition + PositionModifier;
+                    PlayerImage.localPosition = ImageInitialPosition + new Vector3(X, Y, 0f) / 0.75f * 80f;
 
                     if (PositionModifier.magnitude > 0.75f) Fall();
 
@@ -153,6 +167,12 @@ public class PlayerBalanceManager : MonoBehaviour {
             }
         }
 
+    }
+
+    public void SetMoving(bool ToSet)
+    {
+        ResetBar();
+        Moving = ToSet;
     }
 
     void UpdateTimers()

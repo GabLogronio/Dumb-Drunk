@@ -8454,7 +8454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c138b9f55e65314582abf48fc134b6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.101
+      value: -19.2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c138b9f55e65314582abf48fc134b6c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8462,7 +8462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c138b9f55e65314582abf48fc134b6c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.6726
+      value: -8.43
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c138b9f55e65314582abf48fc134b6c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8482,7 +8482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c138b9f55e65314582abf48fc134b6c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c138b9f55e65314582abf48fc134b6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8546,6 +8546,27 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: fa4f11b8573ad1148a6bbe47fe3adad7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c138b9f55e65314582abf48fc134b6c, type: 3}
+--- !u!1 &684687960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 7c138b9f55e65314582abf48fc134b6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 684687959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &684687961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684687960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71726640e68cadd4e87057292cccf584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayersLayers:
+    serializedVersion: 2
+    m_Bits: 7680
 --- !u!1 &687008677
 GameObject:
   m_ObjectHideFlags: 0

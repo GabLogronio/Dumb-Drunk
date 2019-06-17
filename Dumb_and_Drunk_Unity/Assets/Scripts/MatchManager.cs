@@ -21,7 +21,7 @@ public class MatchManager : MonoBehaviour
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 10;
-    private int maxPlayers = 1;
+    private int maxPlayers = 2;
     public Text CounterText, CountdownText;
 
     // Start is called before the first frame update
@@ -155,6 +155,7 @@ public class MatchManager : MonoBehaviour
             PlayersGameObjects[i].SetActive(true);
             if(PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
             Vector3 move = spawnPointsFirstScene[i] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
+            PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().SetMoving(true);
             PlayersGameObjects[i].transform.position += move;
             PlayersGameObjects[i].transform.rotation = Quaternion.identity;
         }
@@ -191,6 +192,7 @@ public class MatchManager : MonoBehaviour
         int winner = 0, loser = 0;
         for (int i = 0; i < maxPlayers; i++)
         {
+            PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().SetMoving(true);
             if (teams[i] != win)
             {
                 NetworkServerManager.getInstance().ServerStringMessageSender(i, "Scene2");
