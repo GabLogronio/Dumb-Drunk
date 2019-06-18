@@ -8,14 +8,36 @@ public class Scene2Camera : MonoBehaviour
     LayerMask[] PlayersLayers = new LayerMask[4];
 
     GameObject Player1, Player2;
+    private bool found = false;
+    private GameObject[] winners = new GameObject[2];
 
     // Start is called before the first frame update
     void Start()
     {
+        //search();
+        winners = MatchManager.getInstance().GetWinnersObjects();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //if (!found) search();
+
+        /*if (Player1 && Player2)
+        {
+            transform.position = new Vector3( 0, 7.5f, Mathf.Min(Player1.transform.position.z, Player2.transform.position.z) - 9.5f);
+        }*/
+
+        transform.position = new Vector3(0, 7.5f, winners[0].transform.position.z - 9.5f);
+        Debug.Log("seguo: " + winners[0].layer);
+    }
+
+    /*private void search()
+    {
         for (int i = 0; i < PlayersLayers.Length; i++)
         {
             Collider[] Player = new Collider[1];
-            Physics.OverlapSphereNonAlloc(transform.position, 25, Player, PlayersLayers[i]);
+            Physics.OverlapSphereNonAlloc(transform.position, 50, Player, PlayersLayers[i]);
             if (Player[0] != null)
             {
                 if (Player[0].gameObject.transform.position.z > transform.position.z)
@@ -25,14 +47,10 @@ public class Scene2Camera : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
-    // Update is called once per frame
-    void Update()
+    /*public void SetWinners(GameObject[] w)
     {
-        if (Player1 && Player2)
-        {
-            transform.position = new Vector3( 0, 7.5f, Mathf.Min(Player1.transform.position.z, Player2.transform.position.z) - 9.5f);
-        }
-    }
+        winners = w;
+    }*/
 }

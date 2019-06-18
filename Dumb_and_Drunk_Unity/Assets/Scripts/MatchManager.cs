@@ -20,9 +20,10 @@ public class MatchManager : MonoBehaviour
     private Vector3[] spawnPointsSecondScene = new Vector3[4];
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
-    private int maxPoints = 2;
+    private int maxPoints = 4;
     private int maxPlayers = 2;
     public Text CounterText, CountdownText, ScoreText;
+    private int teamWin = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class MatchManager : MonoBehaviour
         teamsFacesPos[3] = new Vector3(373, -275, 0);
         DontDestroyOnLoad(gameCanvas.transform.parent.gameObject);
         DontDestroyOnLoad(teamCanvas);
+        DontDestroyOnLoad(victoryCanvas);
         for (int i = 0; i < maxPlayers; i++)
         {
             DontDestroyOnLoad(PlayersGameObjects[i]);
@@ -94,6 +96,16 @@ public class MatchManager : MonoBehaviour
         {
             timer -= Time.deltaTime;
             if (timer <= 0) LoadFirstGameScene();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            LoadMatchmakingScene();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            LoadSecondScene();
         }
 
     }
@@ -194,6 +206,7 @@ public class MatchManager : MonoBehaviour
 
     private void LoadSecondScene()
     {
+        CountdownText.text = "";
         isFirstScene = false;
         CounterText.text = "";
         int team1Score = 0, team2Score = 0;
@@ -206,10 +219,33 @@ public class MatchManager : MonoBehaviour
             if (teams[lastPicked] == 1) team1Score++;
             else team2Score++;
         }
-        if (team1Score > team2Score) scene1End(1);
-        else scene1End(2);
+        if (team1Score > team2Score)
+        {
+            scene1End(1);
+            teamWin = 1;
+        }
+        else
+        {
+            scene1End(2);
+            teamWin = 2;
+        }
         //DebugText.instance.Log("Loaded Second Scene");
         SceneManager.LoadScene("Game Scene 2");
+    }
+
+    public GameObject[] GetWinnersObjects()
+    {
+        int count = 0;
+        GameObject[] winners = new GameObject[2];
+        for (int i = 0; i < maxPlayers; i++)
+        {
+            if (teams[i] == teamWin)
+            {
+                winners[count] = PlayersGameObjects[i].transform.GetChild(2).GetChild(0).gameObject;
+                count++;
+            }
+        }
+        return winners;
     }
 
     private void scene1End(int win)

@@ -145,6 +145,7 @@ public class NetworkServerManager : MonoBehaviour
         PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>().enabled = !player;
         if (player) PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<PlayerInputManager>();
         else PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>();
+        CurrentConnections[i + 1] = PlayersInputManagers[i];
     }
 
     void TestingInput() // ONLY USED IN TESTING
