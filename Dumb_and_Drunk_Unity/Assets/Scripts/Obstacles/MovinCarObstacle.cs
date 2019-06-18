@@ -16,6 +16,7 @@ public class MovinCarObstacle : MonoBehaviour
     {
         //transform.Translate(transform.forward * MovementSpeed * Time.deltaTime);
         if(!Waiting) transform.Translate(Vector3.forward * MovementSpeed * Time.deltaTime);
+        else transform.Translate( - Vector3.forward * MovementSpeed * 0.33f * Time.deltaTime);
         if (Scene1)
         {
             if ((transform.position.x > 31.5f) || (transform.position.z < -27.5f) || (transform.position.z > 22f) || (transform.position.x < -28f)) Despawn();
