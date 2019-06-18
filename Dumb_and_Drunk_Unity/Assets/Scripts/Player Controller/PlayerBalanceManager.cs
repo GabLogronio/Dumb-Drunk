@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerBalanceManager : MonoBehaviour {
 
-    bool Blocked = false;
+    bool Blocked = true;
 
     // Random Wander parameters
     float MinChangeTime = 2f, MaxChangeTime = 5f,
@@ -22,7 +22,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     [SerializeField]
     PlayerInputManager InputController;
 
-    bool Moving = false;
+    bool Moving = true;
 
     float BodyLength = 0.6f, LegsLength = 1.66f;
 

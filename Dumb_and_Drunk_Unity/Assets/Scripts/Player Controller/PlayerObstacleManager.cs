@@ -93,7 +93,7 @@ public class PlayerObstacleManager : MonoBehaviour {
 
     void ResetRigidbodiesVelocity()
     {
-        foreach (Transform child in transform.GetChild(2))
+        foreach (Transform child in transform.parent)
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             if (rb != null) rb.velocity = Vector3.zero;

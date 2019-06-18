@@ -14,19 +14,21 @@ public class MatchManager : MonoBehaviour
     private bool isFirstScene = false;
     private bool isMatchmakingScene = false;
     private int lastPicked = 0;
-    private float timer = 0f, FirstSceneDuration = 66.0f, MatchMakingSceneDuration = 5f;
-    public GameObject gameCanvas, teamCanvas, loadingCanvas;
+    private float timer = 0f, FirstSceneDuration = 65.0f, MatchMakingSceneDuration = 5f;
+    public GameObject gameCanvas, teamCanvas, loadingCanvas, victoryCanvas;
     private Vector3[] spawnPointsFirstScene = new Vector3[4];
     private Vector3[] spawnPointsSecondScene = new Vector3[4];
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
-    private int maxPoints = 10;
+    private int maxPoints = 2;
     private int maxPlayers = 2;
     public Text CounterText, CountdownText, ScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.developerConsoleVisible = true;
+
         if (instance == null) instance = this;
         else if (instance != this) Destroy(this);
         DontDestroyOnLoad(gameObject);
@@ -56,8 +58,10 @@ public class MatchManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //DebugText.instance.Set("1");
         if (isFirstScene)
         {
+            //DebugText.instance.Set("2");
             int ftScore = 0, stScore = 0;
             for (int i = 0; i < maxPlayers; i++)
             {
@@ -67,16 +71,20 @@ public class MatchManager : MonoBehaviour
             ScoreText.text = "<color=red>" + ftScore + "</color><color=white> - </color><color=#0099ff>" + stScore + "</color>";
             timer -= Time.deltaTime;
 
+            //DebugText.instance.Set("3");
+
             if (timer < FirstSceneDuration - 3f)
             {
                 loadingCanvas.SetActive(false);
                 CounterText.text = "Get Ready!";
                 CountdownText.text = (int)(timer - 60) + "";
-   }
+                //DebugText.instance.Set("4");
+            }
             if (timer < FirstSceneDuration - 5.9f && timer > 0f)
             {
                 CountdownText.text = "";
                 CounterText.text = Mathf.Floor(timer / 60).ToString("00") + ":" + (timer % 60).ToString("00");
+                //DebugText.instance.Set("5");
             } 
             if (timer <= 0) LoadSecondScene();
 
@@ -167,14 +175,21 @@ public class MatchManager : MonoBehaviour
             PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().SetMoving(true);
             PlayersGameObjects[i].transform.position += move;
             PlayersGameObjects[i].transform.rotation = Quaternion.identity;
+            gameCanvas.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
+            gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(false);
         }
     }
 
-    public void KeyCollected(int layer)
+    public void KeyCollection(int layer)
     {
         keyCollected[layer - 9]++;
         lastPicked = layer - 9;
         DebugText.instance.Add(layer + " collect key");
+    }
+
+    public float getTimer()
+    {
+        return timer;
     }
 
     private void LoadSecondScene()
@@ -236,7 +251,15 @@ public class MatchManager : MonoBehaviour
     {
         scores[layer - 9]++;
         gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
-        if (scores[layer - 9] >= maxPoints) SceneManager.LoadScene("Victory Scene");
+        if (scores[layer - 9] >= maxPoints)
+        {
+            gameCanvas.SetActive(false);
+            teamCanvas.SetActive(false);
+            loadingCanvas.SetActive(false);
+            victoryCanvas.SetActive(true);
+            victoryCanvas.transform.GetChild(layer - 7).gameObject.SetActive(true);
+
+        }
         else LoadMatchmakingScene();
     }
 }

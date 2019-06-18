@@ -66,6 +66,8 @@ public class ShooterInputManager : InputManager
     // Update is called once per frame
     void Update()
     {
+        //DebugText.instance.Add("shooter");
+
         UpdateTimers();
 
         CheckBounds();
