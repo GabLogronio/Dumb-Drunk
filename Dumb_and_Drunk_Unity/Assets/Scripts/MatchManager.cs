@@ -9,7 +9,7 @@ public class MatchManager : MonoBehaviour
     private static MatchManager instance;
     //cheng, dennis, maurice, mike
     private int[] scores = { 0, 0, 0, 0 };
-    private int[] keyCollected = { 0, 0, 0, 0 };
+    public int[] keyCollected = { 0, 0, 0, 0 };
     private int[] teams = { 1, 1, 2, 2 };
     private bool isFirstScene = false;
     private bool isMatchmakingScene = false;
@@ -22,7 +22,7 @@ public class MatchManager : MonoBehaviour
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 10;
     private int maxPlayers = 2;
-    public Text CounterText, CountdownText;
+    public Text CounterText, CountdownText, ScoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +48,7 @@ public class MatchManager : MonoBehaviour
         {
             DontDestroyOnLoad(PlayersGameObjects[i]);
         }
+        ScoreText.supportRichText = true;
     }
 
 
@@ -57,6 +58,13 @@ public class MatchManager : MonoBehaviour
     {
         if (isFirstScene)
         {
+            int ftScore = 0, stScore = 0;
+            for (int i = 0; i < maxPlayers; i++)
+            {
+                if (teams[i] == 1) ftScore += keyCollected[i];
+                else stScore += keyCollected[i];
+            }
+            ScoreText.text = "<color=red>" + ftScore + "</color><color=white> - </color><color=#0099ff>" + stScore + "</color>";
             timer -= Time.deltaTime;
 
             if (timer < FirstSceneDuration - 3f)
@@ -118,6 +126,7 @@ public class MatchManager : MonoBehaviour
             else teams[3] = 1;
         }*/
         teams = new int[] { 1, 2, 1, 2 };
+        keyCollected = new int[] { 0, 0, 0, 0 };
         SceneManager.LoadScene("Matchmaking Scene");
         //DebugText.instance.Log("Loaded Matchmaking Scene");
         int team1Comp = 0, team2Comp = 0;
@@ -165,6 +174,7 @@ public class MatchManager : MonoBehaviour
     {
         keyCollected[layer - 9]++;
         lastPicked = layer - 9;
+        DebugText.instance.Add(layer + " collect key");
     }
 
     private void LoadSecondScene()
@@ -208,7 +218,11 @@ public class MatchManager : MonoBehaviour
             }
             else
             {
-                if (scores[i] < maxPoints - 1) scores[i]++;
+                if (scores[i] < maxPoints - 1)
+                {
+                    scores[i]++;
+                    gameCanvas.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[i].ToString();
+                }
                 if (PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
                 Vector3 move = spawnPointsSecondScene[winner] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
                 PlayersGameObjects[i].transform.position += move;
@@ -221,6 +235,7 @@ public class MatchManager : MonoBehaviour
     public void scene2End(int layer)
     {
         scores[layer - 9]++;
+        gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
         if (scores[layer - 9] >= maxPoints) SceneManager.LoadScene("Victory Scene");
         else LoadMatchmakingScene();
     }

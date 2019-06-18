@@ -7,15 +7,19 @@ public class Key : MonoBehaviour
     [SerializeField]
     float RotationSpeed = 5f;
 
+    public int pos;
+
     private void Update()
     {
         transform.Rotate(Vector3.up * RotationSpeed);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.layer == 10) // Player Layer
+        if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12) // Player Layer
         {
+            MatchManager.getInstance().KeyCollected(collision.gameObject.layer);
+            Spawer.getInstance().KeyCollected(pos);
             CancelInvoke();
             DestroyKey();
         }
