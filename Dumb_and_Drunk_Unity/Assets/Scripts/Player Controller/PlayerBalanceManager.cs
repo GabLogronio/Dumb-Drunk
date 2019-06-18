@@ -14,7 +14,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 1.5f, InputX = 0f, InputY = 0f, InputSpeed = 0.35f;
 
     [SerializeField]
-    GameObject RightFoot, LeftFoot, Hips, BalanceGUI;
+    GameObject RightFoot, LeftFoot, Hips, BalanceGUI, KeyPrefab;
 
     [SerializeField]
     RectTransform PlayerImage;
@@ -22,7 +22,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     [SerializeField]
     PlayerInputManager InputController;
 
-    bool Moving = true;
+    bool Moving = false;
 
     float BodyLength = 0.6f, LegsLength = 1.66f;
 
@@ -33,7 +33,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     private void Start()
     {
         RandomizeDirection();
-
+        ResetBar();
         ImageInitialPosition = PlayerImage.localPosition;
 
     }
@@ -54,6 +54,19 @@ public class PlayerBalanceManager : MonoBehaviour {
         Hips.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
         NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "Fallen");
+        ShootKeys(MatchManager.getInstance().keyCollected[gameObject.layer - 9]);
+        MatchManager.getInstance().keyCollected[gameObject.layer - 9] = 0;
+    }
+
+    void ShootKeys(int NumberOfKeys)
+    {
+        float X = Random.Range(0f, 1f), Y = Random.Range(0f, 1f);
+        if (X > 0f) X += 1f; else X -= 1f;
+        if (Y > 0f) Y += 1f; else Y -= 1f;
+        Vector3 ShootDirection = new Vector3(X, 2f, Y);
+
+        GameObject newKey = Instantiate(KeyPrefab, new Vector3 (transform.position.x + X, 0f, transform.position.z + Y), Quaternion.identity);
+
     }
 
     public void Fall(Vector3 direction)
@@ -161,12 +174,8 @@ public class PlayerBalanceManager : MonoBehaviour {
                     transform.position = InitialPosition;
 
                 }
-
-
-                // Debug.DrawLine(InitialPosition, InitialPosition + PositionModifier, Color.red);
             }
         }
-
     }
 
     public void SetMoving(bool ToSet)
@@ -186,10 +195,6 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     public void MoveBodyCenter(char Right, char Left, char Up, char Down)
     {
-        /*if (Right == 'T') RightTimer = TimerChanger; 
-        if (Left == 'T') LeftTimer = TimerChanger;
-        if (Down == 'T') DownTimer = TimerChanger;
-        if (Up == 'T') UpTimer = TimerChanger;*/
         if (Right == 'T') RightTimer = TimerChanger;
         if (Left == 'T') LeftTimer = TimerChanger;
         if (Down == 'T') DownTimer = TimerChanger;

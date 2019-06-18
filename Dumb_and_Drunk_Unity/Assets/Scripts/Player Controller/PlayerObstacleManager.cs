@@ -24,11 +24,11 @@ public class PlayerObstacleManager : MonoBehaviour {
     {
         if (!BalanceManager.HasFallen())
         {
+            ResetRigidbodiesVelocity();
             Vector3 PushDirection = BalanceManager.transform.position - TaxiPosition;
             PushDirection = PushDirection.normalized;
             PushDirection.y = 1f;
-            BalanceManager.Fall(PushDirection * 100f);
-            ResetRigidbodiesVelocity();
+            BalanceManager.Fall(PushDirection * 250f);
 
         }
     }
@@ -37,11 +37,11 @@ public class PlayerObstacleManager : MonoBehaviour {
     {
         if (!BalanceManager.HasFallen())
         {
+            ResetRigidbodiesVelocity();
             Vector3 PushDirection = BalanceManager.transform.position - GrannyPosition;
             PushDirection = PushDirection.normalized;
             PushDirection.y = 0f;
-            BalanceManager.Fall(PushDirection * 50f);
-            ResetRigidbodiesVelocity();
+            BalanceManager.Fall(PushDirection * 150f);
 
         }
 
@@ -51,11 +51,11 @@ public class PlayerObstacleManager : MonoBehaviour {
     {
         if (!BalanceManager.HasFallen())
         {
+            ResetRigidbodiesVelocity();
             Vector3 PushDirection = BalanceManager.transform.position - SignPosition;
             PushDirection = PushDirection.normalized;
             PushDirection.y = 0.5f;
-            BalanceManager.Fall(PushDirection * 150f);
-            ResetRigidbodiesVelocity();
+            BalanceManager.Fall(PushDirection * 300f);
 
         }
 
@@ -65,11 +65,11 @@ public class PlayerObstacleManager : MonoBehaviour {
     {
         if (!BalanceManager.HasFallen())
         {
+            ResetRigidbodiesVelocity();
             Vector3 PushDirection = BalanceManager.transform.position - MovingCartPosition;
             PushDirection.y = 0.5f;
             PushDirection = PushDirection.normalized;
-            BalanceManager.Fall(PushDirection * 75f);
-            ResetRigidbodiesVelocity();
+            BalanceManager.Fall(PushDirection * 300f);
 
         }
     }
