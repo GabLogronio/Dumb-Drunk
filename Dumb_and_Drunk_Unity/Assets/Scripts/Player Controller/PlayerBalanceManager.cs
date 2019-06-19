@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerBalanceManager : MonoBehaviour {
 
-    bool Blocked = true;
-
     // Random Wander parameters
-    float MinChangeTime = 2f, MaxChangeTime = 5f,
-      DeltaX = 0f, DeltaY = 0f, X = 0f, Y = 0f, CurrentChangeTime = 0f;
+    float MinChangeTime = 2f, MaxChangeTime = 5f, Delta = 0f, CurrentRandom = 0f;
+    // Input parameters
+    float RightTimer = 0f, LeftTimer = 0f, TimerChanger = 1.5f, CurrentInput = 0f, InputSpeed = 0.35f;
 
-    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 1.5f, InputX = 0f, InputY = 0f, InputSpeed = 0.35f;
+    float CurrentBalance = 0f;
 
     [SerializeField]
     GameObject RightFoot, LeftFoot, Hips, BalanceGUI, KeyPrefab;
@@ -22,11 +21,11 @@ public class PlayerBalanceManager : MonoBehaviour {
     [SerializeField]
     PlayerInputManager InputController;
 
-    bool Moving = true;
+    bool RandomMoving = true, BlockedBar = false;
 
     float BodyLength = 0.6f, LegsLength = 1.66f;
 
-    Vector3 PositionModifier = Vector3.zero, InitialPosition = Vector3.zero, ImageInitialPosition = Vector3.zero;
+    Vector3 InitialPosition = Vector3.zero, ImageInitialPosition = Vector3.zero;
 
     bool Fallen = false;
 
@@ -58,21 +57,25 @@ public class PlayerBalanceManager : MonoBehaviour {
         MatchManager.getInstance().keyCollected[gameObject.layer - 9] = 0;
     }
 
-    void ShootKeys(int NumberOfKeys)
-    {
-        float X = Random.Range(0f, 1f), Y = Random.Range(0f, 1f);
-        if (X > 0f) X += 1f; else X -= 1f;
-        if (Y > 0f) Y += 1f; else Y -= 1f;
-        Vector3 ShootDirection = new Vector3(X, 2f, Y);
-
-        GameObject newKey = Instantiate(KeyPrefab, new Vector3 (transform.position.x + X, 0f, transform.position.z + Y), Quaternion.identity);
-
-    }
-
     public void Fall(Vector3 direction)
     {
         Fall();
         Hips.GetComponent<Rigidbody>().velocity = direction;
+
+    }
+
+    void ShootKeys(int NumberOfKeys)
+    {
+        for (int i = 0; i < NumberOfKeys; i++)
+        {
+            float X = Random.Range(0f, 1f), Y = Random.Range(0f, 1f);
+            if (X > 0f) X += 1f; else X -= 1f;
+            if (Y > 0f) Y += 1f; else Y -= 1f;
+            Vector3 ShootDirection = new Vector3(X, 2f, Y);
+
+            GameObject newKey = Instantiate(KeyPrefab, new Vector3(transform.position.x + X, 2f, transform.position.z + Y), Quaternion.identity);
+
+        }
     }
 
     public void RecoverFromFall()
@@ -84,16 +87,13 @@ public class PlayerBalanceManager : MonoBehaviour {
 
         InputController.SetCanAttach(true);
         InputController.BlockControls(false);
+        ResetBar();
         BlockBar(true, 5f);
 
         BalanceGUI.SetActive(true);
 
         Hips.GetComponent<SpringJoint>().spring = 1000f;
         //Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
-
-        //transform.localPosition = new Vector3(0f, LegsLength + BodyLength, 0f);
-        ResetBar();
-
 
         NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
 
@@ -105,8 +105,10 @@ public class PlayerBalanceManager : MonoBehaviour {
         InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
         transform.position = InitialPosition;
 
-        PositionModifier = Vector3.zero;
-        RightTimer = 0f; LeftTimer = 0f; UpTimer = 0f; DownTimer = 0f;
+        CurrentRandom = 0f;
+        CurrentBalance = 0f;
+        CurrentInput = 0f;
+        RightTimer = 0f; LeftTimer = 0f;
     }
 
     public bool HasFallen()
@@ -116,80 +118,67 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     public void BlockBar(bool ToSet)
     {
-        Blocked = ToSet;
+        BlockedBar = ToSet;
     }
 
     public void BlockBar(bool ToSet, float Timer)
     {
-        Blocked = ToSet;
+        BlockedBar = ToSet;
         Invoke("UnlockBar", Timer);
     }
 
     void UnlockBar()
     {
-        Blocked = false;
+        BlockedBar = false;
     }
 
     void Update()
     {
-        PlayerImage.localPosition = ImageInitialPosition;
-
         if (!Fallen)
         {
             UpdateTimers();
-
             // Initial position based on the feet
             float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
             InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
 
-            if (!float.IsNaN(Height) && !float.IsNaN(PositionModifier.x) && !float.IsNaN(PositionModifier.y) && !float.IsNaN(PositionModifier.z) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
+            if (!float.IsNaN(Height) && !float.IsNaN(CurrentBalance) && transform.position.y > RightFoot.transform.position.y && transform.position.y > LeftFoot.transform.position.y)
             {
-                if(!Blocked)
+                if(BlockedBar)
                 {
-                    if (Moving)
-                    {
-                        X += DeltaX * Time.deltaTime;
-                        Y += DeltaY * Time.deltaTime;
-
-                        InputX = (RightTimer - LeftTimer) / TimerChanger * InputSpeed * Time.deltaTime;
-                        InputY = (UpTimer - DownTimer) / TimerChanger * InputSpeed * Time.deltaTime;
-
-                        //DebugText.instance.Set("RT: " + RightTimer + ", LT: " + LeftTimer + ", UT: " + UpTimer + ", DT: " + DownTimer + " - ");
-                        //DebugText.instance.Set("Input X: " + InputX + ", Input Y: " + InputY + ", UT: " + " - ");
-
-
-                    }
-
-                    PositionModifier += new Vector3(X, 0f, Y);
-                    PositionModifier += Vector3.right * InputX + Vector3.forward * InputY;
-
-                    transform.position = InitialPosition + PositionModifier;
-                    PlayerImage.localPosition = ImageInitialPosition + new Vector3(X, Y, 0f) / 0.75f * 80f;
-
-                    if (PositionModifier.magnitude > 0.75f) Fall();
-
+                    transform.position = InitialPosition;
+                    PlayerImage.localPosition = ImageInitialPosition;
                 }
                 else
                 {
-                    transform.position = InitialPosition;
+                    if (RandomMoving) CurrentRandom += Delta * Time.deltaTime;
+                    else CurrentRandom = 0f;
 
+                    CurrentInput = (RightTimer - LeftTimer) / TimerChanger * InputSpeed * Time.deltaTime;
+
+                    CurrentBalance += (CurrentRandom + CurrentInput);
+
+                    transform.position = InitialPosition + transform.right * CurrentBalance;
+
+                    PlayerImage.localPosition = ImageInitialPosition + new Vector3( CurrentBalance / 0.75f * 80f, 0f, 0f);
+
+                    // DebugText.instance.Set("Balance: " + CurrentBalance);
+
+                    if (CurrentBalance > 0.75f || CurrentBalance < -0.75) Fall();
                 }
             }
         }
     }
 
-    public void SetMoving(bool ToSet)
+    public void SetRandomMoving(bool ToSet)
     {
         ResetBar();
-        Moving = ToSet;
+        RandomMoving = ToSet;
     }
 
     void UpdateTimers()
     {
         if (RightTimer > 0f) RightTimer -= Time.deltaTime;
         if (LeftTimer > 0f) LeftTimer -= Time.deltaTime;
-        if (UpTimer > 0f) UpTimer -= Time.deltaTime;
-        if (DownTimer > 0f) DownTimer -= Time.deltaTime;
 
     }
 
@@ -197,18 +186,15 @@ public class PlayerBalanceManager : MonoBehaviour {
     {
         if (Right == 'T') RightTimer = TimerChanger;
         if (Left == 'T') LeftTimer = TimerChanger;
-        if (Down == 'T') DownTimer = TimerChanger;
-        if (Up == 'T') UpTimer = TimerChanger;
 
     }
 
     void RandomizeDirection()
     {
-        float NewX = Random.Range(-0.001f, 0.001f), NewY = Random.Range(-0.001f, 0.001f);
-        CurrentChangeTime = Random.Range(MinChangeTime, MaxChangeTime);
+        float NewRandom = Random.Range(-0.01f, 0.01f);
+        float CurrentChangeTime = Random.Range(MinChangeTime, MaxChangeTime);
 
-        DeltaX = (NewX - X) / CurrentChangeTime;
-        DeltaY = (NewY - Y) / CurrentChangeTime;
+        Delta = (NewRandom - CurrentRandom) / CurrentChangeTime;
 
         Invoke("RandomizeDirection", CurrentChangeTime);
     }
