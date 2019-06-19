@@ -14,14 +14,14 @@ public class MatchManager : MonoBehaviour
     private bool isFirstScene = false;
     private bool isMatchmakingScene = false;
     private int lastPicked = 0;
-    private float timer = 0f, FirstSceneDuration = 65.0f, MatchMakingSceneDuration = 5f;
+    private float timer = 0f, FirstSceneDuration = 300.0f, MatchMakingSceneDuration = 5f;
     public GameObject gameCanvas, teamCanvas, loadingCanvas, victoryCanvas;
     private Vector3[] spawnPointsFirstScene = new Vector3[4];
     private Vector3[] spawnPointsSecondScene = new Vector3[4];
     public GameObject[] PlayersGameObjects = new GameObject[4];
     private Vector3[] teamsFacesPos = new Vector3[4];
     private int maxPoints = 4;
-    private int maxPlayers = 2;
+    private int maxPlayers = 4;
     public Text CounterText, CountdownText, ScoreText;
     private int teamWin = 1;
 
@@ -117,7 +117,7 @@ public class MatchManager : MonoBehaviour
 
     public void LoadMatchmakingScene()
     {
-        gameCanvas.SetActive(false);
+        //gameCanvas.SetActive(false);
         teamCanvas.SetActive(true);
         for (int i = 0; i < maxPlayers; i++)
         {
@@ -170,7 +170,7 @@ public class MatchManager : MonoBehaviour
     private void LoadFirstGameScene()
     {
         teamCanvas.SetActive(false);
-        gameCanvas.SetActive(true);
+        //gameCanvas.SetActive(true);
         loadingCanvas.SetActive(true);
         CounterText.text = "";
         timer = FirstSceneDuration;
@@ -187,8 +187,8 @@ public class MatchManager : MonoBehaviour
             PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().SetMoving(true);
             PlayersGameObjects[i].transform.position += move;
             PlayersGameObjects[i].transform.rotation = Quaternion.identity;
-            gameCanvas.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
-            gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(false);
+            //gameCanvas.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
+            //gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(false);
         }
     }
 
@@ -257,8 +257,8 @@ public class MatchManager : MonoBehaviour
             if (teams[i] != win)
             {
                 NetworkServerManager.getInstance().ServerStringMessageSender(i, "Scene2");
-                gameCanvas.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
-                gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(true);
+                //gameCanvas.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
+                //gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(true);
                 NetworkServerManager.getInstance().SwitchInputManager(i, false);
 
                 if (PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
@@ -272,7 +272,7 @@ public class MatchManager : MonoBehaviour
                 if (scores[i] < maxPoints - 1)
                 {
                     scores[i]++;
-                    gameCanvas.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[i].ToString();
+                    //gameCanvas.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[i].ToString();
                 }
                 if (PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
                 Vector3 move = spawnPointsSecondScene[winner] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
@@ -286,10 +286,10 @@ public class MatchManager : MonoBehaviour
     public void scene2End(int layer)
     {
         scores[layer - 9]++;
-        gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
+        //gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
         if (scores[layer - 9] >= maxPoints)
         {
-            gameCanvas.SetActive(false);
+            //gameCanvas.SetActive(false);
             teamCanvas.SetActive(false);
             loadingCanvas.SetActive(false);
             victoryCanvas.SetActive(true);

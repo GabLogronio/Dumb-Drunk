@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerBalanceManager : MonoBehaviour {
 
-    bool Blocked = true;
+    bool Blocked = false;
 
     // Random Wander parameters
     float MinChangeTime = 2f, MaxChangeTime = 5f,
@@ -146,8 +146,10 @@ public class PlayerBalanceManager : MonoBehaviour {
             {
                 if(!Blocked)
                 {
+                    if (gameObject.layer == 9) DebugText.instance.Set("Non bloccato");
                     if (Moving)
                     {
+                        if (gameObject.layer == 9) DebugText.instance.Add("mi muovo");
                         X += DeltaX * Time.deltaTime;
                         Y += DeltaY * Time.deltaTime;
 
@@ -171,6 +173,7 @@ public class PlayerBalanceManager : MonoBehaviour {
                 }
                 else
                 {
+                    if (gameObject.layer == 9) DebugText.instance.Set("Bloccato");
                     transform.position = InitialPosition;
 
                 }
