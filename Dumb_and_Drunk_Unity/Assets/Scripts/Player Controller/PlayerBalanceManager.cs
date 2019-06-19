@@ -80,8 +80,6 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     public void RecoverFromFall()
     {
-        Fallen = false;
-
         //SOUND GOT UP
         //AkSoundEngine.PostEvent("GotUp", gameObject);
 
@@ -93,9 +91,18 @@ public class PlayerBalanceManager : MonoBehaviour {
         BalanceGUI.SetActive(true);
 
         Hips.GetComponent<SpringJoint>().spring = 1000f;
-        //Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
+        Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
 
         NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
+
+    }
+
+    public void ResetForScene2()
+    {
+        ResetBar();
+        Hips.GetComponent<SpringJoint>().spring = 1000f;
+        Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
+        BlockBar(true);
 
     }
 
@@ -104,7 +111,9 @@ public class PlayerBalanceManager : MonoBehaviour {
         float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
         InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
         transform.position = InitialPosition;
+        PlayerImage.localPosition = ImageInitialPosition;
 
+        Fallen = false;
         CurrentRandom = 0f;
         CurrentBalance = 0f;
         CurrentInput = 0f;
