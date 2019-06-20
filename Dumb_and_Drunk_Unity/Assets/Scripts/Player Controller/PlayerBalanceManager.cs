@@ -23,7 +23,7 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     bool RandomMoving = true, BlockedBar = false;
 
-    float BodyLength = 0.6f, LegsLength = 1.66f;
+    float BodyLength = 0.6f, LegsLength = 1.66f, SpringForce = 1000f;
 
     Vector3 InitialPosition = Vector3.zero, ImageInitialPosition = Vector3.zero;
 
@@ -33,7 +33,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     {
         RandomizeDirection();
         ResetBar();
-        ImageInitialPosition = PlayerImage.localPosition;
+        ImageInitialPosition = new Vector3(0, 40f, 0);
 
     }
 
@@ -80,8 +80,6 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     public void RecoverFromFall()
     {
-        Fallen = false;
-
         //SOUND GOT UP
         //AkSoundEngine.PostEvent("GotUp", gameObject);
 
@@ -93,18 +91,30 @@ public class PlayerBalanceManager : MonoBehaviour {
         BalanceGUI.SetActive(true);
 
         Hips.GetComponent<SpringJoint>().spring = 1000f;
-        //Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
+        Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 100f);
 
         NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
+
+    }
+
+    public void ResetForScene2()
+    {
+        ResetBar();
+        Hips.GetComponent<SpringJoint>().spring = 1000f;
+        Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 100f);
+        BlockBar(true);
 
     }
 
     void ResetBar()
     {
         float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
+        if(float.IsNaN(Height)) Height = 2.25f;
         InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
         transform.position = InitialPosition;
+        PlayerImage.localPosition = ImageInitialPosition;
 
+        Fallen = false;
         CurrentRandom = 0f;
         CurrentBalance = 0f;
         CurrentInput = 0f;
@@ -167,6 +177,9 @@ public class PlayerBalanceManager : MonoBehaviour {
                 }
             }
         }
+        if (Input.GetKeyDown(KeyCode.Z)) Fall();
+        if (Input.GetKeyDown(KeyCode.X)) RecoverFromFall();
+
     }
 
     public void SetRandomMoving(bool ToSet)
