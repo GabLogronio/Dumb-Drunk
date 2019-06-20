@@ -14,7 +14,7 @@ public class BeggarObstacle : MonoBehaviour
     [SerializeField]
     LayerMask PlayersLayers;
 
-    float MaxDistance = 12f, TimeToStop = 5f, Cooldown = 20f, RotationSpeed = 4f, MovementSpeed = 7f;
+    float MaxDistance = 12f, TimeToStop = 10f, Cooldown = 20f, RotationSpeed = 4f, MovementSpeed = 7f;
 
     Collider[] NearbyPlayers = new Collider[1];
 
@@ -33,7 +33,7 @@ public class BeggarObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.OverlapSphereNonAlloc(transform.position, 6f, NearbyPlayers, PlayersLayers) > 0 && targetPlayer == null && !Resetting && !OnCooldown)
+        if (Physics.OverlapSphereNonAlloc(transform.position, MaxDistance, NearbyPlayers, PlayersLayers) > 0 && targetPlayer == null && !Resetting && !OnCooldown)
         {
             anim.SetBool("Activated", true);
             targetPlayer = NearbyPlayers[0].gameObject.GetComponent<PlayerObstacleManager>().GetPlayerController();

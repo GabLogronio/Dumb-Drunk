@@ -38,6 +38,13 @@ public class FootController : LimbController
         if (Moving) KeepMoving();
     }
 
+    public override bool Release()
+    {
+        base.Release();
+        rb.AddForce(Vector3.down * StepForce / 10f, ForceMode.Impulse);
+        return true;
+    }
+
     void KeepMoving()
     {
         rb.velocity = Vector3.zero;
@@ -88,7 +95,7 @@ public class FootController : LimbController
 
     private void OnCollisionExit(Collision coll)
     {
-        if (Joint == null && coll.gameObject.layer == 11)
+        if (Joint == null && coll.gameObject.layer == 14)
         {
             PlayerController.SetFoot(RightFoot, false);
         }
