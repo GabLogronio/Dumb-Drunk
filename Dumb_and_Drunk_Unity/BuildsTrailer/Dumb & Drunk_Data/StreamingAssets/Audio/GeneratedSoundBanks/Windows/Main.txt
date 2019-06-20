@@ -1,0 +1,131 @@
+Event	ID	Name			Wwise Object Path	Notes
+	56469244	EffortGotUp			\Default Work Unit\Player\EffortGotUp	
+	604601532	OpenGate			\Default Work Unit\Menu\OpenGate	
+	835900482	GrannyImpact			\Default Work Unit\Obstacles\GrannyImpact	
+	1182830809	Clock			\Default Work Unit\Menu\Clock	
+	1183067778	Key			\Default Work Unit\Items\Key	
+	1376241711	LaughPlayer			\Default Work Unit\Player\LaughPlayer	
+	1434238328	ObstacleNYC			\Default Work Unit\Obstacles\ObstacleNYC	
+	1792625333	YouFell			\Default Work Unit\Audience\YouFell	
+	1924693583	DontFell			\Default Work Unit\Audience\DontFell	
+	1972544759	Recover			\Default Work Unit\Audience\Recover	
+	2161169877	TrampImpact			\Default Work Unit\Obstacles\TrampImpact	
+	2385628198	Footsteps			\Default Work Unit\Player\Footsteps	
+	2467796810	PickupGood			\Default Work Unit\Items\PickupGood	
+	2786096973	ClickGeneral			\Default Work Unit\Menu\ClickGeneral	
+	2895182762	HiccupPlayer			\Default Work Unit\Player\HiccupPlayer	
+	3416598638	ThrowingUp			\Default Work Unit\Audience\ThrowingUp	
+	3625187538	GotUp			\Default Work Unit\Audience\GotUp	
+	3806475592	RecoverFalling			\Default Work Unit\Audience\RecoverFalling	
+	4152723942	PickupBad			\Default Work Unit\Items\PickupBad	
+	4178581820	AlmostFall			\Default Work Unit\Audience\AlmostFall	
+	4200414363	TrampVoice			\Default Work Unit\Obstacles\TrampVoice	
+	4250186138	GrannyVoice			\Default Work Unit\Obstacles\GrannyVoice	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	580044789	NYCObstacles			\Default Work Unit\NYCObstacles	
+	1069431850	Player			\Default Work Unit\Player	
+	2215982805	Keys			\Default Work Unit\Keys	
+	2467796810	PickupGood			\Default Work Unit\PickupGood	
+
+Switch	ID	Name	Switch Group			Notes
+	2837639985	Taxi	NYCObstacles			
+	2861812420	HotDogStand	NYCObstacles			
+	3378138780	FireExtinguisher	NYCObstacles			
+	4291420489	Mascotte	NYCObstacles			
+	2188949036	Player2	Player			
+	2188949039	Player1	Player			
+	2215982740	Key2	Keys			
+	2215982741	Key3	Keys			
+	2215982743	Key1	Keys			
+	750153097	PickupClock	PickupGood			
+	1153742465	PickupBottle	PickupGood			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	429005311	Balance			\Default Work Unit\Balance	
+	1473240539	GettinUp			\Default Work Unit\GettinUp	
+	2654366170	Time			\Default Work Unit\Time	
+	3627326343	NauseaBar			\Default Work Unit\NauseaBar	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	28942165	OOh	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\YouFell_8755CB2D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Audience\OOh		12632
+	96959732	Curse_7	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Curse_7_59F931A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerCurse\Player1\Curse_7		10341
+	104165049	Tramp_8	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_8_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampImpact\Tramp_8		23575
+	130612687	RecoverFalling_CH01	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Fiu_Ch1_1_B96B5A7A.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\RecoverFalling\RecoverFalling_CH01		9854
+	135664658	ObstaclesSound	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\ObstaclesSound_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\ObstaclesSound		39805
+	157019339	AlmostFall_Ch2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Fiu_Ch1_1_3F892B84.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerAlmostFall\AlmostFall_Ch2		12463
+	164167876	footsteps_6	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\footsteps_6_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FootstepsConcrete\footsteps_6		2570
+	181736778	footsteps	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\footsteps_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FootstepsConcrete\footsteps		3238
+	182254629	Curse_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Curse_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerCurse\Player2\Curse_2		23370
+	204609570	Burp_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Burp_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\Rutto\Burp_2		31425
+	209375091	Fiu_Ch2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Fiu_Ch1_520A5A8D.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerFiu\Fiu_Ch2		7136
+	211389766	Scared_Vomit	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Scared_Vomit_0A75173B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Audience\Scared_Vomit		17997
+	223913338	Tramp_6	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_6_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampVoice\Tramp_6		15591
+	232316548	Clock	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Clock_B851C1A4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PickupGood\Clock		9289
+	232832004	Laugh_Ch1_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Laugh_Ch1_2_A280A4E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerJoking\Player1\Laugh_Ch1_2		44245
+	265492385	RecoverFalling_CH02	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Fiu_Ch1_1_2F46CDCA.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\RecoverFalling\RecoverFalling_CH02		9220
+	272857995	Hiccup_Ch1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Hiccup_Ch1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerHiccup\Player1\Hiccup_Ch1		6791
+	274690615	Granny_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Granny_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\GrannyImpact\Granny_2		17127
+	284872717	HotDogStand	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\HotDogStand_E0CCABE3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\NYC\HotDogStand		38627
+	290557654	Laugh_Ch2_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Laugh_Ch2_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerJoking\Player2\Laugh_Ch2_2		47211
+	304504432	ColpoSnare	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\ColpoSnare_EE2F0849.wem		\Actor-Mixer Hierarchy\Default Work Unit\Drums\ColpoSnare		22951
+	310794147	Effort_4	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Effort_4_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerEffort\Player2\Effort_4		28275
+	334687449	Tramp_5	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_5_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampVoice\Tramp_5		12626
+	335832914	Curse_5	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Curse_5_0A7D733E.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerCurse\Player1\Curse_5		11211
+	343542237	AlmostFall_Ch1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Fiu_Ch1_1_CC3DFDBA.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerAlmostFall\AlmostFall_Ch1		12592
+	357899457	Granny_Urla	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Granny_Urla_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\GrannyImpact\Granny_Urla		13967
+	362961108	Hiccup_Ch2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Hiccup_Ch2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerHiccup\Player2\Hiccup_Ch2		3702
+	369889709	Curse_3	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Curse_3_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerCurse\Player2\Curse_3		20391
+	374324675	Sforzo_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Sforzo_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerEffort\Player2\Sforzo_2		28373
+	382656433	footsteps_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\footsteps_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FootstepsConcrete\footsteps_2		3451
+	413197766	Tramp_9	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_9_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampVoice\Tramp_9		9771
+	417967410	Tramp_4	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_4_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampVoice\Tramp_4		17293
+	425205033	Hiccup_Ch2_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Hiccup_Ch2_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerHiccup\Player2\Hiccup_Ch2_2		7221
+	445602743	Clock	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Clock_25F41BAB.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Clock		12766
+	456557852	Sforzo_3	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Sforzo_3_9E4F638A.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerEffort\Player1\Sforzo_3		16930
+	477769225	Granny_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Granny_1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\GrannyImpact\Granny_1		24431
+	487529196	Laugh_Ch2_3	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Laugh_Ch2_3_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerJoking\Player2\Laugh_Ch2_3		53527
+	505141620	Sforzo_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Sforzo_1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerEffort\Player2\Sforzo_1		19914
+	508497090	Burp	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Burp_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\Rutto\Burp		34602
+	509949906	Curse_4	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Curse_4_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerCurse\Player2\Curse_4		19990
+	538274823	footsteps_5	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\footsteps_5_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FootstepsConcrete\footsteps_5		4401
+	543150492	Granny	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Granny_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\GrannyVoice\Granny		3776
+	562568776	Effort_6	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Effort_6_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerEffort\Player1\Effort_6		18023
+	566374208	Granny_5	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Granny_5_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\GrannyImpact\Granny_5		16793
+	571173559	Curse_6	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Curse_6_7D770327.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerCurse\Player1\Curse_6		9674
+	593539557	Tramp	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampImpact\Tramp		36641
+	608437538	footsteps_3	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\footsteps_3_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FootstepsConcrete\footsteps_3		3780
+	612149151	Applause	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Applause_68CB7D71.wem		\Actor-Mixer Hierarchy\Default Work Unit\Audience\Applause		65304
+	612338546	Effort_5	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Effort_5_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerEffort\Player2\Effort_5		32443
+	627948039	ClickGeneral	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Click_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\ClickGeneral		7108
+	652411690	Key_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Key_1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\Key\Key_1		16251
+	671247547	Impact_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Impact_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\Impact_2		7279
+	689640965	Tramp_10	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_10_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampVoice\Tramp_10		11556
+	696275444	Taxi	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\CarAlarm_97CA3EFC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\NYC\Taxi		3551
+	698718400	Granny_Catarro_3	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Granny_Catarro_3_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\GrannyVoice\Granny_Catarro_3		15620
+	709700715	Mascotte	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Sin_2D2794C8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\NYC\Mascotte		20524
+	731324688	Hiccup_Ch1_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Hiccup_Ch1_1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerHiccup\Player1\Hiccup_Ch1_1		4553
+	735785502	Tramp_3	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_3_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampVoice\Tramp_3		12659
+	757348022	BadPickup	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\BadPickup_3E41C384.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PickupBad\BadPickup		20321
+	780332214	Granny_Catarro_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Granny_Catarro_1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\GrannyVoice\Granny_Catarro_1		17251
+	781950369	Rullo	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Rullo_CAF4E2B9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Drums\Rullo		19232
+	796574648	Key_3	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Key_3_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\Key\Key_3		20457
+	808545498	Drums_Hit	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Drums_Hit_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Drums\Drums_Hit		49638
+	829905624	Laugh_Ch1_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Laugh_Ch1_1_D42FC43D.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerJoking\Player1\Laugh_Ch1_1		37381
+	863262581	FireExtinguisher	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\FireExtinguisher_EB6E06C9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\NYC\FireExtinguisher		26304
+	864468099	Hiccup_Ch1_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Hiccup_Ch1_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerHiccup\Player1\Hiccup_Ch1_2		6320
+	866379450	Hiccup_Ch2_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Hiccup_Ch2_1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerHiccup\Player2\Hiccup_Ch2_1		4882
+	870945440	Effort_7	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Effort_7_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerEffort\Player1\Effort_7		21267
+	886519548	footsteps_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\footsteps_1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FootstepsConcrete\footsteps_1		3292
+	899444848	PickupBottle	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\PickupBottle_E27D45CF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\PickupGood\PickupBottle		16674
+	904874729	warrior_shout	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\warrior_shout_D87EEDE5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Audience\warrior_shout		10236
+	911634278	Effort_8	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Effort_8_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerEffort\Player1\Effort_8		20894
+	928144525	Curse_1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Curse_1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerCurse\Player2\Curse_1		23447
+	958468104	Curse_8	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Curse_8_24C3CE0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerCurse\Player1\Curse_8		12534
+	976870030	Granny_Catarro_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Granny_Catarro_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\GrannyVoice\Granny_Catarro_2		21610
+	987733596	Tramp_11	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Tramp_11_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Obstacles\VoiceNYCObstacles\TrampImpact\Tramp_11		4532
+	999571786	Laugh_Ch1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Laugh_Ch1_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerJoking\Player1\Laugh_Ch1		16301
+	1007150554	footsteps_4	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\footsteps_4_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FootstepsConcrete\footsteps_4		4702
+	1008375067	Key_2	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Key_2_E031F3DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\Key\Key_2		20817
+	1057766771	Fiu_Ch1	Y:\Desktop\Dumb_and_Drunk_Unity\Dumb&Drunk\.cache\Windows\SFX\Fiu_Ch1_6523A84B.wem		\Actor-Mixer Hierarchy\Default Work Unit\VoicesPlayer\PlayerFiu\Fiu_Ch1		7438
+
