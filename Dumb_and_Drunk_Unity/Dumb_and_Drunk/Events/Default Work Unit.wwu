@@ -240,6 +240,78 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="Fountain" ID="{8554CA06-7427-4788-88FA-17C996699CE3}" ShortID="979201454">
+							<ChildrenList>
+								<Event Name="Fountain_Loop" ID="{DD1756A1-E798-408C-9C66-6F38CAB0FC0B}">
+									<ChildrenList>
+										<Action Name="" ID="{F3A95363-6921-496F-88FD-0FDD7E5C3701}" ShortID="243355755">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Fountain_Loop" ID="{D8B35011-C643-497F-8CEE-9FC467FADBAC}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Bottle" ID="{5DBF2D1A-50B7-4D76-A8DB-1D7BEC871B38}" ShortID="392599512">
+							<ChildrenList>
+								<Event Name="Bottle_Break" ID="{5FFF6F2C-BC9D-40D3-9343-A046A1CA4515}">
+									<ChildrenList>
+										<Action Name="" ID="{0AEE292E-1C6D-494B-AD02-50F74E7EBA02}" ShortID="343034641">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Bottle" ID="{25B004B3-6019-4406-84B4-37DFFE8D3828}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Event Name="ObstacleNYC2" ID="{4674CAAA-801D-4266-BCEE-7EB788593349}">
+							<ChildrenList>
+								<Action Name="" ID="{B0578C10-8E05-49F8-9EFC-C75D80F8D09C}" ShortID="415935505">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="NYC2" ID="{FC5C627B-A231-41F1-B0CF-A031D8945A09}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{B8BB96DF-80ED-46F3-A31C-8787C9AE8DF3}" ShortID="695596633">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Delay" Type="Real64" Value="1.2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ObstaclesSound" ID="{AF698189-CB0E-4E57-9AD0-7865B2910F5E}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{727891D8-F457-4B32-B38B-FA1054E5271B}" ShortID="97687786">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Delay" Type="Real64" Value="2.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PlayerCurse" ID="{500F76F0-98C7-473C-A28C-1A8D0D389EBE}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Menu" ID="{E85D93E5-C213-4ADB-ADB4-C648B92E1925}" ShortID="453147870">
@@ -274,13 +346,27 @@
 						</Event>
 						<Event Name="OpenGate" ID="{97931A37-3D5D-4768-BE3A-BE0068CFE5E7}">
 							<ChildrenList>
-								<Action Name="" ID="{4F0B0364-87A7-4F98-996A-29BD9F0B2632}" ShortID="208764980">
+								<Action Name="" ID="{401AB426-B997-4E45-A918-5E3D9E29FB33}" ShortID="393574515">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Key_2" ID="{AF50948B-C452-4816-B4CF-2AA251348BC5}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+											<ObjectRef Name="Gate" ID="{57370964-F498-4194-B77D-8215244D1287}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Waiting" ID="{5C84E715-3781-46DB-AABC-4C605FF3E6F4}">
+							<ChildrenList>
+								<Action Name="" ID="{628A61F4-1918-478B-AE50-D232243B5372}" ShortID="1066710791">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="NotificaAttesa" ID="{9669CB7C-4E39-4FFC-9746-0C394BF14624}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -341,16 +427,6 @@
 						</Event>
 						<Event Name="ThrowingUp" ID="{6BD35955-35F7-4595-85C7-2993C7D03F7F}">
 							<ChildrenList>
-								<Action Name="" ID="{3EF3FA78-A3FB-4D8F-9732-392AD1D791EE}" ShortID="207246821">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="BadPickup" ID="{D6C122AC-C491-47C3-81B3-ADE10392DDE5}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{19DCB24F-219F-495F-A9FF-A22BA37CF19C}" ShortID="137369919">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
@@ -490,6 +566,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="PickupGood" ID="{BBC18FCC-FC5F-401F-8BA6-08A610CD442E}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="DropKey" ID="{2CAE685A-B674-4CA4-9539-84C7B378BA56}">
+							<ChildrenList>
+								<Action Name="" ID="{42ED80DC-BFDD-4C63-BC34-24E897086117}" ShortID="150798795">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DropKey" ID="{5C88DF45-0739-4273-B116-C7376709DAF1}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

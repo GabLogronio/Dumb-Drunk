@@ -22,14 +22,22 @@
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="AlmostFall" ID="{A3022717-E49F-4575-9800-E8E155D080CA}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Footsteps" ID="{0F2C696C-15EF-4E28-95EC-B4E5011C807A}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="DontFell" ID="{D3F34697-80CA-4BBC-9335-CF506BACD71C}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
+							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="GettinUp" ID="{29E6C6F8-031E-408C-AA29-72014F4174F5}"/>
-							<Value>2.66</Value>
+							<Value>1.03</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SS_Air_Turbulence" ID="{EDA87B19-73AA-40A0-9F19-2073606DB710}"/>
@@ -61,7 +69,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="NauseaBar" ID="{00FAD11E-D14A-4722-AFFB-BDAA1A6D5FE5}"/>
-							<Value>56.0962913363717</Value>
+							<Value>35</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SS_Air_Size" ID="{1329EBEF-A193-472E-A38C-64668B494879}"/>
@@ -94,16 +102,14 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="NYC" ID="{DF332F2D-1216-4194-8E13-00893E8F6261}"/>
-						<CurrentStateRef Name="End" ID="{86BF3A7D-78AC-4D63-B443-318CE23AF28E}"/>
+						<CurrentStateRef Name="Play" ID="{73F67566-561D-4281-92E1-C5FC2DE91580}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="StraightEdge" ID="{16525951-B301-44A1-8E3A-95D879B1F590}"/>
 						<CurrentSwitchRef Name="PickupBottle" ID="{C23265AB-E2BC-42F4-810B-8FD37C2969A9}"/>
 						<CurrentSwitchRef Name="Key1" ID="{F955F5F5-B600-4AF6-A520-169C7DDBC6DE}"/>
 						<CurrentSwitchRef Name="ForHipHop" ID="{B2C0110A-5889-45FD-BFA8-09EFF3DA5116}"/>
-						<CurrentSwitchRef Name="ArtistDancing" ID="{63367F64-A8A3-43DA-AF4A-BF9A0F8EFF1D}"/>
 						<CurrentSwitchRef Name="Player1" ID="{379832DA-77BC-4E02-B41B-F183F95C741C}"/>
-						<CurrentSwitchRef Name="SpoiledFood" ID="{CB4E55AA-6676-43A4-8FE7-76D1D00F1D7D}"/>
 						<CurrentSwitchRef Name="Mascotte" ID="{6498FEFF-ADB0-4976-A2CB-EB38405C46A0}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
@@ -157,11 +163,11 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Balance" ID="{A9875F3B-0210-4141-ADCF-1E97C95CE96A}"/>
-							<Value>-5</Value>
+							<Value>-96</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Playback_Rate" ID="{28387EE3-C13A-4316-B9C3-DB5C521624AF}"/>
-							<Value>1</Value>
+							<Value>0.1</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SS_Air_Month" ID="{09E2B445-C4A3-447F-B3CA-818A1D925EF7}"/>
@@ -221,10 +227,7 @@
 						<CurrentSwitchRef Name="PickupBottle" ID="{C23265AB-E2BC-42F4-810B-8FD37C2969A9}"/>
 						<CurrentSwitchRef Name="Key1" ID="{F955F5F5-B600-4AF6-A520-169C7DDBC6DE}"/>
 						<CurrentSwitchRef Name="ForHipHop" ID="{B2C0110A-5889-45FD-BFA8-09EFF3DA5116}"/>
-						<CurrentSwitchRef Name="ArtistDancing" ID="{63367F64-A8A3-43DA-AF4A-BF9A0F8EFF1D}"/>
 						<CurrentSwitchRef Name="Player1" ID="{379832DA-77BC-4E02-B41B-F183F95C741C}"/>
-						<CurrentSwitchRef Name="SpoiledFood" ID="{CB4E55AA-6676-43A4-8FE7-76D1D00F1D7D}"/>
-						<CurrentSwitchRef Name="FireExtinguisher" ID="{333460C3-F0DD-429D-BAE4-414DA659417F}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Pickup&amp;Menu" ID="{648522D5-7EA2-41E9-8C33-62684FA976D7}">
@@ -232,6 +235,10 @@
 						<Module>
 							<ObjectRef Name="Music" ID="{CF7B5A77-E3E3-4333-8158-68378542A20C}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
 							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="OpenGate" ID="{97931A37-3D5D-4768-BE3A-BE0068CFE5E7}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
+							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="OpenGate" ID="{97931A37-3D5D-4768-BE3A-BE0068CFE5E7}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
@@ -257,7 +264,7 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="GettinUp" ID="{29E6C6F8-031E-408C-AA29-72014F4174F5}"/>
-							<Value>50</Value>
+							<Value>0.82</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SS_Air_Turbulence" ID="{EDA87B19-73AA-40A0-9F19-2073606DB710}"/>
@@ -328,11 +335,10 @@
 						<CurrentSwitchRef Name="StraightEdge" ID="{16525951-B301-44A1-8E3A-95D879B1F590}"/>
 						<CurrentSwitchRef Name="PickupClock" ID="{005FC3CD-9036-45F2-8890-52B0CBE52BC0}"/>
 						<CurrentSwitchRef Name="Key3" ID="{907FAC6F-A2D6-43F3-B86A-8B4724D45BA7}"/>
+						<CurrentSwitchRef Name="Bottle" ID="{A950130A-E207-4432-B788-7960E58A58A6}"/>
 						<CurrentSwitchRef Name="ForHipHop" ID="{B2C0110A-5889-45FD-BFA8-09EFF3DA5116}"/>
-						<CurrentSwitchRef Name="ArtistDancing" ID="{63367F64-A8A3-43DA-AF4A-BF9A0F8EFF1D}"/>
-						<CurrentSwitchRef Name="Player1" ID="{379832DA-77BC-4E02-B41B-F183F95C741C}"/>
-						<CurrentSwitchRef Name="SpoiledFood" ID="{CB4E55AA-6676-43A4-8FE7-76D1D00F1D7D}"/>
-						<CurrentSwitchRef Name="FireExtinguisher" ID="{333460C3-F0DD-429D-BAE4-414DA659417F}"/>
+						<CurrentSwitchRef Name="Player2" ID="{8AF46EA0-65A7-4622-8F40-C21987525830}"/>
+						<CurrentSwitchRef Name="Taxi" ID="{66E8A3EC-B40D-4DD4-8A52-5E365525CDA9}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Obstacles" ID="{D7F621CA-7EC7-4413-9923-A9D8DD1A2A54}">
@@ -437,10 +443,8 @@
 						<CurrentSwitchRef Name="PickupClock" ID="{005FC3CD-9036-45F2-8890-52B0CBE52BC0}"/>
 						<CurrentSwitchRef Name="Key3" ID="{907FAC6F-A2D6-43F3-B86A-8B4724D45BA7}"/>
 						<CurrentSwitchRef Name="ForHipHop" ID="{B2C0110A-5889-45FD-BFA8-09EFF3DA5116}"/>
-						<CurrentSwitchRef Name="ArtistDancing" ID="{63367F64-A8A3-43DA-AF4A-BF9A0F8EFF1D}"/>
-						<CurrentSwitchRef Name="Player2" ID="{8AF46EA0-65A7-4622-8F40-C21987525830}"/>
-						<CurrentSwitchRef Name="SpoiledFood" ID="{CB4E55AA-6676-43A4-8FE7-76D1D00F1D7D}"/>
-						<CurrentSwitchRef Name="FireExtinguisher" ID="{333460C3-F0DD-429D-BAE4-414DA659417F}"/>
+						<CurrentSwitchRef Name="Player1" ID="{379832DA-77BC-4E02-B41B-F183F95C741C}"/>
+						<CurrentSwitchRef Name="Taxi" ID="{66E8A3EC-B40D-4DD4-8A52-5E365525CDA9}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

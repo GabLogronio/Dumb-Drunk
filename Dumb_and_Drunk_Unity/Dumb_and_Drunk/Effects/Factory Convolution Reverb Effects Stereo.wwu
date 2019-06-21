@@ -24,7 +24,9 @@ IR Pre-delay: 4ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Rooms\AK Hamburg Echo Chamber.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="185425062"/>
+										<File Platform="Linux" ID="185425062"/>
+										<File Platform="Mac" ID="185425062"/>
+										<File Platform="Windows" ID="185425062"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -114,7 +116,9 @@ IR Pre-delay: 4ms
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Rooms\AK Hamburg Echo Chamber.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="538281099"/>
+										<File Platform="Linux" ID="538281099"/>
+										<File Platform="Mac" ID="538281099"/>
+										<File Platform="Windows" ID="538281099"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -649,7 +653,9 @@ IR Pre-delay: 5ms
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Rooms\AK Hamburg Karl Schneider Halle.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="237532661"/>
+										<File Platform="Linux" ID="237532661"/>
+										<File Platform="Mac" ID="237532661"/>
+										<File Platform="Windows" ID="237532661"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -739,7 +745,9 @@ IR Pre-delay: 7ms
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Large Spaces\AK Stair Way Hall.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="304471121"/>
+										<File Platform="Linux" ID="304471121"/>
+										<File Platform="Mac" ID="304471121"/>
+										<File Platform="Windows" ID="304471121"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -1240,7 +1248,9 @@ IR Pre-delay: 5ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Rooms\AK Hamburg Karl Schneider Halle.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="634339356"/>
+										<File Platform="Linux" ID="634339356"/>
+										<File Platform="Mac" ID="634339356"/>
+										<File Platform="Windows" ID="634339356"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -1509,7 +1519,9 @@ IR Pre-delay: 7ms
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Large Spaces\AK Stair Way Hall.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="539027192"/>
+										<File Platform="Linux" ID="539027192"/>
+										<File Platform="Mac" ID="539027192"/>
+										<File Platform="Windows" ID="539027192"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -2023,7 +2035,9 @@ IR Pre-delay: 7ms
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Large Spaces\AK Stair Way Hall.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="46969464"/>
+										<File Platform="Linux" ID="46969464"/>
+										<File Platform="Mac" ID="46969464"/>
+										<File Platform="Windows" ID="46969464"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -2117,7 +2131,9 @@ IR Pre-delay: 20ms
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Churches\AK St-Katharinen.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="99990636"/>
+										<File Platform="Linux" ID="99990636"/>
+										<File Platform="Mac" ID="99990636"/>
+										<File Platform="Windows" ID="99990636"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -2205,7 +2221,9 @@ IR Pre-delay: 20ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Churches\AK St-Katharinen.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="101091315"/>
+										<File Platform="Linux" ID="101091315"/>
+										<File Platform="Mac" ID="101091315"/>
+										<File Platform="Windows" ID="101091315"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -2377,7 +2395,9 @@ IR Pre-delay: 20ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Churches\AK St-Katharinen.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="8071170"/>
+										<File Platform="Linux" ID="8071170"/>
+										<File Platform="Mac" ID="8071170"/>
+										<File Platform="Windows" ID="8071170"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -2466,7 +2486,9 @@ IR Pre-delay: 5ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Churches\AK Medium Church.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="1035327887"/>
+										<File Platform="Linux" ID="1035327887"/>
+										<File Platform="Mac" ID="1035327887"/>
+										<File Platform="Windows" ID="1035327887"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -2555,7 +2577,9 @@ IR Pre-delay: 5ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Churches\AK Medium Church.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="659069708"/>
+										<File Platform="Linux" ID="659069708"/>
+										<File Platform="Mac" ID="659069708"/>
+										<File Platform="Windows" ID="659069708"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -2813,7 +2837,9 @@ IR Pre-delay: 6ms</Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Halls\AK Berlin Teldex.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="733994131"/>
+										<File Platform="Linux" ID="733994131"/>
+										<File Platform="Mac" ID="733994131"/>
+										<File Platform="Windows" ID="733994131"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -3083,7 +3109,9 @@ IR Pre-delay: 6ms</Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Halls\AK Berlin Teldex.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="162018684"/>
+										<File Platform="Linux" ID="162018684"/>
+										<File Platform="Mac" ID="162018684"/>
+										<File Platform="Windows" ID="162018684"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -3187,7 +3215,9 @@ IR Pre-delay: 10ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Halls\AK Brasilien Halle.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="609174261"/>
+										<File Platform="Linux" ID="609174261"/>
+										<File Platform="Mac" ID="609174261"/>
+										<File Platform="Windows" ID="609174261"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -3283,7 +3313,9 @@ IR Pre-delay: 6ms</Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Halls\AK Berlin Teldex.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="654850748"/>
+										<File Platform="Linux" ID="654850748"/>
+										<File Platform="Mac" ID="654850748"/>
+										<File Platform="Windows" ID="654850748"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -3455,7 +3487,9 @@ IR Pre-delay: 10ms
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Halls\AK Brasilien Halle.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="417701481"/>
+										<File Platform="Linux" ID="417701481"/>
+										<File Platform="Mac" ID="417701481"/>
+										<File Platform="Windows" ID="417701481"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -3635,7 +3669,9 @@ IR Pre-delay: 2ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Exteriors\AK Hamburg Harburger See.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="612082618"/>
+										<File Platform="Linux" ID="612082618"/>
+										<File Platform="Mac" ID="612082618"/>
+										<File Platform="Windows" ID="612082618"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -3723,7 +3759,9 @@ IR Pre-delay: 8ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Exteriors\AK Hamburg Stadtpark 01.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="1051291759"/>
+										<File Platform="Linux" ID="1051291759"/>
+										<File Platform="Mac" ID="1051291759"/>
+										<File Platform="Windows" ID="1051291759"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -3906,7 +3944,9 @@ IR Pre-delay: 8ms
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Exteriors\AK Hamburg Stadtpark 01.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="152920738"/>
+										<File Platform="Linux" ID="152920738"/>
+										<File Platform="Mac" ID="152920738"/>
+										<File Platform="Windows" ID="152920738"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>
@@ -4176,7 +4216,9 @@ IR Pre-delay: 2ms </Comment>
 										<Property Name="DataFileName" Type="string" Value="AK_Factory_IR\Exteriors\AK Hamburg Harburger See.wav"/>
 									</PropertyList>
 									<ConvertedFileIDList>
-										<File ID="926581161"/>
+										<File Platform="Linux" ID="926581161"/>
+										<File Platform="Mac" ID="926581161"/>
+										<File Platform="Windows" ID="926581161"/>
 									</ConvertedFileIDList>
 								</PluginMediaSource>
 							</ChildrenList>

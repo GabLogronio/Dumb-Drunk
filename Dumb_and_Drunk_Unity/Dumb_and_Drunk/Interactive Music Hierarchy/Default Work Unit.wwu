@@ -2845,28 +2845,40 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Snare_Rit+HipHop.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1047484972"/>
+														<File Platform="Android" ID="96030908"/>
+														<File Platform="Linux" ID="1047484972"/>
+														<File Platform="Mac" ID="1047484972"/>
+														<File Platform="Windows" ID="1047484972"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Rit+HipHop_05" ID="{D126020E-7551-4D61-8F3C-E1D7AF07E481}" ShortID="665257344">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Snare_Rit+HipHop.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1047484972"/>
+														<File Platform="Android" ID="96030908"/>
+														<File Platform="Linux" ID="1047484972"/>
+														<File Platform="Mac" ID="1047484972"/>
+														<File Platform="Windows" ID="1047484972"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Rit+HipHop_07" ID="{98998D06-5999-4448-99AA-61FA2F6D176D}" ShortID="233372414">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Snare_Rit+HipHop.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1047484972"/>
+														<File Platform="Android" ID="96030908"/>
+														<File Platform="Linux" ID="1047484972"/>
+														<File Platform="Mac" ID="1047484972"/>
+														<File Platform="Windows" ID="1047484972"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Rit+HipHop_08" ID="{5138053C-E4DD-4198-8D4E-76725A5987CF}" ShortID="739120070">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Snare_Rit+HipHop.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1047484972"/>
+														<File Platform="Android" ID="96030908"/>
+														<File Platform="Linux" ID="1047484972"/>
+														<File Platform="Mac" ID="1047484972"/>
+														<File Platform="Windows" ID="1047484972"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3246,14 +3258,19 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\BassSlap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="786114912"/>
+														<File Platform="Linux" ID="786114912"/>
+														<File Platform="Mac" ID="786114912"/>
+														<File Platform="Windows" ID="786114912"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="BassSlap_Rit_01" ID="{61A67247-93ED-419C-AD7B-5A924A6D1C7E}" ShortID="61457061">
 													<Language>SFX</Language>
 													<AudioFile>Rit\BassSlap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="786114912"/>
+														<File Platform="Android" ID="12176353"/>
+														<File Platform="Linux" ID="786114912"/>
+														<File Platform="Mac" ID="786114912"/>
+														<File Platform="Windows" ID="786114912"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3305,14 +3322,20 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Clap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="172370246"/>
+														<File Platform="Android" ID="157223790"/>
+														<File Platform="Linux" ID="172370246"/>
+														<File Platform="Mac" ID="172370246"/>
+														<File Platform="Windows" ID="172370246"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Clap_Rit_01" ID="{A7930012-5B8E-4FDC-9AE6-F4DDA6283978}" ShortID="297190631">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Clap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="172370246"/>
+														<File Platform="Android" ID="157223790"/>
+														<File Platform="Linux" ID="172370246"/>
+														<File Platform="Mac" ID="172370246"/>
+														<File Platform="Windows" ID="172370246"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3364,14 +3387,19 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\HHNoise_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="402787741"/>
+														<File Platform="Linux" ID="402787741"/>
+														<File Platform="Mac" ID="402787741"/>
+														<File Platform="Windows" ID="402787741"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="HHNoise_Rit_01" ID="{CF4068F6-A7DB-4CDA-9663-C30FD92128D7}" ShortID="817607728">
 													<Language>SFX</Language>
 													<AudioFile>Rit\HHNoise_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="402787741"/>
+														<File Platform="Android" ID="501077639"/>
+														<File Platform="Linux" ID="402787741"/>
+														<File Platform="Mac" ID="402787741"/>
+														<File Platform="Windows" ID="402787741"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3424,14 +3452,20 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\HH_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="387458113"/>
+														<File Platform="Android" ID="126800752"/>
+														<File Platform="Linux" ID="387458113"/>
+														<File Platform="Mac" ID="387458113"/>
+														<File Platform="Windows" ID="387458113"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="HH_Rit_01" ID="{5E933062-9099-4738-99DE-E87AAE0657F8}" ShortID="595156821">
 													<Language>SFX</Language>
 													<AudioFile>Rit\HH_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="387458113"/>
+														<File Platform="Android" ID="126800752"/>
+														<File Platform="Linux" ID="387458113"/>
+														<File Platform="Mac" ID="387458113"/>
+														<File Platform="Windows" ID="387458113"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3484,14 +3518,19 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Kick_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="953085001"/>
+														<File Platform="Linux" ID="953085001"/>
+														<File Platform="Mac" ID="953085001"/>
+														<File Platform="Windows" ID="953085001"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Kick_Rit_01" ID="{DFA8E98E-A3E8-4876-B0E3-10B4C21ACFA6}" ShortID="615102141">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Kick_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="953085001"/>
+														<File Platform="Android" ID="461806000"/>
+														<File Platform="Linux" ID="953085001"/>
+														<File Platform="Mac" ID="953085001"/>
+														<File Platform="Windows" ID="953085001"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3545,28 +3584,39 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Moog_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="488442550"/>
+														<File Platform="Android" ID="133925563"/>
+														<File Platform="Linux" ID="488442550"/>
+														<File Platform="Mac" ID="488442550"/>
+														<File Platform="Windows" ID="488442550"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Moog_Rit_01" ID="{1E46A6C6-83A3-4576-A0A2-1985BE0C2575}" ShortID="528483862">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Moog_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="488442550"/>
+														<File Platform="Android" ID="133925563"/>
+														<File Platform="Linux" ID="488442550"/>
+														<File Platform="Mac" ID="488442550"/>
+														<File Platform="Windows" ID="488442550"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Moog_Rit_02" ID="{E101ACB6-5C77-4646-A7FA-FE031C3CFD1B}" ShortID="816275873">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Moog_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="488442550"/>
+														<File Platform="Android" ID="133925563"/>
+														<File Platform="Linux" ID="488442550"/>
+														<File Platform="Mac" ID="488442550"/>
+														<File Platform="Windows" ID="488442550"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Moog_Rit_03" ID="{19C42E35-11EF-40FA-A4C4-D93201CD1FB5}" ShortID="133925563">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Moog_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="488442550"/>
+														<File Platform="Linux" ID="488442550"/>
+														<File Platform="Mac" ID="488442550"/>
+														<File Platform="Windows" ID="488442550"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3885,14 +3935,19 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Rhodes_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="531903965"/>
+														<File Platform="Android" ID="307043377"/>
+														<File Platform="Linux" ID="531903965"/>
+														<File Platform="Mac" ID="531903965"/>
+														<File Platform="Windows" ID="531903965"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Rhodes_Rit_01" ID="{8145FCD7-8E14-4D8C-AEE2-FE10F40E0ACA}" ShortID="307043377">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Rhodes_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="531903965"/>
+														<File Platform="Linux" ID="531903965"/>
+														<File Platform="Mac" ID="531903965"/>
+														<File Platform="Windows" ID="531903965"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3972,7 +4027,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Snare_Rit+HipHop.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1047484972"/>
+														<File Platform="Android" ID="96030908"/>
+														<File Platform="Linux" ID="1047484972"/>
+														<File Platform="Mac" ID="1047484972"/>
+														<File Platform="Windows" ID="1047484972"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -4547,42 +4605,59 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Synth_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="333604651"/>
+														<File Platform="Android" ID="376593616"/>
+														<File Platform="Linux" ID="333604651"/>
+														<File Platform="Mac" ID="333604651"/>
+														<File Platform="Windows" ID="333604651"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Synth_Rit_01" ID="{F68F57BF-0AF8-4E71-8C92-59896AF4CB5F}" ShortID="378690697">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Synth_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="333604651"/>
+														<File Platform="Android" ID="376593616"/>
+														<File Platform="Linux" ID="333604651"/>
+														<File Platform="Mac" ID="333604651"/>
+														<File Platform="Windows" ID="333604651"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Synth_Rit_02" ID="{138AB844-4C0C-4AC2-B13E-42077C405872}" ShortID="376593616">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Synth_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="333604651"/>
+														<File Platform="Linux" ID="333604651"/>
+														<File Platform="Mac" ID="333604651"/>
+														<File Platform="Windows" ID="333604651"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Synth_Rit_03" ID="{AFCC80EF-845F-4C64-9D75-5CF88371A74B}" ShortID="1052037714">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Synth_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="333604651"/>
+														<File Platform="Android" ID="376593616"/>
+														<File Platform="Linux" ID="333604651"/>
+														<File Platform="Mac" ID="333604651"/>
+														<File Platform="Windows" ID="333604651"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Synth_Rit_04" ID="{19D97C5E-4895-45CC-A4DC-5CD2B51E69C7}" ShortID="885483051">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Synth_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="333604651"/>
+														<File Platform="Android" ID="376593616"/>
+														<File Platform="Linux" ID="333604651"/>
+														<File Platform="Mac" ID="333604651"/>
+														<File Platform="Windows" ID="333604651"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Synth_Rit_05" ID="{59673DC4-9B43-4ACD-9972-3F30F36DC910}" ShortID="740755217">
 													<Language>SFX</Language>
 													<AudioFile>Rit\Synth_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="333604651"/>
+														<File Platform="Android" ID="376593616"/>
+														<File Platform="Linux" ID="333604651"/>
+														<File Platform="Mac" ID="333604651"/>
+														<File Platform="Windows" ID="333604651"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -4942,28 +5017,40 @@
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Verse+Stacco_03" ID="{A6FCF640-FAE0-4FB2-8376-722FDD285C1A}" ShortID="410630986">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Verse+Stacco_04" ID="{CE0279F6-3F5C-4752-AAEE-269FDE3B4A87}" ShortID="776808181">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Verse+Stacco_06" ID="{C3C3CE6D-81CB-4473-8C06-782C94B580A5}" ShortID="209618517">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -5452,26 +5539,37 @@
 													<Language>SFX</Language>
 													<AudioFile>Verse\Choir2_Verse.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="389502048"/>
+														<File Platform="Android" ID="268090536"/>
+														<File Platform="Linux" ID="389502048"/>
+														<File Platform="Mac" ID="389502048"/>
+														<File Platform="Windows" ID="389502048"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Choir2_Verse_01" ID="{AC8080F1-0D3A-42B1-8F12-2C97D8C4ED62}" ShortID="467937686">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Choir2_Verse.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="389502048"/>
+														<File Platform="Android" ID="268090536"/>
+														<File Platform="Linux" ID="389502048"/>
+														<File Platform="Mac" ID="389502048"/>
+														<File Platform="Windows" ID="389502048"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Choir2_Verse_02" ID="{DAF2B342-555C-4F65-9B72-70523CEB2576}" ShortID="268090536">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Choir2_Verse.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="389502048"/>
+														<File Platform="Linux" ID="389502048"/>
+														<File Platform="Mac" ID="389502048"/>
+														<File Platform="Windows" ID="389502048"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Choir2_Verse_03" ID="{E87F6F5F-9E72-40F0-84CA-0826FD66FFD8}" ShortID="389502048">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Choir2_Verse.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Android" ID="268090536"/>
+													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
@@ -6250,26 +6348,38 @@
 												<AudioFileSource Name="Snare_Verse+Stacco" ID="{384BF572-A3A0-43FB-96D9-BC15EA765173}" ShortID="701522990">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Android" ID="22921504"/>
+													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Verse+Stacco_01" ID="{60120418-08D1-4F90-873F-AE6307F3029D}" ShortID="570220883">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Verse+Stacco_02" ID="{8B359018-0D9D-4D7C-8C43-9E60771246D0}" ShortID="785283721">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Verse+Stacco_03" ID="{24EAD2E4-33C5-4B63-9DF7-E2268004068C}" ShortID="991639087">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -6856,21 +6966,29 @@
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Verse+Stacco_01" ID="{09928617-2EFE-4C67-B308-B3FB7CD7247F}" ShortID="886163531">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Android" ID="22921504"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 												<AudioFileSource Name="Snare_Verse+Stacco_02" ID="{60E42878-440E-45C9-9A86-1C3169A6AC9F}" ShortID="22921504">
 													<Language>SFX</Language>
 													<AudioFile>Verse\Snare_Verse+Stacco.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="701522990"/>
+														<File Platform="Linux" ID="701522990"/>
+														<File Platform="Mac" ID="701522990"/>
+														<File Platform="Windows" ID="701522990"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -7481,7 +7599,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Clap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="172370246"/>
+														<File Platform="Android" ID="157223790"/>
+														<File Platform="Linux" ID="172370246"/>
+														<File Platform="Mac" ID="172370246"/>
+														<File Platform="Windows" ID="172370246"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -7589,7 +7710,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\BassSlap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="786114912"/>
+														<File Platform="Android" ID="12176353"/>
+														<File Platform="Linux" ID="786114912"/>
+														<File Platform="Mac" ID="786114912"/>
+														<File Platform="Windows" ID="786114912"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -7725,7 +7849,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\BassSlap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="786114912"/>
+														<File Platform="Android" ID="12176353"/>
+														<File Platform="Linux" ID="786114912"/>
+														<File Platform="Mac" ID="786114912"/>
+														<File Platform="Windows" ID="786114912"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -7770,7 +7897,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Clap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="172370246"/>
+														<File Platform="Android" ID="157223790"/>
+														<File Platform="Linux" ID="172370246"/>
+														<File Platform="Mac" ID="172370246"/>
+														<File Platform="Windows" ID="172370246"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -7816,7 +7946,9 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\HH_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="387458113"/>
+														<File Platform="Linux" ID="387458113"/>
+														<File Platform="Mac" ID="387458113"/>
+														<File Platform="Windows" ID="387458113"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -7863,7 +7995,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Kick_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="953085001"/>
+														<File Platform="Android" ID="461806000"/>
+														<File Platform="Linux" ID="953085001"/>
+														<File Platform="Mac" ID="953085001"/>
+														<File Platform="Windows" ID="953085001"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8397,7 +8532,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Moog_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="488442550"/>
+														<File Platform="Android" ID="133925563"/>
+														<File Platform="Linux" ID="488442550"/>
+														<File Platform="Mac" ID="488442550"/>
+														<File Platform="Windows" ID="488442550"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8444,7 +8582,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Rhodes_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="531903965"/>
+														<File Platform="Android" ID="307043377"/>
+														<File Platform="Linux" ID="531903965"/>
+														<File Platform="Mac" ID="531903965"/>
+														<File Platform="Windows" ID="531903965"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8549,7 +8690,9 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Snare_Rit+HipHop.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1047484972"/>
+														<File Platform="Linux" ID="1047484972"/>
+														<File Platform="Mac" ID="1047484972"/>
+														<File Platform="Windows" ID="1047484972"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8679,7 +8822,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\BassSlap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="786114912"/>
+														<File Platform="Android" ID="12176353"/>
+														<File Platform="Linux" ID="786114912"/>
+														<File Platform="Mac" ID="786114912"/>
+														<File Platform="Windows" ID="786114912"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8731,7 +8877,9 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Clap_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="172370246"/>
+														<File Platform="Linux" ID="172370246"/>
+														<File Platform="Mac" ID="172370246"/>
+														<File Platform="Windows" ID="172370246"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8783,7 +8931,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\HHNoise_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="402787741"/>
+														<File Platform="Android" ID="501077639"/>
+														<File Platform="Linux" ID="402787741"/>
+														<File Platform="Mac" ID="402787741"/>
+														<File Platform="Windows" ID="402787741"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8836,7 +8987,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\HH_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="387458113"/>
+														<File Platform="Android" ID="126800752"/>
+														<File Platform="Linux" ID="387458113"/>
+														<File Platform="Mac" ID="387458113"/>
+														<File Platform="Windows" ID="387458113"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8889,7 +9043,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Kick_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="953085001"/>
+														<File Platform="Android" ID="461806000"/>
+														<File Platform="Linux" ID="953085001"/>
+														<File Platform="Mac" ID="953085001"/>
+														<File Platform="Windows" ID="953085001"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -8942,7 +9099,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Moog_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="488442550"/>
+														<File Platform="Android" ID="133925563"/>
+														<File Platform="Linux" ID="488442550"/>
+														<File Platform="Mac" ID="488442550"/>
+														<File Platform="Windows" ID="488442550"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -9114,7 +9274,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Rhodes_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="531903965"/>
+														<File Platform="Android" ID="307043377"/>
+														<File Platform="Linux" ID="531903965"/>
+														<File Platform="Mac" ID="531903965"/>
+														<File Platform="Windows" ID="531903965"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -9159,7 +9322,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Snare_Rit+HipHop.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1047484972"/>
+														<File Platform="Android" ID="96030908"/>
+														<File Platform="Linux" ID="1047484972"/>
+														<File Platform="Mac" ID="1047484972"/>
+														<File Platform="Windows" ID="1047484972"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -9329,7 +9495,10 @@
 													<Language>SFX</Language>
 													<AudioFile>Rit\Synth_Rit.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="333604651"/>
+														<File Platform="Android" ID="376593616"/>
+														<File Platform="Linux" ID="333604651"/>
+														<File Platform="Mac" ID="333604651"/>
+														<File Platform="Windows" ID="333604651"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -9843,6 +10012,9 @@
 												<AudioFileSource Name="BassSlap_74" ID="{7A56E278-F54D-497A-87D4-332B2B7A87AC}" ShortID="583092572">
 													<Language>SFX</Language>
 													<AudioFile>74\BassSlap_74.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Android" ID="421107827"/>
+													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
@@ -10096,7 +10268,9 @@
 													<Language>SFX</Language>
 													<AudioFile>74\Clap_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="815986329"/>
+														<File Platform="Linux" ID="815986329"/>
+														<File Platform="Mac" ID="815986329"/>
+														<File Platform="Windows" ID="815986329"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -10201,6 +10375,9 @@
 												<AudioFileSource Name="HHNoise_74" ID="{01BE227C-4B53-4848-AFC5-8C8DA60892BB}" ShortID="1000448165">
 													<Language>SFX</Language>
 													<AudioFile>74\HHNoise_74.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Android" ID="650882792"/>
+													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
@@ -10406,6 +10583,9 @@
 												<AudioFileSource Name="Kick_74" ID="{725EFECC-13D2-4645-90A0-D5E4A7B4B4E7}" ShortID="918824902">
 													<Language>SFX</Language>
 													<AudioFile>74\Kick_74.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Android" ID="715578982"/>
+													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
@@ -10613,6 +10793,9 @@
 												<AudioFileSource Name="Rhodes_74" ID="{54EDFE8C-9A5B-48CD-9276-CD78C201E310}" ShortID="1032061444">
 													<Language>SFX</Language>
 													<AudioFile>74\Rhodes_74.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Android" ID="106268923"/>
+													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
@@ -10790,6 +10973,9 @@
 												<AudioFileSource Name="Sin_74" ID="{7D52FABB-7FE5-4710-93CF-DFDAFF4A59A0}" ShortID="320557144">
 													<Language>SFX</Language>
 													<AudioFile>74\Sin_74.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Android" ID="122204272"/>
+													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
@@ -11031,6 +11217,9 @@
 												<AudioFileSource Name="Snare_74" ID="{2973B10D-3CE5-449B-92E4-E5797D4405C7}" ShortID="1065191719">
 													<Language>SFX</Language>
 													<AudioFile>74\Snare_74.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Android" ID="215174070"/>
+													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
@@ -11447,7 +11636,9 @@
 													<Language>SFX</Language>
 													<AudioFile>74\BassSlap_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="583092572"/>
+														<File Platform="Linux" ID="583092572"/>
+														<File Platform="Mac" ID="583092572"/>
+														<File Platform="Windows" ID="583092572"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -11551,7 +11742,10 @@
 													<Language>SFX</Language>
 													<AudioFile>74\Clap_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="815986329"/>
+														<File Platform="Android" ID="47087146"/>
+														<File Platform="Linux" ID="815986329"/>
+														<File Platform="Mac" ID="815986329"/>
+														<File Platform="Windows" ID="815986329"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -11686,7 +11880,10 @@
 													<Language>SFX</Language>
 													<AudioFile>74\BassSlap_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="583092572"/>
+														<File Platform="Android" ID="421107827"/>
+														<File Platform="Linux" ID="583092572"/>
+														<File Platform="Mac" ID="583092572"/>
+														<File Platform="Windows" ID="583092572"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -11783,7 +11980,10 @@
 													<Language>SFX</Language>
 													<AudioFile>74\Clap_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="815986329"/>
+														<File Platform="Android" ID="47087146"/>
+														<File Platform="Linux" ID="815986329"/>
+														<File Platform="Mac" ID="815986329"/>
+														<File Platform="Windows" ID="815986329"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -11889,7 +12089,9 @@
 													<Language>SFX</Language>
 													<AudioFile>74\HHNoise_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1000448165"/>
+														<File Platform="Linux" ID="1000448165"/>
+														<File Platform="Mac" ID="1000448165"/>
+														<File Platform="Windows" ID="1000448165"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -12099,7 +12301,9 @@
 													<Language>SFX</Language>
 													<AudioFile>74\Kick_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="918824902"/>
+														<File Platform="Linux" ID="918824902"/>
+														<File Platform="Mac" ID="918824902"/>
+														<File Platform="Windows" ID="918824902"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -12311,7 +12515,9 @@
 													<Language>SFX</Language>
 													<AudioFile>74\Rhodes_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1032061444"/>
+														<File Platform="Linux" ID="1032061444"/>
+														<File Platform="Mac" ID="1032061444"/>
+														<File Platform="Windows" ID="1032061444"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -12417,7 +12623,9 @@
 													<Language>SFX</Language>
 													<AudioFile>74\Sin_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="320557144"/>
+														<File Platform="Linux" ID="320557144"/>
+														<File Platform="Mac" ID="320557144"/>
+														<File Platform="Windows" ID="320557144"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -12589,7 +12797,9 @@
 													<Language>SFX</Language>
 													<AudioFile>74\Snare_74.wav</AudioFile>
 													<ConvertedFileIDList>
-														<File ID="1065191719"/>
+														<File Platform="Linux" ID="1065191719"/>
+														<File Platform="Mac" ID="1065191719"/>
+														<File Platform="Windows" ID="1065191719"/>
 													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>

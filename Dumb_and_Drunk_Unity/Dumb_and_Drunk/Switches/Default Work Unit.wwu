@@ -49,19 +49,8 @@
 						</Curve>
 					</SwitchOnRTPC>
 				</SwitchGroup>
-				<SwitchGroup Name="ParisObstacles" ID="{0955B63C-1D21-49BD-94DD-C56C5F72C577}">
-					<ChildrenList>
-						<Switch Name="ArtistDancing" ID="{63367F64-A8A3-43DA-AF4A-BF9A0F8EFF1D}"/>
-						<Switch Name="BikeBaguette" ID="{CE9B0EF8-63B1-416E-9B22-A0AEC2A7547F}"/>
-						<Switch Name="BaguetteBox" ID="{79358E27-88E1-455E-9905-36796B188D25}"/>
-						<Switch Name="FlowerVase" ID="{F551EC14-BAE8-4962-A61D-9ED2669D210C}"/>
-						<Switch Name="Mime" ID="{D31E7517-4754-4D00-BB58-36463CC4B2D5}"/>
-						<Switch Name="PeopleTalking" ID="{1E8D3B4D-D4EB-4549-B8DD-FC4BC64C6338}"/>
-					</ChildrenList>
-				</SwitchGroup>
 				<SwitchGroup Name="NYCObstacles" ID="{8304948B-A610-4EA2-A953-D77478FAE03D}">
 					<ChildrenList>
-						<Switch Name="HotDogStand" ID="{2ECE9B4F-AEF1-4BD7-917F-399B93FA9A1F}"/>
 						<Switch Name="Mascotte" ID="{6498FEFF-ADB0-4976-A2CB-EB38405C46A0}"/>
 						<Switch Name="Taxi" ID="{66E8A3EC-B40D-4DD4-8A52-5E365525CDA9}"/>
 						<Switch Name="FireExtinguisher" ID="{333460C3-F0DD-429D-BAE4-414DA659417F}"/>
@@ -94,9 +83,11 @@
 						<Switch Name="Key3" ID="{907FAC6F-A2D6-43F3-B86A-8B4724D45BA7}"/>
 					</ChildrenList>
 				</SwitchGroup>
-				<SwitchGroup Name="PickupBad" ID="{F0DE8B65-34C5-4A97-9439-66FC42BDEE1F}">
+				<SwitchGroup Name="NYCObstacles2" ID="{07A8EA81-A889-45DF-9B73-F58BD09C2C07}">
 					<ChildrenList>
-						<Switch Name="SpoiledFood" ID="{CB4E55AA-6676-43A4-8FE7-76D1D00F1D7D}"/>
+						<Switch Name="Fountain" ID="{6A5427D5-3233-4C68-B633-CE6D4E884A92}"/>
+						<Switch Name="Bottle" ID="{A950130A-E207-4432-B788-7960E58A58A6}"/>
+						<Switch Name="ShoppingCart" ID="{71EDFB46-DF58-46DE-818F-112665132169}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>

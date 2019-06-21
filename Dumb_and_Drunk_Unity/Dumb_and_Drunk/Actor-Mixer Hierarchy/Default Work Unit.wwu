@@ -57,7 +57,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-9</Value>
+												<Value>-11</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -137,7 +137,7 @@
 										<Property Name="LoopCount" Type="int32" Value="10"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>4</Value>
+												<Value>2</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -165,6 +165,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="HotDogStand" ID="{F5143A46-475A-4AD2-A842-DF0948BBB4EF}" ShortID="786722913">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
@@ -190,9 +197,34 @@
 										<ActiveSource Name="HotDogStand" ID="{9F5CCC1C-C8D8-4830-BF50-01D59C1211FA}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="Fountain_Loop" ID="{D8B35011-C643-497F-8CEE-9FC467FADBAC}" ShortID="834641896">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fountain_Loop" ID="{C3150219-09C0-4278-9533-1607C707EBAA}" ShortID="274893222">
+											<Language>SFX</Language>
+											<AudioFile>Fountain_Loop.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Fountain_Loop" ID="{C3150219-09C0-4278-9533-1607C707EBAA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Fountain_Loop" ID="{D8B35011-C643-497F-8CEE-9FC467FADBAC}"/>
+									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="FireExtinguisher" ID="{A4ABBC27-2598-41E7-A956-C1868A631A75}"/>
 									</GroupingBehavior>
@@ -207,12 +239,6 @@
 									</GroupingBehavior>
 								</GroupingBehaviorList>
 								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="HotDogStand" ID="{2ECE9B4F-AEF1-4BD7-917F-399B93FA9A1F}"/>
-										<ItemList>
-											<ItemRef Name="HotDogStand" ID="{F5143A46-475A-4AD2-A842-DF0948BBB4EF}"/>
-										</ItemList>
-									</Grouping>
 									<Grouping>
 										<SwitchRef Name="FireExtinguisher" ID="{333460C3-F0DD-429D-BAE4-414DA659417F}"/>
 										<ItemList>
@@ -229,147 +255,6 @@
 										<SwitchRef Name="Mascotte" ID="{6498FEFF-ADB0-4976-A2CB-EB38405C46A0}"/>
 										<ItemList>
 											<ItemRef Name="Mascotte" ID="{232C343F-E26D-4445-A93E-78632AFE31BB}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
-							</GroupingInfo>
-						</SwitchContainer>
-						<SwitchContainer Name="Paris" ID="{596D2215-2A41-4CF4-B0A3-765D20A54675}" ShortID="417357258">
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-								</Reference>
-								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="PeopleTalking" ID="{1E8D3B4D-D4EB-4549-B8DD-FC4BC64C6338}" WorkUnitID="{27BA899B-FBDC-40F1-96F3-D300A817E26F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-								</Reference>
-								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="ParisObstacles" ID="{0955B63C-1D21-49BD-94DD-C56C5F72C577}" WorkUnitID="{27BA899B-FBDC-40F1-96F3-D300A817E26F}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="Mime" ID="{06C6C126-E0E2-4701-89A4-64843D76B268}" ShortID="966027997">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-									</ReferenceList>
-								</Sound>
-								<Sound Name="ArtistDancing" ID="{AFC91781-C54B-4987-AB73-C845BAF9766D}" ShortID="485297039">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-									</ReferenceList>
-								</Sound>
-								<Sound Name="PeopleTalking" ID="{88B38D41-6561-4090-98D2-5FD760849182}" ShortID="67532251">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-									</ReferenceList>
-								</Sound>
-								<Sound Name="BikeBaguette" ID="{7ED93EF7-5F6C-4A23-8898-0DB2D4CA5FC7}" ShortID="996763420">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-									</ReferenceList>
-								</Sound>
-								<Sound Name="BaguetteBox" ID="{1D73A158-6E02-4AAC-97BB-D36F9C397D47}" ShortID="1007262652">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-									</ReferenceList>
-								</Sound>
-								<Sound Name="FlowerVase" ID="{0E6752AA-F31B-4E8E-9A90-4DEB84EB15E0}" ShortID="97071791">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-									</ReferenceList>
-								</Sound>
-							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="Mime" ID="{06C6C126-E0E2-4701-89A4-64843D76B268}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="PeopleTalking" ID="{88B38D41-6561-4090-98D2-5FD760849182}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="BaguetteBox" ID="{1D73A158-6E02-4AAC-97BB-D36F9C397D47}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="ArtistDancing" ID="{AFC91781-C54B-4987-AB73-C845BAF9766D}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="FlowerVase" ID="{0E6752AA-F31B-4E8E-9A90-4DEB84EB15E0}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="BikeBaguette" ID="{7ED93EF7-5F6C-4A23-8898-0DB2D4CA5FC7}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="FlowerVase" ID="{F551EC14-BAE8-4962-A61D-9ED2669D210C}"/>
-										<ItemList>
-											<ItemRef Name="FlowerVase" ID="{0E6752AA-F31B-4E8E-9A90-4DEB84EB15E0}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Mime" ID="{D31E7517-4754-4D00-BB58-36463CC4B2D5}"/>
-										<ItemList>
-											<ItemRef Name="Mime" ID="{06C6C126-E0E2-4701-89A4-64843D76B268}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="BaguetteBox" ID="{79358E27-88E1-455E-9905-36796B188D25}"/>
-										<ItemList>
-											<ItemRef Name="BaguetteBox" ID="{1D73A158-6E02-4AAC-97BB-D36F9C397D47}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="PeopleTalking" ID="{1E8D3B4D-D4EB-4549-B8DD-FC4BC64C6338}"/>
-										<ItemList>
-											<ItemRef Name="PeopleTalking" ID="{88B38D41-6561-4090-98D2-5FD760849182}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="ArtistDancing" ID="{63367F64-A8A3-43DA-AF4A-BF9A0F8EFF1D}"/>
-										<ItemList>
-											<ItemRef Name="ArtistDancing" ID="{AFC91781-C54B-4987-AB73-C845BAF9766D}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="BikeBaguette" ID="{CE9B0EF8-63B1-416E-9B22-A0AEC2A7547F}"/>
-										<ItemList>
-											<ItemRef Name="BikeBaguette" ID="{7ED93EF7-5F6C-4A23-8898-0DB2D4CA5FC7}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>
@@ -1071,6 +956,702 @@
 								<ActiveSource Name="Impact_2" ID="{78465349-EA5D-4B2B-9031-CE2F32967FB8}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<SwitchContainer Name="NYC2" ID="{FC5C627B-A231-41F1-B0CF-A031D8945A09}" ShortID="466424600">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Bottle" ID="{A950130A-E207-4432-B788-7960E58A58A6}" WorkUnitID="{27BA899B-FBDC-40F1-96F3-D300A817E26F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="NYCObstacles2" ID="{07A8EA81-A889-45DF-9B73-F58BD09C2C07}" WorkUnitID="{27BA899B-FBDC-40F1-96F3-D300A817E26F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Bottle" ID="{25B004B3-6019-4406-84B4-37DFFE8D3828}" ShortID="987232178">
+									<PropertyList>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Bottle_Woosh" ID="{C0C256D4-ACA1-4618-A31C-66CBF327A6B2}" ShortID="573557772">
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<SourcePlugin Name="SoundSeed Air Woosh" ID="{33BC5742-84D3-4F94-912E-A83818930D9A}" ShortID="683467233" PluginName="SoundSeed Air Woosh" CompanyID="0" PluginID="120">
+													<PropertyList>
+														<Property Name="AttenuationRollOff" Type="Real32" Value="1.2"/>
+														<Property Name="MinDistance" Type="Real32" Value="21.8"/>
+														<Property Name="PlaybackRate" Type="Real32" Value="2.2"/>
+														<Property Name="QFactorScale" Type="Real32" Value="1.85"/>
+														<Property Name="Speed" Type="Real32" Value="46"/>
+														<Property Name="SpeedAutomate" Type="bool" Value="True"/>
+														<Property Name="SpeedPointSpeedRandom" Type="Real32" Value="14.2"/>
+														<Property Name="SpeedPointTimeRandom" Type="Real32" Value="0.28"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<PluginData>
+	<WooshData>
+		<CurveList Version="1">
+			<CurveInfo Name="Speed">
+				<Curve Name="" ID="{CE2431B1-43B0-4E6E-9967-6D60563EB71D}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="1"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>0</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>0.0882</XPos>
+							<YPos>100</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>0.5</XPos>
+							<YPos>0</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+		</CurveList>
+		<Path Version="1">
+			<Path2D Name="" ID="{43733229-1D74-4A29-95BA-3B7749B30EB9}">
+				<PropertyList>
+					<Property Name="LinearTime" Type="bool" Value="False"/>
+				</PropertyList>
+				<PointList>
+					<Point>
+						<XPos>0</XPos>
+						<YPos>0</YPos>
+						<Flags>12</Flags>
+						<Time>0</Time>
+					</Point>
+				</PointList>
+			</Path2D>
+		</Path>
+	</WooshData>
+</PluginData>
+													<PluginInnerObjectList>
+														<List Name="Deflectors">
+															<PluginInnerObject Name="" ID="{A5861949-EE94-482D-A405-B4F6D6E0D48D}" PluginName="Deflector" CompanyID="0" PluginID="122">
+																<PropertyList>
+																	<Property Name="Gain" Type="Real32" Value="-4"/>
+																</PropertyList>
+															</PluginInnerObject>
+														</List>
+													</PluginInnerObjectList>
+												</SourcePlugin>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SoundSeed Air Woosh" ID="{33BC5742-84D3-4F94-912E-A83818930D9A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="Bottle_Break" ID="{A3637BB4-CCF0-443B-AF27-0DE02F721334}" ShortID="1022372909">
+											<PropertyList>
+												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{39D1BE03-1735-4404-878A-C338E93E2749}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="50"/>
+																	<Property Name="Min" Type="Real64" Value="-50"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Bottle_Break" ID="{9CAA733D-71E3-46CF-86E8-1CDF67125E06}" ShortID="197451920">
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend0">
+															<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend1">
+															<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Bottle_Break" ID="{B15D3979-E175-4ABA-9B0D-ABBAB25AD635}" ShortID="798761018">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.21437782192523"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.186843055806393"/>
+																<Property Name="TrimEnd" Type="Real64" Value="1.30200108361929"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Bottle_Break.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Bottle_Break" ID="{B15D3979-E175-4ABA-9B0D-ABBAB25AD635}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Bottle_Break_01" ID="{27274B00-97F6-4C15-A55E-67B33530653C}" ShortID="196303659">
+													<PropertyList>
+														<Property Name="Highpass" Type="int16">
+															<ValueList>
+																<Value>33</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>100</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{F95CD34A-03B7-426D-ACBE-5CC6929D6FA8}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="50"/>
+																			<Property Name="Min" Type="Real64" Value="-50"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-4</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend0">
+															<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend1">
+															<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Bottle_Break_01" ID="{1D49E6F9-C289-4E42-9A4B-45D3B1D61A7F}" ShortID="934065885">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.301067967009813"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0205273613870327"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.744116850279936"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Bottle_Break_01.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Bottle_Break_01" ID="{1D49E6F9-C289-4E42-9A4B-45D3B1D61A7F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="Bottle_Woosh" ID="{C0C256D4-ACA1-4618-A31C-66CBF327A6B2}"/>
+										<ItemRef Name="Bottle_Break" ID="{A3637BB4-CCF0-443B-AF27-0DE02F721334}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Fountain" ID="{0869C8FA-090D-4CA0-B805-0B23ABBE0A2F}" ShortID="938505322">
+									<PropertyList>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.7"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="FountainSpruzzo_02" ID="{69A53349-3B6B-4230-B26A-D0394B827417}" ShortID="532291288">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>13</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>450</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{AC2C0BDA-A6DF-45B2-BCB4-4B522B5B4089}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-303"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FountainSpruzzo_02" ID="{309A48FE-8A93-45CB-992F-7D12F02C51D8}" ShortID="779381181">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.721798808018782"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.21302299680934"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>FountainSpruzzo_02.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FountainSpruzzo_02" ID="{309A48FE-8A93-45CB-992F-7D12F02C51D8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="Fountain_Splash" ID="{175053D3-E63D-4383-AAD3-B9B87C833DDB}" ShortID="209933586">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="FountainSplash_01" ID="{1D4AF3B0-B355-4513-9205-80BBBF8DBCFA}" ShortID="141299489">
+													<PropertyList>
+														<Property Name="Highpass" Type="int16">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{1DC20B07-726F-4027-8FF4-A68613BFBDD8}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="11"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{A332F154-0FA2-4202-B557-2A458573FB58}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="76"/>
+																			<Property Name="Min" Type="Real64" Value="-76"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend0">
+															<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend1">
+															<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="FountainSplash_01" ID="{EF6F0229-6F98-4845-9200-4D37ECDC885F}" ShortID="101207038">
+															<PropertyList>
+																<Property Name="FadeInShape" Type="int16" Value="9"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.771570796460177"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
+																<Property Name="TrimBegin" Type="Real64" Value="1.07024336283186"/>
+																<Property Name="TrimEnd" Type="Real64" Value="1.92754424778761"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>FountainSplash_01.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="FountainSplash_01" ID="{EF6F0229-6F98-4845-9200-4D37ECDC885F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="FountainSplash_02" ID="{0012196E-9E0A-43C3-B6F5-9869246BD140}" ShortID="347922684">
+													<PropertyList>
+														<Property Name="Highpass" Type="int16">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{4C29B6EA-8D62-4A1B-B0E8-D7BF98865054}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="9"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-50</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{384FE389-F76A-4521-AEB9-7F6F5EEBE9D5}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="76"/>
+																			<Property Name="Min" Type="Real64" Value="-51"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend0">
+															<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend1">
+															<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="FountainSplash_02" ID="{573E2993-DEFC-4123-BA20-42C60B7AD0E9}" ShortID="1022056341">
+															<PropertyList>
+																<Property Name="FadeInShape" Type="int16" Value="9"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.450084281500211"/>
+																<Property Name="FadeOutShape" Type="int16" Value="0"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.865876427267072"/>
+																<Property Name="TrimEnd" Type="Real64" Value="1.56457869283407"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>FountainSplash_02.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="FountainSplash_02" ID="{573E2993-DEFC-4123-BA20-42C60B7AD0E9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="FountainSplash_03" ID="{7BF48E41-D29B-45D4-98B3-F86B875FD96C}" ShortID="997067265">
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend0">
+															<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+														<Reference Name="UserAuxSend1">
+															<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="FountainSplash_03" ID="{1DBD0AC2-01BB-40AD-9A3D-634A5B63426F}" ShortID="15245606">
+															<PropertyList>
+																<Property Name="FadeInShape" Type="int16" Value="9"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.575774336283186"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.509402654867257"/>
+																<Property Name="TrimEnd" Type="Real64" Value="1.11338495575221"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>FountainSplash_03.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="FountainSplash_03" ID="{1DBD0AC2-01BB-40AD-9A3D-634A5B63426F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="FountainSpruzzo_02" ID="{69A53349-3B6B-4230-B26A-D0394B827417}"/>
+										<ItemRef Name="Fountain_Splash" ID="{175053D3-E63D-4383-AAD3-B9B87C833DDB}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="ShoppingCart" ID="{12D7E9C4-4B82-4CEE-8B0D-D01244F222C8}" ShortID="95273708">
+									<PropertyList>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{EF3E7263-1F15-4686-852F-DA72C529F2E4}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="ShopCart_Crash" ID="{FEEEB4DE-784D-4FCE-8A60-86E218698D1F}" ShortID="933410077">
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ShopCart_Crash" ID="{878E537D-0100-4AB0-941F-B8F2EB1D130C}" ShortID="3402350">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0802387474163707"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.698077102522425"/>
+														<Property Name="FadeOutShape" Type="int16" Value="1"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.417241486565128"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.84549119057652"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>ShopCart_Crash.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="ShopCart_Crash" ID="{878E537D-0100-4AB0-941F-B8F2EB1D130C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="ShopCart_Crash02" ID="{11A01143-87B7-4FF4-B043-C3386F33B7F4}" ShortID="267436074">
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ShopCart_Crash02" ID="{F8E4A875-DF7E-4DFC-9D4A-E8D266500EDF}" ShortID="1072138107">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.202090131037666"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.06557793028717"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.53964712138543"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>ShopCart_Crash02.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="ShopCart_Crash02" ID="{F8E4A875-DF7E-4DFC-9D4A-E8D266500EDF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Bottle" ID="{25B004B3-6019-4406-84B4-37DFFE8D3828}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="ShoppingCart" ID="{12D7E9C4-4B82-4CEE-8B0D-D01244F222C8}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Fountain" ID="{0869C8FA-090D-4CA0-B805-0B23ABBE0A2F}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Bottle" ID="{A950130A-E207-4432-B788-7960E58A58A6}"/>
+										<ItemList>
+											<ItemRef Name="Bottle" ID="{25B004B3-6019-4406-84B4-37DFFE8D3828}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="ShoppingCart" ID="{71EDFB46-DF58-46DE-818F-112665132169}"/>
+										<ItemList>
+											<ItemRef Name="ShoppingCart" ID="{12D7E9C4-4B82-4CEE-8B0D-D01244F222C8}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Fountain" ID="{6A5427D5-3233-4C68-B633-CE6D4E884A92}"/>
+										<ItemList>
+											<ItemRef Name="Fountain" ID="{0869C8FA-090D-4CA0-B805-0B23ABBE0A2F}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="General" ID="{C0F54C4B-9513-4AE0-8160-48D1F4B4D11A}" ShortID="749838888">
@@ -1176,6 +1757,38 @@
 								<ActiveSource Name="Clock" ID="{D2772A86-44E6-4C4B-9010-E3F844524EFE}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="NotificaAttesa" ID="{9669CB7C-4E39-4FFC-9746-0C394BF14624}" ShortID="79510663">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="NotificaAttesa" ID="{29704824-53A3-4651-8C3E-E05F12E3D29E}" ShortID="873485135">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0477048341460478"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0636064455280634"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.91455401039472"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>NotificaAttesa.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="NotificaAttesa" ID="{29704824-53A3-4651-8C3E-E05F12E3D29E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="VoicesPlayer" ID="{E49EBF83-DFBE-41CB-B27C-2435F9F46D33}" ShortID="454870393">
@@ -1195,6 +1808,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<SwitchContainer Name="PlayerJoking" ID="{BD82BE99-4B72-494D-92D4-BFD2CCB53A98}" ShortID="209660712">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
@@ -1498,7 +2118,8 @@
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.8"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
 										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
 										<Property Name="Volume" Type="Real64">
@@ -1549,7 +2170,6 @@
 													<PropertyList>
 														<Property Name="FadeOutDuration" Type="Real64" Value="0.29424778761062"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimEnd" Type="Real64" Value="1.87905604719764"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Sforzo_3.wav</AudioFile>
@@ -1790,7 +2410,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>6</Value>
+										<Value>9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1813,6 +2433,11 @@
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1943,6 +2568,11 @@
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -2200,6 +2830,12 @@
 						<SwitchContainer Name="PlayerHiccup" ID="{658ECE6E-1045-4408-A619-103D3DCCFC27}" ShortID="15666258">
 							<PropertyList>
 								<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -2486,6 +3122,13 @@
 							</GroupingInfo>
 						</SwitchContainer>
 						<SwitchContainer Name="PlayerFiu" ID="{3B46BB74-D9F7-4939-AE45-1D6DAE45C1A4}" ShortID="231276813">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
@@ -2635,6 +3278,15 @@
 						<SwitchContainer Name="PlayerAlmostFall" ID="{6D51D226-1891-4CA2-8C4B-8247735314CC}" ShortID="1045071530">
 							<PropertyList>
 								<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<RTPCList>
@@ -2677,7 +3329,15 @@
 									</RTPCList>
 								</Property>
 								<Property Name="SwitchBehavior" Type="int16" Value="1"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{8A620516-AFF6-4E8F-BBBF-2332CBBA175D}" ShortID="893099054">
 											<ReferenceList>
@@ -2697,12 +3357,12 @@
 														<SegmentShape>Exp3</SegmentShape>
 													</Point>
 													<Point>
-														<XPos>-55.22546</XPos>
-														<YPos>-200</YPos>
+														<XPos>-75.64986</XPos>
+														<YPos>-36.45643</YPos>
 														<Flags>0</Flags>
 													</Point>
 													<Point>
-														<XPos>55.22546</XPos>
+														<XPos>74.85411</XPos>
 														<YPos>-200</YPos>
 														<Flags>0</Flags>
 														<SegmentShape>Log3</SegmentShape>
@@ -2733,49 +3393,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="AlmostFall_Ch1" ID="{4B163A71-E649-4364-BBC0-FEEB68A6423F}" ShortID="363279707">
-									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>8</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-										<Reference Name="UserAuxSend0">
-											<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-										<Reference Name="UserAuxSend1">
-											<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Fiu_Ch1_1" ID="{9DBC8F8D-82AC-469E-9813-A36DF003651C}" ShortID="157019339">
-											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.232499475341028"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.0476922000699544"/>
-												<Property Name="LoopEnd" Type="Real64" Value="1.51422735222106"/>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimEnd" Type="Real64" Value="1.51720811472543"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Fiu_Ch1_1.wav</AudioFile>
-											<ConvertedFileIDList>
-												<File ID="343542237"/>
-											</ConvertedFileIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Fiu_Ch1_1" ID="{9DBC8F8D-82AC-469E-9813-A36DF003651C}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 								<Sound Name="AlmostFall_Ch2" ID="{C1D1FCAD-2781-4B51-8845-21D055227FB6}" ShortID="614464574">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
@@ -2827,7 +3444,9 @@
 											<Language>SFX</Language>
 											<AudioFile>Fiu_Ch1_1.wav</AudioFile>
 											<ConvertedFileIDList>
-												<File ID="157019339"/>
+												<File Platform="Linux" ID="157019339"/>
+												<File Platform="Mac" ID="157019339"/>
+												<File Platform="Windows" ID="157019339"/>
 											</ConvertedFileIDList>
 										</AudioFileSource>
 									</ChildrenList>
@@ -2835,14 +3454,79 @@
 										<ActiveSource Name="Fiu_Ch1_1" ID="{905F8D6B-794F-470A-A7CB-EDF6E055EC23}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<RandomSequenceContainer Name="AlmostFall_Ch1" ID="{E51544B2-E91F-453E-BDD5-8206523D2E98}" ShortID="894571076">
+									<PropertyList>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="1.5"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="AlmostFall_Ch1" ID="{4B163A71-E649-4364-BBC0-FEEB68A6423F}" ShortID="363279707">
+											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>8</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Fiu_Ch1_1" ID="{9DBC8F8D-82AC-469E-9813-A36DF003651C}" ShortID="157019339">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.232499475341028"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0476922000699544"/>
+														<Property Name="LoopEnd" Type="Real64" Value="1.51422735222106"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.51720811472543"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Fiu_Ch1_1.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File Platform="Linux" ID="343542237"/>
+														<File Platform="Mac" ID="343542237"/>
+														<File Platform="Windows" ID="343542237"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Fiu_Ch1_1" ID="{9DBC8F8D-82AC-469E-9813-A36DF003651C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
 									<GroupingBehavior>
-										<ItemRef Name="AlmostFall_Ch1" ID="{4B163A71-E649-4364-BBC0-FEEB68A6423F}"/>
+										<ItemRef Name="AlmostFall_Ch2" ID="{C1D1FCAD-2781-4B51-8845-21D055227FB6}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
-										<ItemRef Name="AlmostFall_Ch2" ID="{C1D1FCAD-2781-4B51-8845-21D055227FB6}"/>
+										<ItemRef Name="AlmostFall_Ch1" ID="{E51544B2-E91F-453E-BDD5-8206523D2E98}"/>
 									</GroupingBehavior>
 								</GroupingBehaviorList>
 								<GroupingList>
@@ -2850,12 +3534,6 @@
 										<SwitchRef Name="Player2" ID="{8AF46EA0-65A7-4622-8F40-C21987525830}"/>
 										<ItemList>
 											<ItemRef Name="AlmostFall_Ch2" ID="{C1D1FCAD-2781-4B51-8845-21D055227FB6}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Player1" ID="{379832DA-77BC-4E02-B41B-F183F95C741C}"/>
-										<ItemList>
-											<ItemRef Name="AlmostFall_Ch1" ID="{4B163A71-E649-4364-BBC0-FEEB68A6423F}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>
@@ -3127,9 +3805,38 @@
 										<ActiveSource Name="Key_3" ID="{B1A2F711-9FB2-4FDA-8888-D2F716DC860D}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="DropKey" ID="{5C88DF45-0739-4273-B116-C7376709DAF1}" ShortID="956749695">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DropKey" ID="{AC4752AE-A429-4DD0-B81A-CD36A17E847A}" ShortID="126053622">
+											<Language>SFX</Language>
+											<AudioFile>DropKey.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DropKey" ID="{AC4752AE-A429-4DD0-B81A-CD36A17E847A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="DropKey" ID="{5C88DF45-0739-4273-B116-C7376709DAF1}"/>
+									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Key_2" ID="{AF50948B-C452-4816-B4CF-2AA251348BC5}"/>
 									</GroupingBehavior>
@@ -3280,9 +3987,168 @@
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
+						<RandomSequenceContainer Name="Gate" ID="{57370964-F498-4194-B77D-8215244D1287}" ShortID="400776644">
+							<PropertyList>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="MetalGate_KeyOpen" ID="{1C69825B-FA1D-460B-A38B-08FD712D3782}" ShortID="735692006">
+									<PropertyList>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>7</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MetalGate_KeyOpen" ID="{B4C0373A-95E8-4165-A026-5F026F21F6F0}" ShortID="689591392">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.338495575221239"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.829646017699115"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.37610619469027"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>MetalGate_KeyOpen.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MetalGate_KeyOpen" ID="{B4C0373A-95E8-4165-A026-5F026F21F6F0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<BlendContainer Name="Opera" ID="{44B93F8F-9FD5-47C7-A77F-C2CF91C0B611}" ShortID="952425323">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MetalGate_DoorOpen" ID="{77BC5D5A-A284-4EA9-9E14-3614C2DF183E}" ShortID="241751198">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MetalGate_DoorOpen" ID="{DEB3D279-894D-49BC-A124-C7E9484E05C3}" ShortID="900101445">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.854535398230088"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.381637168141593"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.66703539823009"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>MetalGate_DoorOpen.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MetalGate_DoorOpen" ID="{DEB3D279-894D-49BC-A124-C7E9484E05C3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Gate_Opera" ID="{0EA383E0-4CF5-45B2-84D9-082ABA56B3F1}" ShortID="318852425">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-8</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Gate_Opera" ID="{2930FBC3-25C8-489C-A30F-AFD52AD70D5E}" ShortID="190935897">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0730088495575218"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.91371681415929"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Gate_Opera.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Gate_Opera" ID="{2930FBC3-25C8-489C-A30F-AFD52AD70D5E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</BlendContainer>
+							</ChildrenList>
+							<Playlist>
+								<ItemRef Name="MetalGate_KeyOpen" ID="{1C69825B-FA1D-460B-A38B-08FD712D3782}"/>
+								<ItemRef Name="Opera" ID="{44B93F8F-9FD5-47C7-A77F-C2CF91C0B611}"/>
+							</Playlist>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Audience" ID="{A9B6A0C6-DADA-4572-82E1-4783631AA456}" ShortID="735848794">
+					<PropertyList>
+						<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
@@ -3437,6 +4303,13 @@
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Drums" ID="{D46DC8ED-2F5A-4AEA-92BF-C39A7A7CF0BA}" ShortID="182628011">
+					<PropertyList>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
@@ -3448,6 +4321,12 @@
 					<ChildrenList>
 						<Sound Name="ColpoSnare" ID="{36B20E12-D8B6-495D-9D5E-9D4D49426D33}" ShortID="230170216">
 							<PropertyList>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -3491,6 +4370,12 @@
 						</Sound>
 						<Sound Name="Drums_Hit" ID="{B7CABB96-0774-4B2F-BBBC-C4C793A0A018}" ShortID="1051987937">
 							<PropertyList>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>9</Value>
@@ -3519,11 +4404,15 @@
 							<PropertyList>
 								<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
 								<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>3</Value>
-									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{C2AF9671-98AE-44D6-975D-72A3155C2FE3}" ShortID="32381674">
 											<ReferenceList>
@@ -3543,25 +4432,25 @@
 														<SegmentShape>Exp3</SegmentShape>
 													</Point>
 													<Point>
-														<XPos>-55.22646</XPos>
-														<YPos>0.11005</YPos>
+														<XPos>-84.40418</XPos>
+														<YPos>-0.02129</YPos>
 														<Flags>0</Flags>
 														<SegmentShape>Log3</SegmentShape>
 													</Point>
 													<Point>
-														<XPos>-55.22546</XPos>
+														<XPos>-75.11936</XPos>
 														<YPos>-200</YPos>
 														<Flags>0</Flags>
 													</Point>
 													<Point>
-														<XPos>55.22546</XPos>
-														<YPos>-200</YPos>
+														<XPos>75</XPos>
+														<YPos>-199.99999</YPos>
 														<Flags>0</Flags>
-														<SegmentShape>Log3</SegmentShape>
+														<SegmentShape>Exp1</SegmentShape>
 													</Point>
 													<Point>
-														<XPos>55.52239</XPos>
-														<YPos>0.02176</YPos>
+														<XPos>83.90435</XPos>
+														<YPos>-0.37823</YPos>
 														<Flags>0</Flags>
 														<SegmentShape>Exp3</SegmentShape>
 													</Point>
@@ -3638,6 +4527,11 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -3668,6 +4562,11 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16">
 									<ModifierList>
 										<ModifierInfo>
@@ -3681,6 +4580,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
