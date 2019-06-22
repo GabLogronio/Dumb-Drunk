@@ -14,7 +14,7 @@ public class BeggarObstacle : MonoBehaviour
     [SerializeField]
     LayerMask PlayersLayers;
 
-    float MaxDistance = 12f, TimeToStop = 10f, Cooldown = 20f, RotationSpeed = 4f, MovementSpeed = 7f;
+    float MaxDistance = 7f, TimeToStop = 10f, Cooldown = 20f, RotationSpeed = 4f, MovementSpeed = 7f;
 
     Collider[] NearbyPlayers = new Collider[1];
 
@@ -26,7 +26,7 @@ public class BeggarObstacle : MonoBehaviour
         InitialPosition = transform.position;
         InitialRotation = transform.rotation;
         anim = GetComponent<Animator>();
-
+        DebugText.instance.Audio("TrampVoice");
 
     }
 
@@ -90,6 +90,15 @@ public class BeggarObstacle : MonoBehaviour
 
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
+        {
+            DebugText.instance.Audio("Granny Impact");
+            collision.gameObject.GetComponent<PlayerObstacleManager>().Granny(transform.position);
+        }
     }
 
     void Chase()

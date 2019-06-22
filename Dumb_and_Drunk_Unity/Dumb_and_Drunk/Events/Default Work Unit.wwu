@@ -260,15 +260,15 @@
 						</Folder>
 						<Folder Name="Bottle" ID="{5DBF2D1A-50B7-4D76-A8DB-1D7BEC871B38}" ShortID="392599512">
 							<ChildrenList>
-								<Event Name="Bottle_Break" ID="{5FFF6F2C-BC9D-40D3-9343-A046A1CA4515}">
+								<Event Name="Bottle_Woosh" ID="{4320BC45-F03F-4963-A980-58DBE102D524}">
 									<ChildrenList>
-										<Action Name="" ID="{0AEE292E-1C6D-494B-AD02-50F74E7EBA02}" ShortID="343034641">
+										<Action Name="" ID="{7C24790D-D1A6-465A-B37F-1ACC52D29813}" ShortID="800511729">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Bottle" ID="{25B004B3-6019-4406-84B4-37DFFE8D3828}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+													<ObjectRef Name="Bottle_Woosh" ID="{C0C256D4-ACA1-4618-A31C-66CBF327A6B2}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -291,7 +291,7 @@
 								<Action Name="" ID="{B8BB96DF-80ED-46F3-A31C-8787C9AE8DF3}" ShortID="695596633">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
-										<Property Name="Delay" Type="Real64" Value="1.2"/>
+										<Property Name="Delay" Type="Real64" Value="0.7"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -307,6 +307,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="PlayerCurse" ID="{500F76F0-98C7-473C-A28C-1A8D0D389EBE}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Car" ID="{7D188A89-E886-4FC9-83B7-4C6EA70BC528}">
+							<ChildrenList>
+								<Action Name="" ID="{8C299BB6-4DA5-44DE-BC93-921AD9F5AE77}" ShortID="710797966">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Car" ID="{AED13E09-B2A0-4250-B8D1-3B38D6FDDDD0}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -372,6 +386,20 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Gate_Opera" ID="{9A33F587-71A6-4CE1-BB98-92D68DA6E5C1}">
+							<ChildrenList>
+								<Action Name="" ID="{3705CDA4-AF07-4802-8671-AA0F1A3B97CB}" ShortID="94709537">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Gate_Opera" ID="{0EA383E0-4CF5-45B2-84D9-082ABA56B3F1}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Audience" ID="{DEC41F1C-DA2C-43ED-BBE5-274B1A0DC304}" ShortID="349395521">
@@ -430,7 +458,6 @@
 								<Action Name="" ID="{19DCB24F-219F-495F-A9FF-A22BA37CF19C}" ShortID="137369919">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
-										<Property Name="Delay" Type="Real64" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -441,7 +468,7 @@
 								<Action Name="" ID="{B142BE04-5316-4225-8098-9DC40121147F}" ShortID="1066872118">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
-										<Property Name="Delay" Type="Real64" Value="2"/>
+										<Property Name="Delay" Type="Real64" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -516,6 +543,11 @@
 								<Action Name="" ID="{40B1A4F8-E9BC-44CE-B0E2-7A0E41E61D25}" ShortID="263986084">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -640,6 +672,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="PlayerHiccup" ID="{658ECE6E-1045-4408-A619-103D3DCCFC27}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayerReady" ID="{38BF4CC5-ACAD-4807-A7C6-D2E6B62B2F63}">
+							<ChildrenList>
+								<Action Name="" ID="{458E238E-56D1-4B52-A586-DAF0AAE2E205}" ShortID="575975135">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PlayerReady" ID="{D2F04F7A-A100-4CBB-8E54-DF625ED3B2A1}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

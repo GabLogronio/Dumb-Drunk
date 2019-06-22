@@ -3,31 +3,31 @@
 	<Platform GUID="{60694E8E-691B-420B-97B2-9F255B13CB2D}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="525771945" Timestamp="1560460620"/>
-				<File Name="Main" Hash="796108430" Timestamp="1560537116"/>
-				<File Name="Music" Hash="1971046551" Timestamp="1560460620"/>
+				<File Name="Init" Hash="3956620534" Timestamp="1561201228"/>
+				<File Name="Main" Hash="1150075071" Timestamp="1561201227"/>
+				<File Name="Music" Hash="416256770" Timestamp="1561201228"/>
 				<File Name="NYC" Hash="3179311985" Timestamp="1545300944"/>
 				<File Name="Paris" Hash="1895410388" Timestamp="1560460620"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="2425939367" Timestamp="1560537116"/>
+				<File Name="" Hash="185094900" Timestamp="1561201228"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
 	<Platform GUID="{1CC28E1D-87E9-4D9F-881E-1AD83BD8D9F9}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="2505576785" Timestamp="1560460615"/>
-				<File Name="Main" Hash="12572131" Timestamp="1560537115"/>
-				<File Name="Music" Hash="4097981881" Timestamp="1560460615"/>
+				<File Name="Init" Hash="1007189590" Timestamp="1561201224"/>
+				<File Name="Main" Hash="1150075071" Timestamp="1561201223"/>
+				<File Name="Music" Hash="3682154137" Timestamp="1561201224"/>
 				<File Name="Paris" Hash="1895410388" Timestamp="1560460615"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1553063018" Timestamp="1560537115"/>
+				<File Name="" Hash="4130968136" Timestamp="1561201224"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
@@ -49,16 +49,16 @@
 	<Platform GUID="{581BDF61-5364-4FFB-949E-258479B7B0FF}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="4077159307" Timestamp="1560460617"/>
-				<File Name="Main" Hash="796108430" Timestamp="1560537116"/>
-				<File Name="Music" Hash="1971046551" Timestamp="1560460617"/>
+				<File Name="Init" Hash="3859031540" Timestamp="1561201226"/>
+				<File Name="Main" Hash="1150075071" Timestamp="1561201225"/>
+				<File Name="Music" Hash="416256770" Timestamp="1561201226"/>
 				<File Name="NYC" Hash="3179311985" Timestamp="1545300943"/>
 				<File Name="Paris" Hash="1895410388" Timestamp="1560460617"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1320741605" Timestamp="1560537116"/>
+				<File Name="" Hash="1748920966" Timestamp="1561201226"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

@@ -1,30 +1,34 @@
-AlmostFall - VUOTO
-DontFell - *tss - awww (deluso)
-GotUp - AH!
-Recover - VUOTO
-RecoverFalling - WOW femminile
-ThrowingUp - Rutto + voci spaventate
-YouFell - batteria + risate e applausi
+(CELL OR PC)EVENTS
+(CELL) AlmostFall - VUOTO
+(CELL) DontFell - *tss - awww (deluso)
+(CELL) GotUp - AH!
+(CELL) Recover - VUOTO
+(CELL) RecoverFalling - WOW femminile
+(CELL) ThrowingUp - Rutto + voci spaventate
+(CELL) YouFell - batteria + risate e applausi
 
-DropKey - fischio decrescente
-Key - pling
-PickupGood - tling + bibita stappata
+(PC) DropKey - fischio decrescente
+(PC) Key - pling
+(PC) PickupGood - tling + bibita stappata
 
-ClickGeneral - goccia
-Clock - VUOTO
-OpenGate - catene + voce lirica (da dividere)
-Waiting - tum tum elettronico
+(PC) ClickGeneral - goccia
+(PC) Clock - VUOTO
+(PC) OpenGate - catene 
+(PC) Gate_Opera - voce lirica (da dividere)
+(PC) Waiting - tum tum elettronico
 
-Music - VUOTO
+(PC) Music - VUOTO
 
-Bottle_Break - lancio è rottura (da dividere)
-Fountain_Loop - acqua che scorre
-GrannyImpact & GrannyVoice - batteria + voce vecchia & borbottio vario
-TrampImpact & TrampVoice - batteria + voce barbone & borbottio vario
-ObstacleNYC - batteria
-ObstacleNYC2 - misto
+(PC) Bottle_Woosh - lancio di bottiglia
+(PC) Fountain_Loop - acqua che scorre
+(PC) Car - macchina accende e passa
+(PC) GrannyImpact & GrannyVoice - batteria + voce vecchia & borbottio vario
+(PC) TrampImpact & TrampVoice - batteria + voce barbone & borbottio vario
+(PC) ObstacleNYC - batteria
+(PC) ObstacleNYC2 - misto
 
 EffortGotUp - VUOTO
 Footseps - VUOTO
 HiccupPlayer - VUOTO
 LaughPlayer - VUOTO
+(CELL) PlayerReady - voce

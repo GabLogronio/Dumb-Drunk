@@ -8,7 +8,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     // Random Wander parameters
     float MinChangeTime = 2f, MaxChangeTime = 5f, Delta = 0f, CurrentRandom = 0f;
     // Input parameters
-    float RightTimer = 0f, LeftTimer = 0f, TimerChanger = 1.5f, CurrentInput = 0f, InputSpeed = 0.35f;
+    float RightTimer = 0f, LeftTimer = 0f, TimerChanger = 1.5f, CurrentInput = 0f, InputSpeed = 0.2f;
 
     float CurrentBalance = 0f;
 
@@ -39,33 +39,42 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     public void Fall()
     {
-        Fallen = true;
+        if (!Fallen)
+        {
+            Fallen = true;
 
-        BlockBar(true);
+            BlockBar(true);
 
-        InputController.Detach();
-        InputController.BlockControls(true);
-        InputController.SetCanAttach(false);
+            InputController.Detach();
+            InputController.BlockControls(true);
+            InputController.SetCanAttach(false);
 
-        BalanceGUI.SetActive(false);
+            BalanceGUI.SetActive(false);
 
-        Hips.GetComponent<SpringJoint>().spring = 0f;
-        Hips.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Hips.GetComponent<SpringJoint>().spring = 0f;
+            Hips.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-        NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "Fallen");
-        ShootKeys(MatchManager.getInstance().keyCollected[gameObject.layer - 9]);
-        MatchManager.getInstance().keyCollected[gameObject.layer - 9] = 0;
+            NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "Fallen");
+            ShootKeys(MatchManager.getInstance().keyCollected[gameObject.layer - 9]);
+            MatchManager.getInstance().keyCollected[gameObject.layer - 9] = 0;
+
+        }
+
     }
 
     public void Fall(Vector3 direction)
     {
-        Fall();
-        Hips.GetComponent<Rigidbody>().velocity = direction;
+        if (!Fallen)
+        {
+            Fall();
+            Hips.GetComponent<Rigidbody>().velocity = direction;
 
+        }
     }
 
     void ShootKeys(int NumberOfKeys)
     {
+        DebugText.instance.Audio("DropKey");
         for (int i = 0; i < NumberOfKeys; i++)
         {
             float X = Random.Range(0f, 1f), Y = Random.Range(0f, 1f);
@@ -80,21 +89,24 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     public void RecoverFromFall()
     {
-        //SOUND GOT UP
-        //AkSoundEngine.PostEvent("GotUp", gameObject);
+        if (Fallen)
+        {
+            //SOUND GOT UP
+            //AkSoundEngine.PostEvent("GotUp", gameObject);
 
-        InputController.SetCanAttach(true);
-        InputController.BlockControls(false);
-        ResetBar();
-        BlockBar(true, 5f);
+            InputController.SetCanAttach(true);
+            InputController.BlockControls(false);
+            ResetBar();
+            BlockBar(true, 5f);
 
-        BalanceGUI.SetActive(true);
+            BalanceGUI.SetActive(true);
 
-        Hips.GetComponent<SpringJoint>().spring = 1000f;
-        Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 100f);
+            Hips.GetComponent<SpringJoint>().spring = 1000f;
+            Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 250f);
 
-        NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
+            NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
 
+        }
     }
 
     public void ResetForScene2()
@@ -204,7 +216,7 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     void RandomizeDirection()
     {
-        float NewRandom = Random.Range(-0.01f, 0.01f);
+        float NewRandom = Random.Range(-0.005f, 0.005f);
         float CurrentChangeTime = Random.Range(MinChangeTime, MaxChangeTime);
 
         Delta = (NewRandom - CurrentRandom) / CurrentChangeTime;

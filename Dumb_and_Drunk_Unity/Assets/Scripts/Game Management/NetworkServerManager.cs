@@ -70,8 +70,9 @@ public class NetworkServerManager : MonoBehaviour
             ServerStringMessageSender(CurrentConnections[NetMsg.conn.connectionId], "Player|" + NetMsg.conn.connectionId);
             PlayersImages[CurrentConnections.Count - 1].GetComponent<BouncingFace>().SetImage(PlayersPosition[CurrentConnections.Count - 1]);
             //if (CurrentConnections.Count == Characters.Length)  <---------- TO PUT BACK
-            if (CurrentConnections.Count == 1) 
+            if (CurrentConnections.Count == 4) 
             {
+                DebugText.instance.Audio("StopElevatorMusic");
                 foreach (int ConnectionID in CurrentConnections.Keys)
                 {
                     ServerStringMessageSender(CurrentConnections[ConnectionID], "Start");
@@ -117,7 +118,6 @@ public class NetworkServerManager : MonoBehaviour
                 break;
             case "Butt":
                 CurrentConnections[NetMsg.conn.connectionId].PressedButton(deltas[1], deltas[2] == "Down");
-                //DebugText.instance.Log(CurrentConnections[NetMsg.conn.connectionId].gameObject.name + "pressed " + deltas[1]);
                 break;
             case "Gyro":
                 CurrentConnections[NetMsg.conn.connectionId].SetGyroscope(deltas[1][0], deltas[2][0], deltas[3][0], deltas[4][0]);

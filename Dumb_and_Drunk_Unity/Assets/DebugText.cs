@@ -27,4 +27,9 @@ public class DebugText : MonoBehaviour
         OutText.text = ToAdd;
     }
 
+    public void Audio(string AudioName)
+    {
+        // PLAY THE AUDIO
+    }
+
 }

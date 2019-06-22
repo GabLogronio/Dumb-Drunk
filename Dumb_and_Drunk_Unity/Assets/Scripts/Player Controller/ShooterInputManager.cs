@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShooterInputManager : InputManager
 {
     // PlayerControl
-    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f, InputX = 0f, InputY = 0f, InputSpeed = 25f;
+    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f, InputX = 0f, InputY = 0f, InputSpeed = 40f;
 
     // RandomWanderer
     float MinChangeTime = 3f, MaxChangeTime = 10f,
@@ -157,6 +157,7 @@ public class ShooterInputManager : InputManager
 
     private void Shoot()
     {
+        DebugText.instance.Audio("Bottle_Woosh");
         GameObject newBottle = Instantiate(BottlePrefab, Camera.main.transform.position, Quaternion.identity);
         newBottle.GetComponent<Rigidbody>().velocity = ((Camera.main.ScreenToWorldPoint(new Vector3(pointerRT.position.x, pointerRT.position.y, Camera.main.farClipPlane)) - Camera.main.transform.position).normalized * Mathf.Log(chargeToPower(), 10) * multiplicator);
         newBottle.GetComponent<Rigidbody>().AddTorque(Vector3.right * 100f * multiplicator);
@@ -167,7 +168,7 @@ public class ShooterInputManager : InputManager
     {
         float NewX = Random.Range(-1f, 1f), NewY = Random.Range(-1f, 1f);
         CurrentChangeTime = Random.Range(MinChangeTime, MaxChangeTime);
-        CurrentSpeed = new Vector3(NewX, NewY, 0f).magnitude;
+        CurrentSpeed = new Vector3(NewX, NewY, 0f).magnitude * 2f;
 
         DeltaX = (NewX - X) / CurrentChangeTime;
         DeltaY = (NewY - Y) / CurrentChangeTime;

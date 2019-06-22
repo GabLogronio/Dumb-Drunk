@@ -14,10 +14,12 @@ public class GrannyObstacle : MonoBehaviour
     void Start()
     {
         CalculateNewDestination();
+        DebugText.instance.Audio("GrannyVoice");
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         if (PauseTimer <= PauseTime) PauseTimer += Time.deltaTime;
         else
@@ -36,6 +38,7 @@ public class GrannyObstacle : MonoBehaviour
     {
         if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
+            DebugText.instance.Audio("Granny Impact");
             collision.gameObject.GetComponent<PlayerObstacleManager>().Granny(transform.position);
             CalculateNewDestination();
         }

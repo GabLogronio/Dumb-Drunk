@@ -74,6 +74,8 @@
 					<ChildrenList>
 						<Switch Name="Player1" ID="{379832DA-77BC-4E02-B41B-F183F95C741C}"/>
 						<Switch Name="Player2" ID="{8AF46EA0-65A7-4622-8F40-C21987525830}"/>
+						<Switch Name="Player3" ID="{88322F1B-C518-46B2-B599-C44C21C6060F}"/>
+						<Switch Name="Player4" ID="{BDBED412-391D-4BB0-B954-AD35850AC132}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="Keys" ID="{27B55A3E-EF5C-43A4-A1E5-17EC13FA5862}">
@@ -88,6 +90,7 @@
 						<Switch Name="Fountain" ID="{6A5427D5-3233-4C68-B633-CE6D4E884A92}"/>
 						<Switch Name="Bottle" ID="{A950130A-E207-4432-B788-7960E58A58A6}"/>
 						<Switch Name="ShoppingCart" ID="{71EDFB46-DF58-46DE-818F-112665132169}"/>
+						<Switch Name="Car" ID="{4A1B46CE-536E-4193-9C74-0770FFE7A375}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>

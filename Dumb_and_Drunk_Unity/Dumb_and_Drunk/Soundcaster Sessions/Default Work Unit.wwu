@@ -101,7 +101,6 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="NYC" ID="{DF332F2D-1216-4194-8E13-00893E8F6261}"/>
 						<CurrentStateRef Name="Play" ID="{73F67566-561D-4281-92E1-C5FC2DE91580}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
@@ -219,7 +218,6 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="NYC" ID="{DF332F2D-1216-4194-8E13-00893E8F6261}"/>
 						<CurrentStateRef Name="Play" ID="{73F67566-561D-4281-92E1-C5FC2DE91580}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
@@ -241,12 +239,20 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Fountain_Loop" ID="{DD1756A1-E798-408C-9C66-6F38CAB0FC0B}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="OpenGate" ID="{97931A37-3D5D-4768-BE3A-BE0068CFE5E7}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Clock" ID="{AA53CB1F-217B-4503-B288-329774021F89}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
 							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Waiting" ID="{5C84E715-3781-46DB-AABC-4C605FF3E6F4}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
+							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Key" ID="{B3B5A805-E535-4F74-A966-3427AF6AECDC}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
@@ -257,8 +263,16 @@
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="ClickGeneral" ID="{82F46C6F-F097-4856-838D-DAF85BEF246F}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="PickupGood" ID="{AF343736-844E-4E98-8B58-7A3252CDC7DA}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Car" ID="{7D188A89-E886-4FC9-83B7-4C6EA70BC528}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}"/>
+							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -272,7 +286,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Balance" ID="{A9875F3B-0210-4141-ADCF-1E97C95CE96A}"/>
-							<Value>-5</Value>
+							<Value>-75</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Playback_Rate" ID="{28387EE3-C13A-4316-B9C3-DB5C521624AF}"/>
@@ -324,21 +338,20 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Time" ID="{BFAB67DB-6C9B-4F06-B764-D12677F13BAA}"/>
-							<Value>22</Value>
+							<Value>84</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="NYC" ID="{DF332F2D-1216-4194-8E13-00893E8F6261}"/>
 						<CurrentStateRef Name="Play" ID="{73F67566-561D-4281-92E1-C5FC2DE91580}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="StraightEdge" ID="{16525951-B301-44A1-8E3A-95D879B1F590}"/>
-						<CurrentSwitchRef Name="PickupClock" ID="{005FC3CD-9036-45F2-8890-52B0CBE52BC0}"/>
-						<CurrentSwitchRef Name="Key3" ID="{907FAC6F-A2D6-43F3-B86A-8B4724D45BA7}"/>
-						<CurrentSwitchRef Name="Bottle" ID="{A950130A-E207-4432-B788-7960E58A58A6}"/>
+						<CurrentSwitchRef Name="PickupBottle" ID="{C23265AB-E2BC-42F4-810B-8FD37C2969A9}"/>
+						<CurrentSwitchRef Name="Key1" ID="{F955F5F5-B600-4AF6-A520-169C7DDBC6DE}"/>
+						<CurrentSwitchRef Name="Car" ID="{4A1B46CE-536E-4193-9C74-0770FFE7A375}"/>
 						<CurrentSwitchRef Name="ForHipHop" ID="{B2C0110A-5889-45FD-BFA8-09EFF3DA5116}"/>
-						<CurrentSwitchRef Name="Player2" ID="{8AF46EA0-65A7-4622-8F40-C21987525830}"/>
-						<CurrentSwitchRef Name="Taxi" ID="{66E8A3EC-B40D-4DD4-8A52-5E365525CDA9}"/>
+						<CurrentSwitchRef Name="Player3" ID="{88322F1B-C518-46B2-B599-C44C21C6060F}"/>
+						<CurrentSwitchRef Name="FireExtinguisher" ID="{333460C3-F0DD-429D-BAE4-414DA659417F}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Obstacles" ID="{D7F621CA-7EC7-4413-9923-A9D8DD1A2A54}">
@@ -435,7 +448,6 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="NYC" ID="{DF332F2D-1216-4194-8E13-00893E8F6261}"/>
 						<CurrentStateRef Name="Play" ID="{73F67566-561D-4281-92E1-C5FC2DE91580}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">

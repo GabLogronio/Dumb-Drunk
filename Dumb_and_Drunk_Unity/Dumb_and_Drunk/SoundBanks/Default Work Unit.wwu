@@ -7,7 +7,6 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="LaughPlayer" ID="{7B5A6920-240F-4075-B196-AF0B7555E7BC}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Fountain_Loop" ID="{DD1756A1-E798-408C-9C66-6F38CAB0FC0B}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
-						<ObjectRef Name="Bottle_Break" ID="{5FFF6F2C-BC9D-40D3-9343-A046A1CA4515}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="ObstacleNYC2" ID="{4674CAAA-801D-4266-BCEE-7EB788593349}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TrampImpact" ID="{7B681819-EBFC-42B9-A17B-545A706C761B}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="YouFell" ID="{726753E0-8439-439E-A85D-43D4E54FE8C1}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
@@ -19,18 +18,22 @@
 						<ObjectRef Name="Waiting" ID="{5C84E715-3781-46DB-AABC-4C605FF3E6F4}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="OpenGate" ID="{97931A37-3D5D-4768-BE3A-BE0068CFE5E7}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Recover" ID="{3A71EBC3-7723-47BA-B5B1-4C025A4CEE70}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerReady" ID="{38BF4CC5-ACAD-4807-A7C6-D2E6B62B2F63}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="ClickGeneral" ID="{82F46C6F-F097-4856-838D-DAF85BEF246F}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Bottle_Woosh" ID="{4320BC45-F03F-4963-A980-58DBE102D524}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="GotUp" ID="{964376DD-0D82-49BA-B996-AE5EF8275380}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RecoverFalling" ID="{85C13458-AA28-4A74-9198-8C5557605132}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="DontFell" ID="{D3F34697-80CA-4BBC-9335-CF506BACD71C}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="HiccupPlayer" ID="{BD9E6CAF-CD7E-4BDB-91E2-12C6A9B621DB}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="GrannyVoice" ID="{637A069F-14FC-4C23-BC43-D03D219195DF}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="DropKey" ID="{2CAE685A-B674-4CA4-9539-84C7B378BA56}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Gate_Opera" ID="{9A33F587-71A6-4CE1-BB98-92D68DA6E5C1}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="GrannyImpact" ID="{89BC9B59-EE13-4D72-BF46-5E82CF27898F}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Footsteps" ID="{0F2C696C-15EF-4E28-95EC-B4E5011C807A}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PickupGood" ID="{AF343736-844E-4E98-8B58-7A3252CDC7DA}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Key" ID="{B3B5A805-E535-4F74-A966-3427AF6AECDC}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="EffortGotUp" ID="{6818F97A-EC4C-4F94-8A68-FB23138B1FD4}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Car" ID="{7D188A89-E886-4FC9-83B7-4C6EA70BC528}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

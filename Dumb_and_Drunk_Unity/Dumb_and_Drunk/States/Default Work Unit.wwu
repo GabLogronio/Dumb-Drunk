@@ -19,13 +19,6 @@
 						</Transition>
 					</TransitionList>
 				</StateGroup>
-				<StateGroup Name="City" ID="{A9D26E66-89CA-472C-A838-D1BF9CA9AF1E}">
-					<ChildrenList>
-						<State Name="None" ID="{B5840456-E57C-4651-8FEF-D4690FAABD72}"/>
-						<State Name="Paris" ID="{FB19E52F-0355-4A76-9B40-3DEC42508542}"/>
-						<State Name="NYC" ID="{DF332F2D-1216-4194-8E13-00893E8F6261}"/>
-					</ChildrenList>
-				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

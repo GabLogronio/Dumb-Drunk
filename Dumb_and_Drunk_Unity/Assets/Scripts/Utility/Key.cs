@@ -23,6 +23,7 @@ public class Key : MonoBehaviour
     {
         if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12) // Player Layer
         {
+            DebugText.instance.Audio("Key");
             MatchManager.getInstance().KeyCollection(collision.gameObject.layer);
             Spawer.getInstance().KeyCollected(pos);
             CancelInvoke();

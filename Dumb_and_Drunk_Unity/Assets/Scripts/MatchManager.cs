@@ -14,7 +14,7 @@ public class MatchManager : MonoBehaviour
     private bool isFirstScene = false;
     private bool isMatchmakingScene = false;
     private int lastPicked = 0;
-    private float timer = 0f, FirstSceneDuration = 65.0f, MatchMakingSceneDuration = 5f;
+    private float timer = 0f, FirstSceneDuration = 96.0f, MatchMakingSceneDuration = 5f;
     public GameObject gameCanvas, teamCanvas, loadingCanvas, victoryCanvas;
     private Vector3[] spawnPointsFirstScene = new Vector3[4];
     private Vector3[] spawnPointsSecondScene = new Vector3[4];
@@ -33,14 +33,14 @@ public class MatchManager : MonoBehaviour
         if (instance == null) instance = this;
         else if (instance != this) Destroy(this);
         DontDestroyOnLoad(gameObject);
-        spawnPointsFirstScene[0] = new Vector3(-4.53252f, 2.794139f, -9.023758f);
-        spawnPointsFirstScene[1] = new Vector3(-1.530971f, 2.794139f, -9.023758f);
-        spawnPointsFirstScene[2] = new Vector3(1.530971f, 2.794139f, -9.023758f);
-        spawnPointsFirstScene[3] = new Vector3(4.53252f, 2.794139f, -9.023758f);
-        spawnPointsSecondScene[0] = new Vector3(-1.468635f, 2.794139f, 17.71417f);
-        spawnPointsSecondScene[1] = new Vector3(1.468635f, 2.794139f, 17.71417f);
-        spawnPointsSecondScene[2] = new Vector3(-1.468635f, 2.794139f, 90);
-        spawnPointsSecondScene[3] = new Vector3(1.468635f, 2.794139f, 90);
+        spawnPointsFirstScene[0] = new Vector3(-4.53252f, 3.25f, -9.023758f);
+        spawnPointsFirstScene[1] = new Vector3(-1.530971f, 3.25f, -9.023758f);
+        spawnPointsFirstScene[2] = new Vector3(1.530971f, 3.25f, -9.023758f);
+        spawnPointsFirstScene[3] = new Vector3(4.53252f, 3.25f, -9.023758f);
+        spawnPointsSecondScene[0] = new Vector3(-1.468635f, 3.25f, 17.71417f);
+        spawnPointsSecondScene[1] = new Vector3(1.468635f, 3.25f, 17.71417f);
+        spawnPointsSecondScene[2] = new Vector3(-1.468635f, 3.25f, 90);
+        spawnPointsSecondScene[3] = new Vector3(1.468635f, 3.25f, 90);
         teamsFacesPos[0] = new Vector3(-400, 155, 0);
         teamsFacesPos[1] = new Vector3(-100, 155, 0);
         teamsFacesPos[2] = new Vector3(70, -275, 0);
@@ -64,6 +64,9 @@ public class MatchManager : MonoBehaviour
         if (isFirstScene)
         {
             //DebugText.instance.Set("2");
+            timer -= Time.deltaTime;
+            DebugText.instance.Audio("Clock");
+
             int ftScore = 0, stScore = 0;
             for (int i = 0; i < maxPlayers; i++)
             {
@@ -71,13 +74,11 @@ public class MatchManager : MonoBehaviour
                 else stScore += keyCollected[i];
             }
             ScoreText.text = "<color=red>" + ftScore + "</color><color=white> - </color><color=#0099ff>" + stScore + "</color>";
-            timer -= Time.deltaTime;
 
             //DebugText.instance.Set("3");
 
             if (timer < FirstSceneDuration - 3f)
             {
-                loadingCanvas.SetActive(false);
                 CounterText.text = "Get Ready!";
                 CountdownText.text = (int)(timer - 60) + "";
                 //DebugText.instance.Set("4");
@@ -85,9 +86,10 @@ public class MatchManager : MonoBehaviour
             if (timer < FirstSceneDuration - 5.9f && timer > 0f)
             {
                 CountdownText.text = "";
-                CounterText.text = Mathf.Floor(timer / 60).ToString("00") + ":" + (timer % 60).ToString("00");
+                CounterText.text = Mathf.Floor(timer).ToString("00");
+                //CounterText.text = Mathf.Floor(timer / 60).ToString("00") + ":" + (timer % 60).ToString("00");
                 //DebugText.instance.Set("5");
-            } 
+            }
             if (timer <= 0) LoadSecondScene();
 
         }
@@ -117,6 +119,7 @@ public class MatchManager : MonoBehaviour
 
     public void LoadMatchmakingScene()
     {
+        DebugText.instance.Audio("Music");
         gameCanvas.SetActive(false);
         teamCanvas.SetActive(true);
         for (int i = 0; i < maxPlayers; i++)
@@ -124,7 +127,7 @@ public class MatchManager : MonoBehaviour
             PlayersGameObjects[i].SetActive(false);
             NetworkServerManager.getInstance().SwitchInputManager(i, true);
         }
-        /*teams[0] = Random.Range(1, 3);
+        teams[0] = Random.Range(1, 3);
         teams[1] = Random.Range(1, 3);
         if (teams[0] == teams[1])
         {
@@ -144,8 +147,8 @@ public class MatchManager : MonoBehaviour
             teams[2] = Random.Range(1, 3);
             if (teams[2] == 1) teams[3] = 2;
             else teams[3] = 1;
-        }*/
-        teams = new int[] { 1, 2, 1, 2 };
+        }
+        //teams = new int[] { 1, 2, 1, 2 };
         keyCollected = new int[] { 0, 0, 0, 0 };
         SceneManager.LoadScene("Matchmaking Scene");
         //DebugText.instance.Log("Loaded Matchmaking Scene");
@@ -155,6 +158,7 @@ public class MatchManager : MonoBehaviour
             if (teams[i] == 1)
             {
                 teamCanvas.transform.GetChild(1).GetChild(i).gameObject.GetComponent<RectTransform>().localPosition = teamsFacesPos[team1Comp];
+
                 team1Comp++;
             }
             else
@@ -171,7 +175,7 @@ public class MatchManager : MonoBehaviour
     {
         teamCanvas.SetActive(false);
         gameCanvas.SetActive(true);
-        loadingCanvas.SetActive(true);
+
         CounterText.text = "";
         timer = FirstSceneDuration;
         isFirstScene = true;
@@ -179,14 +183,26 @@ public class MatchManager : MonoBehaviour
         NetworkServerManager.getInstance().ServerStringMessageSenderToAll("Scene1");
         //DebugText.instance.Log("Loaded First Scene");
         SceneManager.LoadScene("Game Scene 1");
+        Loading(3f);
         for (int i = 0; i < maxPlayers; i++)
         {
+            if (teams[i] == 1)
+            {
+                gameCanvas.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.SetActive(true);
+                gameCanvas.transform.GetChild(i).GetChild(0).GetChild(1).gameObject.SetActive(false);
+            }
+            else
+            {
+                gameCanvas.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.SetActive(false);
+                gameCanvas.transform.GetChild(i).GetChild(0).GetChild(1).gameObject.SetActive(true);
+            }
+
+
             PlayersGameObjects[i].SetActive(true);
             PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
             Vector3 move = spawnPointsFirstScene[i] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
 
             PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().SetRandomMoving(true);
-            PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().BlockBar(true, 5f);
             //PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().RecoverFromFall();
 
             PlayersGameObjects[i].transform.position += move;
@@ -235,6 +251,8 @@ public class MatchManager : MonoBehaviour
         }
         //DebugText.instance.Log("Loaded Second Scene");
         SceneManager.LoadScene("Game Scene 2");
+        DebugText.instance.Audio("OpenGate");
+        Loading(3f);
     }
 
     public GameObject[] GetWinnersObjects()
@@ -277,7 +295,7 @@ public class MatchManager : MonoBehaviour
                 if (scores[i] < maxPoints - 1)
                 {
                     scores[i]++;
-                    gameCanvas.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[i].ToString();
+                    gameCanvas.transform.GetChild(i).GetChild(0).GetChild(3).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[i].ToString();
                 }
                 PlayersGameObjects[i].GetComponent<PlayerInputManager>().Detach();
                 Vector3 move = spawnPointsSecondScene[winner] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
@@ -295,13 +313,36 @@ public class MatchManager : MonoBehaviour
         gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
         if (scores[layer - 9] >= maxPoints)
         {
+            DebugText.instance.Audio("StopMusic");
+            DebugText.instance.Audio("Gate_Opera");
             gameCanvas.SetActive(false);
             teamCanvas.SetActive(false);
-            loadingCanvas.SetActive(false);
             victoryCanvas.SetActive(true);
             victoryCanvas.transform.GetChild(layer - 7).gameObject.SetActive(true);
 
         }
         else LoadMatchmakingScene();
+    }
+
+    void Loading(float Duration)
+    {
+        loadingCanvas.SetActive(true);
+        for (int i = 0; i < maxPlayers; i++)
+        {
+            PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().BlockBar(true, Duration + 3f);
+            if (PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().BlockControls(true);
+        }
+
+        Invoke("FinishLoading", Duration);
+    }
+
+    void FinishLoading()
+    {
+        loadingCanvas.SetActive(false);
+        for (int i = 0; i < maxPlayers; i++)
+        {
+            if (PlayersGameObjects[i].GetComponent<PlayerInputManager>()) PlayersGameObjects[i].GetComponent<PlayerInputManager>().BlockControls(false);
+        }
+
     }
 }
