@@ -22,8 +22,7 @@ public class TaxiObstacle : MonoBehaviour
             for (int i = 0; i < PlayersLayers.Length; i++)
             {
                 Collider[] Player = new Collider[1];
-                Physics.OverlapSphereNonAlloc(transform.position, AlarmRange, Player, PlayersLayers[i]);
-                if (Player[0] != null)
+                if(Physics.OverlapSphereNonAlloc(transform.position, AlarmRange, Player, PlayersLayers[i]) > 0)
                     Player[0].gameObject.GetComponent<PlayerObstacleManager>().Taxi(transform.position);
 
             }

@@ -50,6 +50,8 @@ public class FootController : LimbController
         rb.velocity = Vector3.zero;
 
         Vector3 FinalDirection = PlayerBalance.GetInitialPosition() - transform.position + CurrentDirection.normalized * 0.65f;
+        if (RightFoot) FinalDirection += PlayerBalance.GetHips().right * 0.2f;
+        else FinalDirection -= PlayerBalance.GetHips().right * 0.2f;
 
         FinalDirection.y = (FootHeight - transform.position.y) * 2f;
 

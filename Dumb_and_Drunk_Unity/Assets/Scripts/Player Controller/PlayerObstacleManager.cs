@@ -106,8 +106,8 @@ public class PlayerObstacleManager : MonoBehaviour {
         BalanceManager.BlockBar(true, Timer);
     }
 
-    public GameObject GetPlayerController()
+    public PlayerBalanceManager GetPlayerController()
     {
-        return BalanceManager.gameObject;
+        return BalanceManager;
     }
 }

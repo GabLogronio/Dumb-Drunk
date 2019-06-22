@@ -9,7 +9,7 @@ public class BeggarObstacle : MonoBehaviour
     Vector3 InitialPosition;
     Quaternion InitialRotation;
 
-    GameObject targetPlayer = null;
+    PlayerBalanceManager targetPlayer = null;
 
     [SerializeField]
     LayerMask PlayersLayers;
@@ -51,9 +51,9 @@ public class BeggarObstacle : MonoBehaviour
             }
             else
             {
-                Vector3 Destination = targetPlayer.transform.position + targetPlayer.transform.forward * 3f;
+                Vector3 Destination = targetPlayer.transform.position + targetPlayer.GetHips().forward * 1.5f;
                 Destination.y = transform.position.y;
-                if (Vector3.Distance(transform.position, Destination) > 2f)
+                if (Vector3.Distance(transform.position, Destination) > 3.5f)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, Destination, Time.deltaTime * MovementSpeed);
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Destination - transform.position), Time.deltaTime * RotationSpeed);

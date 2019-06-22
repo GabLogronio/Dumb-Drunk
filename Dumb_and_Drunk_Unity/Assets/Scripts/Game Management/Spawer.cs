@@ -6,6 +6,8 @@ public class Spawer : MonoBehaviour
 {
     private static Spawer instance = null;
 
+    int CurrentKeys = 0;
+
     [SerializeField]
     Transform[] Spawners;
 
@@ -13,8 +15,6 @@ public class Spawer : MonoBehaviour
     GameObject Key;
 
     float MinSpawnTime = 10f, MaxSpawnTime = 15f;
-
-    bool Activated = true;
 
     private bool[] occupied = new bool[10];
     private float counter = 20;
@@ -48,8 +48,9 @@ public class Spawer : MonoBehaviour
 
     void Spawn()
     {
-        if (Activated)
+        if (CurrentKeys <= 8 )
         {
+            CurrentKeys++;
             int Spawn1;
             do
             {
@@ -64,7 +65,8 @@ public class Spawer : MonoBehaviour
 
     public void KeyCollected(int pos)
     {
-        Invoke("Spawn", 5);
+        CurrentKeys--;
+        //Invoke("Spawn", 5);
         occupied[pos] = false;
     }
 }

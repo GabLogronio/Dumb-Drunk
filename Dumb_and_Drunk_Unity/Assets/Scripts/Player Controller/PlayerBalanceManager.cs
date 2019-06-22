@@ -13,7 +13,7 @@ public class PlayerBalanceManager : MonoBehaviour {
     float CurrentBalance = 0f;
 
     [SerializeField]
-    GameObject RightFoot, LeftFoot, Hips, BalanceGUI, KeyPrefab;
+    GameObject RightFoot, LeftFoot, Hips, BalanceGUI, KeyPrefab, IconImage;
 
     [SerializeField]
     RectTransform PlayerImage;
@@ -23,7 +23,7 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     bool RandomMoving = true, BlockedBar = false;
 
-    float BodyLength = 0.6f, LegsLength = 1.66f, SpringForce = 1000f;
+    float BodyLength = 0.65f, LegsLength = 1.7f, SpringForce = 1000f;
 
     Vector3 InitialPosition = Vector3.zero, ImageInitialPosition = Vector3.zero;
 
@@ -50,6 +50,7 @@ public class PlayerBalanceManager : MonoBehaviour {
             InputController.SetCanAttach(false);
 
             BalanceGUI.SetActive(false);
+            IconImage.SetActive(false);
 
             Hips.GetComponent<SpringJoint>().spring = 0f;
             Hips.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -89,24 +90,23 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     public void RecoverFromFall()
     {
-        if (Fallen)
-        {
-            //SOUND GOT UP
-            //AkSoundEngine.PostEvent("GotUp", gameObject);
 
-            InputController.SetCanAttach(true);
-            InputController.BlockControls(false);
-            ResetBar();
-            BlockBar(true, 5f);
+        //SOUND GOT UP
+        //AkSoundEngine.PostEvent("GotUp", gameObject);
 
-            BalanceGUI.SetActive(true);
+        InputController.SetCanAttach(true);
+        InputController.BlockControls(false);
+        ResetBar();
+        BlockBar(true, 5f);
 
-            Hips.GetComponent<SpringJoint>().spring = 1000f;
-            Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 250f);
+        BalanceGUI.SetActive(true);
+        IconImage.SetActive(true);
 
-            NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
+        Hips.GetComponent<SpringJoint>().spring = 1000f;
+        Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 250f);
 
-        }
+        NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
+
     }
 
     public void ResetForScene2()
@@ -159,6 +159,9 @@ public class PlayerBalanceManager : MonoBehaviour {
         if (!Fallen)
         {
             UpdateTimers();
+
+            Vector3 Position = Camera.main.WorldToScreenPoint(this.transform.position);
+            IconImage.transform.position = Position;
             // Initial position based on the feet
             float Height = Mathf.Sqrt(LegsLength * LegsLength - Mathf.Pow((Vector3.Distance(RightFoot.transform.position, LeftFoot.transform.position) / 2f), 2)) + BodyLength;
             InitialPosition = new Vector3((RightFoot.transform.position.x + LeftFoot.transform.position.x) / 2, Height, (RightFoot.transform.position.z + LeftFoot.transform.position.z) / 2);
@@ -228,6 +231,12 @@ public class PlayerBalanceManager : MonoBehaviour {
     {
         return InitialPosition;
     }
+
+    public Transform GetHips()
+    {
+        return Hips.transform;
+    }
+
 
 }
 

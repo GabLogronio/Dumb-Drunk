@@ -63,23 +63,24 @@ public class NetworkServerManager : MonoBehaviour
 
     void OnClientConnected(NetworkMessage NetMsg)
     {
-        //if (CurrentConnections.Count <= Characters.Length) <---------- TO PUT BACK
-        if (CurrentConnections.Count <= 4)
+        if (CurrentConnections.Count <= PlayersInputManagers.Length)
             {
             CurrentConnections.Add(NetMsg.conn.connectionId, PlayersInputManagers[CurrentConnections.Count]);
             ServerStringMessageSender(CurrentConnections[NetMsg.conn.connectionId], "Player|" + NetMsg.conn.connectionId);
             PlayersImages[CurrentConnections.Count - 1].GetComponent<BouncingFace>().SetImage(PlayersPosition[CurrentConnections.Count - 1]);
-            //if (CurrentConnections.Count == Characters.Length)  <---------- TO PUT BACK
-            if (CurrentConnections.Count == 4) 
-            {
-                DebugText.instance.Audio("StopElevatorMusic");
-                foreach (int ConnectionID in CurrentConnections.Keys)
-                {
-                    ServerStringMessageSender(CurrentConnections[ConnectionID], "Start");
-                }
-                MatchManager.getInstance().LoadMatchmakingScene();
-            }
+            if (CurrentConnections.Count == PlayersInputManagers.Length) StartGame();
+
         }
+    }
+
+    public void StartGame()
+    {
+        DebugText.instance.Audio("StopElevatorMusic");
+        foreach (int ConnectionID in CurrentConnections.Keys)
+        {
+            ServerStringMessageSender(CurrentConnections[ConnectionID], "Start");
+        }
+        MatchManager.getInstance().LoadMatchmakingScene();
     }
 
     public void ServerStringMessageSender(int i, string ToSend)

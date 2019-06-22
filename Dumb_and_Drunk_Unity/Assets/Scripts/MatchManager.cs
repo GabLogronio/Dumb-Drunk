@@ -102,7 +102,7 @@ public class MatchManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && !isFirstScene && !isMatchmakingScene)
         {
-            LoadMatchmakingScene();
+            NetworkServerManager.getInstance().StartGame();
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && isFirstScene && !isMatchmakingScene)
@@ -310,7 +310,7 @@ public class MatchManager : MonoBehaviour
     public void scene2End(int layer)
     {
         scores[layer - 9]++;
-        gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
+        gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(3).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
         if (scores[layer - 9] >= maxPoints)
         {
             DebugText.instance.Audio("StopMusic");
