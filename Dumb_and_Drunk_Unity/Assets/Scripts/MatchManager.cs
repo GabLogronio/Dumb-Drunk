@@ -85,6 +85,7 @@ public class MatchManager : MonoBehaviour
             }
             if (timer < FirstSceneDuration - 5.9f && timer > 0f)
             {
+                Spawer.getInstance().StartSpawning();
                 CountdownText.text = "";
                 CounterText.text = Mathf.Floor(timer).ToString("00");
                 //CounterText.text = Mathf.Floor(timer / 60).ToString("00") + ":" + (timer % 60).ToString("00");

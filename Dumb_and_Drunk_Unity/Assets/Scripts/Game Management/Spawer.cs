@@ -16,27 +16,45 @@ public class Spawer : MonoBehaviour
 
     float MinSpawnTime = 10f, MaxSpawnTime = 15f;
 
-    private bool[] occupied = new bool[10];
+    [SerializeField]
+    private bool[] occupied;
+    bool Started = false;
     private float counter = 20;
 
     // Start is called before the first frame update
     void Start()
     {
         if (instance == null) instance = this;
-        for (int i = 0; i < 10; i++) occupied[i] = false;
-        Spawn();
-        Spawn();
+        occupied = new bool[Spawners.Length];
+        for (int i = 0; i < occupied.Length; i++) occupied[i] = false;
+
+    }
+
+    public void StartSpawning()
+    {
+        if (!Started)
+        {
+            Spawn();
+            Spawn();
+
+            Started = true;
+        }
+
     }
 
     private void Update()
     {
-        if (MatchManager.getInstance().getTimer() >= 0.5f)
+        if (Started)
         {
-            counter -= Time.deltaTime;
-            if (counter <= 0)
+            if (MatchManager.getInstance().getTimer() >= 0.5f)
             {
-                Spawn();
-                counter = 20;
+                counter -= Time.deltaTime;
+                if (counter <= 0f)
+                {
+                    Spawn();
+                    Spawn();
+                    counter = 20f;
+                }
             }
         }
     }

@@ -27,12 +27,10 @@ public class ShooterInputManager : InputManager
     {
         if (Down)
         {
-            DebugText.instance.Set("Charging shot");
             pressed = true;
         }
         else
         {
-            DebugText.instance.Set("Released shot");
             pressed = false;
             Shoot();
         }

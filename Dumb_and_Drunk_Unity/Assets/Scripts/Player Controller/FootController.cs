@@ -85,7 +85,7 @@ public class FootController : LimbController
         if (coll.gameObject.layer == 14 && Active && Joint == null) // Environment layer
         {
             PlayerController.SetFoot(RightFoot, true);
-
+            DebugText.instance.Audio("Footstep");
             ContactPoint contact = coll.contacts[0];
             Joint = Instantiate(InstantiableJoint, new Vector3(contact.point.x, contact.point.y, contact.point.z), coll.gameObject.transform.rotation);
             Joint.GetComponent<HingeJoint>().connectedBody = rb;

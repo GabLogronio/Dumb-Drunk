@@ -83,6 +83,13 @@ public class NetworkServerManager : MonoBehaviour
         MatchManager.getInstance().LoadMatchmakingScene();
     }
 
+    public void ServerSoundToControllerSender(int i, string ToSend)
+    {
+        StringMessage msg = new StringMessage();
+        msg.value = "Snd|" + ToSend;
+        NetworkServer.SendToClient(CurrentConnections.First(ConnId => ConnId.Value == PlayersInputManagers[i]).Key, 888, msg);
+    }
+
     public void ServerStringMessageSender(int i, string ToSend)
     {
         ServerStringMessageSender(PlayersInputManagers[i], ToSend);

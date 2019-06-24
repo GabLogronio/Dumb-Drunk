@@ -80,21 +80,15 @@ public class PlayerInputManager : InputManager
 
     public override void PressedButton(string ButtonName, bool Down)
     {
-        DebugText.instance.Set("Received " + ButtonName + ", Down " + Down);
-
         if (!BlockedControls)
         {
-            DebugText.instance.Add("Not BLocked");
-
             if (Down && RightFootSet && LeftFootSet)
             {
-                DebugText.instance.Add("Moving");
                 ControllerStringDictionary.FirstOrDefault(x => x.Value == ButtonName).Key.Move();
                 //DebugText.text += "Released " + ButtonName + "\n";
             }
             else if (!Down)
             {
-                DebugText.instance.Add("Releasing");
                 ControllerStringDictionary.FirstOrDefault(x => x.Value == ButtonName).Key.Release();
                 //DebugText.text += "Pressed " + ButtonName + "\n";
             }
