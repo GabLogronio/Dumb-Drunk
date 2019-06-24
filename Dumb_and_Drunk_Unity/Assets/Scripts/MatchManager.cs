@@ -120,7 +120,7 @@ public class MatchManager : MonoBehaviour
 
     public void LoadMatchmakingScene()
     {
-        DebugText.instance.Audio("Music");
+        AkSoundEngine.SetState("GameState", "None");
         gameCanvas.SetActive(false);
         teamCanvas.SetActive(true);
         for (int i = 0; i < maxPlayers; i++)
@@ -254,6 +254,7 @@ public class MatchManager : MonoBehaviour
         SceneManager.LoadScene("Game Scene 2");
         DebugText.instance.Audio("OpenGate");
         Loading(3f);
+        AkSoundEngine.PostEvent("OpenGate", gameObject);
     }
 
     public GameObject[] GetWinnersObjects()
@@ -320,6 +321,11 @@ public class MatchManager : MonoBehaviour
             teamCanvas.SetActive(false);
             victoryCanvas.SetActive(true);
             victoryCanvas.transform.GetChild(layer - 7).gameObject.SetActive(true);
+            for (int i = 1; i < 5; i++)
+            {
+                if (i == layer - 8) NetworkServerManager.getInstance().ServerStringMessageSender(i, "Won");
+                else NetworkServerManager.getInstance().ServerStringMessageSender(i, "Lost");
+            }
 
         }
         else LoadMatchmakingScene();

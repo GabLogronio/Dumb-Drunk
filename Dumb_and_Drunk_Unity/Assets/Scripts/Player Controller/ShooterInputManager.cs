@@ -155,11 +155,11 @@ public class ShooterInputManager : InputManager
 
     private void Shoot()
     {
-        DebugText.instance.Audio("Bottle_Woosh");
         GameObject newBottle = Instantiate(BottlePrefab, Camera.main.transform.position, Quaternion.identity);
         newBottle.GetComponent<Rigidbody>().velocity = ((Camera.main.ScreenToWorldPoint(new Vector3(pointerRT.position.x, pointerRT.position.y, Camera.main.farClipPlane)) - Camera.main.transform.position).normalized * Mathf.Log(chargeToPower(), 10) * multiplicator);
         newBottle.GetComponent<Rigidbody>().AddTorque(Vector3.right * 100f * multiplicator);
         charge = 0;
+        AkSoundEngine.PostEvent("Bottle_Woosh", gameObject);
     }
 
     void RandomizeDirection()

@@ -17,7 +17,7 @@ public class WaterProjectileObstacle : MonoBehaviour
 
     private void explode(Vector3 pos)
     {
-        DebugText.instance.Audio("ClickGeneral");
+        AkSoundEngine.PostEvent("ClickGeneral", gameObject);
         Instantiate(PuddlePrefab, new Vector3(pos.x, 0.5f, pos.z), Quaternion.identity);
         Destroy(gameObject);
     }

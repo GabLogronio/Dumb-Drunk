@@ -11,6 +11,11 @@ public class MovinCarObstacle : MonoBehaviour
     bool Scene1 = true;
     bool Waiting = false;
 
+    private void Start()
+    {
+        AkSoundEngine.SetSwitch("NYCObstacles2", "Car", gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +45,7 @@ public class MovinCarObstacle : MonoBehaviour
     {
         if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
+            AkSoundEngine.PostEvent("ObstacleNYC2", gameObject);
             Waiting = true;
             collision.gameObject.GetComponent<PlayerObstacleManager>().MovingCart(transform.position);
             Invoke("StopWaiting", WaitTime);

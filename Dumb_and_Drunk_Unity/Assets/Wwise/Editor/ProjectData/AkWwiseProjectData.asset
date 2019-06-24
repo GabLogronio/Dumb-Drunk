@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,15 +13,15 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 0b0e1bac754b43429cc325ef030b8a8a
-    m_lastTime: -8586598450194775808
+    m_lastTime: -8586404379494775808
     List: []
-  - PhysicalPath: Virtual Acoustics/Factory Reflect Acoustic Textures.wwu
+  - PhysicalPath: Virtual Acoustics\Factory Reflect Acoustic Textures.wwu
     ParentPhysicalPath: 
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
-    m_lastTime: -8586598452554775808
+    m_lastTime: -8586404379494775808
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -32,7 +33,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Acoustic_Banner
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Acoustic_Banner
+      Path: Factory Reflect Acoustic Textures\Textures\Acoustic_Banner
     - name: Anechoic
       guid: 32c20a8be202de4ebeacfdd1a900e3ed
       id: 1873957695
@@ -43,7 +44,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Anechoic
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Anechoic
+      Path: Factory Reflect Acoustic Textures\Textures\Anechoic
     - name: Brick
       guid: a9a586b004f2534ca838bdb18b18f6d6
       id: 504532776
@@ -54,7 +55,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Brick
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Brick
+      Path: Factory Reflect Acoustic Textures\Textures\Brick
     - name: Carpet
       guid: 8975223456dc604296c4b9f4b669092b
       id: 2412606308
@@ -65,7 +66,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Carpet
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Carpet
+      Path: Factory Reflect Acoustic Textures\Textures\Carpet
     - name: Concrete
       guid: 001cf85c9628e04aaf7c3080bdaba682
       id: 841620460
@@ -76,7 +77,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Concrete
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Concrete
+      Path: Factory Reflect Acoustic Textures\Textures\Concrete
     - name: Cork_Tiles
       guid: 19c9d2305f92434189063dbb3c4ae5e2
       id: 3195498748
@@ -87,7 +88,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Cork_Tiles
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Cork_Tiles
+      Path: Factory Reflect Acoustic Textures\Textures\Cork_Tiles
     - name: Curtains
       guid: 339ee6f8975c6849b508a1535f2d66e8
       id: 2928161104
@@ -98,7 +99,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Curtains
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Curtains
+      Path: Factory Reflect Acoustic Textures\Textures\Curtains
     - name: Drywall
       guid: f4e3a4680b4c8746a8b8a84db93dbc8f
       id: 3670307564
@@ -109,7 +110,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Drywall
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Drywall
+      Path: Factory Reflect Acoustic Textures\Textures\Drywall
     - name: Fabric
       guid: 32d581836edbed4ea7a3bc7b0a0b8ba8
       id: 1970351858
@@ -120,7 +121,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Fabric
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Fabric
+      Path: Factory Reflect Acoustic Textures\Textures\Fabric
     - name: Mountain
       guid: 313793c51a00b44a98dd9b033a8c8eab
       id: 513139656
@@ -131,7 +132,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Mountain
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Mountain
+      Path: Factory Reflect Acoustic Textures\Textures\Mountain
     - name: Tile
       guid: c4da82a82a13b747ba9db9907ba29cc0
       id: 2637588553
@@ -142,7 +143,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Tile
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Tile
+      Path: Factory Reflect Acoustic Textures\Textures\Tile
     - name: Wood
       guid: 96bcff1fe76f9e48ba6c7c14a71391ae
       id: 2058049674
@@ -153,7 +154,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Wood
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Wood
+      Path: Factory Reflect Acoustic Textures\Textures\Wood
     - name: Wood_Bright
       guid: e5d1857ba2c1634e9a13cec54b641adc
       id: 4262522749
@@ -164,7 +165,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Wood_Bright
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Wood_Bright
+      Path: Factory Reflect Acoustic Textures\Textures\Wood_Bright
     - name: Wood_Deep
       guid: 8e474652dac50c4ea0dec98d1479529a
       id: 1755085759
@@ -175,12 +176,12 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Wood_Deep
         ObjectType: 15
-      Path: Factory Reflect Acoustic Textures/Textures/Wood_Deep
+      Path: Factory Reflect Acoustic Textures\Textures\Wood_Deep
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7c3bd1d5c146604b85014a7c259967fd
-    m_lastTime: -8586538880434775808
+    m_lastTime: -8586404379434775808
     List:
     - name: RVBGameplay
       guid: 84db9b1da5b17a4d8a59b1ca3c186f89
@@ -192,7 +193,7 @@ MonoBehaviour:
         ObjectType: 2
       - ElementName: RVBGameplay
         ObjectType: 1
-      Path: Default Work Unit/Master Audio Bus/RVBGameplay
+      Path: Default Work Unit\Master Audio Bus\RVBGameplay
     - name: TutorialRVB
       guid: ef5fac9cc6392f4c8a84b47361207fc2
       id: 3029550055
@@ -203,12 +204,12 @@ MonoBehaviour:
         ObjectType: 2
       - ElementName: TutorialRVB
         ObjectType: 1
-      Path: Default Work Unit/Master Audio Bus/TutorialRVB
+      Path: Default Work Unit\Master Audio Bus\TutorialRVB
   BankWwu:
-  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aaa3ed57c36dff44a3f952afca07d73e
-    m_lastTime: -8586538870874775808
+    m_lastTime: -8586404379394775808
     List:
     - name: Main
       guid: efe3d44e04d98643b126746cedfe2a48
@@ -218,7 +219,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Main
         ObjectType: 7
-      Path: Default Work Unit/Main
+      Path: Default Work Unit\Main
     - name: Music
       guid: c6965b5f69522b41b641d334a43275db
       id: 3991942870
@@ -227,7 +228,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Music
         ObjectType: 7
-      Path: Default Work Unit/Music
+      Path: Default Work Unit\Music
     - name: Paris
       guid: 023560e0886d2d45ba1b88e0e85a68b1
       id: 3529644050
@@ -236,12 +237,12 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Paris
         ObjectType: 7
-      Path: Default Work Unit/Paris
+      Path: Default Work Unit\Paris
   EventWwu:
-  - PhysicalPath: Events/Default Work Unit.wwu
+  - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 615d881f8bb6b741908d89dbb9960f0e
-    m_lastTime: -8586538855294775808
+    m_lastTime: -8586404379394775808
     List:
     - name: AlmostFall
       guid: 172702a39fe475459800e8e155d080ca
@@ -253,7 +254,37 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: AlmostFall
         ObjectType: 3
-      Path: Default Work Unit/Audience/AlmostFall
+      Path: Default Work Unit\Audience\AlmostFall
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Bottle_Woosh
+      guid: 45bc20433ff06349a98058dbe102d524
+      id: 234780388
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: Bottle
+        ObjectType: 4
+      - ElementName: Bottle_Woosh
+        ObjectType: 3
+      Path: Default Work Unit\Obstacles\Bottle\Bottle_Woosh
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Car
+      guid: 898a187d86e8c94f83b74c6ea70bc528
+      id: 983016381
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: Car
+        ObjectType: 3
+      Path: Default Work Unit\Obstacles\Car
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -267,7 +298,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ClickGeneral
         ObjectType: 3
-      Path: Default Work Unit/Menu/ClickGeneral
+      Path: Default Work Unit\Menu\ClickGeneral
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -281,7 +312,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Clock
         ObjectType: 3
-      Path: Default Work Unit/Menu/Clock
+      Path: Default Work Unit\Menu\Clock
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -295,7 +326,21 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: DontFell
         ObjectType: 3
-      Path: Default Work Unit/Audience/DontFell
+      Path: Default Work Unit\Audience\DontFell
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: DropKey
+      guid: 5a68ae2c74b6a44c953984c7b378ba56
+      id: 692898223
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Items
+        ObjectType: 4
+      - ElementName: DropKey
+        ObjectType: 3
+      Path: Default Work Unit\Items\DropKey
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -309,7 +354,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: EffortGotUp
         ObjectType: 3
-      Path: Default Work Unit/Player/EffortGotUp
+      Path: Default Work Unit\Player\EffortGotUp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -323,7 +368,37 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Footsteps
         ObjectType: 3
-      Path: Default Work Unit/Player/Footsteps
+      Path: Default Work Unit\Player\Footsteps
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fountain_Loop
+      guid: a15617dd98e78c409c666f38cab0fc0b
+      id: 3508841562
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: Fountain
+        ObjectType: 4
+      - ElementName: Fountain_Loop
+        ObjectType: 3
+      Path: Default Work Unit\Obstacles\Fountain\Fountain_Loop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Gate_Opera
+      guid: 87f5339aa671e14cbb9892d68da6e5c1
+      id: 2592191804
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: Gate_Opera
+        ObjectType: 3
+      Path: Default Work Unit\Menu\Gate_Opera
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -337,7 +412,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: GotUp
         ObjectType: 3
-      Path: Default Work Unit/Audience/GotUp
+      Path: Default Work Unit\Audience\GotUp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -351,7 +426,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: GrannyImpact
         ObjectType: 3
-      Path: Default Work Unit/Obstacles/GrannyImpact
+      Path: Default Work Unit\Obstacles\GrannyImpact
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -365,7 +440,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: GrannyVoice
         ObjectType: 3
-      Path: Default Work Unit/Obstacles/GrannyVoice
+      Path: Default Work Unit\Obstacles\GrannyVoice
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -379,7 +454,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: HiccupPlayer
         ObjectType: 3
-      Path: Default Work Unit/Player/HiccupPlayer
+      Path: Default Work Unit\Player\HiccupPlayer
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -393,7 +468,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Key
         ObjectType: 3
-      Path: Default Work Unit/Items/Key
+      Path: Default Work Unit\Items\Key
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -407,7 +482,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: LaughPlayer
         ObjectType: 3
-      Path: Default Work Unit/Player/LaughPlayer
+      Path: Default Work Unit\Player\LaughPlayer
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -421,7 +496,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Music
         ObjectType: 3
-      Path: Default Work Unit/MusicEvents/Music
+      Path: Default Work Unit\MusicEvents\Music
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -435,7 +510,21 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ObstacleNYC
         ObjectType: 3
-      Path: Default Work Unit/Obstacles/ObstacleNYC
+      Path: Default Work Unit\Obstacles\ObstacleNYC
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ObstacleNYC2
+      guid: aaca74461d806642bcee7eb788593349
+      id: 190727130
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Obstacles
+        ObjectType: 4
+      - ElementName: ObstacleNYC2
+        ObjectType: 3
+      Path: Default Work Unit\Obstacles\ObstacleNYC2
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -449,7 +538,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: OpenGate
         ObjectType: 3
-      Path: Default Work Unit/Menu/OpenGate
+      Path: Default Work Unit\Menu\OpenGate
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -463,7 +552,21 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: PickupGood
         ObjectType: 3
-      Path: Default Work Unit/Items/PickupGood
+      Path: Default Work Unit\Items\PickupGood
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: PlayerReady
+      guid: c54cbf38adac0748a7c6d2e6b62b2f63
+      id: 1234515599
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 4
+      - ElementName: PlayerReady
+        ObjectType: 3
+      Path: Default Work Unit\Player\PlayerReady
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -477,7 +580,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Recover
         ObjectType: 3
-      Path: Default Work Unit/Audience/Recover
+      Path: Default Work Unit\Audience\Recover
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -491,7 +594,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: RecoverFalling
         ObjectType: 3
-      Path: Default Work Unit/Audience/RecoverFalling
+      Path: Default Work Unit\Audience\RecoverFalling
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -505,7 +608,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ThrowingUp
         ObjectType: 3
-      Path: Default Work Unit/Audience/ThrowingUp
+      Path: Default Work Unit\Audience\ThrowingUp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -519,7 +622,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: TrampImpact
         ObjectType: 3
-      Path: Default Work Unit/Obstacles/TrampImpact
+      Path: Default Work Unit\Obstacles\TrampImpact
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -533,7 +636,21 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: TrampVoice
         ObjectType: 3
-      Path: Default Work Unit/Obstacles/TrampVoice
+      Path: Default Work Unit\Obstacles\TrampVoice
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Waiting
+      guid: 15e7845c8137db46aabc4c605ff3e6f4
+      id: 19135406
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Menu
+        ObjectType: 4
+      - ElementName: Waiting
+        ObjectType: 3
+      Path: Default Work Unit\Menu\Waiting
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -547,15 +664,15 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: YouFell
         ObjectType: 3
-      Path: Default Work Unit/Audience/YouFell
+      Path: Default Work Unit\Audience\YouFell
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
   RtpcWwu:
-  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e0449f80e846e64fb8f996fdf04b2fe9
-    m_lastTime: -8586549937974775808
+    m_lastTime: -8586404379454775808
     List:
     - name: Balance
       guid: 3b5f87a910024141adcf1e97c95ce96a
@@ -565,7 +682,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Balance
         ObjectType: 13
-      Path: Default Work Unit/Balance
+      Path: Default Work Unit\Balance
     - name: GettinUp
       guid: f8c6e6291e038c40aa2972014f4174f5
       id: 1473240539
@@ -574,7 +691,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: GettinUp
         ObjectType: 13
-      Path: Default Work Unit/GettinUp
+      Path: Default Work Unit\GettinUp
     - name: NauseaBar
       guid: 1ed1fa004ad12247affbbdaa1a6d5fe5
       id: 3627326343
@@ -583,7 +700,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: NauseaBar
         ObjectType: 13
-      Path: Default Work Unit/NauseaBar
+      Path: Default Work Unit\NauseaBar
     - name: Time
       guid: db67abbf9b6c064fb764d12677f13baa
       id: 2654366170
@@ -592,11 +709,11 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Time
         ObjectType: 13
-      Path: Default Work Unit/Time
-  - PhysicalPath: Game Parameters/Factory Motion.wwu
+      Path: Default Work Unit\Time
+  - PhysicalPath: Game Parameters\Factory Motion.wwu
     ParentPhysicalPath: 
     guid: 225213d7dbd1d042adc0930743567776
-    m_lastTime: -8586598452554775808
+    m_lastTime: -8586404379474775808
     List:
     - name: Playback_Rate
       guid: e37e38283ac11643b9c3db5c521624af
@@ -606,7 +723,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Playback_Rate
         ObjectType: 13
-      Path: Factory Motion/Playback_Rate
+      Path: Factory Motion\Playback_Rate
     - name: RPM
       guid: 05aa129177f5fd449f4e4424158129e6
       id: 796049864
@@ -615,11 +732,11 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: RPM
         ObjectType: 13
-      Path: Factory Motion/RPM
-  - PhysicalPath: Game Parameters/Factory SoundSeed Air Game Syncs.wwu
+      Path: Factory Motion\RPM
+  - PhysicalPath: Game Parameters\Factory SoundSeed Air Game Syncs.wwu
     ParentPhysicalPath: 
     guid: 5577163b42fb8b4598bf96f557afb3b9
-    m_lastTime: -8586598452554775808
+    m_lastTime: -8586404379474775808
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -629,7 +746,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_Fear
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_Fear
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Fear
     - name: SS_Air_Freefall
       guid: 37fe2d2f9e4f944d83d853cca39781ad
       id: 3002758120
@@ -638,7 +755,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_Freefall
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_Freefall
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Freefall
     - name: SS_Air_Fury
       guid: dc79aea23acaba4696529986c322a87b
       id: 1029930033
@@ -647,7 +764,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_Fury
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_Fury
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Fury
     - name: SS_Air_Month
       guid: 45b4e209a3c47f44b3ca818a1d925ef7
       id: 2648548617
@@ -656,7 +773,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_Month
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_Month
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Month
     - name: SS_Air_Presence
       guid: 1a81b7e32f7b0f49b44f5fe51b468041
       id: 3847924954
@@ -665,7 +782,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_Presence
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_Presence
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Presence
     - name: SS_Air_RPM
       guid: ab9048a3d5b92645a64d5290c43ef2dc
       id: 822163944
@@ -674,7 +791,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_RPM
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_RPM
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_RPM
     - name: SS_Air_Size
       guid: efeb291393a12e47a38c64668b494879
       id: 3074696722
@@ -683,7 +800,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_Size
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_Size
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Size
     - name: SS_Air_Storm
       guid: db8c3fe9d1063747acaf7cd44bbed783
       id: 3715662592
@@ -692,7 +809,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_Storm
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_Storm
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Storm
     - name: SS_Air_TimeOfDay
       guid: 2ca76f537e8c8b4cae03ef34fdadc314
       id: 3203397129
@@ -701,7 +818,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_TimeOfDay
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_TimeOfDay
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_TimeOfDay
     - name: SS_Air_Turbulence
       guid: 197ba8edaa73a0409f192073606db710
       id: 4160247818
@@ -710,41 +827,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: SS_Air_Turbulence
         ObjectType: 13
-      Path: Factory SoundSeed Air Game Syncs/SS_Air_Turbulence
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Turbulence
   StateWwu:
-  - PhysicalPath: States/Default Work Unit.wwu
+  - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 74dcac0601591f4a99f9861a80ff4ef8
-    m_lastTime: -8586582441474775808
+    m_lastTime: -8586404379454775808
     List:
-    - name: City
-      guid: 666ed2a9ca892c47a838d1bf9ca9af1e
-      id: 3888786832
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: City
-        ObjectType: 9
-      Path: Default Work Unit/City
-      values:
-      - name: None
-        guid: 560484b57ce551468fefd4690faabd72
-        id: 748895195
-        PathAndIcons:
-        - ElementName: None
-          ObjectType: 8
-      - name: NYC
-        guid: 2d2f33df161294418e1300893e8f6261
-        id: 779860493
-        PathAndIcons:
-        - ElementName: NYC
-          ObjectType: 8
-      - name: Paris
-        guid: 2fe519fb5503764a9b403dec42508542
-        id: 3529644050
-        PathAndIcons:
-        - ElementName: Paris
-          ObjectType: 8
     - name: GameState
       guid: 4318a0379433244ba62d351669cc86bc
       id: 4091656514
@@ -753,7 +842,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: GameState
         ObjectType: 9
-      Path: Default Work Unit/GameState
+      Path: Default Work Unit\GameState
       values:
       - name: End
         guid: 7d3abf86ac78634db443318ce23af28e
@@ -780,10 +869,10 @@ MonoBehaviour:
         - ElementName: StartMenu
           ObjectType: 8
   SwitchWwu:
-  - PhysicalPath: Switches/Default Work Unit.wwu
+  - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 9b89ba27dcfbf14096f3d300a817e26f
-    m_lastTime: -8586550939854775808
+    m_lastTime: -8586404379494775808
     List:
     - name: Keys
       guid: 3e5ab5275cefa443a1e517ec13fa5862
@@ -793,7 +882,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Keys
         ObjectType: 11
-      Path: Default Work Unit/Keys
+      Path: Default Work Unit\Keys
       values:
       - name: Key1
         guid: f5f555f900b6f64aa520169c7ddbc6de
@@ -821,7 +910,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Nausea
         ObjectType: 11
-      Path: Default Work Unit/Nausea
+      Path: Default Work Unit\Nausea
       values:
       - name: StraightEdge
         guid: 5159521601b3a1448e3a95d879b1f590
@@ -855,19 +944,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: NYCObstacles
         ObjectType: 11
-      Path: Default Work Unit/NYCObstacles
+      Path: Default Work Unit\NYCObstacles
       values:
       - name: FireExtinguisher
         guid: c3603433ddf09d42bae4414da659417f
         id: 3378138780
         PathAndIcons:
         - ElementName: FireExtinguisher
-          ObjectType: 10
-      - name: HotDogStand
-        guid: 4f9bce2ef1aed74b917f399b93fa9a1f
-        id: 2861812420
-        PathAndIcons:
-        - ElementName: HotDogStand
           ObjectType: 10
       - name: Mascotte
         guid: fffe9864b0ad7649a2cbeb38405c46a0
@@ -881,67 +964,39 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: Taxi
           ObjectType: 10
-    - name: ParisObstacles
-      guid: 3cb65509211dbd4994ddc56c5f72c577
-      id: 1107149412
+    - name: NYCObstacles2
+      guid: 81eaa80789a8df459b73f58bd09c2c07
+      id: 1645266589
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: ParisObstacles
+      - ElementName: NYCObstacles2
         ObjectType: 11
-      Path: Default Work Unit/ParisObstacles
+      Path: Default Work Unit\NYCObstacles2
       values:
-      - name: ArtistDancing
-        guid: 647f3663a3a8da43af4abf9a0f8eff1d
-        id: 4258714584
+      - name: Bottle
+        guid: 0a1350a907e23244b7887960e58a58a6
+        id: 3848582449
         PathAndIcons:
-        - ElementName: ArtistDancing
+        - ElementName: Bottle
           ObjectType: 10
-      - name: BaguetteBox
-        guid: 278e3579e1885e45990536796b188d25
-        id: 2859006487
+      - name: Car
+        guid: ce461b4a6e5393419c740770ffe7a375
+        id: 983016381
         PathAndIcons:
-        - ElementName: BaguetteBox
+        - ElementName: Car
           ObjectType: 10
-      - name: BikeBaguette
-        guid: f80e9bceb1636e419b22a0aec2a7547f
-        id: 1582918959
+      - name: Fountain
+        guid: d527546a3332684cb633ce6d4e884a92
+        id: 1362338037
         PathAndIcons:
-        - ElementName: BikeBaguette
+        - ElementName: Fountain
           ObjectType: 10
-      - name: FlowerVase
-        guid: 14ec51f5e8ba6249a61d9ed2669d210c
-        id: 51596611
+      - name: ShoppingCart
+        guid: 46fbed7158dfde46818f112665132169
+        id: 1257211947
         PathAndIcons:
-        - ElementName: FlowerVase
-          ObjectType: 10
-      - name: Mime
-        guid: 17751ed35447004dbb5836463cc4b2d5
-        id: 2559194501
-        PathAndIcons:
-        - ElementName: Mime
-          ObjectType: 10
-      - name: PeopleTalking
-        guid: 4d3b8d1eebd44945b8ddfc4bc64c6338
-        id: 952687098
-        PathAndIcons:
-        - ElementName: PeopleTalking
-          ObjectType: 10
-    - name: PickupBad
-      guid: 658bdef0c534974a943966fc42bdee1f
-      id: 4152723942
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: PickupBad
-        ObjectType: 11
-      Path: Default Work Unit/PickupBad
-      values:
-      - name: SpoiledFood
-        guid: aa554ecb7666a4438fe776d1d00f1d7d
-        id: 1196838563
-        PathAndIcons:
-        - ElementName: SpoiledFood
+        - ElementName: ShoppingCart
           ObjectType: 10
     - name: PickupGood
       guid: dafa3935e3cf0c418bfbbe36c5413868
@@ -951,7 +1006,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: PickupGood
         ObjectType: 11
-      Path: Default Work Unit/PickupGood
+      Path: Default Work Unit\PickupGood
       values:
       - name: PickupBottle
         guid: ab6532c2bce2f442810b8fd37c2969a9
@@ -973,7 +1028,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Player
         ObjectType: 11
-      Path: Default Work Unit/Player
+      Path: Default Work Unit\Player
       values:
       - name: Player1
         guid: da329837bc77024eb41bf183f95c741c
@@ -987,6 +1042,18 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: Player2
           ObjectType: 10
+      - name: Player3
+        guid: 1b2f328818c5b246b599c44c21c6060f
+        id: 2188949037
+        PathAndIcons:
+        - ElementName: Player3
+          ObjectType: 10
+      - name: Player4
+        guid: 12d4bebd1d39b04bb954ad35850ac132
+        id: 2188949034
+        PathAndIcons:
+        - ElementName: Player4
+          ObjectType: 10
     - name: Scratch
       guid: 24311b6e3338e1459f9500b14797e0f6
       id: 2077382857
@@ -995,7 +1062,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Scratch
         ObjectType: 11
-      Path: Default Work Unit/Scratch
+      Path: Default Work Unit\Scratch
       values:
       - name: ForHipHop
         guid: 0a11c0b28958fd45bfa809eff3da5116
@@ -1022,18 +1089,23 @@ MonoBehaviour:
         - ElementName: InVerse
           ObjectType: 10
   TriggerWwu:
-  - PhysicalPath: Triggers/Default Work Unit.wwu
+  - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 0de505f679ac7a478978712aedb3eb0b
-    m_lastTime: -8586598450194775808
+    m_lastTime: -8586404379494775808
     List: []
   ExpandedItems:
   - /Dumb_and_Drunk
   - /Dumb_and_Drunk/Events
   - /Dumb_and_Drunk/Events/Default Work Unit
-  - /Dumb_and_Drunk/Events/Default Work Unit/Audience
+  - /Dumb_and_Drunk/Events/Default Work Unit/Items
   - /Dumb_and_Drunk/Events/Default Work Unit/Menu
+  - /Dumb_and_Drunk/Events/Default Work Unit/MusicEvents
   - /Dumb_and_Drunk/Events/Default Work Unit/Obstacles
+  - /Dumb_and_Drunk/Events/Default Work Unit/Obstacles/Bottle
+  - /Dumb_and_Drunk/Events/Default Work Unit/Obstacles/Fountain
   - /Dumb_and_Drunk/Events/Default Work Unit/Player
+  - /Dumb_and_Drunk/Switches
+  - /Dumb_and_Drunk/Switches/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

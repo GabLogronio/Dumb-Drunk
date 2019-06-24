@@ -32,3 +32,16 @@ Footseps - VUOTO
 HiccupPlayer - VUOTO
 LaughPlayer - VUOTO
 (CELL) PlayerReady - voce
+
+
+
+
+
+cell ha i file dei suoni
+ogni classe da pc chiama NetworkServerManager.getInstance().PlaySoundOnController(int i, string s); ##################  i = layer - 8
+
+
+
+
+
+car: solo movimento, non accensione

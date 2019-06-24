@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c505d85f267e44b6b432f586491429b, type: 3}
-  m_Name: A9D26E66-89CA-472C-A838-D1BF9CA9AF1E
+  m_Script: {fileID: 11500000, guid: fe74dfafdf5e4457c96538384de24caa, type: 3}
+  m_Name: 07A8EA81-A889-45DF-9B73-F58BD09C2C07
   m_EditorClassIdentifier: 
-  objectName: City
-  id: 3888786832
-  guid: A9D26E66-89CA-472C-A838-D1BF9CA9AF1E
+  objectName: NYCObstacles2
+  id: 1645266589
+  guid: 07A8EA81-A889-45DF-9B73-F58BD09C2C07

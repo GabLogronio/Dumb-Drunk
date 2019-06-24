@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee57a34ef483643248bece1adffd4bab, type: 3}
+  m_Name: 71EDFB46-DF58-46DE-818F-112665132169
+  m_EditorClassIdentifier: 
+  objectName: ShoppingCart
+  id: 1257211947
+  guid: 71EDFB46-DF58-46DE-818F-112665132169
+  WwiseSwitchGroupReference: {fileID: 0}
