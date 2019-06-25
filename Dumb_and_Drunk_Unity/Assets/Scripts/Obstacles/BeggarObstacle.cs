@@ -26,7 +26,7 @@ public class BeggarObstacle : MonoBehaviour
         InitialPosition = transform.position;
         InitialRotation = transform.rotation;
         anim = GetComponent<Animator>();
-        DebugText.instance.Audio("TrampVoice");
+
 
     }
 
@@ -96,7 +96,6 @@ public class BeggarObstacle : MonoBehaviour
     {
         if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
-            DebugText.instance.Audio("Granny Impact");
             collision.gameObject.GetComponent<PlayerObstacleManager>().Granny(transform.position);
         }
     }

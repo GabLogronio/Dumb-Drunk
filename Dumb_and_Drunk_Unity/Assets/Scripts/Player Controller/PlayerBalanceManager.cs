@@ -55,7 +55,6 @@ public class PlayerBalanceManager : MonoBehaviour {
             Hips.GetComponent<SpringJoint>().spring = 0f;
             Hips.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-            DebugText.instance.Audio("Fallen");
             NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "Fallen");
             ShootKeys(MatchManager.getInstance().keyCollected[gameObject.layer - 9]);
             MatchManager.getInstance().keyCollected[gameObject.layer - 9] = 0;
@@ -76,7 +75,6 @@ public class PlayerBalanceManager : MonoBehaviour {
 
     void ShootKeys(int NumberOfKeys)
     {
-        DebugText.instance.Audio("DropKey");
         for (int i = 0; i < NumberOfKeys; i++)
         {
             float X = Random.Range(0f, 1f), Y = Random.Range(0f, 1f);
@@ -106,7 +104,6 @@ public class PlayerBalanceManager : MonoBehaviour {
         Hips.GetComponent<SpringJoint>().spring = 1000f;
         Hips.GetComponent<Rigidbody>().AddForce(Vector3.up * 250f);
 
-        DebugText.instance.Audio("GotUp");
         NetworkServerManager.getInstance().ServerStringMessageSender(InputController, "GotUp");
 
     }

@@ -14,7 +14,6 @@ public class FountainObstacle : MonoBehaviour
     void Start()
     {
         Invoke("Shoot", ShootCooldown);
-        DebugText.instance.Audio("Fountain_Loop");
 
     }
 

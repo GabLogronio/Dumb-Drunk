@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6478791564824047742}
   - component: {fileID: 8541593714868620416}
   - component: {fileID: 7303190766259214363}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4711,8 +4711,8 @@ GameObject:
   - component: {fileID: 6017361560478390532}
   - component: {fileID: 1642364794654120137}
   - component: {fileID: 3251077161863702528}
-  m_Layer: 0
-  m_Name: Key1
+  m_Layer: 13
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4792,6 +4792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSpeed: 5
+  pos: 0
 --- !u!136 &3251077161863702528
 CapsuleCollider:
   m_ObjectHideFlags: 0

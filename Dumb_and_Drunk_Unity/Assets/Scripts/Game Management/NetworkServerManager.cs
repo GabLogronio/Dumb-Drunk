@@ -75,7 +75,6 @@ public class NetworkServerManager : MonoBehaviour
 
     public void StartGame()
     {
-        DebugText.instance.Audio("StopElevatorMusic");
         foreach (int ConnectionID in CurrentConnections.Keys)
         {
             ServerStringMessageSender(CurrentConnections[ConnectionID], "Start");

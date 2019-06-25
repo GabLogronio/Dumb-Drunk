@@ -16,7 +16,6 @@ public class Spawer : MonoBehaviour
 
     float MinSpawnTime = 10f, MaxSpawnTime = 15f;
 
-    [SerializeField]
     private bool[] occupied;
     bool Started = false;
     private float counter = 20;

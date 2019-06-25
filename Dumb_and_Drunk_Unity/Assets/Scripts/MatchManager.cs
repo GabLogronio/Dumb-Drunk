@@ -191,11 +191,18 @@ public class MatchManager : MonoBehaviour
             {
                 gameCanvas.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.SetActive(true);
                 gameCanvas.transform.GetChild(i).GetChild(0).GetChild(1).gameObject.SetActive(false);
+
+                PlayersGameObjects[i].transform.GetChild(0).GetChild(2).GetChild(0).gameObject.SetActive(true);
+                PlayersGameObjects[i].transform.GetChild(0).GetChild(2).GetChild(1).gameObject.SetActive(false);
+
             }
             else
             {
                 gameCanvas.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.SetActive(false);
                 gameCanvas.transform.GetChild(i).GetChild(0).GetChild(1).gameObject.SetActive(true);
+
+                PlayersGameObjects[i].transform.GetChild(0).GetChild(2).GetChild(0).gameObject.SetActive(false);
+                PlayersGameObjects[i].transform.GetChild(0).GetChild(2).GetChild(1).gameObject.SetActive(true);
             }
 
 
@@ -204,7 +211,7 @@ public class MatchManager : MonoBehaviour
             Vector3 move = spawnPointsFirstScene[i] - PlayersGameObjects[i].transform.GetChild(2).GetChild(0).position;
 
             PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().SetRandomMoving(true);
-            //PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().RecoverFromFall();
+            PlayersGameObjects[i].transform.GetChild(2).GetChild(0).GetComponent<PlayerBalanceManager>().RecoverFromFall();
 
             PlayersGameObjects[i].transform.position += move;
             PlayersGameObjects[i].transform.rotation = Quaternion.identity;
@@ -252,7 +259,6 @@ public class MatchManager : MonoBehaviour
         }
         //DebugText.instance.Log("Loaded Second Scene");
         SceneManager.LoadScene("Game Scene 2");
-        DebugText.instance.Audio("OpenGate");
         Loading(3f);
         AkSoundEngine.PostEvent("OpenGate", gameObject);
     }
@@ -315,7 +321,6 @@ public class MatchManager : MonoBehaviour
         gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(3).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
         if (scores[layer - 9] >= maxPoints)
         {
-            DebugText.instance.Audio("StopMusic");
             DebugText.instance.Audio("Gate_Opera");
             gameCanvas.SetActive(false);
             teamCanvas.SetActive(false);

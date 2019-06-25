@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class ShooterInputManager : InputManager
 {
     // PlayerControl
-    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f, InputX = 0f, InputY = 0f, InputSpeed = 40f;
+    float RightTimer = 0f, LeftTimer = 0f, UpTimer = 0f, DownTimer = 0f, TimerChanger = 2.5f, InputX = 0f, InputY = 0f, InputSpeed = 50f, cooldown = 1f;
 
     // RandomWanderer
     float MinChangeTime = 3f, MaxChangeTime = 10f,
       DeltaX = 0f, DeltaY = 0f, X = 0f, Y = 0f, CurrentChangeTime = 0f, CurrentSpeed = 0f;
 
     private float charge = 0, MaxCharge = 3f;
-    private bool pressed = false;
+    private bool pressed = false, inCooldown = false;
     [SerializeField]
     GameObject BottlePrefab;
     [SerializeField]
@@ -48,6 +48,11 @@ public class ShooterInputManager : InputManager
         if (Down == 'T') DownTimer = TimerChanger;
         if (Up == 'T') UpTimer = TimerChanger;
 
+    }
+
+    void FinishCooldown()
+    {
+        inCooldown = false;
     }
 
     void Start()
@@ -155,18 +160,24 @@ public class ShooterInputManager : InputManager
 
     private void Shoot()
     {
-        GameObject newBottle = Instantiate(BottlePrefab, Camera.main.transform.position, Quaternion.identity);
-        newBottle.GetComponent<Rigidbody>().velocity = ((Camera.main.ScreenToWorldPoint(new Vector3(pointerRT.position.x, pointerRT.position.y, Camera.main.farClipPlane)) - Camera.main.transform.position).normalized * Mathf.Log(chargeToPower(), 10) * multiplicator);
-        newBottle.GetComponent<Rigidbody>().AddTorque(Vector3.right * 100f * multiplicator);
         charge = 0;
-        AkSoundEngine.PostEvent("Bottle_Woosh", gameObject);
+        if (!inCooldown)
+        {
+            GameObject newBottle = Instantiate(BottlePrefab, Camera.main.transform.position, Quaternion.identity);
+            newBottle.GetComponent<Rigidbody>().velocity = ((Camera.main.ScreenToWorldPoint(new Vector3(pointerRT.position.x, pointerRT.position.y, Camera.main.farClipPlane)) - Camera.main.transform.position).normalized * Mathf.Log(chargeToPower(), 10) * multiplicator);
+            newBottle.GetComponent<Rigidbody>().AddTorque(Vector3.right * 100f * multiplicator);
+            AkSoundEngine.PostEvent("Bottle_Woosh", gameObject);
+            inCooldown = true;
+            Invoke("FinishCooldown", cooldown);
+        }
+
     }
 
     void RandomizeDirection()
     {
         float NewX = Random.Range(-1f, 1f), NewY = Random.Range(-1f, 1f);
         CurrentChangeTime = Random.Range(MinChangeTime, MaxChangeTime);
-        CurrentSpeed = new Vector3(NewX, NewY, 0f).magnitude * 2f;
+        CurrentSpeed = new Vector3(NewX, NewY, 0f).magnitude;
 
         DeltaX = (NewX - X) / CurrentChangeTime;
         DeltaY = (NewY - Y) / CurrentChangeTime;

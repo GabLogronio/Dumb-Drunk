@@ -14,7 +14,6 @@ public class GrannyObstacle : MonoBehaviour
     void Start()
     {
         CalculateNewDestination();
-        DebugText.instance.Audio("GrannyVoice");
 
     }
 

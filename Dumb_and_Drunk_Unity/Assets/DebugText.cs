@@ -18,16 +18,16 @@ public class DebugText : MonoBehaviour
 
     public void Add(string ToAdd)
     {
-        if (OutText.text.Length > 1000) OutText.text = "";
-        OutText.text += ToAdd + " - ";
+     //   if (OutText.text.Length > 1000) OutText.text = "";
+       // OutText.text += ToAdd + " - ";
     }
 
     public void Set(string ToAdd)
     {
-        OutText.text = ToAdd;
+       // OutText.text = ToAdd;
     }
 
-    public void Audio(string AudioName)
+    public void Audio(string ToAdd)
     {
         // PLAY THE AUDIO
     }
