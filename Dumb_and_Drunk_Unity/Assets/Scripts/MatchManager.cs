@@ -321,7 +321,9 @@ public class MatchManager : MonoBehaviour
         gameCanvas.transform.GetChild(layer - 9).GetChild(0).GetChild(3).gameObject.GetComponent<UnityEngine.UI.Text>().text = scores[layer - 9].ToString();
         if (scores[layer - 9] >= maxPoints)
         {
-            DebugText.instance.Audio("Gate_Opera");
+            AkSoundEngine.StopAll(gameObject);
+            AkSoundEngine.PostEvent("Gate_Opera", gameObject);
+            AkSoundEngine.SetSwitch("Music", "Start", gameObject);
             gameCanvas.SetActive(false);
             teamCanvas.SetActive(false);
             victoryCanvas.SetActive(true);

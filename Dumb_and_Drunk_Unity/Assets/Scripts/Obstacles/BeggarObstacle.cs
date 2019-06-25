@@ -30,6 +30,11 @@ public class BeggarObstacle : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        AkSoundEngine.StopAll(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -96,6 +101,7 @@ public class BeggarObstacle : MonoBehaviour
     {
         if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
+            AkSoundEngine.PostEvent("TrampImpact", gameObject);
             collision.gameObject.GetComponent<PlayerObstacleManager>().Granny(transform.position);
         }
     }

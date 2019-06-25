@@ -14,7 +14,12 @@ public class GrannyObstacle : MonoBehaviour
     void Start()
     {
         CalculateNewDestination();
+        
+    }
 
+    private void OnDestroy()
+    {
+        AkSoundEngine.StopAll(gameObject);
     }
 
     // Update is called once per frame
@@ -37,6 +42,7 @@ public class GrannyObstacle : MonoBehaviour
     {
         if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
+            AkSoundEngine.PostEvent("GrannyImpact", gameObject);
             DebugText.instance.Audio("Granny Impact");
             collision.gameObject.GetComponent<PlayerObstacleManager>().Granny(transform.position);
             CalculateNewDestination();

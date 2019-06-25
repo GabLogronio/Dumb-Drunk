@@ -1105,6 +1105,9 @@ MonoBehaviour:
   - /Dumb_and_Drunk/Events/Default Work Unit/Obstacles/Bottle
   - /Dumb_and_Drunk/Events/Default Work Unit/Obstacles/Fountain
   - /Dumb_and_Drunk/Events/Default Work Unit/Player
+  - /Dumb_and_Drunk/States
+  - /Dumb_and_Drunk/States/Default Work Unit
+  - /Dumb_and_Drunk/States/Default Work Unit/GameState
   - /Dumb_and_Drunk/Switches
   - /Dumb_and_Drunk/Switches/Default Work Unit
   autoPopulateEnabled: 1

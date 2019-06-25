@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
+	<RootPaths>
+		<ProjectRoot>C:\Users\mling\Desktop\repo\Dumb-Drunk\Dumb_and_Drunk_Unity\Dumb_and_Drunk\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\mling\Desktop\repo\Dumb-Drunk\Dumb_and_Drunk_Unity\Dumb_and_Drunk\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\mling\Desktop\repo\Dumb-Drunk\Dumb_and_Drunk_Unity\Dumb_and_Drunk\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\mling\Desktop\repo\Dumb-Drunk\Dumb_and_Drunk_Unity\Dumb_and_Drunk\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="4178581820" Name="AlmostFall" ObjectPath="\Events\Default Work Unit\Audience\AlmostFall"/>
+				<Event Id="234780388" Name="Bottle_Woosh" ObjectPath="\Events\Default Work Unit\Obstacles\Bottle\Bottle_Woosh" MaxAttenuation="100.000000"/>
+				<Event Id="983016381" Name="Car" ObjectPath="\Events\Default Work Unit\Obstacles\Car" MaxAttenuation="100.000000"/>
+				<Event Id="2786096973" Name="ClickGeneral" ObjectPath="\Events\Default Work Unit\Menu\ClickGeneral"/>
+				<Event Id="1182830809" Name="Clock" ObjectPath="\Events\Default Work Unit\Menu\Clock"/>
+				<Event Id="1924693583" Name="DontFell" ObjectPath="\Events\Default Work Unit\Audience\DontFell"/>
+				<Event Id="692898223" Name="DropKey" ObjectPath="\Events\Default Work Unit\Items\DropKey"/>
+				<Event Id="56469244" Name="EffortGotUp" ObjectPath="\Events\Default Work Unit\Player\EffortGotUp"/>
+				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Player\Footsteps"/>
+				<Event Id="3508841562" Name="Fountain_Loop" ObjectPath="\Events\Default Work Unit\Obstacles\Fountain\Fountain_Loop" MaxAttenuation="100.000000"/>
+				<Event Id="2592191804" Name="Gate_Opera" ObjectPath="\Events\Default Work Unit\Menu\Gate_Opera"/>
+				<Event Id="3625187538" Name="GotUp" ObjectPath="\Events\Default Work Unit\Audience\GotUp"/>
+				<Event Id="835900482" Name="GrannyImpact" ObjectPath="\Events\Default Work Unit\Obstacles\GrannyImpact"/>
+				<Event Id="4250186138" Name="GrannyVoice" ObjectPath="\Events\Default Work Unit\Obstacles\GrannyVoice" MaxAttenuation="100.000000"/>
+				<Event Id="2895182762" Name="HiccupPlayer" ObjectPath="\Events\Default Work Unit\Player\HiccupPlayer"/>
+				<Event Id="1183067778" Name="Key" ObjectPath="\Events\Default Work Unit\Items\Key"/>
+				<Event Id="1376241711" Name="LaughPlayer" ObjectPath="\Events\Default Work Unit\Player\LaughPlayer"/>
+				<Event Id="1434238328" Name="ObstacleNYC" ObjectPath="\Events\Default Work Unit\Obstacles\ObstacleNYC"/>
+				<Event Id="190727130" Name="ObstacleNYC2" ObjectPath="\Events\Default Work Unit\Obstacles\ObstacleNYC2"/>
+				<Event Id="604601532" Name="OpenGate" ObjectPath="\Events\Default Work Unit\Menu\OpenGate"/>
+				<Event Id="2467796810" Name="PickupGood" ObjectPath="\Events\Default Work Unit\Items\PickupGood"/>
+				<Event Id="1234515599" Name="PlayerReady" ObjectPath="\Events\Default Work Unit\Player\PlayerReady"/>
+				<Event Id="1972544759" Name="Recover" ObjectPath="\Events\Default Work Unit\Audience\Recover"/>
+				<Event Id="3806475592" Name="RecoverFalling" ObjectPath="\Events\Default Work Unit\Audience\RecoverFalling"/>
+				<Event Id="3416598638" Name="ThrowingUp" ObjectPath="\Events\Default Work Unit\Audience\ThrowingUp"/>
+				<Event Id="2161169877" Name="TrampImpact" ObjectPath="\Events\Default Work Unit\Obstacles\TrampImpact"/>
+				<Event Id="4200414363" Name="TrampVoice" ObjectPath="\Events\Default Work Unit\Obstacles\TrampVoice" MaxAttenuation="100.000000"/>
+				<Event Id="19135406" Name="Waiting" ObjectPath="\Events\Default Work Unit\Menu\Waiting"/>
+				<Event Id="1792625333" Name="YouFell" ObjectPath="\Events\Default Work Unit\Audience\YouFell"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="3402350" Language="SFX">
+					<ShortName>ShopCart_Crash.wav</ShortName>
+					<Path>SFX\ShopCart_Crash_84A03937.wem</Path>
+				</File>
+				<File Id="15245606" Language="SFX">
+					<ShortName>FountainSplash_03.wav</ShortName>
+					<Path>SFX\FountainSplash_03_5FCE3C77.wem</Path>
+				</File>
+				<File Id="28942165" Language="SFX">
+					<ShortName>YouFell.wav</ShortName>
+					<Path>SFX\YouFell_0292C122.wem</Path>
+				</File>
+				<File Id="96959732" Language="SFX">
+					<ShortName>Curse_7.wav</ShortName>
+					<Path>SFX\Curse_7_5AAD235A.wem</Path>
+				</File>
+				<File Id="101207038" Language="SFX">
+					<ShortName>FountainSplash_01.wav</ShortName>
+					<Path>SFX\FountainSplash_01_6D38F757.wem</Path>
+				</File>
+				<File Id="104165049" Language="SFX">
+					<ShortName>Tramp_8.wav</ShortName>
+					<Path>SFX\Tramp_8_1BB1B5C9.wem</Path>
+				</File>
+				<File Id="126053622" Language="SFX">
+					<ShortName>DropKey.wav</ShortName>
+					<Path>SFX\DropKey_E031F3DD.wem</Path>
+				</File>
+				<File Id="130612687" Language="SFX">
+					<ShortName>Fiu_Ch1_1.wav</ShortName>
+					<Path>SFX\Fiu_Ch1_1_B96B5A7A.wem</Path>
+				</File>
+				<File Id="135664658" Language="SFX">
+					<ShortName>ObstaclesSound.wav</ShortName>
+					<Path>SFX\ObstaclesSound_E031F3DD.wem</Path>
+				</File>
+				<File Id="142695618" Language="SFX">
+					<ShortName>Car_Stop.wav</ShortName>
+					<Path>SFX\Car_Stop_599AF8B4.wem</Path>
+				</File>
+				<File Id="148964418" Language="SFX">
+					<ShortName>gab2.wav</ShortName>
+					<Path>SFX\gab2_9598641C.wem</Path>
+				</File>
+				<File Id="182254629" Language="SFX">
+					<ShortName>Curse_2.wav</ShortName>
+					<Path>SFX\Curse_2_3BE15AD5.wem</Path>
+				</File>
+				<File Id="190935897" Language="SFX">
+					<ShortName>Gate_Opera.wav</ShortName>
+					<Path>SFX\Gate_Opera_3C7551B5.wem</Path>
+				</File>
+				<File Id="204609570" Language="SFX">
+					<ShortName>Burp_2.wav</ShortName>
+					<Path>SFX\Burp_2_E031F3DD.wem</Path>
+				</File>
+				<File Id="211389766" Language="SFX">
+					<ShortName>Scared_Vomit.wav</ShortName>
+					<Path>SFX\Scared_Vomit_0A75173B.wem</Path>
+				</File>
+				<File Id="223913338" Language="SFX">
+					<ShortName>Tramp_6.wav</ShortName>
+					<Path>SFX\Tramp_6_5F106B7F.wem</Path>
+				</File>
+				<File Id="255904910" Language="SFX">
+					<ShortName>Gab01.wav</ShortName>
+					<Path>SFX\Gab01_6BF3F852.wem</Path>
+				</File>
+				<File Id="265492385" Language="SFX">
+					<ShortName>Fiu_Ch1_1.wav</ShortName>
+					<Path>SFX\Fiu_Ch1_1_2F46CDCA.wem</Path>
+				</File>
+				<File Id="274690615" Language="SFX">
+					<ShortName>Granny_2.wav</ShortName>
+					<Path>SFX\Granny_2_3E723458.wem</Path>
+				</File>
+				<File Id="274893222" Language="SFX">
+					<ShortName>Fountain_Loop.wav</ShortName>
+					<Path>SFX\Fountain_Loop_25F41BAB.wem</Path>
+				</File>
+				<File Id="304504432" Language="SFX">
+					<ShortName>ColpoSnare.wav</ShortName>
+					<Path>SFX\ColpoSnare_EE2F0849.wem</Path>
+				</File>
+				<File Id="334687449" Language="SFX">
+					<ShortName>Tramp_5.wav</ShortName>
+					<Path>SFX\Tramp_5_D2AC4C49.wem</Path>
+				</File>
+				<File Id="335832914" Language="SFX">
+					<ShortName>Curse_5.wav</ShortName>
+					<Path>SFX\Curse_5_03033EF7.wem</Path>
+				</File>
+				<File Id="357899457" Language="SFX">
+					<ShortName>Granny_Urla.wav</ShortName>
+					<Path>SFX\Granny_Urla_681FE496.wem</Path>
+				</File>
+				<File Id="369889709" Language="SFX">
+					<ShortName>Curse_3.wav</ShortName>
+					<Path>SFX\Curse_3_B79F4D6C.wem</Path>
+				</File>
+				<File Id="374324675" Language="SFX">
+					<ShortName>Sforzo_2.wav</ShortName>
+					<Path>SFX\Sforzo_2_E031F3DD.wem</Path>
+				</File>
+				<File Id="413197766" Language="SFX">
+					<ShortName>Tramp_9.wav</ShortName>
+					<Path>SFX\Tramp_9_C4553583.wem</Path>
+				</File>
+				<File Id="417967410" Language="SFX">
+					<ShortName>Tramp_4.wav</ShortName>
+					<Path>SFX\Tramp_4_E70840F0.wem</Path>
+				</File>
+				<File Id="439744709" Language="SFX">
+					<ShortName>gab4.wav</ShortName>
+					<Path>SFX\gab4_1BE98741.wem</Path>
+				</File>
+				<File Id="445602743" Language="SFX">
+					<ShortName>Clock.wav</ShortName>
+					<Path>SFX\Clock_619B9A67.wem</Path>
+				</File>
+				<File Id="456557852" Language="SFX">
+					<ShortName>Sforzo_3.wav</ShortName>
+					<Path>SFX\Sforzo_3_3F2CF73C.wem</Path>
+				</File>
+				<File Id="477769225" Language="SFX">
+					<ShortName>Granny_1.wav</ShortName>
+					<Path>SFX\Granny_1_1814E019.wem</Path>
+				</File>
+				<File Id="505141620" Language="SFX">
+					<ShortName>Sforzo_1.wav</ShortName>
+					<Path>SFX\Sforzo_1_E031F3DD.wem</Path>
+				</File>
+				<File Id="508497090" Language="SFX">
+					<ShortName>Burp.wav</ShortName>
+					<Path>SFX\Burp_E031F3DD.wem</Path>
+				</File>
+				<File Id="509949906" Language="SFX">
+					<ShortName>Curse_4.wav</ShortName>
+					<Path>SFX\Curse_4_C79EF306.wem</Path>
+				</File>
+				<File Id="516776534" Language="SFX">
+					<ShortName>gab6.wav</ShortName>
+					<Path>SFX\gab6_0DC4D9B2.wem</Path>
+				</File>
+				<File Id="543150492" Language="SFX">
+					<ShortName>Granny.wav</ShortName>
+					<Path>SFX\Granny_03AD7170.wem</Path>
+				</File>
+				<File Id="553452032" Language="SFX">
+					<ShortName>PickupClock.wav</ShortName>
+					<Path>SFX\PickupClock_E381272C.wem</Path>
+				</File>
+				<File Id="562568776" Language="SFX">
+					<ShortName>Effort_6.wav</ShortName>
+					<Path>SFX\Effort_6_E031F3DD.wem</Path>
+				</File>
+				<File Id="566374208" Language="SFX">
+					<ShortName>Granny_5.wav</ShortName>
+					<Path>SFX\Granny_5_B0B73CE9.wem</Path>
+				</File>
+				<File Id="571173559" Language="SFX">
+					<ShortName>Curse_6.wav</ShortName>
+					<Path>SFX\Curse_6_09610A7E.wem</Path>
+				</File>
+				<File Id="593539557" Language="SFX">
+					<ShortName>Tramp.wav</ShortName>
+					<Path>SFX\Tramp_FD4D8DE6.wem</Path>
+				</File>
+				<File Id="612149151" Language="SFX">
+					<ShortName>Applause.wav</ShortName>
+					<Path>SFX\Applause_D7365ADC.wem</Path>
+				</File>
+				<File Id="627948039" Language="SFX">
+					<ShortName>Click.wav</ShortName>
+					<Path>SFX\Click_E031F3DD.wem</Path>
+				</File>
+				<File Id="652411690" Language="SFX">
+					<ShortName>Key_1.wav</ShortName>
+					<Path>SFX\Key_1_E031F3DD.wem</Path>
+				</File>
+				<File Id="671247547" Language="SFX">
+					<ShortName>Impact_2.wav</ShortName>
+					<Path>SFX\Impact_2_E031F3DD.wem</Path>
+				</File>
+				<File Id="689591392" Language="SFX">
+					<ShortName>MetalGate_KeyOpen.wav</ShortName>
+					<Path>SFX\MetalGate_KeyOpen_026BF657.wem</Path>
+				</File>
+				<File Id="689640965" Language="SFX">
+					<ShortName>Tramp_10.wav</ShortName>
+					<Path>SFX\Tramp_10_2FDBFCFA.wem</Path>
+				</File>
+				<File Id="696275444" Language="SFX">
+					<ShortName>CarAlarm.wav</ShortName>
+					<Path>SFX\CarAlarm_DFE0840D.wem</Path>
+				</File>
+				<File Id="698718400" Language="SFX">
+					<ShortName>Granny_Catarro_3.wav</ShortName>
+					<Path>SFX\Granny_Catarro_3_22E1C7FA.wem</Path>
+				</File>
+				<File Id="703673520" Language="SFX">
+					<ShortName>Car.wav</ShortName>
+					<Path>SFX\Car_40DD5DC9.wem</Path>
+				</File>
+				<File Id="709700715" Language="SFX">
+					<ShortName>Sin.wav</ShortName>
+					<Path>SFX\Sin_0DB3C1D6.wem</Path>
+				</File>
+				<File Id="735785502" Language="SFX">
+					<ShortName>Tramp_3.wav</ShortName>
+					<Path>SFX\Tramp_3_BE7811CC.wem</Path>
+				</File>
+				<File Id="770426111" Language="SFX">
+					<ShortName>gab7.wav</ShortName>
+					<Path>SFX\gab7_698C70E8.wem</Path>
+				</File>
+				<File Id="779381181" Language="SFX">
+					<ShortName>FountainSpruzzo_02.wav</ShortName>
+					<Path>SFX\FountainSpruzzo_02_6AB42F70.wem</Path>
+				</File>
+				<File Id="780332214" Language="SFX">
+					<ShortName>Granny_Catarro_1.wav</ShortName>
+					<Path>SFX\Granny_Catarro_1_7B06113F.wem</Path>
+				</File>
+				<File Id="781950369" Language="SFX">
+					<ShortName>Rullo.wav</ShortName>
+					<Path>SFX\Rullo_BF0CD426.wem</Path>
+				</File>
+				<File Id="796574648" Language="SFX">
+					<ShortName>Key_3.wav</ShortName>
+					<Path>SFX\Key_3_E031F3DD.wem</Path>
+				</File>
+				<File Id="798761018" Language="SFX">
+					<ShortName>Bottle_Break.wav</ShortName>
+					<Path>SFX\Bottle_Break_6C836559.wem</Path>
+				</File>
+				<File Id="808545498" Language="SFX">
+					<ShortName>Drums_Hit.wav</ShortName>
+					<Path>SFX\Drums_Hit_E031F3DD.wem</Path>
+				</File>
+				<File Id="863262581" Language="SFX">
+					<ShortName>FireExtinguisher.wav</ShortName>
+					<Path>SFX\FireExtinguisher_D8E101F0.wem</Path>
+				</File>
+				<File Id="870945440" Language="SFX">
+					<ShortName>Effort_7.wav</ShortName>
+					<Path>SFX\Effort_7_E031F3DD.wem</Path>
+				</File>
+				<File Id="873485135" Language="SFX">
+					<ShortName>NotificaAttesa.wav</ShortName>
+					<Path>SFX\NotificaAttesa_098592DD.wem</Path>
+				</File>
+				<File Id="899444848" Language="SFX">
+					<ShortName>PickupBottle.wav</ShortName>
+					<Path>SFX\PickupBottle_AAD524E8.wem</Path>
+				</File>
+				<File Id="900101445" Language="SFX">
+					<ShortName>MetalGate_DoorOpen.wav</ShortName>
+					<Path>SFX\MetalGate_DoorOpen_92E7A935.wem</Path>
+				</File>
+				<File Id="904874729" Language="SFX">
+					<ShortName>warrior_shout.wav</ShortName>
+					<Path>SFX\warrior_shout_D87EEDE5.wem</Path>
+				</File>
+				<File Id="911634278" Language="SFX">
+					<ShortName>Effort_8.wav</ShortName>
+					<Path>SFX\Effort_8_E031F3DD.wem</Path>
+				</File>
+				<File Id="928144525" Language="SFX">
+					<ShortName>Curse_1.wav</ShortName>
+					<Path>SFX\Curse_1_6944EBE3.wem</Path>
+				</File>
+				<File Id="934065885" Language="SFX">
+					<ShortName>Bottle_Break_01.wav</ShortName>
+					<Path>SFX\Bottle_Break_01_65449762.wem</Path>
+				</File>
+				<File Id="958468104" Language="SFX">
+					<ShortName>Curse_8.wav</ShortName>
+					<Path>SFX\Curse_8_B30D0FBE.wem</Path>
+				</File>
+				<File Id="976870030" Language="SFX">
+					<ShortName>Granny_Catarro_2.wav</ShortName>
+					<Path>SFX\Granny_Catarro_2_83E9FAB1.wem</Path>
+				</File>
+				<File Id="987733596" Language="SFX">
+					<ShortName>Tramp_11.wav</ShortName>
+					<Path>SFX\Tramp_11_5658BA1C.wem</Path>
+				</File>
+				<File Id="1008375067" Language="SFX">
+					<ShortName>Key_2.wav</ShortName>
+					<Path>SFX\Key_2_E031F3DD.wem</Path>
+				</File>
+				<File Id="1022056341" Language="SFX">
+					<ShortName>FountainSplash_02.wav</ShortName>
+					<Path>SFX\FountainSplash_02_46587308.wem</Path>
+				</File>
+				<File Id="1069791282" Language="SFX">
+					<ShortName>gab3.wav</ShortName>
+					<Path>SFX\gab3_29E923EF.wem</Path>
+				</File>
+				<File Id="1072138107" Language="SFX">
+					<ShortName>ShopCart_Crash02.wav</ShortName>
+					<Path>SFX\ShopCart_Crash02_9B097922.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3529644050" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Paris</ObjectPath>
+			<ShortName>Paris</ShortName>
+			<Path>Paris.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3991942870" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Music</ObjectPath>
+			<ShortName>Music</ShortName>
+			<Path>Music.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\MusicEvents\Music"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="16844521" Language="SFX">
+					<ShortName>Scratch\Scratch_PerStacco.wav</ShortName>
+					<Path>SFX\Scratch\Scratch_PerStacco_36418EDA.wem</Path>
+				</File>
+				<File Id="25974780" Language="SFX">
+					<ShortName>74\Moog_74.wav</ShortName>
+					<Path>SFX\74\Moog_74_36418EDA.wem</Path>
+				</File>
+				<File Id="90952974" Language="SFX">
+					<ShortName>Verse\BassSlap_Verse.wav</ShortName>
+					<Path>SFX\Verse\BassSlap_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="105409256" Language="SFX">
+					<ShortName>The only one.wav</ShortName>
+					<Path>SFX\The only one_36418EDA.wem</Path>
+				</File>
+				<File Id="108314707" Language="SFX">
+					<ShortName>HipHop\Sax1.wav</ShortName>
+					<Path>SFX\HipHop\Sax1_36418EDA.wem</Path>
+				</File>
+				<File Id="163342050" Language="SFX">
+					<ShortName>Intro\Kick_Intro.wav</ShortName>
+					<Path>SFX\Intro\Kick_Intro_36418EDA.wem</Path>
+				</File>
+				<File Id="167153080" Language="SFX">
+					<ShortName>theChamp_1.wav</ShortName>
+					<Path>SFX\theChamp_1_36418EDA.wem</Path>
+				</File>
+				<File Id="172370246" Language="SFX">
+					<ShortName>Rit\Clap_Rit.wav</ShortName>
+					<Path>SFX\Rit\Clap_Rit_36418EDA.wem</Path>
+				</File>
+				<File Id="180902968" Language="SFX">
+					<ShortName>HipHop\Bass_HipHop.wav</ShortName>
+					<Path>SFX\HipHop\Bass_HipHop_36418EDA.wem</Path>
+				</File>
+				<File Id="192350217" Language="SFX">
+					<ShortName>the Champ.wav</ShortName>
+					<Path>SFX\the Champ_36418EDA.wem</Path>
+				</File>
+				<File Id="223619743" Language="SFX">
+					<ShortName>Verse\Synth_Verse.wav</ShortName>
+					<Path>SFX\Verse\Synth_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="228795708" Language="SFX">
+					<ShortName>74\HH_74.wav</ShortName>
+					<Path>SFX\74\HH_74_36418EDA.wem</Path>
+				</File>
+				<File Id="320557144" Language="SFX">
+					<ShortName>74\Sin_74.wav</ShortName>
+					<Path>SFX\74\Sin_74_36418EDA.wem</Path>
+				</File>
+				<File Id="333604651" Language="SFX">
+					<ShortName>Rit\Synth_Rit.wav</ShortName>
+					<Path>SFX\Rit\Synth_Rit_36418EDA.wem</Path>
+				</File>
+				<File Id="348201723" Language="SFX">
+					<ShortName>real motherfucker_1.wav</ShortName>
+					<Path>SFX\real motherfucker_1_36418EDA.wem</Path>
+				</File>
+				<File Id="350901085" Language="SFX">
+					<ShortName>Finale\Rhodes_Fin.wav</ShortName>
+					<Path>SFX\Finale\Rhodes_Fin_36418EDA.wem</Path>
+				</File>
+				<File Id="359681385" Language="SFX">
+					<ShortName>HipHop\Sax2.wav</ShortName>
+					<Path>SFX\HipHop\Sax2_36418EDA.wem</Path>
+				</File>
+				<File Id="385962218" Language="SFX">
+					<ShortName>Intro\Snare_Intro.wav</ShortName>
+					<Path>SFX\Intro\Snare_Intro_36418EDA.wem</Path>
+				</File>
+				<File Id="387458113" Language="SFX">
+					<ShortName>Rit\HH_Rit.wav</ShortName>
+					<Path>SFX\Rit\HH_Rit_36418EDA.wem</Path>
+				</File>
+				<File Id="389502048" Language="SFX">
+					<ShortName>Verse\Choir2_Verse.wav</ShortName>
+					<Path>SFX\Verse\Choir2_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="402787741" Language="SFX">
+					<ShortName>Rit\HHNoise_Rit.wav</ShortName>
+					<Path>SFX\Rit\HHNoise_Rit_36418EDA.wem</Path>
+				</File>
+				<File Id="450649615" Language="SFX">
+					<ShortName>Real motherfucker.wav</ShortName>
+					<Path>SFX\Real motherfucker_36418EDA.wem</Path>
+				</File>
+				<File Id="472842228" Language="SFX">
+					<ShortName>yeah.wav</ShortName>
+					<Path>SFX\yeah_36418EDA.wem</Path>
+				</File>
+				<File Id="481249387" Language="SFX">
+					<ShortName>Verse\HHNoise_Verse.wav</ShortName>
+					<Path>SFX\Verse\HHNoise_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="487042093" Language="SFX">
+					<ShortName>Verse\SynthFrase_Verse.wav</ShortName>
+					<Path>SFX\Verse\SynthFrase_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="488442550" Language="SFX">
+					<ShortName>Rit\Moog_Rit.wav</ShortName>
+					<Path>SFX\Rit\Moog_Rit_36418EDA.wem</Path>
+				</File>
+				<File Id="489202198" Language="SFX">
+					<ShortName>Elevator Music - Vanoss Gaming Background Music (HD).wav</ShortName>
+					<Path>SFX\Elevator Music - Vanoss Gaming Background Music (HD)_36418EDA.wem</Path>
+				</File>
+				<File Id="518768440" Language="SFX">
+					<ShortName>Verse\Kick_Verse.wav</ShortName>
+					<Path>SFX\Verse\Kick_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="531903965" Language="SFX">
+					<ShortName>Rit\Rhodes_Rit.wav</ShortName>
+					<Path>SFX\Rit\Rhodes_Rit_36418EDA.wem</Path>
+				</File>
+				<File Id="552235749" Language="SFX">
+					<ShortName>Verse\Moog_Verse.wav</ShortName>
+					<Path>SFX\Verse\Moog_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="558877834" Language="SFX">
+					<ShortName>Stacco\Kick_Stacco.wav</ShortName>
+					<Path>SFX\Stacco\Kick_Stacco_36418EDA.wem</Path>
+				</File>
+				<File Id="583092572" Language="SFX">
+					<ShortName>74\BassSlap_74.wav</ShortName>
+					<Path>SFX\74\BassSlap_74_36418EDA.wem</Path>
+				</File>
+				<File Id="587095022" Language="SFX">
+					<ShortName>Finale\BassSlap_Fin.wav</ShortName>
+					<Path>SFX\Finale\BassSlap_Fin_36418EDA.wem</Path>
+				</File>
+				<File Id="595146723" Language="SFX">
+					<ShortName>HipHop\Moog_HipHop.wav</ShortName>
+					<Path>SFX\HipHop\Moog_HipHop_36418EDA.wem</Path>
+				</File>
+				<File Id="607732022" Language="SFX">
+					<ShortName>HipHop\SynthFrase_HipHop.wav</ShortName>
+					<Path>SFX\HipHop\SynthFrase_HipHop_36418EDA.wem</Path>
+				</File>
+				<File Id="701522990" Language="SFX">
+					<ShortName>Verse\Snare_Verse+Stacco.wav</ShortName>
+					<Path>SFX\Verse\Snare_Verse+Stacco_36418EDA.wem</Path>
+				</File>
+				<File Id="758590583" Language="SFX">
+					<ShortName>Verse\Choir1_Verse.wav</ShortName>
+					<Path>SFX\Verse\Choir1_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="786114912" Language="SFX">
+					<ShortName>Rit\BassSlap_Rit.wav</ShortName>
+					<Path>SFX\Rit\BassSlap_Rit_36418EDA.wem</Path>
+				</File>
+				<File Id="815986329" Language="SFX">
+					<ShortName>74\Clap_74.wav</ShortName>
+					<Path>SFX\74\Clap_74_36418EDA.wem</Path>
+				</File>
+				<File Id="828692649" Language="SFX">
+					<ShortName>feels good.wav</ShortName>
+					<Path>SFX\feels good_36418EDA.wem</Path>
+				</File>
+				<File Id="857736409" Language="SFX">
+					<ShortName>HipHop\HH_HipHop.wav</ShortName>
+					<Path>SFX\HipHop\HH_HipHop_36418EDA.wem</Path>
+				</File>
+				<File Id="868780141" Language="SFX">
+					<ShortName>Intro\Pad_Intro.wav</ShortName>
+					<Path>SFX\Intro\Pad_Intro_36418EDA.wem</Path>
+				</File>
+				<File Id="895273903" Language="SFX">
+					<ShortName>HipHop\Clap_HipHop.wav</ShortName>
+					<Path>SFX\HipHop\Clap_HipHop_36418EDA.wem</Path>
+				</File>
+				<File Id="909098337" Language="SFX">
+					<ShortName>the One.wav</ShortName>
+					<Path>SFX\the One_36418EDA.wem</Path>
+				</File>
+				<File Id="918824902" Language="SFX">
+					<ShortName>74\Kick_74.wav</ShortName>
+					<Path>SFX\74\Kick_74_36418EDA.wem</Path>
+				</File>
+				<File Id="942631601" Language="SFX">
+					<ShortName>74\Wave_74.wav</ShortName>
+					<Path>SFX\74\Wave_74_36418EDA.wem</Path>
+				</File>
+				<File Id="949679150" Language="SFX">
+					<ShortName>Scratch\Scratch_Verse.wav</ShortName>
+					<Path>SFX\Scratch\Scratch_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="950501854" Language="SFX">
+					<ShortName>Verse\SinLow.wav</ShortName>
+					<Path>SFX\Verse\SinLow_36418EDA.wem</Path>
+				</File>
+				<File Id="953085001" Language="SFX">
+					<ShortName>Rit\Kick_Rit.wav</ShortName>
+					<Path>SFX\Rit\Kick_Rit_36418EDA.wem</Path>
+				</File>
+				<File Id="993105796" Language="SFX">
+					<ShortName>Scratch\Scratch2_Verse.wav</ShortName>
+					<Path>SFX\Scratch\Scratch2_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="1000448165" Language="SFX">
+					<ShortName>74\HHNoise_74.wav</ShortName>
+					<Path>SFX\74\HHNoise_74_36418EDA.wem</Path>
+				</File>
+				<File Id="1032061444" Language="SFX">
+					<ShortName>74\Rhodes_74.wav</ShortName>
+					<Path>SFX\74\Rhodes_74_36418EDA.wem</Path>
+				</File>
+				<File Id="1047484972" Language="SFX">
+					<ShortName>Rit\Snare_Rit+HipHop.wav</ShortName>
+					<Path>SFX\Rit\Snare_Rit+HipHop_36418EDA.wem</Path>
+				</File>
+				<File Id="1051068775" Language="SFX">
+					<ShortName>Scratch\Scratch_PerRit.wav</ShortName>
+					<Path>SFX\Scratch\Scratch_PerRit_36418EDA.wem</Path>
+				</File>
+				<File Id="1053109590" Language="SFX">
+					<ShortName>HipHop\Kick_HipHop.wav</ShortName>
+					<Path>SFX\HipHop\Kick_HipHop_36418EDA.wem</Path>
+				</File>
+				<File Id="1058889311" Language="SFX">
+					<ShortName>Verse\Sin_Verse.wav</ShortName>
+					<Path>SFX\Verse\Sin_Verse_36418EDA.wem</Path>
+				</File>
+				<File Id="1065191719" Language="SFX">
+					<ShortName>74\Snare_74.wav</ShortName>
+					<Path>SFX\74\Snare_74_36418EDA.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

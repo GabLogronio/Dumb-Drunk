@@ -17,6 +17,7 @@ public class TaxiObstacle : MonoBehaviour
     {
         if (!AlreadyActivated && collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
+            AkSoundEngine.PostEvent("ObstacleNYC", gameObject);
             for (int i = 0; i < PlayersLayers.Length; i++)
             {
                 Collider[] Player = new Collider[1];

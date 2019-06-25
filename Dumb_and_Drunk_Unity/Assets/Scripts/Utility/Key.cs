@@ -25,10 +25,9 @@ public class Key : MonoBehaviour
         if (!Activated && collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12) // Player Layer
         {
             Activated = true;
-            DebugText.instance.Audio("Key");
+            AkSoundEngine.PostEvent("Key", gameObject);
             MatchManager.getInstance().KeyCollection(collision.gameObject.layer);
             Spawer.getInstance().KeyCollected(pos);
-            DebugText.instance.Add("Key " + collision.gameObject.name);
             DestroyKey();
         }
     }
