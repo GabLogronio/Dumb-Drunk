@@ -69,15 +69,10 @@ public class ShooterInputManager : InputManager
     // Update is called once per frame
     void Update()
     {
-        //DebugText.instance.Add("shooter");
-
         UpdateTimers();
-
         CheckBounds();
 
         if (pressed) charge += Time.deltaTime;
-
-        //Debug.DrawLine(Camera.main.transform.position, Camera.main.ScreenToWorldPoint(new Vector3(pointerRT.position.x, pointerRT.position.y, Camera.main.farClipPlane)), Color.red);
 
         X += DeltaX * Time.deltaTime;
         Y += DeltaY * Time.deltaTime;
@@ -86,7 +81,6 @@ public class ShooterInputManager : InputManager
         InputX = RightTimer - LeftTimer;
         InputY = UpTimer - DownTimer;
 
-        //pointerRT.localPosition = new Vector3(pointerRT.localPosition.x + X * CurrentSpeed * Time.deltaTime, pointerRT.localPosition.y + Y * CurrentSpeed * Time.deltaTime, 1.0f);
         pointerRT.Translate(new Vector3((X * CurrentSpeed) + (InputX * InputSpeed) * Time.deltaTime, (Y * CurrentSpeed) + (InputY * InputSpeed) * Time.deltaTime, 0f));
     }
 
@@ -160,7 +154,6 @@ public class ShooterInputManager : InputManager
 
     private void Shoot()
     {
-        charge = 0;
         if (!inCooldown)
         {
             GameObject newBottle = Instantiate(BottlePrefab, Camera.main.transform.position, Quaternion.identity);
@@ -171,6 +164,7 @@ public class ShooterInputManager : InputManager
             Invoke("FinishCooldown", cooldown);
         }
 
+        charge = 0;
     }
 
     void RandomizeDirection()

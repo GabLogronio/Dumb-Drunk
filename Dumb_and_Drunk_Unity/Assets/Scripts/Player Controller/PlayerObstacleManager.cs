@@ -28,7 +28,7 @@ public class PlayerObstacleManager : MonoBehaviour {
             Vector3 PushDirection = BalanceManager.transform.position - TaxiPosition;
             PushDirection = PushDirection.normalized;
             PushDirection.y = 1f;
-            BalanceManager.Fall(PushDirection * 250f);
+            BalanceManager.Fall(PushDirection * 200f);
 
         }
     }

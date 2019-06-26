@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TaxiObstacle : MonoBehaviour
 {
-    [SerializeField]
-    private float AlarmRange, LightsTimer;
+    private float AlarmRange = 7.5f, LightsTimer = 1f;
 
     [SerializeField]
     GameObject Lights;

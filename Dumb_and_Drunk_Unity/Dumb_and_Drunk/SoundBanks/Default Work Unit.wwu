@@ -9,6 +9,7 @@
 						<ObjectRef Name="Fountain_Loop" ID="{DD1756A1-E798-408C-9C66-6F38CAB0FC0B}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="ObstacleNYC2" ID="{4674CAAA-801D-4266-BCEE-7EB788593349}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TrampImpact" ID="{7B681819-EBFC-42B9-A17B-545A706C761B}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Bottle_Break" ID="{15FC07F7-6081-4333-B1B2-234EBF156F72}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="YouFell" ID="{726753E0-8439-439E-A85D-43D4E54FE8C1}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TrampVoice" ID="{D3F5281D-908E-4476-9053-7DC2A939F112}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Clock" ID="{AA53CB1F-217B-4503-B288-329774021F89}" WorkUnitID="{1F885D61-B68B-41B7-908D-89DBB9960F0E}" Filter="7" Origin="Manual"/>

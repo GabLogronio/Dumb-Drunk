@@ -1400,7 +1400,14 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
-								<Sound Name="Bottle_Woosh" ID="{C0C256D4-ACA1-4618-A31C-66CBF327A6B2}" ShortID="573557772">
+								<Sound Name="Car_Stop" ID="{11EC510D-41CB-47AA-9AD3-0330B1B9440E}" ShortID="952846707">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
 											<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
@@ -1419,76 +1426,18 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<SourcePlugin Name="SoundSeed Air Woosh" ID="{33BC5742-84D3-4F94-912E-A83818930D9A}" ShortID="683467233" PluginName="SoundSeed Air Woosh" CompanyID="0" PluginID="120">
+										<AudioFileSource Name="Car_Stop" ID="{33C7334B-A8B3-4D6B-9BEF-F3678397BC75}" ShortID="142695618">
 											<PropertyList>
-												<Property Name="AttenuationRollOff" Type="Real32" Value="1.2"/>
-												<Property Name="MinDistance" Type="Real32" Value="21.8"/>
-												<Property Name="PlaybackRate" Type="Real32" Value="2.2"/>
-												<Property Name="QFactorScale" Type="Real32" Value="1.85"/>
-												<Property Name="Speed" Type="Real32" Value="46"/>
-												<Property Name="SpeedAutomate" Type="bool" Value="True"/>
-												<Property Name="SpeedPointSpeedRandom" Type="Real32" Value="14.2"/>
-												<Property Name="SpeedPointTimeRandom" Type="Real32" Value="0.28"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.182522123893805"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.182522123893805"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.44579646017699"/>
 											</PropertyList>
 											<Language>SFX</Language>
-											<PluginData>
-	<WooshData>
-		<CurveList Version="1">
-			<CurveInfo Name="Speed">
-				<Curve Name="" ID="{CE2431B1-43B0-4E6E-9967-6D60563EB71D}">
-					<PropertyList>
-						<Property Name="Flags" Type="int32" Value="1"/>
-					</PropertyList>
-					<PointList>
-						<Point>
-							<XPos>0</XPos>
-							<YPos>0</YPos>
-							<Flags>5</Flags>
-						</Point>
-						<Point>
-							<XPos>0.0882</XPos>
-							<YPos>100</YPos>
-							<Flags>0</Flags>
-						</Point>
-						<Point>
-							<XPos>0.5</XPos>
-							<YPos>0</YPos>
-							<Flags>37</Flags>
-						</Point>
-					</PointList>
-				</Curve>
-			</CurveInfo>
-		</CurveList>
-		<Path Version="1">
-			<Path2D Name="" ID="{43733229-1D74-4A29-95BA-3B7749B30EB9}">
-				<PropertyList>
-					<Property Name="LinearTime" Type="bool" Value="False"/>
-				</PropertyList>
-				<PointList>
-					<Point>
-						<XPos>0</XPos>
-						<YPos>0</YPos>
-						<Flags>12</Flags>
-						<Time>0</Time>
-					</Point>
-				</PointList>
-			</Path2D>
-		</Path>
-	</WooshData>
-</PluginData>
-											<PluginInnerObjectList>
-												<List Name="Deflectors">
-													<PluginInnerObject Name="" ID="{A5861949-EE94-482D-A405-B4F6D6E0D48D}" PluginName="Deflector" CompanyID="0" PluginID="122">
-														<PropertyList>
-															<Property Name="Gain" Type="Real32" Value="-4"/>
-														</PropertyList>
-													</PluginInnerObject>
-												</List>
-											</PluginInnerObjectList>
-										</SourcePlugin>
+											<AudioFile>Car_Stop.wav</AudioFile>
+										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="SoundSeed Air Woosh" ID="{33BC5742-84D3-4F94-912E-A83818930D9A}" Platform="Linked"/>
+										<ActiveSource Name="Car_Stop" ID="{33C7334B-A8B3-4D6B-9BEF-F3678397BC75}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<RandomSequenceContainer Name="Bottle_Break" ID="{A3637BB4-CCF0-443B-AF27-0DE02F721334}" ShortID="1022372909">
@@ -1630,46 +1579,6 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
-								<Sound Name="Car_Stop" ID="{11EC510D-41CB-47AA-9AD3-0330B1B9440E}" ShortID="952846707">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-4</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Attenuation">
-											<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
-										</Reference>
-										<Reference Name="Conversion">
-											<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-										<Reference Name="UserAuxSend0">
-											<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-										<Reference Name="UserAuxSend1">
-											<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Car_Stop" ID="{33C7334B-A8B3-4D6B-9BEF-F3678397BC75}" ShortID="142695618">
-											<PropertyList>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.182522123893805"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.182522123893805"/>
-												<Property Name="TrimEnd" Type="Real64" Value="2.44579646017699"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Car_Stop.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Car_Stop" ID="{33C7334B-A8B3-4D6B-9BEF-F3678397BC75}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
@@ -1681,9 +1590,6 @@
 									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="ShoppingCart" ID="{12D7E9C4-4B82-4CEE-8B0D-D01244F222C8}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Bottle_Woosh" ID="{C0C256D4-ACA1-4618-A31C-66CBF327A6B2}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Fountain" ID="{0869C8FA-090D-4CA0-B805-0B23ABBE0A2F}"/>
@@ -1717,6 +1623,109 @@
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
+						<ActorMixer Name="Bottle" ID="{371FF82F-314E-453E-943E-08071560A3DE}" ShortID="603629070">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Bottle_Woosh" ID="{C0C256D4-ACA1-4618-A31C-66CBF327A6B2}" ShortID="573557772">
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Obstacles" ID="{155C0B5D-BEE1-4DE9-B373-FB1A0427F81C}" WorkUnitID="{0D106A1E-EF83-4795-A317-3C2C38C1263F}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="SFX" ID="{4AE6DB0D-D0A3-4205-9093-3D135A3F2AD9}" WorkUnitID="{D3A9D56A-EB57-4021-849A-A40B4B026CCD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{F61B3BEF-D96F-4C83-912A-30356E0197B6}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="RVBGameplay" ID="{1D9BDB84-B1A5-4D7A-8A59-B1CA3C186F89}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="TutorialRVB" ID="{9CAC5FEF-39C6-4C2F-8A84-B47361207FC2}" WorkUnitID="{D5D13B7C-46C1-4B60-8501-4A7C259967FD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<SourcePlugin Name="SoundSeed Air Woosh" ID="{33BC5742-84D3-4F94-912E-A83818930D9A}" ShortID="683467233" PluginName="SoundSeed Air Woosh" CompanyID="0" PluginID="120">
+											<PropertyList>
+												<Property Name="AttenuationRollOff" Type="Real32" Value="1.2"/>
+												<Property Name="MinDistance" Type="Real32" Value="21.8"/>
+												<Property Name="PlaybackRate" Type="Real32" Value="2.2"/>
+												<Property Name="QFactorScale" Type="Real32" Value="1.85"/>
+												<Property Name="Speed" Type="Real32" Value="46"/>
+												<Property Name="SpeedAutomate" Type="bool" Value="True"/>
+												<Property Name="SpeedPointSpeedRandom" Type="Real32" Value="14.2"/>
+												<Property Name="SpeedPointTimeRandom" Type="Real32" Value="0.28"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<PluginData>
+	<WooshData>
+		<CurveList Version="1">
+			<CurveInfo Name="Speed">
+				<Curve Name="" ID="{CE2431B1-43B0-4E6E-9967-6D60563EB71D}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="1"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>0</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>0.0882</XPos>
+							<YPos>100</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>0.5</XPos>
+							<YPos>0</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+		</CurveList>
+		<Path Version="1">
+			<Path2D Name="" ID="{43733229-1D74-4A29-95BA-3B7749B30EB9}">
+				<PropertyList>
+					<Property Name="LinearTime" Type="bool" Value="False"/>
+				</PropertyList>
+				<PointList>
+					<Point>
+						<XPos>0</XPos>
+						<YPos>0</YPos>
+						<Flags>12</Flags>
+						<Time>0</Time>
+					</Point>
+				</PointList>
+			</Path2D>
+		</Path>
+	</WooshData>
+</PluginData>
+											<PluginInnerObjectList>
+												<List Name="Deflectors">
+													<PluginInnerObject Name="" ID="{A5861949-EE94-482D-A405-B4F6D6E0D48D}" PluginName="Deflector" CompanyID="0" PluginID="122">
+														<PropertyList>
+															<Property Name="Gain" Type="Real32" Value="-4"/>
+														</PropertyList>
+													</PluginInnerObject>
+												</List>
+											</PluginInnerObjectList>
+										</SourcePlugin>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SoundSeed Air Woosh" ID="{33BC5742-84D3-4F94-912E-A83818930D9A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="General" ID="{C0F54C4B-9513-4AE0-8160-48D1F4B4D11A}" ShortID="749838888">

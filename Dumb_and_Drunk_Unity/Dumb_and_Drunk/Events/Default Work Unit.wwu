@@ -274,6 +274,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Bottle_Break" ID="{15FC07F7-6081-4333-B1B2-234EBF156F72}">
+									<ChildrenList>
+										<Action Name="" ID="{6D5B6B79-6899-464F-AA9D-60C33793D6DB}" ShortID="960570450">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Bottle_Break" ID="{A3637BB4-CCF0-443B-AF27-0DE02F721334}" WorkUnitID="{ECD3A8F7-66D7-4344-A4D0-CD966742F513}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="ObstacleNYC2" ID="{4674CAAA-801D-4266-BCEE-7EB788593349}">

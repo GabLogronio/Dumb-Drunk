@@ -40,7 +40,6 @@ public class CarsAndCartSpawner : MonoBehaviour
                 Obstacles[i].transform.position = SpawnPoints[SelectedSpawnPoint].position;
                 Obstacles[i].transform.rotation = SpawnPoints[SelectedSpawnPoint].rotation;
                 Obstacles[i].SetActive(true);
-                DebugText.instance.Audio("Car");
 
             }
             else Obstacles[i].SetActive(false);

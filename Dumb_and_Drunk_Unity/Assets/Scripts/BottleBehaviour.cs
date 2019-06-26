@@ -11,14 +11,14 @@ public class BottleBehaviour : MonoBehaviour
     {
         if (collision.gameObject.layer == 14)
         {
+            AkSoundEngine.PostEvent("Bottle_Break", gameObject);
             explode(transform.position);
-            DebugText.instance.Audio("Bottle_Broken");
 
         }
         else if (collision.gameObject.layer >= 9 && collision.gameObject.layer <= 12)
         {
             collision.gameObject.GetComponent<PlayerObstacleManager>().Fall();
-            DebugText.instance.Audio("Bottle_Broken");
+            AkSoundEngine.PostEvent("Bottle_Break", gameObject);
             Destroy(gameObject);
         }
     }
