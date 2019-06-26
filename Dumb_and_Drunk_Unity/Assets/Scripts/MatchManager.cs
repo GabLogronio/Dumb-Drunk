@@ -169,10 +169,12 @@ public class MatchManager : MonoBehaviour
         }
         timer = MatchMakingSceneDuration;
         isMatchmakingScene = true;
+
     }
 
     private void LoadFirstGameScene()
     {
+        Debug.Log("1 CURRENT " + NetworkServerManager.getInstance().CurrentConnections.Count);
         teamCanvas.SetActive(false);
         gameCanvas.SetActive(true);
 
@@ -218,6 +220,7 @@ public class MatchManager : MonoBehaviour
             gameCanvas.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
             gameCanvas.transform.GetChild(i).GetChild(2).gameObject.SetActive(false);
         }
+
     }
 
     public void KeyCollection(int layer)

@@ -45,6 +45,7 @@ public class PlayerBalanceManager : MonoBehaviour {
 
             BlockBar(true);
 
+            InputController.RandomizeControls();
             InputController.Detach();
             InputController.BlockControls(true);
             InputController.SetCanAttach(false);

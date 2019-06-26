@@ -27,7 +27,7 @@ public class NetworkServerManager : MonoBehaviour
     [SerializeField]
     Vector3[] PlayersPosition = new Vector3[4];
 
-    Dictionary<int, InputManager> CurrentConnections = new Dictionary<int, InputManager>();
+    public Dictionary<int, InputManager> CurrentConnections = new Dictionary<int, InputManager>();
 
     void OnGUI()
     {
@@ -96,9 +96,14 @@ public class NetworkServerManager : MonoBehaviour
 
     public void ServerStringMessageSender (InputManager Player, string ToSend)
     {
-        StringMessage msg = new StringMessage();
-        msg.value = ToSend;
-        NetworkServer.SendToClient(CurrentConnections.First(ConnId => ConnId.Value == Player).Key, 888, msg);
+        if (CurrentConnections.First(ConnId => ConnId.Value == Player).Key <= CurrentConnections.Count)
+        {
+            Debug.Log("Player ID " + CurrentConnections.First(ConnId => ConnId.Value == Player).Key + ", CurrentConnections " + CurrentConnections.Count);
+            StringMessage msg = new StringMessage();
+            msg.value = ToSend;
+            NetworkServer.SendToClient(CurrentConnections.First(ConnId => ConnId.Value == Player).Key, 888, msg);
+        }
+
     }
 
     public void ServerStringMessageSenderToAll(string ToSend)
@@ -148,11 +153,15 @@ public class NetworkServerManager : MonoBehaviour
 
     public void SwitchInputManager(int i, bool player)
     {
-        PlayersInputManagers[i].gameObject.GetComponent<PlayerInputManager>().enabled = player;
-        PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>().enabled = !player;
-        if (player) PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<PlayerInputManager>();
-        else PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>();
-        CurrentConnections[i + 1] = PlayersInputManagers[i];
+        if (i < CurrentConnections.Count)
+        {
+            PlayersInputManagers[i].gameObject.GetComponent<PlayerInputManager>().enabled = player;
+            PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>().enabled = !player;
+            if (player) PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<PlayerInputManager>();
+            else PlayersInputManagers[i] = PlayersInputManagers[i].gameObject.GetComponent<ShooterInputManager>();
+            CurrentConnections[i + 1] = PlayersInputManagers[i];
+
+        }
     }
 
     void TestingInput() // ONLY USED IN TESTING
